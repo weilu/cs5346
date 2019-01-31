@@ -3,7 +3,35 @@
 <head>
 <meta charset="utf-8"/>
 <title>D3</title>
-<script src="https://d3js.org/d3.v5.js"></script></head>
+<script src="https://d3js.org/d3.v5.js"></script>
+
+</head>
 <body>
+  <script>
+    async function foo(){
+      let w = 300;
+      let h = 200;
+      d3.select("body").append("svg").attr("height", h).attr("width", w);
+      let c = await d3.csv("https://raw.githubusercontent.com/CS5346-Information-Visualisation/CS5346-Information-Visualisation.github.io/master/datasets/sample.csv");
+
+      console.log(c)
+
+      let colours = ["red", "blue", "black"];
+      for(let i=0; i < c.length; i+=1) {
+        let value = Math.floor((c[i].W2 - c[i].W1) * 100)
+        let x = 30 + i * w/(c.length); 
+        let y = h - (value * 10 + 25); // invert the y-axis
+        d3.select("svg")
+          .append("circle")
+            .attr("cx", x)
+            .attr("cy", y)
+            .attr("r", value)
+            .attr("fill", colours[i%colours.length]);
+      }
+    }
+
+    foo()
+  </script>
+
 </body>
 </html> 
