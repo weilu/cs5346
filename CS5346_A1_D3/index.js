@@ -51,7 +51,15 @@ function linearRegress(x, y) {
 
 async function main(){
   var data = await d3.csv("results.csv", function(d) {
+    var bufSizeOrd = 1
+    if (d.bufSize == '240') {
+      bufSizeOrd = 3
+    } else if (d.bufSize == '120') {
+      bufSizeOrd = 2
+    }
+
     return {
+      bufSizeOrd: bufSizeOrd,
       method : d.method,
       quality : +d.quality,
       inefficiency : +d.inefficiency
@@ -105,6 +113,10 @@ async function main(){
                 .domain(data.map(d => d.method))
                 .range(d3.schemeCategory10)
 
+  var opacity = d3.scaleLinear()
+                  .domain(data.map(d => d.bufSizeOrd))
+                  .range([0.2, 0.8])
+
   // add the graph canvas to the body of the webpage
   var svg = d3.select("body").append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -130,6 +142,7 @@ async function main(){
         .attr("cx", d => x(d.quality))
         .attr("cy", d => y(d.inefficiency))
         .style("fill", d => color(d.method))
+        .style("opacity", d => opacity(d.bufSizeOrd))
         .on("mouseover", function(d) {
             entered(d.method, d.quality, d.inefficiency)
         })
