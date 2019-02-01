@@ -134,12 +134,8 @@ async function main(){
       .attr("cx", d => x(d.quality))
       .attr("cy", d => y(d.inefficiency))
       .style("fill", d => color(d.method))
-      .on("mouseover", function(d) {
-          entered(d.method, d.quality, d.inefficiency)
-      })
-      .on("mouseout", function(d) {
-          left(d[0])
-      });
+      .on("mouseover", d => entered(d.method, d.quality, d.inefficiency))
+      .on("mouseout", d => left(d[0]));
 
   const path = svg.selectAll(".regLine")
       .data(regData)
@@ -150,12 +146,8 @@ async function main(){
       .attr("y2", d => y(d[1][3]))
       .attr("class", d => d[0] + " regLine")
       .style("stroke", d => color(d[0]))
-      .on("mouseover", function(d) {
-          entered(d[0])
-      })
-      .on("mouseout", function(d) {
-          left(d[0])
-      })
+      .on("mouseover", d => entered(d[0]))
+      .on("mouseout", d => left(d[0]))
 
   function entered(method, quality, inefficiency) {
     tooltip.transition()
