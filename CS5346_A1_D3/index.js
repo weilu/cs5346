@@ -1,3 +1,4 @@
+// Modified from: https://bl.ocks.org/ctufts/674ece47de093f6e0cd5af22d7ee9b9b
 function linearRegress(x, y) {
   // calculate mean x and y
   var n = x.length
@@ -121,36 +122,36 @@ async function main(){
     svg.append("g").call(yAxis)
 
     // draw dots
-    svg.selectAll(".dot")
+    const dot = svg.selectAll(".dot")
         .data(data)
       .enter().append("circle")
-        .attr("class", "dot")
+        .attr("class", d => d.method + " dot")
         .attr("r", 3.5)
         .attr("cx", d => x(d.quality))
         .attr("cy", d => y(d.inefficiency))
         .style("fill", d => color(d.method))
         .on("mouseover", function(d) {
-            tooltip.transition()
-                 .duration(200)
-                 .style("opacity", .9);
-            tooltip.html(d.method + "<br/> (" + d.quality + ", " + d.inefficiency + ")")
-                 .style("left", (d3.event.pageX + 5) + "px")
-                 .style("top", (d3.event.pageY - 28) + "px");
+            entered(d.method, d.quality, d.inefficiency)
         })
         .on("mouseout", function(d) {
-            tooltip.transition()
-                 .duration(500)
-                 .style("opacity", 0);
+            left(d[0])
         });
 
-  svg.selectAll(".regLine")
+  const path = svg.selectAll(".regLine")
       .data(regData)
     .enter().append("line")
       .attr("x1", d => x(d[1][0]))
       .attr("y1", d => y(d[1][1]))
       .attr("x2", d => x(d[1][2]))
       .attr("y2", d => y(d[1][3]))
+      .attr("class", d => d[0] + " regLine")
       .style("stroke", d => color(d[0]))
+      .on("mouseover", function(d) {
+          entered(d[0])
+      })
+      .on("mouseout", function(d) {
+          left(d[0])
+      })
 
     // // draw legend
     // var legend = svg.selectAll(".legend")
@@ -174,7 +175,40 @@ async function main(){
     //     .style("text-anchor", "end")
     //     .text(function(d) { return d;})
 
+  function entered(method, quality, inefficiency) {
+    tooltip.transition()
+         .duration(200)
+         .style("opacity", .9);
+    var text = method
+    if (quality != null && inefficiency != null) {
+      text += "<br/> (" + quality + ", " + inefficiency + ")"
+    }
+    tooltip.html(text)
+         .style("left", (d3.event.pageX + 5) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+
+    svg.selectAll(`.regLine:not(.${method})`)
+      .style("stroke", "#ddd")
+    svg.selectAll(`.dot:not(.${method})`)
+      .style("stroke", "#ddd")
+      .style("fill", "#ddd")
+    svg.selectAll(`.${method}`).raise()
   }
+
+  function left(method) {
+    tooltip.transition()
+         .duration(500)
+         .style("opacity", 0);
+
+    svg.selectAll(`.regLine:not(.${method})`)
+      .style("stroke", d => color(d[0]))
+    svg.selectAll(`.dot:not(.${method})`)
+      .style("stroke", "#000")
+      .style("fill", d => color(d.method))
+  }
+
+}
+
 
 main()
 
