@@ -84,6 +84,28 @@ async function main(){
                 .domain(data.map(d => d.method))
                 .range(d3.schemeCategory10)
 
+  // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
+  var legend = svg => {
+    const g = svg
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+      .selectAll("g")
+      .data(color.domain().slice())
+      .enter().append("g")
+        .attr("transform", (d, i) => `translate(0,${i * 20})`);
+
+    g.append("rect")
+        .attr("width", 19)
+        .attr("height", 19)
+        .attr("fill", color);
+
+    g.append("text")
+        .attr("x", 24)
+        .attr("y", 9.5)
+        .attr("dy", "0.35em")
+        .text(d => d);
+  }
+
   // add the graph canvas to the body of the webpage
   var svg = d3.select("body").append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -96,25 +118,28 @@ async function main(){
       .attr("class", "tooltip")
       .style("opacity", 0);
 
-    // axis
-    svg.append("g").call(xAxis)
-    svg.append("g").call(yAxis)
+  // axis
+  svg.append("g").call(xAxis)
+  svg.append("g").call(yAxis)
+  svg.append("g")
+      .attr("transform", `translate(${width - 50}, ${margin.top + 200})`)
+      .call(legend);
 
-    // draw dots
-    const dot = svg.selectAll(".dot")
-        .data(data)
-      .enter().append("circle")
-        .attr("class", d => d.method + " dot")
-        .attr("r", 3.5)
-        .attr("cx", d => x(d.quality))
-        .attr("cy", d => y(d.inefficiency))
-        .style("fill", d => color(d.method))
-        .on("mouseover", function(d) {
-            entered(d.method, d.quality, d.inefficiency)
-        })
-        .on("mouseout", function(d) {
-            left(d[0])
-        });
+  // draw dots
+  const dot = svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", d => d.method + " dot")
+      .attr("r", 3.5)
+      .attr("cx", d => x(d.quality))
+      .attr("cy", d => y(d.inefficiency))
+      .style("fill", d => color(d.method))
+      .on("mouseover", function(d) {
+          entered(d.method, d.quality, d.inefficiency)
+      })
+      .on("mouseout", function(d) {
+          left(d[0])
+      });
 
   const path = svg.selectAll(".regLine")
       .data(regData)
@@ -131,28 +156,6 @@ async function main(){
       .on("mouseout", function(d) {
           left(d[0])
       })
-
-    // // draw legend
-    // var legend = svg.selectAll(".legend")
-    //     .data(color.domain())
-    //   .enter().append("g")
-    //     .attr("class", "legend")
-    //     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-    //
-    // // draw legend colored rectangles
-    // legend.append("rect")
-    //     .attr("x", width - 18)
-    //     .attr("width", 18)
-    //     .attr("height", 18)
-    //     .style("fill", color);
-    //
-    // // draw legend text
-    // legend.append("text")
-    //     .attr("x", width - 24)
-    //     .attr("y", 9)
-    //     .attr("dy", ".35em")
-    //     .style("text-anchor", "end")
-    //     .text(function(d) { return d;})
 
   function entered(method, quality, inefficiency) {
     tooltip.transition()
