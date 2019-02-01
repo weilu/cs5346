@@ -151,6 +151,11 @@ function renderCanvas(data, color) {
 
   // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
   var legend = svg => {
+    svg.append("text")
+      .attr("font-weight", "bold")
+      .attr("dy", -8)
+      .text("Streaming")
+
     const g = svg
         .attr("font-family", "sans-serif")
         .attr("font-size", 10)
@@ -174,6 +179,11 @@ function renderCanvas(data, color) {
   }
 
   var radioButtons = svg => {
+    svg.append("text")
+      .attr("x", 3)
+      .attr("font-weight", "bold")
+      .text("BufSize")
+
     const g = svg
         .attr("font-family", "sans-serif")
         .attr("font-size", 10)
@@ -182,26 +192,26 @@ function renderCanvas(data, color) {
       .enter().append("g")
         .attr("transform", (d, i) => `translate(0,${i * 20})`)
 
-  g.append("circle")
-      .attr("class", "radio")
-      .attr("r", 6)
-      .attr("cx", 10)
-      .attr("cy", 10)
-      .style("fill", d => initRadio(d))
-      .on("click", function(d) {
-        enabledBufSize = d
-        d3.selectAll("circle.radio")
-          .style("fill", d => getRadioColor(false))
-        d3.select(this)
-          .style("fill", d => getRadioColor(true))
-        updateData()
-      })
+    g.append("circle")
+        .attr("class", "radio")
+        .attr("r", 6)
+        .attr("cx", 10)
+        .attr("cy", 15)
+        .style("fill", d => initRadio(d))
+        .on("click", function(d) {
+          enabledBufSize = d
+          d3.selectAll("circle.radio")
+            .style("fill", d => getRadioColor(false))
+          d3.select(this)
+            .style("fill", d => getRadioColor(true))
+          updateData()
+        })
 
-    g.append("text")
-        .attr("x", 24)
-        .attr("y", 9.5)
-        .attr("dy", "0.35em")
-        .text(d => d)
+      g.append("text")
+          .attr("x", 24)
+          .attr("y", 15)
+          .attr("dy", "0.35em")
+          .text(d => d)
   }
 
   // add the graph canvas to the body of the webpage
@@ -223,7 +233,7 @@ function renderCanvas(data, color) {
       .attr("transform", `translate(${width - 50}, ${margin.top + 200})`)
       .call(legend);
   svg.append("g")
-      .attr("transform", `translate(${width - 120}, ${margin.top + 340})`)
+      .attr("transform", `translate(${width - 120}, ${margin.top + 335})`)
       .call(radioButtons);
 
   function getLegendColor(method, enabled) {
