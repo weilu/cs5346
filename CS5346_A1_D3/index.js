@@ -32,6 +32,7 @@ async function loadData() {
   return d3.csv("results.csv", function(d) {
     return {
       method : d.method,
+      bufSize : d.bufSize,
       quality : +d.quality,
       inefficiency : +d.inefficiency
     }
@@ -110,6 +111,10 @@ function renderContent(data, svg, tooltip, x, y, color) {
 }
 
 function renderCanvas(data, color) {
+  // by default select the first bufSize
+  const bufSizes = d3.set(data.map(d => d.bufSize)).values()
+  var enabledBufSize = bufSizes[0]
+
   // only enable the 1st method initially
   var enabledMethods = d3.set([data[0].method])
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -168,6 +173,37 @@ function renderCanvas(data, color) {
         .text(d => d)
   }
 
+  var radioButtons = svg => {
+    const g = svg
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+      .selectAll("g")
+      .data(bufSizes)
+      .enter().append("g")
+        .attr("transform", (d, i) => `translate(0,${i * 20})`)
+
+  g.append("circle")
+      .attr("class", "radio")
+      .attr("r", 6)
+      .attr("cx", 10)
+      .attr("cy", 10)
+      .style("fill", d => initRadio(d))
+      .on("click", function(d) {
+        enabledBufSize = d
+        d3.selectAll("circle.radio")
+          .style("fill", d => getRadioColor(false))
+        d3.select(this)
+          .style("fill", d => getRadioColor(true))
+        updateData()
+      })
+
+    g.append("text")
+        .attr("x", 24)
+        .attr("y", 9.5)
+        .attr("dy", "0.35em")
+        .text(d => d)
+  }
+
   // add the graph canvas to the body of the webpage
   var svg = d3.select("body").append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -186,6 +222,9 @@ function renderCanvas(data, color) {
   svg.append("g")
       .attr("transform", `translate(${width - 50}, ${margin.top + 200})`)
       .call(legend);
+  svg.append("g")
+      .attr("transform", `translate(${width - 120}, ${margin.top + 340})`)
+      .call(radioButtons);
 
   function getLegendColor(method, enabled) {
     if (enabled) {
@@ -211,12 +250,29 @@ function renderCanvas(data, color) {
     svg.selectAll(`rect.${method}`)
       .style("fill", d => getLegendColor(d, !enabled))
 
-    const newData = data.filter(d => enabledMethods.has(d.method))
+    updateData()
+  }
+
+  function getRadioColor(enabled) {
+    if (enabled) {
+      return '#428bca' // blue
+    } else {
+      return 'fff'
+    }
+  }
+
+  function initRadio(bufSize) {
+    return getRadioColor(enabledBufSize == bufSize)
+  }
+
+
+  function updateData() {
+    const newData = data.filter(d => enabledBufSize == d.bufSize)
+                        .filter(d => enabledMethods.has(d.method))
     renderContent(newData, svg, tooltip, x, y, color)
   }
 
-  const initData = data.filter(d => enabledMethods.has(d.method))
-  return [initData, svg, tooltip, x, y]
+  updateData()
 }
 
 ;(async () => {
@@ -224,7 +280,6 @@ function renderCanvas(data, color) {
   const color = d3.scaleOrdinal()
                   .domain(data.map(d => d.method))
                   .range(d3.schemeCategory10)
-  const data_svg_tooltip_x_y = renderCanvas(data, color)
-  renderContent(...data_svg_tooltip_x_y, color)
+  renderCanvas(data, color)
 })()
 
