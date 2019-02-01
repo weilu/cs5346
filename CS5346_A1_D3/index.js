@@ -38,7 +38,7 @@ async function loadData() {
   })
 }
 
-function renderContent(data, color, svg, tooltip, x, y) {
+function renderContent(data, svg, tooltip, x, y, color) {
   var regData = []
   var dataByMethod = d3.nest()
     .key(d => d.method)
@@ -110,7 +110,8 @@ function renderContent(data, color, svg, tooltip, x, y) {
 }
 
 function renderCanvas(data, color) {
-  var enabledMethods = d3.set(data.map(d => d.method))
+  // only enable the 1st method initially
+  var enabledMethods = d3.set([data[0].method])
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
@@ -156,7 +157,7 @@ function renderCanvas(data, color) {
     g.append("rect")
         .attr("width", 19)
         .attr("height", 19)
-        .attr("fill", color)
+        .attr("fill", d => initLegendState(d))
         .attr("class", d => d)
         .on("click", d => toggleLegend(d))
 
@@ -186,21 +187,36 @@ function renderCanvas(data, color) {
       .attr("transform", `translate(${width - 50}, ${margin.top + 200})`)
       .call(legend);
 
-  function toggleLegend(method) {
-    if (enabledMethods.has(method)) {
-      enabledMethods.remove(method)
-      svg.selectAll(`rect.${method}`)
-        .style("fill", "#ddd")
+  function getLegendColor(method, enabled) {
+    if (enabled) {
+      return color(method)
     } else {
-      enabledMethods.add(method)
-      svg.selectAll(`rect.${method}`)
-        .style("fill", d => color(method))
+      return "#ddd"
     }
-    const newData = data.filter(d => enabledMethods.has(d.method))
-    renderContent(newData, color, svg, tooltip, x, y)
   }
 
-  return [svg, tooltip, x, y]
+  function initLegendState(method) {
+    const enabled = enabledMethods.has(method)
+    return getLegendColor(method, enabled)
+  }
+
+  function toggleLegend(method) {
+    const enabled = enabledMethods.has(method)
+    if (enabled) {
+      enabledMethods.remove(method)
+    } else {
+      enabledMethods.add(method)
+    }
+
+    svg.selectAll(`rect.${method}`)
+      .style("fill", d => getLegendColor(d, !enabled))
+
+    const newData = data.filter(d => enabledMethods.has(d.method))
+    renderContent(newData, svg, tooltip, x, y, color)
+  }
+
+  const initData = data.filter(d => enabledMethods.has(d.method))
+  return [initData, svg, tooltip, x, y]
 }
 
 ;(async () => {
@@ -208,7 +224,7 @@ function renderCanvas(data, color) {
   const color = d3.scaleOrdinal()
                   .domain(data.map(d => d.method))
                   .range(d3.schemeCategory10)
-  const svg_tooltip_x_y = renderCanvas(data, color)
-  renderContent(data, color, ...svg_tooltip_x_y)
+  const data_svg_tooltip_x_y = renderCanvas(data, color)
+  renderContent(...data_svg_tooltip_x_y, color)
 })()
 
