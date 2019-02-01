@@ -28,15 +28,17 @@ function linearRegress(x, y) {
   return [min_x, min_y, max_x, max_y]
 }
 
-async function main(){
-  var data = await d3.csv("results.csv", function(d) {
+async function loadData() {
+  return d3.csv("results.csv", function(d) {
     return {
       method : d.method,
       quality : +d.quality,
       inefficiency : +d.inefficiency
     }
   })
+}
 
+function renderContent(data, color, svg, tooltip, x, y) {
   var regData = []
   var dataByMethod = d3.nest()
     .key(d => d.method)
@@ -47,83 +49,8 @@ async function main(){
     regData.push([entry.key, regPoints])
   }
 
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
-      width = 960 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
-
-  // setup x
-  var x = d3.scaleLinear()
-            .domain(d3.extent(data, d => d.quality)).nice()
-            .range([0, width])
-  var xAxis = g => g
-      .attr("transform", `translate(0, ${height})`)
-      .call(d3.axisBottom(x))
-      .call(g => g.append("text")
-        .attr("class", "label")
-        .attr("x", width)
-        .attr("y", -6)
-        .style("text-anchor", "end")
-        .text("Quality"))
-
-  // setup y
-  var y = d3.scaleLinear()
-            .domain(d3.extent(data, d => d.inefficiency)).nice()
-            .range([height, 0])
-  var yAxis = g => g
-      .call(d3.axisLeft(y))
-      .call(g => g.append("text")
-        .attr("class", "label")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Inefficiency"))
-
-  // setup fill color
-  var color = d3.scaleOrdinal()
-                .domain(data.map(d => d.method))
-                .range(d3.schemeCategory10)
-
-  // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
-  var legend = svg => {
-    const g = svg
-        .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
-      .selectAll("g")
-      .data(color.domain().slice())
-      .enter().append("g")
-        .attr("transform", (d, i) => `translate(0,${i * 20})`);
-
-    g.append("rect")
-        .attr("width", 19)
-        .attr("height", 19)
-        .attr("fill", color);
-
-    g.append("text")
-        .attr("x", 24)
-        .attr("y", 9.5)
-        .attr("dy", "0.35em")
-        .text(d => d);
-  }
-
-  // add the graph canvas to the body of the webpage
-  var svg = d3.select("body").append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-  // add the tooltip area to the webpage
-  var tooltip = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
-
-  // axis
-  svg.append("g").call(xAxis)
-  svg.append("g").call(yAxis)
-  svg.append("g")
-      .attr("transform", `translate(${width - 50}, ${margin.top + 200})`)
-      .call(legend);
+  // empty dots & line
+  svg.selectAll(".dot,.regLine").remove()
 
   // draw dots
   const dot = svg.selectAll(".dot")
@@ -180,9 +107,108 @@ async function main(){
       .style("stroke", "#000")
       .style("fill", d => color(d.method))
   }
-
 }
 
+function renderCanvas(data, color) {
+  var enabledMethods = d3.set(data.map(d => d.method))
+  var margin = {top: 20, right: 20, bottom: 30, left: 40},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
-main()
+  // setup x
+  var x = d3.scaleLinear()
+            .domain(d3.extent(data, d => d.quality)).nice()
+            .range([0, width])
+  var xAxis = g => g
+      .attr("transform", `translate(0, ${height})`)
+      .call(d3.axisBottom(x))
+      .call(g => g.append("text")
+        .attr("class", "label")
+        .attr("x", width)
+        .attr("y", -6)
+        .style("text-anchor", "end")
+        .text("Quality"))
+
+  // setup y
+  var y = d3.scaleLinear()
+            .domain(d3.extent(data, d => d.inefficiency)).nice()
+            .range([height, 0])
+  var yAxis = g => g
+      .call(d3.axisLeft(y))
+      .call(g => g.append("text")
+        .attr("class", "label")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Inefficiency"))
+
+  // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
+  var legend = svg => {
+    const g = svg
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+      .selectAll("g")
+      .data(color.domain().slice())
+      .enter().append("g")
+        .attr("transform", (d, i) => `translate(0,${i * 20})`)
+
+    g.append("rect")
+        .attr("width", 19)
+        .attr("height", 19)
+        .attr("fill", color)
+        .attr("class", d => d)
+        .on("click", d => toggleLegend(d))
+
+    g.append("text")
+        .attr("x", 24)
+        .attr("y", 9.5)
+        .attr("dy", "0.35em")
+        .text(d => d)
+  }
+
+  // add the graph canvas to the body of the webpage
+  var svg = d3.select("body").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // add the tooltip area to the webpage
+  var tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
+
+  // axis
+  svg.append("g").call(xAxis)
+  svg.append("g").call(yAxis)
+  svg.append("g")
+      .attr("transform", `translate(${width - 50}, ${margin.top + 200})`)
+      .call(legend);
+
+  function toggleLegend(method) {
+    if (enabledMethods.has(method)) {
+      enabledMethods.remove(method)
+      svg.selectAll(`rect.${method}`)
+        .style("fill", "#ddd")
+    } else {
+      enabledMethods.add(method)
+      svg.selectAll(`rect.${method}`)
+        .style("fill", d => color(method))
+    }
+    const newData = data.filter(d => enabledMethods.has(d.method))
+    renderContent(newData, color, svg, tooltip, x, y)
+  }
+
+  return [svg, tooltip, x, y]
+}
+
+;(async () => {
+  const data = await loadData()
+  const color = d3.scaleOrdinal()
+                  .domain(data.map(d => d.method))
+                  .range(d3.schemeCategory10)
+  const svg_tooltip_x_y = renderCanvas(data, color)
+  renderContent(data, color, ...svg_tooltip_x_y)
+})()
 
