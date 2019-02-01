@@ -19,34 +19,13 @@ function linearRegress(x, y) {
   var b1 = term1 / term2;
   var b0 = y_mean - (b1 * x_mean);
 
-  min_x = x[0]
-  max_x = x[0]
-  min_y = y[0]
-  max_y = y[0]
-  var min_x_y = []
-  var max_x_y = []
-  for (i = 0; i < x.length; i++) {
-    // fit line using coeffs
-    yhat = b0 + (x[i] * b1)
-    if (x[i] > max_x) {
-      max_x = x[i]
-      max_x_y = [x[i], yhat]
-    }
-    if (yhat > max_y) {
-      max_y = yhat
-      max_x_y = [x[i], yhat]
-    }
-    if (x < min_x) {
-      min_x = x[i]
-      min_x_y = [x[i], yhat]
-    }
-    if (yhat < min_y) {
-      min_y = yhat
-      min_x_y = [x[i], yhat]
-    }
-  }
+  xRange = d3.extent(x)
+  min_x = xRange[0]
+  min_y = b0 + (min_x * b1)
+  max_x = xRange[1]
+  max_y = b0 + (max_x * b1)
 
-  return [min_x_y[0], min_x_y[1], max_x_y[0], max_x_y[1]]
+  return [min_x, min_y, max_x, max_y]
 }
 
 async function main(){
