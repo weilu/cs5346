@@ -130,9 +130,9 @@ function renderCanvas(data, color) {
       .call(d3.axisBottom(x))
       .call(g => g.append("text")
         .attr("class", "label")
+        .attr("font-weight", "bold")
         .attr("x", width)
         .attr("y", -6)
-        .style("text-anchor", "end")
         .text("Quality"))
 
   // setup y
@@ -143,10 +143,10 @@ function renderCanvas(data, color) {
       .call(d3.axisLeft(y))
       .call(g => g.append("text")
         .attr("class", "label")
+        .attr("font-weight", "bold")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
-        .style("text-anchor", "end")
         .text("Inefficiency"))
 
   // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
