@@ -6,7 +6,8 @@ d3.csv("results.csv", function(d) {
     method : d.method,
     bufSize : d.bufSize,
     quality : +d.quality,
-    inefficiency : +d.inefficiency
+    inefficiency : +d.inefficiency,
+    qoe: +d.qoe
   }
 }).then(function(data) {
   q2(data)
