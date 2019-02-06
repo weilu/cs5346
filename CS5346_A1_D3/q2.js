@@ -20,19 +20,7 @@ var svg = d3.select("body").append("svg")
 var yAxisBox = svg.append("g").attr("transform", "translate(40,0)");
 var xAxisBox = svg.append("g").attr("transform", "translate(40,0)");
 
-function render(groupCounts) {
-  // Select all values into one Array for axis scaling (min/ max)
-  var globalCounts = [];
-  for (var method in groupCounts) {
-    for (var bufSize in groupCounts[method]) {
-      var groupCount = groupCounts[method][bufSize]
-      groupCount.forEach(element => {
-          globalCounts.push(element)
-      })
-    }
-  }
-
-
+function render(groupCounts, min_max_y) {
   // // Create Tooltips
   // var tip = d3.tip().attr('class', 'd3-tip').direction('e').offset([0,5])
   //     .html(function(d) {
@@ -56,8 +44,8 @@ function render(groupCounts) {
     .paddingInner(0.1)
     .domain(Object.keys(groupCounts))
 
-  var bufSizeKeys = Object.keys(Object.values(groupCounts)[0])
   // bufSize
+  var bufSizeKeys = Object.keys(Object.values(groupCounts)[0])
   var x1 = d3.scaleBand()
     .rangeRound([0, x0.bandwidth()])
     .padding(0.5)
@@ -66,23 +54,16 @@ function render(groupCounts) {
     .range(["#98abc5", "#6b486b", "#ff8c00"]);
 
   // Compute a global y scale based on the global counts
-  var min = d3.min(globalCounts);
-  var max = d3.max(globalCounts);
   var yScale = d3.scaleLinear()
-    .domain([min, max])
+    .domain(min_max_y)
     .range([height, 0])
     .nice()
-
-  // // Setup the group the box plot elements will render in
-  // var g = svg.append("g")
-  //   .attr("transform", "translate(20,0)");
 
   function makeRecord(groupCount) {
     var record = {};
     var localMin = d3.min(groupCount);
     var localMax = d3.max(groupCount);
 
-    record["key"] = method + '-' + bufSize;
     record["counts"] = groupCount;
     record["quartile"] = boxQuartiles(groupCount);
     record["whiskers"] = [localMax, localMin];
@@ -91,7 +72,7 @@ function render(groupCounts) {
   }
 
   var data = []
-  for (method in groupCounts) {
+  for (const method in groupCounts) {
     var rowObj = { method: method }
     for (var bufSize in groupCounts[method]) {
       rowObj[bufSize] = makeRecord(groupCounts[method][bufSize])
@@ -209,6 +190,7 @@ function boxQuartiles(d) {
 }
 
 export default function(allData) {
+  const min_max_y = d3.extent(allData, d => d.qoe)
   const dataByMethodByBufSize = d3.nest()
     .key(d => d.method)
     .key(d => d.bufSize)
@@ -223,6 +205,6 @@ export default function(allData) {
     }
   }
 
-  render(dataByMethodByBufSize)
+  render(dataByMethodByBufSize, min_max_y)
 }
 
