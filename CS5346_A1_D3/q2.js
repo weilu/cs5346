@@ -1,4 +1,4 @@
-import makeCheckboxLegend from './utils.js'
+import util from './utils.js'
 
 // box plot refereced https://bl.ocks.org/bytesbysophie/0311395c1e082f98e67efaf2c7f9555b
 // grouped plot refereced https://bl.ocks.org/mbostock/3887051
@@ -82,7 +82,7 @@ function render(plotData, min_max_y, bufSizes) {
     .call(xAxis);
 
   const enabledBufSizes = d3.set(bufSizes)
-  var legend = makeCheckboxLegend(svg, "BufSize", z, enabledBufSizes, updateData)
+  var legend = util.makeCheckboxLegend(svg, "BufSize", z, enabledBufSizes, updateData)
   svg.append("g")
       .attr("transform", `translate(${width - 50}, ${margin.top + 400})`)
       .call(legend);

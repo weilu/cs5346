@@ -1,7 +1,7 @@
 // color: the color mapping function
 // enabledItems: a set to be modified
 // updateData: callback function to refresh data & rerender graph content
-export default function makeCheckboxLegend(svg, legendLabel, color, enabledItems, updateData) {
+function makeCheckboxLegend(svg, legendLabel, color, enabledItems, updateData) {
   // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
   var legend = svg => {
     svg.append("text")
@@ -64,3 +64,58 @@ export default function makeCheckboxLegend(svg, legendLabel, color, enabledItems
 
   return legend
 }
+
+// enabledItem: an array with a single item
+function makeRadioLegend(svg, legendLabel, legendData, enabledItem, updateData) {
+  var radioButtons = svg => {
+    svg.append("text")
+      .attr("x", 3)
+      .attr("font-weight", "bold")
+      .text(legendLabel)
+
+    const g = svg
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+      .selectAll("g")
+      .data(legendData)
+      .enter().append("g")
+        .attr("transform", (d, i) => `translate(0,${i * 20})`)
+
+    g.append("circle")
+        .attr("class", "radio")
+        .attr("r", 6)
+        .attr("cx", 10)
+        .attr("cy", 15)
+        .style("fill", d => initRadio(d))
+        .on("click", function(d) {
+          enabledItem[0] = d
+          d3.selectAll("circle.radio")
+            .style("fill", d => getRadioColor(false))
+          d3.select(this)
+            .style("fill", d => getRadioColor(true))
+          updateData()
+        })
+
+      g.append("text")
+          .attr("x", 24)
+          .attr("y", 15)
+          .attr("dy", "0.35em")
+          .text(d => d)
+  }
+
+  function getRadioColor(enabled) {
+    if (enabled) {
+      return '#428bca' // blue
+    } else {
+      return 'fff'
+    }
+  }
+
+  function initRadio(item) {
+    return getRadioColor(enabledItem[0] == item)
+  }
+
+  return radioButtons
+}
+
+export default { makeCheckboxLegend, makeRadioLegend }

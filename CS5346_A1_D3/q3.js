@@ -1,4 +1,4 @@
-import makeCheckboxLegend from './utils.js'
+import util from './utils.js'
 
 // Modified from: https://bl.ocks.org/ctufts/674ece47de093f6e0cd5af22d7ee9b9b
 function linearRegress(x, y) {
@@ -104,7 +104,7 @@ function renderContent(data, svg, tooltip, x, y, color) {
 function render(data, color) {
   // by default select the first bufSize
   const bufSizes = d3.set(data.map(d => d.bufSize)).values()
-  var enabledBufSize = bufSizes[0]
+  var enabledBufSizeArr = [bufSizes[0]]
 
   // only enable the 1st method initially
   var enabledMethods = d3.set([data[0].method])
@@ -140,42 +140,6 @@ function render(data, color) {
         .attr("dy", ".71em")
         .text("Inefficiency"))
 
-  var radioButtons = svg => {
-    svg.append("text")
-      .attr("x", 3)
-      .attr("font-weight", "bold")
-      .text("BufSize")
-
-    const g = svg
-        .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
-      .selectAll("g")
-      .data(bufSizes)
-      .enter().append("g")
-        .attr("transform", (d, i) => `translate(0,${i * 20})`)
-
-    g.append("circle")
-        .attr("class", "radio")
-        .attr("r", 6)
-        .attr("cx", 10)
-        .attr("cy", 15)
-        .style("fill", d => initRadio(d))
-        .on("click", function(d) {
-          enabledBufSize = d
-          d3.selectAll("circle.radio")
-            .style("fill", d => getRadioColor(false))
-          d3.select(this)
-            .style("fill", d => getRadioColor(true))
-          updateData()
-        })
-
-      g.append("text")
-          .attr("x", 24)
-          .attr("y", 15)
-          .attr("dy", "0.35em")
-          .text(d => d)
-  }
-
   // add the graph canvas to the body of the webpage
   var svg = d3.select("body").append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -188,7 +152,8 @@ function render(data, color) {
       .attr("class", "tooltip")
       .style("opacity", 0);
 
-  const legend = makeCheckboxLegend(svg, "Streaming", color, enabledMethods, updateData)
+  var radioButtons = util.makeRadioLegend(svg, "BufSize", bufSizes, enabledBufSizeArr, updateData)
+  const legend = util.makeCheckboxLegend(svg, "Streaming", color, enabledMethods, updateData)
 
   // axis
   svg.append("g").call(xAxis)
@@ -200,21 +165,8 @@ function render(data, color) {
       .attr("transform", `translate(${width - 120}, ${margin.top + 335})`)
       .call(radioButtons);
 
-  function getRadioColor(enabled) {
-    if (enabled) {
-      return '#428bca' // blue
-    } else {
-      return 'fff'
-    }
-  }
-
-  function initRadio(bufSize) {
-    return getRadioColor(enabledBufSize == bufSize)
-  }
-
-
   function updateData() {
-    const newData = data.filter(d => enabledBufSize == d.bufSize)
+    const newData = data.filter(d => enabledBufSizeArr[0] == d.bufSize)
                         .filter(d => enabledMethods.has(d.method))
     renderContent(newData, svg, tooltip, x, y, color)
   }
