@@ -67,16 +67,16 @@ function render(plotData, min_max_y, bufSizes) {
       .attr("transform", d => "translate(" + x0(d.method) + ",0)")
 
   function makeSubgroupPlotData(d) {
-    return bufSizes.map(key => ({key, record: d[key]}))
+    return bufSizes.map(key => ({key, ...d[key]}))
   }
 
   g.selectAll(".verticalLines")
     .data(makeSubgroupPlotData)
     .enter().append("line") // Draw the box plot vertical lines
       .attr("x1", d => x1(d.key) + barWidth/2)
-      .attr("y1", d =>  yScale(d.record.whiskers[0]))
+      .attr("y1", d =>  yScale(d.whiskers[0]))
       .attr("x2", d =>  x1(d.key) + barWidth/2)
-      .attr("y2", d => yScale(d.record.whiskers[1]))
+      .attr("y2", d => yScale(d.whiskers[1]))
       .attr("stroke", boxPlotColor)
       .attr("stroke-width", 1)
       .attr("stroke-dasharray", "5,5")
@@ -87,9 +87,9 @@ function render(plotData, min_max_y, bufSizes) {
     .data(makeSubgroupPlotData)
     .enter().append("rect")
     .attr("width", barWidth)
-    .attr("height", d => yScale(d.record.quartile[2]) - yScale(d.record.quartile[0]))
+    .attr("height", d => yScale(d.quartile[2]) - yScale(d.quartile[0]))
     .attr("x", d => x1(d.key))
-    .attr("y", d => yScale(d.record.quartile[0]))
+    .attr("y", d => yScale(d.quartile[0]))
     .attr("fill", d => z(d.key) )
     .attr("stroke-width", 1)
     // .attr("stroke", boxPlotColor)
@@ -100,23 +100,23 @@ function render(plotData, min_max_y, bufSizes) {
   var horizontalLineConfigs = [
   {   // Top whisker
       x1: d => x1(d.key),
-      y1: d => yScale(d.record.whiskers[0]),
+      y1: d => yScale(d.whiskers[0]),
       x2: d => x1(d.key) + barWidth,
-      y2: d => yScale(d.record.whiskers[0]),
+      y2: d => yScale(d.whiskers[0]),
       color: boxPlotColor
   },
   {   // Median
       x1: d => x1(d.key),
-      y1: d => yScale(d.record.quartile[1]),
+      y1: d => yScale(d.quartile[1]),
       x2: d => x1(d.key) + barWidth,
-      y2: d => yScale(d.record.quartile[1]),
+      y2: d => yScale(d.quartile[1]),
       color: medianLineColor
   },
   {   // Bottom whisker
       x1: d => x1(d.key),
-      y1: d => yScale(d.record.whiskers[1]),
+      y1: d => yScale(d.whiskers[1]),
       x2: d => x1(d.key) + barWidth,
-      y2: d => yScale(d.record.whiskers[1]),
+      y2: d => yScale(d.whiskers[1]),
       color: boxPlotColor
   }
   ]
