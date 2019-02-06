@@ -96,67 +96,49 @@ function render(plotData, min_max_y, bufSizes) {
     // .on('mouseover', tip.show)
     // .on('mouseout', tip.hide);
 
-  // Config for whiskers and median
-  var horizontalLineConfigs = [
-  {   // Top whisker
-      x1: d => x1(d.key),
-      y1: d => yScale(d.whiskers[0]),
-      x2: d => x1(d.key) + barWidth,
-      y2: d => yScale(d.whiskers[0]),
-      color: boxPlotColor
-  },
-  {   // Median
-      x1: d => x1(d.key),
-      y1: d => yScale(d.quartile[1]),
-      x2: d => x1(d.key) + barWidth,
-      y2: d => yScale(d.quartile[1]),
-      color: medianLineColor
-  },
-  {   // Bottom whisker
-      x1: d => x1(d.key),
-      y1: d => yScale(d.whiskers[1]),
-      x2: d => x1(d.key) + barWidth,
-      y2: d => yScale(d.whiskers[1]),
-      color: boxPlotColor
+  // Draw the whiskers
+  for(var i=0; i < 2; i++) {
+    g.selectAll(".whiskers")
+      .data(makeSubgroupPlotData)
+      .enter().append("line")
+        .attr("x1", d => x1(d.key))
+        .attr("y1", d => yScale(d.whiskers[i]))
+        .attr("x2", d => x1(d.key) + barWidth)
+        .attr("y2", d => yScale(d.whiskers[i]))
+        .attr("stroke", boxPlotColor)
   }
-  ]
 
-  // Draw the whiskers and median line
-  for(var i=0; i < horizontalLineConfigs.length; i++) {
-      var lineConfig = horizontalLineConfigs[i];
-      var horizontalLine = g.selectAll(".whiskers")
-          .data(makeSubgroupPlotData)
-          .enter().append("line")
-            .attr("x1", lineConfig.x1)
-            .attr("y1", lineConfig.y1)
-            .attr("x2", lineConfig.x2)
-            .attr("y2", lineConfig.y2)
-            .attr("stroke", lineConfig.color)
-            .attr("stroke-width", 1)
-            .attr("fill", "none");
-  }
+  // Draw median
+  g.selectAll(".median")
+    .data(makeSubgroupPlotData)
+    .enter().append("line")
+      .attr("x1", d => x1(d.key))
+      .attr("y1", d => yScale(d.quartile[1]))
+      .attr("x2", d => x1(d.key) + barWidth)
+      .attr("y2", d => yScale(d.quartile[1]))
+      .attr("stroke", medianLineColor)
 
   // add the Y gridlines
   svg.append("g")
-      .attr("transform", "translate(40,0)")
-      .attr("class", "grid")
-      .call(d3.axisLeft(yScale)
-          .tickSize(-width)
-          .tickFormat("")
-      )
+    .attr("transform", "translate(40,0)")
+    .attr("class", "grid")
+    .call(d3.axisLeft(yScale)
+        .tickSize(-width)
+        .tickFormat("")
+    )
 
   // Setup a scale on the left
   var yAxis = d3.axisLeft(yScale).ticks(6)
   yAxisBox.append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
+    .attr("class", "y axis")
+    .call(yAxis);
 
   // Setup a series axis on the bottom
   var xAxis = d3.axisBottom(x0);
   xAxisBox.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
 }
 
 function boxQuartiles(d) {
