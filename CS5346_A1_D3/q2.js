@@ -51,7 +51,8 @@ function render(plotData, min_max_y, bufSizes) {
     .padding(0.5)
     .domain(bufSizes)
   var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#6b486b", "#ff8c00"]);
+    .range(["#98abc5", "#6b486b", "#ff8c00"])
+    .domain(bufSizes)
 
   // Compute a global y scale based on the global counts
   var yScale = d3.scaleLinear()
@@ -133,6 +134,37 @@ function render(plotData, min_max_y, bufSizes) {
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis);
+
+  var legend = svg => {
+    svg.append("text")
+      .attr("font-weight", "bold")
+      .attr("dy", -8)
+      .text("BufSize")
+
+    const g = svg
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+      .selectAll("g")
+      .data(z.domain().slice())
+      .enter().append("g")
+        .attr("transform", (d, i) => `translate(0,${i * 20})`)
+
+    g.append("rect")
+        .attr("width", 19)
+        .attr("height", 19)
+        .attr("fill", d => z(d))
+        .attr("class", d => d)
+        // .on("click", d => toggleLegend(d))
+
+    g.append("text")
+        .attr("x", 24)
+        .attr("y", 9.5)
+        .attr("dy", "0.35em")
+        .text(d => d)
+  }
+  svg.append("g")
+      .attr("transform", `translate(${width - 50}, ${margin.top + 400})`)
+      .call(legend);
 }
 
 function boxQuartiles(d) {
