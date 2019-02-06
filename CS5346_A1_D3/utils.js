@@ -89,7 +89,7 @@ function makeRadioLegend(svg, legendLabel, legendData, enabledItem, updateData) 
         .style("fill", d => initRadio(d))
         .on("click", function(d) {
           enabledItem[0] = d
-          d3.selectAll("circle.radio")
+          svg.selectAll("circle.radio")
             .style("fill", d => getRadioColor(false))
           d3.select(this)
             .style("fill", d => getRadioColor(true))
