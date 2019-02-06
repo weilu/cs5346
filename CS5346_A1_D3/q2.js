@@ -96,27 +96,21 @@ function render(plotData, min_max_y, bufSizes) {
     // .on('mouseover', tip.show)
     // .on('mouseout', tip.hide);
 
-  // Draw the whiskers
-  for(var i=0; i < 2; i++) {
-    g.selectAll(".whiskers")
-      .data(makeSubgroupPlotData)
+  function drawHorizontalLine(selection, yDataFn, strokeColor) {
+      selection.data(makeSubgroupPlotData)
       .enter().append("line")
         .attr("x1", d => x1(d.key))
-        .attr("y1", d => yScale(d.whiskers[i]))
+        .attr("y1", d => yScale(yDataFn(d)))
         .attr("x2", d => x1(d.key) + barWidth)
-        .attr("y2", d => yScale(d.whiskers[i]))
-        .attr("stroke", boxPlotColor)
+        .attr("y2", d => yScale(yDataFn(d)))
+        .attr("stroke", strokeColor)
   }
 
-  // Draw median
-  g.selectAll(".median")
-    .data(makeSubgroupPlotData)
-    .enter().append("line")
-      .attr("x1", d => x1(d.key))
-      .attr("y1", d => yScale(d.quartile[1]))
-      .attr("x2", d => x1(d.key) + barWidth)
-      .attr("y2", d => yScale(d.quartile[1]))
-      .attr("stroke", medianLineColor)
+  for(var i=0; i < 2; i++) {
+    drawHorizontalLine(g.selectAll(".whiskers"), d => d.whiskers[i], boxPlotColor)
+  }
+  drawHorizontalLine(g.selectAll(".median"), d => d.quartile[1], boxPlotColor)
+  drawHorizontalLine(g.selectAll(".mean"), d => d.mean, medianLineColor)
 
   // add the Y gridlines
   svg.append("g")
@@ -164,7 +158,8 @@ export default function(allData) {
       const stripped = dataByMethodByBufSize[method][bufSize].map(o => o.qoe)
       const record = {};
       record.counts = stripped.sort((a, b) => a - b) // sort group counts so quantile methods work
-      record.quartile = boxQuartiles(record.counts);
+      record.quartile = boxQuartiles(record.counts)
+      record.mean = d3.mean(record.counts)
       record.whiskers = d3.extent(record.counts)
       rowObj[bufSize] = record
     }
