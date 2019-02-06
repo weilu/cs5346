@@ -4,7 +4,7 @@ import util from './utils.js'
 // grouped plot refereced https://bl.ocks.org/mbostock/3887051
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    height = 580 - margin.top - margin.bottom;
 var barWidth = 20;
 var boxPlotColor = "#898989";
 var medianLineColor = "#ffffff";
@@ -70,28 +70,37 @@ function render(plotData, min_max_y, bufSizes) {
         .tickFormat("")
     )
 
-  var yAxis = d3.axisLeft(y).ticks(6)
+  var yAxis = g => g
+    .call(d3.axisLeft(y).ticks(6))
+    .call(g => g.append("text")
+      .attr("class", "label")
+      .attr("font-weight", "bold")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .text("Quality of Experience"))
   yAxisBox.append("g")
     .attr("class", "y axis")
     .call(yAxis);
 
-  var xAxis = d3.axisBottom(x0);
+  var xAxis = g => g
+      .attr("transform", `translate(0, ${height})`)
+      .call(d3.axisBottom(x0))
   xAxisBox.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
     .call(xAxis);
 
   const enabledBufSizes = d3.set(bufSizes)
   var legend = util.makeCheckboxLegend(svg, "BufSize", z, enabledBufSizes, updateData)
   svg.append("g")
-      .attr("transform", `translate(${width - 50}, ${margin.top + 400})`)
+      .attr("transform", `translate(${width - 50}, ${margin.top + 430})`)
       .call(legend);
 
   const enabledMiddleBand = ['mean']
   var radioButtons = util.makeRadioLegend(svg, "Middle band", ['mean', 'median'],
                                           enabledMiddleBand, updateData)
   svg.append("g")
-      .attr("transform", `translate(${width - 120}, ${margin.top + 420})`)
+      .attr("transform", `translate(${width - 120}, ${margin.top + 445})`)
       .call(radioButtons);
 
   function updateData() {
@@ -147,7 +156,7 @@ function renderContent(plotData, bufSizes, middleBand, svg, x0, x1, y, z) {
     .attr("y", d => y(d.quartile[0]))
     .attr("fill", d => z(d.key) )
     .attr("stroke-width", 1)
-    // .attr("stroke", boxPlotColor)
+    .attr("stroke", boxPlotColor)
     // .on('mouseover', tip.show)
     // .on('mouseout', tip.hide);
 
