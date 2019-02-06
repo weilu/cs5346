@@ -87,6 +87,13 @@ function render(plotData, min_max_y, bufSizes) {
       .attr("transform", `translate(${width - 50}, ${margin.top + 400})`)
       .call(legend);
 
+  const enabledMiddleBand = ['mean']
+  var radioButtons = util.makeRadioLegend(svg, "Middle band", ['mean', 'median'],
+                                          enabledMiddleBand, updateData)
+  svg.append("g")
+      .attr("transform", `translate(${width - 120}, ${margin.top + 420})`)
+      .call(radioButtons);
+
   function updateData() {
     const bufSizes = enabledBufSizes.values()
     const newData = []
@@ -95,13 +102,14 @@ function render(plotData, min_max_y, bufSizes) {
       bufSizes.forEach(s => row[s] = r[s])
       newData.push(row)
     })
-    renderContent(newData, bufSizes, svg, x0, x1, y, z)
+    const middleBand = enabledMiddleBand[0]
+    renderContent(newData, bufSizes, middleBand, svg, x0, x1, y, z)
   }
 
   updateData()
 }
 
-function renderContent(plotData, bufSizes, svg, x0, x1, y, z) {
+function renderContent(plotData, bufSizes, middleBand, svg, x0, x1, y, z) {
   // empty dots & line
   svg.selectAll(".q2content").remove()
 
@@ -156,8 +164,11 @@ function renderContent(plotData, bufSizes, svg, x0, x1, y, z) {
   for(var i=0; i < 2; i++) {
     drawHorizontalLine(g.selectAll(".whiskers"), d => d.whiskers[i], boxPlotColor)
   }
-  drawHorizontalLine(g.selectAll(".median"), d => d.quartile[1], boxPlotColor)
-  drawHorizontalLine(g.selectAll(".mean"), d => d.mean, medianLineColor)
+  if (middleBand === 'mean') {
+    drawHorizontalLine(g.selectAll(".mean"), d => d.mean, medianLineColor)
+  } else {
+    drawHorizontalLine(g.selectAll(".median"), d => d.quartile[1], medianLineColor)
+  }
 }
 
 function boxQuartiles(d) {
