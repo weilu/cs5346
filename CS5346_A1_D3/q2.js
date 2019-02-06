@@ -20,7 +20,7 @@ var svg = d3.select("body").append("svg")
 var yAxisBox = svg.append("g").attr("transform", "translate(40,0)");
 var xAxisBox = svg.append("g").attr("transform", "translate(40,0)");
 
-function render(groupCounts, min_max_y) {
+function render(plotData, min_max_y, bufSizes) {
   // // Create Tooltips
   // var tip = d3.tip().attr('class', 'd3-tip').direction('e').offset([0,5])
   //     .html(function(d) {
@@ -39,17 +39,17 @@ function render(groupCounts, min_max_y) {
   // svg.call(tip);
 
   // method
+  const methods = plotData.map(d => d.method)
   var x0 = d3.scaleBand()
     .rangeRound([0, width-margin.right])
     .paddingInner(0.1)
-    .domain(Object.keys(groupCounts))
+    .domain(methods)
 
   // bufSize
-  var bufSizeKeys = Object.keys(Object.values(groupCounts)[0])
   var x1 = d3.scaleBand()
     .rangeRound([0, x0.bandwidth()])
     .padding(0.5)
-    .domain(bufSizeKeys)
+    .domain(bufSizes)
   var z = d3.scaleOrdinal()
     .range(["#98abc5", "#6b486b", "#ff8c00"]);
 
@@ -59,40 +59,19 @@ function render(groupCounts, min_max_y) {
     .range([height, 0])
     .nice()
 
-  function makeRecord(groupCount) {
-    var record = {};
-    var localMin = d3.min(groupCount);
-    var localMax = d3.max(groupCount);
-
-    record["counts"] = groupCount;
-    record["quartile"] = boxQuartiles(groupCount);
-    record["whiskers"] = [localMax, localMin];
-
-    return record
-  }
-
-  var data = []
-  for (const method in groupCounts) {
-    var rowObj = { method: method }
-    for (var bufSize in groupCounts[method]) {
-      rowObj[bufSize] = makeRecord(groupCounts[method][bufSize])
-    }
-    data.push(rowObj)
-  }
-
-  function makePlotData(d) {
-    return bufSizeKeys.map(key => ({key, record: d[key]}))
-  }
-
   var g = svg.append("g")
     .attr("transform", "translate(40,0)")
     .selectAll("g")
-    .data(data)
+    .data(plotData)
     .enter().append("g")
       .attr("transform", d => "translate(" + x0(d.method) + ",0)")
 
+  function makeSubgroupPlotData(d) {
+    return bufSizes.map(key => ({key, record: d[key]}))
+  }
+
   g.selectAll(".verticalLines")
-    .data(makePlotData)
+    .data(makeSubgroupPlotData)
     .enter().append("line") // Draw the box plot vertical lines
       .attr("x1", d => x1(d.key) + barWidth/2)
       .attr("y1", d =>  yScale(d.record.whiskers[0]))
@@ -105,7 +84,7 @@ function render(groupCounts, min_max_y) {
 
   // Draw the boxes of the box plot, filled in white and on top of vertical lines
   g.selectAll("rect")
-    .data(makePlotData)
+    .data(makeSubgroupPlotData)
     .enter().append("rect")
     .attr("width", barWidth)
     .attr("height", d => yScale(d.record.quartile[2]) - yScale(d.record.quartile[0]))
@@ -140,13 +119,13 @@ function render(groupCounts, min_max_y) {
       y2: d => yScale(d.record.whiskers[1]),
       color: boxPlotColor
   }
-  ];
+  ]
 
   // Draw the whiskers and median line
   for(var i=0; i < horizontalLineConfigs.length; i++) {
       var lineConfig = horizontalLineConfigs[i];
       var horizontalLine = g.selectAll(".whiskers")
-          .data(makePlotData)
+          .data(makeSubgroupPlotData)
           .enter().append("line")
             .attr("x1", lineConfig.x1)
             .attr("y1", lineConfig.y1)
@@ -180,7 +159,6 @@ function render(groupCounts, min_max_y) {
       .call(xAxis);
 }
 
-// Quartile definition
 function boxQuartiles(d) {
     return [
         d3.quantile(d, .75),
@@ -196,15 +174,22 @@ export default function(allData) {
     .key(d => d.bufSize)
     .object(allData)
 
-  // strip other fields
+  const plotData = []
+  // strip other fields & prep data
   for (const method in dataByMethodByBufSize) {
+    const rowObj = { method: method }
     for (const bufSize in dataByMethodByBufSize[method]) {
       const stripped = dataByMethodByBufSize[method][bufSize].map(o => o.qoe)
-      // sort group counts so quantile methods work
-      dataByMethodByBufSize[method][bufSize] = stripped.sort((a, b) => a - b)
+      const record = {};
+      record.counts = stripped.sort((a, b) => a - b) // sort group counts so quantile methods work
+      record.quartile = boxQuartiles(record.counts);
+      record.whiskers = d3.extent(record.counts)
+      rowObj[bufSize] = record
     }
+    plotData.push(rowObj)
   }
 
-  render(dataByMethodByBufSize, min_max_y)
+  const bufSizes = d3.set(allData.map(d => d.bufSize)).values()
+  render(plotData, min_max_y, bufSizes)
 }
 
