@@ -1,3 +1,5 @@
+import makeCheckboxLegend from './utils.js'
+
 // Modified from: https://bl.ocks.org/ctufts/674ece47de093f6e0cd5af22d7ee9b9b
 function linearRegress(x, y) {
   // calculate mean x and y
@@ -138,35 +140,6 @@ function render(data, color) {
         .attr("dy", ".71em")
         .text("Inefficiency"))
 
-  // modified from: https://beta.observablehq.com/@mbostock/d3-stacked-area-chart
-  var legend = svg => {
-    svg.append("text")
-      .attr("font-weight", "bold")
-      .attr("dy", -8)
-      .text("Streaming")
-
-    const g = svg
-        .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
-      .selectAll("g")
-      .data(color.domain().slice())
-      .enter().append("g")
-        .attr("transform", (d, i) => `translate(0,${i * 20})`)
-
-    g.append("rect")
-        .attr("width", 19)
-        .attr("height", 19)
-        .attr("fill", d => initLegendState(d))
-        .attr("class", d => d)
-        .on("click", d => toggleLegend(d))
-
-    g.append("text")
-        .attr("x", 24)
-        .attr("y", 9.5)
-        .attr("dy", "0.35em")
-        .text(d => d)
-  }
-
   var radioButtons = svg => {
     svg.append("text")
       .attr("x", 3)
@@ -215,6 +188,8 @@ function render(data, color) {
       .attr("class", "tooltip")
       .style("opacity", 0);
 
+  const legend = makeCheckboxLegend(svg, "Streaming", color, enabledMethods, updateData)
+
   // axis
   svg.append("g").call(xAxis)
   svg.append("g").call(yAxis)
@@ -224,33 +199,6 @@ function render(data, color) {
   svg.append("g")
       .attr("transform", `translate(${width - 120}, ${margin.top + 335})`)
       .call(radioButtons);
-
-  function getLegendColor(method, enabled) {
-    if (enabled) {
-      return color(method)
-    } else {
-      return "#ddd"
-    }
-  }
-
-  function initLegendState(method) {
-    const enabled = enabledMethods.has(method)
-    return getLegendColor(method, enabled)
-  }
-
-  function toggleLegend(method) {
-    const enabled = enabledMethods.has(method)
-    if (enabled) {
-      enabledMethods.remove(method)
-    } else {
-      enabledMethods.add(method)
-    }
-
-    svg.selectAll(`rect.${method}`)
-      .style("fill", d => getLegendColor(d, !enabled))
-
-    updateData()
-  }
 
   function getRadioColor(enabled) {
     if (enabled) {
