@@ -44,7 +44,35 @@ function renderContent(data, svg, tooltip, x, y, color) {
   // empty dots & line
   svg.selectAll(".dot,.regLine").remove()
 
-  // draw dots
+  function tooltipHTML(d) {
+    var text = d.method
+    if (d.quality != null && d.inefficiency != null) {
+      text += "<br/> (" + d.quality + ", " + d.inefficiency + ")"
+    }
+    return text
+  }
+
+  function showMore(method) {
+    return function() {
+      svg.selectAll(`.regLine:not(.${method})`)
+        .style("stroke", "#ddd")
+      svg.selectAll(`.dot:not(.${method})`)
+        .style("stroke", "#ddd")
+        .style("fill", "#ddd")
+      svg.selectAll(`.${method}`).raise()
+    }
+  }
+
+  function hideMore(method) {
+    return function() {
+      svg.selectAll(`.regLine:not(.${method})`)
+        .style("stroke", d => color(d[0]))
+      svg.selectAll(`.dot:not(.${method})`)
+        .style("stroke", "#000")
+        .style("fill", d => color(d.method))
+    }
+  }
+
   const dot = svg.selectAll(".dot")
       .data(data)
     .enter().append("circle")
@@ -53,8 +81,8 @@ function renderContent(data, svg, tooltip, x, y, color) {
       .attr("cx", d => x(d.quality))
       .attr("cy", d => y(d.inefficiency))
       .style("fill", d => color(d.method))
-      .on("mouseover", d => entered(d.method, d.quality, d.inefficiency))
-      .on("mouseout", d => left(d[0]));
+      .on("mouseover", d => tooltip.show(tooltipHTML(d), showMore(d.method)))
+      .on("mouseout", d => tooltip.hide(hideMore(d[0])))
 
   const path = svg.selectAll(".regLine")
       .data(regData)
@@ -65,40 +93,9 @@ function renderContent(data, svg, tooltip, x, y, color) {
       .attr("y2", d => y(d[1][3]))
       .attr("class", d => d[0] + " regLine")
       .style("stroke", d => color(d[0]))
-      .on("mouseover", d => entered(d[0]))
-      .on("mouseout", d => left(d[0]))
+      .on("mouseover", d => tooltip.show(tooltipHTML({method: d[0]}, showMore(d[0]))))
+      .on("mouseout", d => tooltip.hide(hideMore(d[0])))
 
-  function entered(method, quality, inefficiency) {
-    tooltip.transition()
-         .duration(200)
-         .style("opacity", .9);
-    var text = method
-    if (quality != null && inefficiency != null) {
-      text += "<br/> (" + quality + ", " + inefficiency + ")"
-    }
-    tooltip.html(text)
-         .style("left", (d3.event.pageX + 5) + "px")
-         .style("top", (d3.event.pageY - 28) + "px");
-
-    svg.selectAll(`.regLine:not(.${method})`)
-      .style("stroke", "#ddd")
-    svg.selectAll(`.dot:not(.${method})`)
-      .style("stroke", "#ddd")
-      .style("fill", "#ddd")
-    svg.selectAll(`.${method}`).raise()
-  }
-
-  function left(method) {
-    tooltip.transition()
-         .duration(500)
-         .style("opacity", 0);
-
-    svg.selectAll(`.regLine:not(.${method})`)
-      .style("stroke", d => color(d[0]))
-    svg.selectAll(`.dot:not(.${method})`)
-      .style("stroke", "#000")
-      .style("fill", d => color(d.method))
-  }
 }
 
 function render(data, color) {
@@ -147,10 +144,7 @@ function render(data, color) {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // add the tooltip area to the webpage
-  var tooltip = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
+  var tooltip = util.makeTooltip()
 
   var radioButtons = util.makeRadioLegend(svg, "BufSize", bufSizes, enabledBufSizeArr, updateData)
   const legend = util.makeCheckboxLegend(svg, "Streaming", color, enabledMethods, updateData)

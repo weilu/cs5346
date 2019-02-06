@@ -118,4 +118,37 @@ function makeRadioLegend(svg, legendLabel, legendData, enabledItem, updateData) 
   return radioButtons
 }
 
-export default { makeCheckboxLegend, makeRadioLegend }
+function makeTooltip() {
+  // add the tooltip area to the webpage
+  var tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip d3-tip")
+      .style("opacity", 0);
+
+  function show(html, showMoreFn) {
+    tooltip.transition()
+         .duration(200)
+         .style("opacity", .9);
+
+    tooltip.html(html)
+         .style("left", (d3.event.pageX + 5) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+
+    if (showMoreFn != null) {
+      showMoreFn()
+    }
+  }
+
+  function hide(hideMoreFn) {
+    tooltip.transition()
+         .duration(500)
+         .style("opacity", 0);
+
+    if (hideMoreFn != null) {
+      hideMoreFn()
+    }
+  }
+
+  return {show, hide}
+}
+
+export default { makeCheckboxLegend, makeRadioLegend, makeTooltip }

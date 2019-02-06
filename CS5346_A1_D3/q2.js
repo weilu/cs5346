@@ -22,22 +22,7 @@ var yAxisBox = svg.append("g").attr("transform", "translate(40,0)");
 var xAxisBox = svg.append("g").attr("transform", "translate(40,0)");
 
 function render(plotData, min_max_y, bufSizes) {
-  // // Create Tooltips
-  // var tip = d3.tip().attr('class', 'd3-tip').direction('e').offset([0,5])
-  //     .html(function(d) {
-  //         var content = "<span style='margin-left: 2.5px;'><b>" + d.key + "</b></span><br>";
-  //         content +=`
-  //             <table style="margin-top: 2.5px;">
-  //                     <tr><td>Max: </td><td style="text-align: right">` + d3.format(".2f")(d.whiskers[0]) + `</td></tr>
-  //                     <tr><td>Q3: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[0]) + `</td></tr>
-  //                     <tr><td>Median: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[1]) + `</td></tr>
-  //                     <tr><td>Q1: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[2]) + `</td></tr>
-  //                     <tr><td>Min: </td><td style="text-align: right">` + d3.format(".2f")(d.whiskers[1]) + `</td></tr>
-  //             </table>
-  //             `;
-  //         return content;
-  //     });
-  // svg.call(tip);
+  var tooltip = util.makeTooltip()
 
   // method
   const methods = plotData.map(d => d.method)
@@ -112,13 +97,13 @@ function render(plotData, min_max_y, bufSizes) {
       newData.push(row)
     })
     const middleBand = enabledMiddleBand[0]
-    renderContent(newData, bufSizes, middleBand, svg, x0, x1, y, z)
+    renderContent(newData, bufSizes, middleBand, svg, tooltip, x0, x1, y, z)
   }
 
   updateData()
 }
 
-function renderContent(plotData, bufSizes, middleBand, svg, x0, x1, y, z) {
+function renderContent(plotData, bufSizes, middleBand, svg, tooltip, x0, x1, y, z) {
   // empty dots & line
   svg.selectAll(".q2content").remove()
 
@@ -146,6 +131,20 @@ function renderContent(plotData, bufSizes, middleBand, svg, x0, x1, y, z) {
       .attr("stroke-dasharray", "5,5")
       .attr("fill", "none");
 
+  function tooltipHTML(d) {
+    var content = `<span style='margin-left: 2.5px;'><b>${d.method} (bufSize: ${d.key})</b></span><br>`
+    content +=`
+        <table style="margin-top: 2.5px;">
+                <tr><td>Max: </td><td style="text-align: right">` + d3.format(".2f")(d.whiskers[1]) + `</td></tr>
+                <tr><td>Q3: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[0]) + `</td></tr>
+                <tr><td>Median: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[1]) + `</td></tr>
+                <tr><td>Mean: </td><td style="text-align: right">` + d3.format(".2f")(d.mean) + `</td></tr>
+                <tr><td>Q1: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[2]) + `</td></tr>
+                <tr><td>Min: </td><td style="text-align: right">` + d3.format(".2f")(d.whiskers[0]) + `</td></tr>
+        </table>`
+    return content
+  }
+
   // Draw the boxes of the box plot, filled in white and on top of vertical lines
   g.selectAll("rect")
     .data(makeSubgroupPlotData)
@@ -157,8 +156,8 @@ function renderContent(plotData, bufSizes, middleBand, svg, x0, x1, y, z) {
     .attr("fill", d => z(d.key) )
     .attr("stroke-width", 1)
     .attr("stroke", boxPlotColor)
-    // .on('mouseover', tip.show)
-    // .on('mouseout', tip.hide);
+    .on("mouseover", d => tooltip.show(tooltipHTML(d)))
+    .on("mouseout", d => tooltip.hide())
 
   function drawHorizontalLine(selection, yDataFn, strokeColor) {
       selection.data(makeSubgroupPlotData)
@@ -206,6 +205,7 @@ export default function(allData) {
       record.quartile = boxQuartiles(record.counts)
       record.mean = d3.mean(record.counts)
       record.whiskers = d3.extent(record.counts)
+      record.method = method
       rowObj[bufSize] = record
     }
     plotData.push(rowObj)
