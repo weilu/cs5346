@@ -16,8 +16,9 @@ d3.csv("results.csv", function(d) {
     numStall: +d.numStall
   }
 }).then(function(data) {
-  q1(data)
-  q2(data)
-  q3(data)
-  q4(data)
+  const bufSizes = d3.set(data.map(d => d.bufSize)).values()
+  q1(data, bufSizes)
+  q2(data, bufSizes)
+  q3(data, bufSizes)
+  q4(data, bufSizes)
 })

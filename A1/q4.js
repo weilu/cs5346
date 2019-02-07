@@ -81,9 +81,8 @@ function renderContent(plotData, svg) {
     .text(d => `stalls: ${d.numStall}`)
 }
 
-function render(data) {
+function render(data, bufSizes) {
   // select the first bufSize by default
-  const bufSizes = Object.keys(data)
   const enabledBufSizeArr = [bufSizes[0]]
   const plotData = data[enabledBufSizeArr[0]]
 
@@ -147,7 +146,7 @@ function render(data) {
   updateData()
 }
 
-export default function(data) {
+export default function(data, bufSizes) {
   var plotData = data
     .filter(d => d.sample === 'v7')
     .map(d => ({
@@ -163,5 +162,5 @@ export default function(data) {
     .key(d => d.bufSize)
     .object(plotData)
 
-  render(plotData)
+  render(plotData, bufSizes)
 }

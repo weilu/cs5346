@@ -98,9 +98,12 @@ function renderContent(data, svg, tooltip, x, y, color) {
 
 }
 
-function render(data, color) {
+function render(data, bufSizes) {
+  const color = d3.scaleOrdinal()
+                  .domain(data.map(d => d.method))
+                  .range(d3.schemeCategory10)
+
   // by default select the first bufSize
-  const bufSizes = d3.set(data.map(d => d.bufSize)).values()
   var enabledBufSizeArr = [bufSizes[0]]
 
   // only enable the 1st method initially
@@ -167,9 +170,6 @@ function render(data, color) {
   updateData()
 }
 
-export default function(data) {
-  const color = d3.scaleOrdinal()
-                  .domain(data.map(d => d.method))
-                  .range(d3.schemeCategory10)
-  render(data, color)
+export default function(data, bufSizes) {
+  render(data, bufSizes)
 }

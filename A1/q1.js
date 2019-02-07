@@ -62,9 +62,8 @@ function getPaddedYDomain(plotData, attr) {
   return [minMaxY[0], maxYWithPadding]
 }
 
-function render(data) {
+function render(data, bufSizes) {
   // select the first bufSize by default
-  const bufSizes = Object.keys(data)
   const enabledBufSizeArr = [bufSizes[0]]
   const plotData = data[enabledBufSizeArr[0]]
 
@@ -123,7 +122,7 @@ function render(data) {
   updateData()
 }
 
-export default function(data) {
+export default function(data, bufSizes) {
   const dataByBufSizeByMethod = d3.nest()
     .key(d => d.bufSize)
     .key(d => d.method)
@@ -139,5 +138,6 @@ export default function(data) {
     }
     plotData[bufSize] = rows
   }
-  render(plotData)
+
+  render(plotData, bufSizes)
 }

@@ -187,7 +187,7 @@ function boxQuartiles(d) {
     ];
 }
 
-export default function(allData) {
+export default function(allData, bufSizes) {
   const min_max_y = d3.extent(allData, d => d.qoe)
   const dataByMethodByBufSize = d3.nest()
     .key(d => d.method)
@@ -211,7 +211,6 @@ export default function(allData) {
     plotData.push(rowObj)
   }
 
-  const bufSizes = d3.set(allData.map(d => d.bufSize)).values()
   render(plotData, min_max_y, bufSizes)
 }
 
