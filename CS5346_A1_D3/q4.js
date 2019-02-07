@@ -4,7 +4,7 @@ import util from './utils.js'
 var margin = { top: 50, right: 0, bottom: 100, left: 30 },
     width = 960 - margin.left - margin.right,
     height = 430 - margin.top - margin.bottom,
-    gridSize = Math.floor(width / 10), // TODO: make this methods.length
+    gridSize = Math.floor(width / 12), // TODO: make this methods.length
     legendElementWidth = gridSize*2
 const colors = ['#31a354', '#c7e9c0', '#fff']
 
@@ -48,11 +48,10 @@ function render(data) {
 
   var cards = svg.selectAll(".numStall")
     .data(data)
-    // .data(data, d => d.profile+':'+d.method)
 
   cards.enter().append("rect")
-    .attr("x", function(d) { return (d.methodNum - 1) * gridSize; })
-    .attr("y", function(d) { return (d.profileNum - 1) * gridSize; })
+    .attr("x", d => (d.methodNum - 1) * gridSize)
+    .attr("y", d => (d.profileNum - 1) * gridSize)
     .attr("rx", 4)
     .attr("ry", 4)
     .attr("class", "hour bordered")
@@ -65,26 +64,26 @@ function render(data) {
 
   cards.exit().remove();
 
-  // var legend = svg.selectAll(".legend")
-  //     .data([0].concat(colorScale.quantiles()), function(d) { return d; });
-  //
-  // legend.enter().append("g")
-  //     .attr("class", "legend");
-  //
-  // legend.append("rect")
-  //   .attr("x", function(d, i) { return legendElementWidth * i; })
-  //   .attr("y", height)
-  //   .attr("width", legendElementWidth)
-  //   .attr("height", gridSize / 2)
-  //   .style("fill", function(d, i) { return colors[i]; });
-  //
-  // legend.append("text")
-  //   .attr("class", "mono")
-  //   .text(function(d) { return "≥ " + Math.round(d); })
-  //   .attr("x", function(d, i) { return legendElementWidth * i; })
-  //   .attr("y", height + gridSize);
-  //
-  // legend.exit().remove();
+  var legend = svg.selectAll(".legend")
+      .data([0, 1, 2])
+      .enter().append("g")
+        .attr("class", "legend")
+
+  legend.append("rect")
+    .attr("class", "bordered")
+    .attr("x", (d, i) => legendElementWidth * i)
+    .attr("y", height + gridSize/2)
+    .attr("width", legendElementWidth)
+    .attr("height", gridSize / 3)
+    .style("fill", (d, i) => colors[i])
+
+  const legendText = ['minimum number of stalls', 'in-between', 'maximum number of stalls']
+  legend.append("text")
+    .text(d => legendText[d])
+    .attr("x", (d, i) => legendElementWidth * i)
+    .attr("y", height + gridSize);
+
+  legend.exit().remove();
 }
 
 export default function(data) {
