@@ -23,8 +23,10 @@ function renderContent(plotData, enabledYRadio, svg, x, y, yAxis) {
   bars.exit()
     .remove()
 
-  bars.enter()
-    .append("rect")
+  const barGroups = bars.enter()
+    .append("g")
+
+  barGroups.append("rect")
     .attr("fill", '#428bca')
     .attr("x", d => x(d.method))
     .attr("y", d => y(d[enabledYRadio]))
@@ -36,6 +38,29 @@ function renderContent(plotData, enabledYRadio, svg, x, y, yAxis) {
     .ease(d3.easeLinear)
     .attr("y", d => y(d[enabledYRadio]))
     .attr("height", d => height - y(d[enabledYRadio]))
+
+  function formatNumber(number) {
+    if (number < 100) {
+      return d3.format(".2f")(number)
+    } else {
+      return d3.format(",d")(number)
+    }
+  }
+
+  const barLabels = barGroups.append("text")
+    .attr("class", "bar-text")
+    .attr("x", d => x(d.method) + x.bandwidth()/2)
+    .attr("y", d => y(d[enabledYRadio]) - 5)
+    .style("text-anchor", "middle")
+    .text(d => formatNumber(d[enabledYRadio]))
+
+  svg.selectAll('text.bar-text')
+    .data(plotData)
+    .transition()
+    .duration(300)
+    .ease(d3.easeLinear)
+    .attr("y", d => y(d[enabledYRadio]) - 5)
+    .text(d => formatNumber(d[enabledYRadio]))
 }
 
 // pad y so we have space on top for radio buttons
