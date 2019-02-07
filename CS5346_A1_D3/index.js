@@ -1,3 +1,4 @@
+import q1 from './q1.js'
 import q2 from './q2.js'
 import q3 from './q3.js'
 
@@ -6,10 +7,12 @@ d3.csv("results.csv", function(d) {
     method : d.method,
     bufSize : d.bufSize,
     quality : +d.quality,
+    change : +d.change,
     inefficiency : +d.inefficiency,
     qoe: +d.qoe
   }
 }).then(function(data) {
+  q1(data)
   q2(data)
   q3(data)
 })
