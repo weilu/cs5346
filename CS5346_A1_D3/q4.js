@@ -32,14 +32,14 @@ function renderContent(plotData, svg) {
         d3.select(this)
           .select('text')
           .transition()
-          .duration(500)
+          .duration(300)
           .style("opacity", 1.0)
       })
       .on("mouseout", function(d) {
         d3.select(this)
           .select('text')
           .transition()
-          .duration(500)
+          .duration(300)
           .style("opacity", 0)
       })
 
@@ -87,7 +87,7 @@ function render(data) {
   const enabledBufSizeArr = [bufSizes[0]]
   const plotData = data[enabledBufSizeArr[0]]
 
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("#q4").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")

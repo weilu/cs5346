@@ -9,18 +9,34 @@
 
 <style>
 body {
-  font: 11px sans-serif;
+  color: #333;
+  font: 11px Verdana, Geneva, sans-serif;
 }
+
+#header, #content {
+  text-align: center;
+  margin: 50px 0;
+}
+
+div.task {
+  margin: 50px 0;
+  display: inline-block;
+}
+
+div.task h2{
+  text-align: left;
+}
+
 /* q3 styles  */
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #333;
   shape-rendering: crispEdges;
 }
 
 .dot {
-  stroke: #000;
+  stroke: #333;
 }
 
 .radio {
@@ -38,7 +54,7 @@ body {
 }
 
 text.label {
-  fill: #000;
+  fill: #333;
   text-anchor: end;
 }
 
@@ -69,7 +85,7 @@ rect.bordered {
 
 .card-group text {
   opacity: 0;
-  fill: black;
+  fill: #333;
 }
 .card-group.c0 text {
   fill: #fff;
@@ -78,6 +94,25 @@ rect.bordered {
 </style>
 
 <body>
+  <div id='header'>
+    <h1>CS5346 Information Visualisation Assignment 1</h1>
+    <h3>Lu Wei</h3>
+  </div>
+  <div id='content'>
+    <div id="q1" class="task">
+      <h2>Average quality and number of changes in quality by streaming method</h2>
+    </div>
+    <div id="q2" class="task">
+      <h2>Quality of experience by streaming method and buffer configuration</h2>
+    </div>
+    <div id="q3" class="task">
+      <h2>Inefficiency & quality correlation by streaming methods</h2>
+    </div>
+    <div id="q4" class="task">
+      <h2>Streaming methods with min/max number of stalls under various network profiles</h2>
+    </div>
+  </div>
+
   <script src="d3.v5.js"></script>
   <script type="module" src="utils.js"></script>
   <script type="module" src="q1.js"></script>

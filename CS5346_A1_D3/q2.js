@@ -11,7 +11,7 @@ var medianLineColor = "#ffffff";
 var axisColor = "#898989";
 
 // Setup the svg and group we will draw the box plot in
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#q2").append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
