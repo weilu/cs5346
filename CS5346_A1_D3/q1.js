@@ -98,10 +98,6 @@ function render(data) {
       .attr("transform", `translate(${width - 60}, ${margin.top})`)
       .call(yRadio);
 
-  // append the group that containing all the bars
-  svg.append("g")
-    .attr('class', 'q3g')
-
   function updateData() {
     const newData = data[enabledBufSizeArr[0]]
     renderContent(newData, enabledYRadioArr[0], svg, x, y, yAxis)
