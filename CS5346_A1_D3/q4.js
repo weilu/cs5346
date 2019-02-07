@@ -25,8 +25,25 @@ function renderContent(plotData, svg) {
   cards.exit()
     .remove();
 
-  cards.enter()
-    .append("rect")
+  const cardGroups = cards.enter()
+    .append("g")
+      .attr("class", d => "card-group c" + d.numStall)
+      .on("mouseover", function(d) {
+        d3.select(this)
+          .select('text')
+          .transition()
+          .duration(500)
+          .style("opacity", 1.0)
+      })
+      .on("mouseout", function(d) {
+        d3.select(this)
+          .select('text')
+          .transition()
+          .duration(500)
+          .style("opacity", 0)
+      })
+
+  cardGroups.append("rect")
       .attr("x", d => (d.methodNum - 1) * gridSize)
       .attr("y", d => (d.profileNum - 1) * gridSize)
       .attr("rx", 4)
@@ -39,13 +56,29 @@ function renderContent(plotData, svg) {
         .duration(500)
         .delay(d => d.methodNum * 15)
         .style("fill", d => colorScale(d.numStall))
+      .select('.card-text')
 
-  cards = svg.selectAll(".card") // need to re-select to indicate update
+  cardGroups.append("text")
+    .attr("class", "card-text")
+    .attr("font-weight", "bold")
+    .attr("x", d => (d.methodNum - 1) * gridSize + gridSize/4)
+    .attr("y", d => (d.profileNum - 1) * gridSize + gridSize/2)
+    .text(d => `stalls: ${d.numStall}`)
+
+  svg.selectAll(".card") // need to re-select to indicate update
     .data(plotData)
     .transition()
       .duration(500)
       .delay(d => d.methodNum * 15)
       .style("fill", d => colorScale(d.numStall))
+
+  svg.selectAll(".card-group")
+    .data(plotData)
+    .attr("class", d => "card-group c" + d.numStall)
+
+  svg.selectAll(".card-text")
+    .data(plotData)
+    .text(d => `stalls: ${d.numStall}`)
 }
 
 function render(data) {
