@@ -5,18 +5,24 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
     height = 500 - margin.top - margin.bottom;
 
 function renderContent(plotData, svg, x, y) {
-  svg.selectAll(".q3g").remove()
+  const bars = svg.selectAll("rect")
+    .data(plotData)
 
-  svg.append("g")
-    .attr("fill", '#428bca')
-    .attr('class', 'q3g')
-  .selectAll("rect")
-  .data(plotData)
-  .enter().append("rect")
+  bars.exit()
+    .remove()
+
+  bars.enter()
+    .append("rect")
     .attr("x", d => x(d.method))
     .attr("y", d => y(d.avgQuality))
     .attr("height", d => height - y(d.avgQuality))
     .attr("width", x.bandwidth());
+
+  bars.transition()
+    .duration(300)
+    .ease(d3.easeLinear)
+    .attr("y", d => y(d.avgQuality))
+    .attr("height", d => height - y(d.avgQuality))
 }
 
 function render(data) {
@@ -63,9 +69,13 @@ function render(data) {
       .attr("transform", `translate(${width - 120}, ${margin.top})`)
       .call(radioButtons);
 
+  var contentGroup = svg.append("g")
+    .attr("fill", '#428bca')
+    .attr('class', 'q3g')
+
   function updateData() {
     const newData = data[enabledBufSizeArr[0]]
-    renderContent(newData, svg, x, y)
+    renderContent(newData, contentGroup, x, y)
   }
 
   updateData()
