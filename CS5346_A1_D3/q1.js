@@ -1,11 +1,29 @@
+import util from './utils.js'
+
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
+function renderContent(plotData, svg, x, y) {
+  svg.selectAll(".q3g").remove()
+
+  svg.append("g")
+    .attr("fill", '#428bca')
+    .attr('class', 'q3g')
+  .selectAll("rect")
+  .data(plotData)
+  .enter().append("rect")
+    .attr("x", d => x(d.method))
+    .attr("y", d => y(d.avgQuality))
+    .attr("height", d => height - y(d.avgQuality))
+    .attr("width", x.bandwidth());
+}
+
 function render(data) {
   // select the first bufSize by default
-  var enabledBufSize = Object.keys(data)[0]
-  const plotData = data[enabledBufSize]
+  const bufSizes = Object.keys(data)
+  var enabledBufSizeArr = [bufSizes[0]]
+  const plotData = data[enabledBufSizeArr[0]]
 
   const methods = plotData.map(d => d.method)
   var x = d3.scaleBand()
@@ -16,8 +34,10 @@ function render(data) {
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(x))
 
+  const minMaxY = d3.extent(plotData, d => d.avgQuality)
+  const maxYWithPadding = minMaxY[1] + 0.3 * (minMaxY[1] - minMaxY[0])
   var y = d3.scaleLinear()
-            .domain(d3.extent(plotData, d => d.avgQuality)).nice()
+            .domain([minMaxY[0], maxYWithPadding]).nice()
             .range([height, 0])
   var yAxis = g => g
       .call(d3.axisLeft(y))
@@ -35,19 +55,20 @@ function render(data) {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  svg.append("g")
-    .attr("fill", '#428bca')
-  .selectAll("rect")
-  .data(plotData)
-  .enter().append("rect")
-    .attr("x", d => x(d.method))
-    .attr("y", d => y(d.avgQuality))
-    .attr("height", d => height - y(d.avgQuality))
-    .attr("width", x.bandwidth());
-
   svg.append("g").call(xAxis)
   svg.append("g").call(yAxis)
 
+  var radioButtons = util.makeRadioLegend(svg, "BufSize", bufSizes, enabledBufSizeArr, updateData)
+  svg.append("g")
+      .attr("transform", `translate(${width - 120}, ${margin.top})`)
+      .call(radioButtons);
+
+  function updateData() {
+    const newData = data[enabledBufSizeArr[0]]
+    renderContent(newData, svg, x, y)
+  }
+
+  updateData()
 }
 
 export default function(data) {
