@@ -151,4 +151,17 @@ function makeTooltip() {
   return {show, hide}
 }
 
-export default { makeCheckboxLegend, makeRadioLegend, makeTooltip }
+function formatNumber(number) {
+  if (Math.abs(number) < 100) {
+    return d3.format(".2f")(number)
+  } else {
+    return d3.format(",d")(number)
+  }
+}
+
+export default {
+  makeCheckboxLegend,
+  makeRadioLegend,
+  makeTooltip,
+  formatNumber
+}
