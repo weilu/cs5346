@@ -4,7 +4,19 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-function renderContent(plotData, svg, x, y) {
+function renderContent(plotData, enabledYRadio, svg, x, y, yAxis) {
+  // update y axis
+  y.domain(getPaddedYDomain(plotData, enabledYRadio)).nice()
+  svg.select('.y.axis')
+    .transition()
+    .duration(300)
+    .call(yAxis)
+  svg.select('.y.label')
+    .transition()
+    .duration(300)
+    .text(enabledYRadio)
+
+  // update bars
   const bars = svg.selectAll("rect")
     .data(plotData)
 
@@ -13,23 +25,34 @@ function renderContent(plotData, svg, x, y) {
 
   bars.enter()
     .append("rect")
+    .attr("fill", '#428bca')
     .attr("x", d => x(d.method))
-    .attr("y", d => y(d.avgQuality))
-    .attr("height", d => height - y(d.avgQuality))
+    .attr("y", d => y(d[enabledYRadio]))
+    .attr("height", d => height - y(d[enabledYRadio]))
     .attr("width", x.bandwidth());
 
   bars.transition()
     .duration(300)
     .ease(d3.easeLinear)
-    .attr("y", d => y(d.avgQuality))
-    .attr("height", d => height - y(d.avgQuality))
+    .attr("y", d => y(d[enabledYRadio]))
+    .attr("height", d => height - y(d[enabledYRadio]))
+}
+
+// pad y so we have space on top for radio buttons
+function getPaddedYDomain(plotData, attr) {
+  const minMaxY = d3.extent(plotData, d => d[attr])
+  const maxYWithPadding = minMaxY[1] + 0.3 * (minMaxY[1] - minMaxY[0])
+  return [minMaxY[0], maxYWithPadding]
 }
 
 function render(data) {
   // select the first bufSize by default
   const bufSizes = Object.keys(data)
-  var enabledBufSizeArr = [bufSizes[0]]
+  const enabledBufSizeArr = [bufSizes[0]]
   const plotData = data[enabledBufSizeArr[0]]
+
+  // show avgQuality by default
+  const enabledYRadioArr = ['avgQuality']
 
   const methods = plotData.map(d => d.method)
   var x = d3.scaleBand()
@@ -40,20 +63,13 @@ function render(data) {
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(x))
 
-  const minMaxY = d3.extent(plotData, d => d.avgQuality)
-  const maxYWithPadding = minMaxY[1] + 0.3 * (minMaxY[1] - minMaxY[0])
+  const yDomain = getPaddedYDomain(plotData, enabledYRadioArr[0])
   var y = d3.scaleLinear()
-            .domain([minMaxY[0], maxYWithPadding]).nice()
+            .domain(yDomain).nice()
             .range([height, 0])
   var yAxis = g => g
       .call(d3.axisLeft(y))
-      .call(g => g.append("text")
-        .attr("class", "label")
-        .attr("font-weight", "bold")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .text("Average Quality"))
+      .call(g => g)
 
   var svg = d3.select("body").append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -61,21 +77,34 @@ function render(data) {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  svg.append("g").call(xAxis)
-  svg.append("g").call(yAxis)
+  svg.append("g").attr("class", "x axis").call(xAxis)
+  const yAxisFrame = svg.append("g").attr("class", "y axis").call(yAxis)
+  yAxisFrame.append("text")
+    .attr("class", "y label")
+    .attr("font-weight", "bold")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .text(enabledYRadioArr[0])
 
   var radioButtons = util.makeRadioLegend(svg, "BufSize", bufSizes, enabledBufSizeArr, updateData)
   svg.append("g")
       .attr("transform", `translate(${width - 120}, ${margin.top})`)
       .call(radioButtons);
 
-  var contentGroup = svg.append("g")
-    .attr("fill", '#428bca')
+  var yRadio = util.makeRadioLegend(svg, "Compare", ['avgQuality', 'avgChange'],
+                                    enabledYRadioArr, updateData)
+  svg.append("g")
+      .attr("transform", `translate(${width - 60}, ${margin.top})`)
+      .call(yRadio);
+
+  // append the group that containing all the bars
+  svg.append("g")
     .attr('class', 'q3g')
 
   function updateData() {
     const newData = data[enabledBufSizeArr[0]]
-    renderContent(newData, contentGroup, x, y)
+    renderContent(newData, enabledYRadioArr[0], svg, x, y, yAxis)
   }
 
   updateData()
