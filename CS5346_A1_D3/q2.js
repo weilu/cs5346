@@ -132,16 +132,16 @@ function renderContent(plotData, bufSizes, middleBand, svg, tooltip, x0, x1, y, 
       .attr("fill", "none");
 
   function tooltipHTML(d) {
-    var content = `<span style='margin-left: 2.5px;'><b>${d.method} (bufSize: ${d.key})</b></span><br>`
+    var content = `<span><b>${d.method} (bufSize: ${d.key})</b></span><br>`
     content +=`
-        <table style="margin-top: 2.5px;">
-                <tr><td>Max: </td><td style="text-align: right">` + d3.format(".2f")(d.whiskers[1]) + `</td></tr>
-                <tr><td>Q3: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[0]) + `</td></tr>
-                <tr><td>Median: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[1]) + `</td></tr>
-                <tr><td>Mean: </td><td style="text-align: right">` + d3.format(".2f")(d.mean) + `</td></tr>
-                <tr><td>Q1: </td><td style="text-align: right">` + d3.format(".2f")(d.quartile[2]) + `</td></tr>
-                <tr><td>Min: </td><td style="text-align: right">` + d3.format(".2f")(d.whiskers[0]) + `</td></tr>
-        </table>`
+      <table>
+        <tr><td>Max: </td><td>${util.formatNumber(d.whiskers[1])}</td></tr>
+        <tr><td>Q3: </td><td>${util.formatNumber(d.quartile[0])}</td></tr>
+        <tr><td>Median: </td><td>${util.formatNumber(d.quartile[1])}</td></tr>
+        <tr><td>Mean: </td><td>${util.formatNumber(d.mean)}</td></tr>
+        <tr><td>Q1: </td><td>${util.formatNumber(d.quartile[2])}</td></tr>
+        <tr><td>Min: </td><td>${util.formatNumber(d.whiskers[0])}</td></tr>
+      </table>`
     return content
   }
 
