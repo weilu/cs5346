@@ -53,6 +53,24 @@ function renderContent(plotData, enabledYRadio, svg, x, y, yAxis) {
     .ease(d3.easeLinear)
     .attr("y", d => y(d[enabledYRadio]) - 5)
     .text(d => util.formatNumber(d[enabledYRadio]))
+
+  // update average line
+  const avg = d3.mean(plotData, d => d[enabledYRadio])
+  const avgLine = svg.selectAll("line.avg")
+    .data([avg])
+    .enter().append('line')
+      .attr("class", "avg")
+      .attr("x1", d => x(plotData[0].method))
+      .attr("y1", d => y(d))
+      .attr("x2", d => x(plotData[plotData.length - 1].method) + x.bandwidth())
+      .attr("y2", d => y(d))
+  svg.selectAll("line.avg")
+    .data([avg])
+    .transition()
+    .duration(300)
+    .ease(d3.easeLinear)
+    .attr("y1", d => y(d))
+    .attr("y2", d => y(d))
 }
 
 // pad y so we have space on top for radio buttons
@@ -113,6 +131,21 @@ function render(data, bufSizes) {
   svg.append("g")
       .attr("transform", `translate(${width - 60}, ${margin.top})`)
       .call(yRadio);
+
+  const avgLegend = svg => {
+    svg.append("text")
+      .attr("font-weight", "bold")
+      .text('Avg across methods')
+
+    svg.append('line')
+      .attr("class", "avg-legend")
+      .attr("y1", 15)
+      .attr("y2", 15)
+      .attr("x2", 110)
+  }
+  svg.append("g")
+      .attr("transform", `translate(${width - 250}, ${margin.top})`)
+      .call(avgLegend)
 
   function updateData() {
     const newData = data[enabledBufSizeArr[0]]
