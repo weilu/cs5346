@@ -51,5 +51,11 @@ Draw plots to show the correlation between inefficiency and quality for all meth
 ## Task 4
 We would like to know the methods which have the minimum number of stalls for video V7 under different network profiles. Draw appropriate plot for it.
 
+- The data is first filtered to keep only rows of video V7. There is one data point, which is the number of stalls, for each given buffer configuration, network profile, and streaming method.
+- A heatmap is chosen to visualize the methods with the minimum and maximum number of stalls under each network profile. The matrix created by the heatmap allows us to cross two categorical dimensions, namely network profile and streaming methods.
+- The color of the tile represent the degree of stalls: dark green represents minimum number of stalls, white represents maximum number of stalls, while light green represents anything in between. This is explained by the legend at the bottom of the plot.
+- Hovering over a tile provides additional information of exactly how many stalls there are for a given method, profile and buffer config.
+- Similar to task 1 and 3, user can choose buffer configuration to display by clicking on the radio button in the legend.
+
 
 [1]: https://www.jstor.org/stable/2685173
