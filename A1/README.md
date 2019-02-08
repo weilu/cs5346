@@ -42,6 +42,12 @@ Draw a single plot to show the Average QoE for a method grouped by different buf
 ## Task 3
 Draw plots to show the correlation between inefficiency and quality for all methods in different buffer configurations.
 
+- Data is grouped by streaming method and buffer configuration.
+- Scatter plot with a trend line (aka regression line) is used for visualizing data points of each method and buffer configuration group. A scatter plot truthfully represent every single data point, while the the trend line provides a simple linear interpretation of the correlation between two quantitative variables to aid understanding of the data.
+- By default only data of one group is shown. Data of other methods can be added/removed to/from the graph by clicking on the boxes in the legend. Different streaming methods are color-coded so their corresponding points and trend lines can be visually differentiated and compared in the plot.
+- When multiple groups of data are visible in the plot, hovering over any point or line will highlight only visualization for that group and grey out all other groups. A tooltip will also present the name of the highlighted group and the values for the data point under the cursor. This is useful for when the user wants to inspect a single data point, such as an outlier. It's also useful to view a group of data points in the context of the rest of the rest of the data with minimal visual clutter.
+- Similar to task 1, user can choose buffer configuration to display by clicking on the radio button in the legend.
+
 ## Task 4
 We would like to know the methods which have the minimum number of stalls for video V7 under different network profiles. Draw appropriate plot for it.
 
