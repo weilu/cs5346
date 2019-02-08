@@ -107,7 +107,7 @@ function makeRadioLegend(svg, legendLabel, legendData, enabledItem, updateData) 
     if (enabled) {
       return '#428bca' // blue
     } else {
-      return 'fff'
+      return '#fff'
     }
   }
 
