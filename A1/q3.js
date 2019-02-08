@@ -93,7 +93,7 @@ function renderContent(data, svg, tooltip, x, y, color) {
       .attr("y2", d => y(d[1][3]))
       .attr("class", d => d[0] + " regLine")
       .style("stroke", d => color(d[0]))
-      .on("mouseover", d => tooltip.show(tooltipHTML({method: d[0]}, showMore(d[0]))))
+      .on("mouseover", d => tooltip.show(tooltipHTML({method: d[0]}), showMore(d[0])))
       .on("mouseout", d => tooltip.hide(hideMore(d[0])))
 
 }
