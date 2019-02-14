@@ -75,9 +75,9 @@ function renderContent(plotData, enabledYRadio, svg, x, y, yAxis) {
 
 // pad y so we have space on top for radio buttons
 function getPaddedYDomain(plotData, attr) {
-  const minMaxY = d3.extent(plotData, d => d[attr])
-  const maxYWithPadding = minMaxY[1] + 0.3 * (minMaxY[1] - minMaxY[0])
-  return [minMaxY[0], maxYWithPadding]
+  const maxY = d3.max(plotData, d => d[attr])
+  const maxYWithPadding = 1.2 * maxY
+  return [0, maxYWithPadding]
 }
 
 function render(data, bufSizes) {
