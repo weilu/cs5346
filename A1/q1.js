@@ -91,7 +91,7 @@ function render(data, bufSizes) {
   const methods = plotData.map(d => d.method)
   var x = d3.scaleBand()
     .rangeRound([0, width])
-    .paddingInner(0.4)
+    .paddingInner(0.3)
     .domain(methods)
   var xAxis = g => g
       .attr("transform", `translate(0, ${height})`)
