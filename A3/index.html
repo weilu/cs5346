@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>CS5346 A3 - Julian Teh & Lu Wei</title>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link href="c3.min.css" rel="stylesheet">
 </head>
 
 <style>
@@ -21,6 +22,7 @@ body {
 div.task {
   margin: 50px 0;
   display: inline-block;
+  max-height: 50vh;
 }
 
 div.task h2{
@@ -58,14 +60,18 @@ rect.bordered {
     <h3>Julian Teh & Lu Wei</h3>
   </div>
   <div id='content'>
-    <div id="q1" class="task">
-      <h2>Top 10 ArXiv Authors: Publications by Year</h2>
-    </div>
+    <h2>Top 10 ArXiv Authors: Publications by Year</h2>
+    <div id="q1" class="task"></div>
+
+    <h2>ICSE Publications by Year</h2>
+    <div id="q3" class="task"></div>
   </div>
 
   <script src="d3.v5.js"></script>
+  <script src="c3.min.js"></script>
   <script type="module" src="utils.js"></script>
   <script type="module" src="q1.js"></script>
+  <script type="module" src="q3.js"></script>
   <script type="module" src="index.js"></script>
 </body>
 

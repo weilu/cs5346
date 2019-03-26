@@ -3,7 +3,7 @@ import util from './utils.js'
 
 var margin = { top: 70, right: 0, bottom: 100, left: 30 },
     width = 960 - margin.left - margin.right,
-    height = 1800 - margin.top - margin.bottom,
+    height = 1500 - margin.top - margin.bottom,
     gridSize = Math.floor(width / 12),
     legendElementWidth = gridSize*2
 
