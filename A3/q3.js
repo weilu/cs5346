@@ -14,6 +14,9 @@ export default function(data) {
     data: {
       columns: plotData,
       x: 'year'
+    },
+    zoom: {
+      enabled: true
     }
   })
 
@@ -62,6 +65,9 @@ export default function(data) {
       groups: [
         top10Topics
       ]
+    },
+    zoom: {
+      enabled: true
     }
   })
 }
