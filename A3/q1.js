@@ -1,10 +1,10 @@
 // referenced http://bl.ocks.org/tjdecke/5558084
 import util from './utils.js'
 
-var margin = { top: 70, right: 0, bottom: 100, left: 200 },
+var margin = { top: 20, right: 0, bottom: 100, left: 200 },
     width = 1000 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom,
-    gridSize = Math.floor(height / 12),
+    height = 500 - margin.top - margin.bottom,
+    gridSize = Math.floor(height / 10),
     legendElementWidth = gridSize*2
 
 function render(plotData, ys, xs) {
