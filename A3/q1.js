@@ -1,13 +1,13 @@
 // referenced http://bl.ocks.org/tjdecke/5558084
 import util from './utils.js'
 
-var margin = { top: 70, right: 0, bottom: 100, left: 30 },
-    width = 960 - margin.left - margin.right,
-    height = 1500 - margin.top - margin.bottom,
-    gridSize = Math.floor(width / 12),
+var margin = { top: 70, right: 0, bottom: 100, left: 200 },
+    width = 1000 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom,
+    gridSize = Math.floor(height / 12),
     legendElementWidth = gridSize*2
 
-function render(plotData, xs, ys) {
+function render(plotData, ys, xs) {
   var svg = d3.select("#q1").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -30,8 +30,8 @@ function render(plotData, xs, ys) {
       .text(d => d)
       .attr("x", (d, i) => i * gridSize)
       .attr("y", 0)
-      .style("text-anchor", "start")
-      .attr("transform", (d, i) => "translate(" + gridSize / 4 + ", -6) rotate(-30," + i * gridSize + ", 0)")
+      .style("text-anchor", "middle")
+      .attr("transform", (d, i) => "translate(" + gridSize / 2 + ", -6)")
       .attr("class", "timeLabel mono axis")
 
   var colorScale = d3.scaleSequential(d3.interpolateGreens)
@@ -61,8 +61,8 @@ function render(plotData, xs, ys) {
       })
 
   cardGroups.append("rect")
-      .attr("x", d => (xs.indexOf(d.name)) * gridSize)
-      .attr("y", d => (d.year - d3.min(ys)) * gridSize)
+      .attr("y", d => (ys.indexOf(d.name)) * gridSize)
+      .attr("x", d => (d.year - d3.min(xs)) * gridSize)
       .attr("rx", 4)
       .attr("ry", 4)
       .attr("class", "card bordered")
@@ -71,22 +71,23 @@ function render(plotData, xs, ys) {
       .style("fill", 'white')
       .transition()
         .duration(500)
-        .delay(d => xs.indexOf(d.name) * 15)
+        .delay(d => ys.indexOf(d.name) * 15)
         .style("fill", d => colorScale(d.count))
       .select('.card-text')
 
   cardGroups.append("text")
     .attr("class", "card-text")
     .attr("font-weight", "bold")
-    .attr("x", d => (xs.indexOf(d.name)) * gridSize + gridSize/2 - 5)
-    .attr("y", d => (d.year - d3.min(ys)) * gridSize + gridSize/2)
+    .attr("y", d => (ys.indexOf(d.name)) * gridSize + gridSize/2)
+    .attr("x", d => (d.year - d3.min(xs)) * gridSize + gridSize/2)
+    .style("text-anchor", "middle")
     .text(d => `${d.count}`)
 
   svg.selectAll(".card") // need to re-select to indicate update
     .data(plotData)
     .transition()
       .duration(500)
-      .delay(d => (xs.indexOf(d.name)) * 15)
+      .delay(d => (ys.indexOf(d.name)) * 15)
       .style("fill", d => colorScale(d.count))
 
   svg.selectAll(".card-group")
