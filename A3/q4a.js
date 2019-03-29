@@ -39,7 +39,7 @@ function render(dataNodes, dataLinks) {
     .selectAll("circle")
     .data(nodes)
     .join("circle")
-      .attr("r", 5)
+      .attr("r", d => d.paperCount)
       .attr("fill", color)
       .call(drag(simulation));
 
@@ -97,13 +97,14 @@ export default function(data) {
   })
 
   const sortedAuthors = Object.values(authorsById).sort((a, b) => b.papers - a.papers)
-  const top1000AuthorIds = sortedAuthors.slice(0, 1000).map(a => a.id)
+  const top1000Authors = {}
+  sortedAuthors.slice(0, 1000).forEach(a => top1000Authors[a.id] = a)
 
   const authors = {}
   const coauthors = {}
   data.forEach(function(d) {
     const selectedAuthors = d.authors.reduce(function(acc, curr) {
-      if (curr.ids && top1000AuthorIds.includes(curr.ids[0])) {
+      if (curr.ids && curr.ids[0] in top1000Authors) {
         acc.push(curr)
       }
       return acc
@@ -127,7 +128,11 @@ export default function(data) {
     }
   })
 
-  const nodes = Object.keys(authors).map(id => ({id: id, name: authors[id]}))
+  const nodes = Object.keys(authors).map(id => ({
+    id: id,
+    name: authors[id],
+    paperCount: top1000Authors[id].papers
+  }))
   const links = Object.keys(coauthors).map(function(linkId) {
     const sourceTarget = linkId.split('&')
     return {source: sourceTarget[0], target: sourceTarget[1], value: coauthors[linkId]}
