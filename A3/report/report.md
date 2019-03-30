@@ -40,11 +40,11 @@ The assignment teaches students to handle big data, either by filtering it or cl
         </tr>
         <tr>
             <td>4a</td>
-            <td></td>
+            <td>Force Directed Graph</td>
         </tr>
         <tr>
             <td>4b</td>
-            <td></td>
+            <td>Tree Map</td>
         </tr>
     </table>
 </html>
@@ -72,7 +72,7 @@ Task 4b: Tree Map
 
 For Task 3, we encoded the 10 most frequently occuring keywords per year in ICSE publications into a stacked area chart. We first counted and extracted the 10 most frequently occuring keywords, and collected these by year. Using the X-Axis for year, and the Y-Axis for the number of occurrences of the keywords, we mapped out the points, and then connected them using a spline with colored area.
 
-For Task 4 ,
+For Task 4a, we represented authors as nodes in a graph, and drew the relations between authors and co-authors by connecting them with lines if they had written a paper together. In addition, we defined the attractive force between authors as high if they were co-authors, and low if one had referenced another. This gave us a force-directed graph representing the relation of authors. 
 
 ### 3. Other Information
 None

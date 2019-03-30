@@ -13,8 +13,14 @@ function render(dataNodes) {
           .attr(
               'transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-  svg.append('g')
+  console.log(dataNodes);
+
+  var colorScale = d3.scaleSequential(d3.interpolateGreens)
+                       .domain(d3.extent(dataNodes, d => d.value))
+
+  svg.selectAll('g')
       .data(dataNodes)
+      .enter()
       .append('rect')
       .attr(
           'x',
@@ -31,9 +37,12 @@ function render(dataNodes) {
           function(d) {
             return d.x1 - d.x0;
           })
-      .attr('height', function(d) {
-        return d.y1 - d.y0;
-      });
+      .attr(
+          'height',
+          function(d) {
+            return d.y1 - d.y0;
+          })
+      .style('fill', d => colorScale(d.value))
 }
 
 export default function(data) {
@@ -50,10 +59,11 @@ export default function(data) {
   });
 
   const sortedAuthors =
-      Object.values(authors).sort((a, b) => b.papers - a.papers)
+      Object.values(authors).sort((a, b) => b.papers - a.papers);
 
   var authorNodes = {'name': 'authors', 'children': []};
-  Object.values(sortedAuthors).forEach((d) => authorNodes.children.push(d))
+  // sortedAuthors.slice(0, 10).map((d) => authorNodes.children.push(d));
+  Object.values(sortedAuthors).forEach((d) => authorNodes.children.push(d));
 
   var root = d3.hierarchy(authorNodes);
 
