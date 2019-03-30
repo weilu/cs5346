@@ -62,11 +62,11 @@ Task 3: Time Series Line Chart
 Task 3: Stacked Area Chart
 ![Task 3: Stacked Area Chart](task3_2.png)
 
-Task 4a: Stacked Area Chart
-![Task 4a: Stacked Area Chart](task4a_1.png)
+Task 4a: Force Directed Graph
+![Task 4a: Force Directed Graph](task4a_1.png)
 
-Task 4b: Stacked Area Chart
-![Task 4b: Stacked Area Chart](task4b_1.png)
+Task 4b: Tree Map
+![Task 4b: Tree Map](task4b_1.png)
 
 #### (iii)
 
