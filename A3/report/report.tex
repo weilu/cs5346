@@ -67,15 +67,18 @@ Preview images of visualizations
 
 \subsection{}
 
-\subsubsection*{Task 3}
+\subsubsection*{Task 3b: ICSE Publication Top 10 Keyword Trend}
 
-We encoded the 10 most frequently occuring keywords per year in ICSE publications into a stacked area chart. We first counted and extracted the 10 most frequently occuring keywords, and collected these by year. Using the X-Axis for year, and the Y-Axis for the number of occurrences of the keywords, we mapped out the points, and then connected them using a spline with colored area.
+
+\textbf{Visual Encoding \& Data Processing:} We encoded the 10 most frequently occuring keywords of all time in ICSE publications into a stacked area time series chart. We first counted and extracted the 10 most frequently occuring keywords of all time, and then collected their frequencies by year. Using the X-Axis for year, and the Y-Axis for the number of occurrences of the keywords, we mapped out the points, and then connected them using a spline with colored area.
+
+\textbf{Interactions:} Hovering over the points in the graph shows a tooltip including the year and exact counts of frequency of every popular keywords. Hovering over the legend highlights the area of the given keyword. Clicking on the keyword toggles to display and hide the corresponding visualization. Drag to zoom in and out of any specific time period of interest.
 
 \subsubsection*{Task 4a: ArXiv Top 1000 Author-Co-Author Network}
 
 \textbf{Visual Encoding:} We represented authors as nodes in a graph, and drew the relations between authors and co-authors by connecting them with lines if they had written at least one paper together. The size of every node corresponds to the number of publications of the author. We defined the attractive force between authors to be positively correlated with the number of publications they have co-authored together; visually the thicker the link, the more two authors have collaborated. This gave us a force-directed graph representing the relation of authors. Note that each group of authors that are connected through coauthorship is colored the same and they are positioned close together in a cluster. 
 
-\textbf{Interactions:} Hovering over a node shows the author name and his/her total number of publications; hovering over a link shows the number of collaborations between two authors. Every node can be dragged out of place for better inspection.
+\textbf{Interactions:} Hovering over a node shows the author name and his/her total number of publications; hovering over a link shows the number of collaborations between two authors. Every node can be dragged out of place for better inspection. 
 
 \textbf{Data Processing:} There are over 47,581 authors in the dataset of 21,557 ArXiv publications we extracted from the first 10,000,000 entries of the full dataset. Plotting all of the authors in a network graph is not visually meaningful, therefore we sorted the authors by their number of publications and picked the top 1000 authors to visualize. The paper count per author is attached to every author object for visualizing node sizes. We also tallied the paper count per author pair for link visualization in the network. We labeled node groups using depth first search and then projected the groups into a rainbow color scheme. We also singled out the nodes without any connection (authors without co-authors) and colored them in grey to reduce visual noise.
 
