@@ -69,6 +69,8 @@ For Task 3, we encoded the 10 most frequently occuring keywords per year in ICSE
 
 For Task 4a, we represented authors as nodes in a graph, and drew the relations between authors and co-authors by connecting them with lines if they had written a paper together. In addition, we defined the attractive force between authors as high if they were co-authors, and low if one had referenced another. This gave us a force-directed graph representing the relation of authors. 
 
+For Task 4b, we represented authors as a cell in a treemap, with the relative size of the cell determined by the number of publications originating from that author. Interestingly, we observed a phenomena that is well documented as Price's Law. Price's Law states that half the publications in any given field originate from a square root of all contributors. In our exploration of the data, we found that the relation between the number of authors and the number of papers was exponential in nature, and thus roughly half the publications are indeed written by a square root of the number of authors. In fact, when we observed this when we were exploring with only a subset of the data, but this held true when we used the full set of ICSE authors, which illustrates that Price's Law holds even at scale. 
+
 \section{Other Information}
 
 \end{document}
