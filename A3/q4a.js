@@ -4,7 +4,7 @@ var margin = { top: 0, right: 0, bottom: 100, left: 20 },
     height = 1200 - margin.top - margin.bottom
 
 function render(nodes, links) {
-  console.log(nodes)
+  // console.log(nodes)
 
   const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id))
@@ -31,7 +31,8 @@ function render(nodes, links) {
   function colorFn(d) {
     if (d.group != 0) {
       return colorScale(d.group)
-    } else {
+    }
+    else {
       return 'grey'
     }
   }
@@ -47,7 +48,7 @@ function render(nodes, links) {
       .call(drag(simulation));
 
   node.append("title")
-      .text(d => d.name);
+      .text(d => d.name + ' ' + d.id + ' group: ' + d.group);
 
   simulation.on("tick", () => {
     link
@@ -87,6 +88,21 @@ function render(nodes, links) {
   }
 }
 
+function buildLinks(selectedAuthors, coauthors) {
+  for (var i=0; i<selectedAuthors.length-1; i++) {
+    const id1 = selectedAuthors[i].id
+    for (var j=i+1; j<selectedAuthors.length; j++) {
+      const id2 = selectedAuthors[j].id
+      const linkId = [id1, id2].sort().join('&')
+      if (coauthors[linkId] == null) {
+        coauthors[linkId] = 1
+      } else {
+        coauthors[linkId] += 1
+      }
+    }
+  }
+}
+
 export default function(data) {
   const authorsById = {}
   data.forEach(function(paper){
@@ -123,14 +139,15 @@ export default function(data) {
   })
 
   const top1000Authors = {}
-  console.log(sortedAuthors.length)
-  sortedAuthors.slice(0, 1000).forEach(a => top1000Authors[a.id] = a)
+  // console.log(sortedAuthors.length)
+  sortedAuthors.slice(0, 100).forEach(a => top1000Authors[a.id] = a)
 
   const authors = {}
   const coauthors = {}
   data.forEach(function(d) {
     const selectedAuthors = d.authors.reduce(function(acc, curr) {
       if (curr.ids && curr.ids[0] in top1000Authors) {
+        curr.id = curr.ids[0]
         acc.push(curr)
       }
       return acc
@@ -140,34 +157,65 @@ export default function(data) {
     selectedAuthors.forEach(a => authors[a.ids[0]] = a.name)
 
     // prepare links
-    for (var i=0; i<selectedAuthors.length-1; i++) {
-      const id1 = selectedAuthors[i].ids[0]
-      for (var j=i+1; j<selectedAuthors.length; j++) {
-        const id2 = selectedAuthors[j].ids[0]
-        const linkId = [id1, id2].sort().join('&')
-        if (coauthors[linkId] == null) {
-          coauthors[linkId] = 1
-        } else {
-          coauthors[linkId] += 1
-        }
-      }
-    }
+    buildLinks(selectedAuthors, coauthors)
   })
 
-  function getGroup(author) {
-    const hasTopCoauthors = Object.keys(author.coauthors).some(a => a in top1000Authors)
-    return hasTopCoauthors ? author.group : 0
-  }
   const nodes = Object.keys(authors).map(id => ({
     id: id,
     name: authors[id],
     paperCount: top1000Authors[id].papers,
-    group: getGroup(top1000Authors[id])
+    group: top1000Authors[id].group
   }))
+
+  const coauthorGroups = {}
+  const authorsByGroup = d3.rollup(Object.values(top1000Authors), v => d3.set(v.map(n => n.id)), d => d.group)
+  function subsetDfs(author, parent) {
+    if (parent == null) {
+      author.subsetGroup = author.id
+    } else {
+      author.subsetGroup = parent.subsetGroup
+    }
+
+    Object.keys(author.coauthors).forEach(function(neighborId){
+      if (neighborId in top1000Authors) {
+        const neighbor = authorsById[neighborId]
+        if (neighbor.subsetGroup == null) subsetDfs(neighbor, author)
+      }
+    })
+  }
+  authorsByGroup.forEach(function(authorSet, gid) {
+    const authorIds = authorSet.values()
+    const selectedAuthorIds = []
+    authorIds.forEach(function(id){
+      const author = top1000Authors[id]
+      if (author.subsetGroup == null) {
+        selectedAuthorIds.push(id)
+        subsetDfs(author)
+      }
+    })
+    if (selectedAuthorIds.length > 1) {
+      const selectedAuthors = selectedAuthorIds.map(id => top1000Authors[id])
+      for (var i=0; i<selectedAuthors.length-1; i++) {
+        const id1 = selectedAuthors[i].id
+        const id2 = selectedAuthors[i+1].id
+        const linkId = [id1, id2].sort().join('&')
+        coauthorGroups[linkId] = 1
+      }
+    }
+  })
+
+
+  const groupLinks = Object.keys(coauthorGroups).map(function(linkId) {
+    const sourceTarget = linkId.split('&')
+    return {source: sourceTarget[0], target: sourceTarget[1], value: 0.01}
+  })
+  console.log(groupLinks)
+
   const links = Object.keys(coauthors).map(function(linkId) {
     const sourceTarget = linkId.split('&')
     return {source: sourceTarget[0], target: sourceTarget[1], value: coauthors[linkId]}
-  })
+  }).concat(groupLinks)
+  console.log(links)
 
   render(nodes, links)
 }
