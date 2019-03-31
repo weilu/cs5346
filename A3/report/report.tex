@@ -5,13 +5,15 @@
 \usepackage{microtype}
 
 \usepackage{graphicx}
+\usepackage{caption}
+
+\raggedright
 
 \begin{document}
 
 \newcommand{\insertimage}[2]{
   \begin{center}
-    \includegraphics[width=0.9\columnwidth]{#1} \\
-    \caption{#2}
+    \includegraphics[width=0.9\columnwidth]{#1}
   \end{center}
 }
 
@@ -25,10 +27,6 @@
     Julian Teh & A0163126M
 \end{tabular}
 \end{center}
-
-\pagebreak
-
-\tableofcontents
 
 \pagebreak
 
@@ -53,17 +51,23 @@ In this assignment we explore techniques involved in visualizing big data, inclu
 
 Preview images of visualizations
 
-\insertimage{task1_1.png}{Task 1: Heat Map}
+\insertimage{task1_1.png}
+\caption{Task 1: Heat Map}
 
-\insertimage{task2_1.png}{Task 2: Bar Chart}
+\insertimage{task2_1.png}
+\caption{Task 2: Bar Chart}
 
-\insertimage{task3_1.png}{Task 3: Time Series Line Chart}
+\insertimage{task3_1.png}
+\caption{Task 3: Time Series Line Chart}
 
-\insertimage{task3_2.png}{Task 3: Stacked Area Chart}
+\insertimage{task3_2.png}
+\caption{Task 3: Stacked Area Chart}
 
-\insertimage{task4a_1.png}{Task 4a: Force Directed Graph}
+\insertimage{task4a_1.png}
+\caption{Task 4a: Force Directed Graph}
 
-\insertimage{task4b_1.png}{Task 4b: Tree Map}
+\insertimage{task4b_1.png}
+\caption{Task 4b: Tree Map}
 
 \subsection{}
 
