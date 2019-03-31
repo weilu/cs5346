@@ -8,9 +8,12 @@
 
 \begin{document}
 
-\raggedright
-
-\newcommand{\insertimage}[1]{ \begin{center} \includegraphics[width=10cm]{#1} \end{center} }
+\newcommand{\insertimage}[2]{
+  \begin{center}
+    \includegraphics[width=0.9\columnwidth]{#1} \\
+    \caption{#2}
+  \end{center}
+}
 
 \title{ CS5346 Assignment 3 - CIRViz }
 
@@ -30,11 +33,12 @@
 \pagebreak
 
 \section{Introduction}
-The assignment teaches students to handle big data, either by filtering it or cleaning it, and then handling it to extract insights or to explore. In this assignment we split the work into two main portions; exploration of the data, and coding the final visualizations. For exploration we used Tableau with a small dataset to examine any interesting trends, and for the final visualization we used C3.js on top of D3.js to render with the full dataset. 
+In this assignment we explore techniques involved in visualizing big data, including cleaning, filtering and transformation. We then use the processed data for exploration and extraction of insights. We split the work into two main portions to be divided between the pair: data exploration and coding of the final visualizations. For exploration we used Tableau with a small dataset to examine any interesting trends, and for the final visualization we used C3.js and D3.js to render with the full dataset.
 
 \section{Visualizations - Purpose and Method}
 
 \subsection{}
+
 \begin{tabular} { l | l }
     Task & Visualization\\
     \hline
@@ -46,31 +50,37 @@ The assignment teaches students to handle big data, either by filtering it or cl
 \end{tabular}
 
 \subsection{}
-\insertimage{task1_1.png}
-Task 1: Heat Map
 
-\insertimage{task2_1.png}
-Task 2: Bar Chart
+Preview images of visualizations
 
-\insertimage{task3_1.png}
-Task 3: Time Series Line Chart
+\insertimage{task1_1.png}{Task 1: Heat Map}
 
-\insertimage{task3_2.png}
-Task 3: Stacked Area Chart
+\insertimage{task2_1.png}{Task 2: Bar Chart}
 
-\insertimage{task4a_1.png}
-Task 4a: Force Directed Graph
+\insertimage{task3_1.png}{Task 3: Time Series Line Chart}
 
-\insertimage{task4b_1.png}
-Task 4b: Tree Map
+\insertimage{task3_2.png}{Task 3: Stacked Area Chart}
+
+\insertimage{task4a_1.png}{Task 4a: Force Directed Graph}
+
+\insertimage{task4b_1.png}{Task 4b: Tree Map}
 
 \subsection{}
-For Task 3, we encoded the 10 most frequently occuring keywords per year in ICSE publications into a stacked area chart. We first counted and extracted the 10 most frequently occuring keywords, and collected these by year. Using the X-Axis for year, and the Y-Axis for the number of occurrences of the keywords, we mapped out the points, and then connected them using a spline with colored area.
 
-For Task 4a, we represented authors as nodes in a graph, and drew the relations between authors and co-authors by connecting them with lines if they had written a paper together. In addition, we defined the attractive force between authors as high if they were co-authors, and low if one had referenced another. This gave us a force-directed graph representing the relation of authors. 
+\subsubsection*{Task 3}
+
+We encoded the 10 most frequently occuring keywords per year in ICSE publications into a stacked area chart. We first counted and extracted the 10 most frequently occuring keywords, and collected these by year. Using the X-Axis for year, and the Y-Axis for the number of occurrences of the keywords, we mapped out the points, and then connected them using a spline with colored area.
+
+\subsubsection*{Task 4a: ArXiv Top 1000 Author-Co-Author Network}
+
+\textbf{Visual Encoding:} We represented authors as nodes in a graph, and drew the relations between authors and co-authors by connecting them with lines if they had written at least one paper together. The size of every node corresponds to the number of publications of the author. We defined the attractive force between authors to be positively correlated with the number of publications they have co-authored together; visually the thicker the link, the more two authors have collaborated. This gave us a force-directed graph representing the relation of authors. Note that each group of authors that are connected through coauthorship is colored the same and they are positioned close together in a cluster. 
+
+\textbf{Interactions:} Hovering over a node shows the author name and his/her total number of publications; hovering over a link shows the number of collaborations between two authors. Every node can be dragged out of place for better inspection.
+
+\textbf{Data Processing:} There are over 47,581 authors in the dataset of 21,557 ArXiv publications we extracted from the first 10,000,000 entries of the full dataset. Plotting all of the authors in a network graph is not visually meaningful, therefore we sorted the authors by their number of publications and picked the top 1000 authors to visualize. The paper count per author is attached to every author object for visualizing node sizes. We also tallied the paper count per author pair for link visualization in the network. We labeled node groups using depth first search and then projected the groups into a rainbow color scheme. We also singled out the nodes without any connection (authors without co-authors) and colored them in grey to reduce visual noise.
+
+\textbf{Insights:} Author Rodrigo C. de Lamare is very productive with 29 publications, but he only has one collaboration with one of the top 1000 authors, therefore he's a solo powerhouse. We can also see that there is one large group in the center (colored in purple) that connects majority of the top authors\footnote{Some nodes of the same color appear to be not connected to the rest of the nodes in the group because their co-authors that formed the links are not among the top 1000 authors}.
 
 For Task 4b, we represented authors as a cell in a treemap, with the relative size of the cell determined by the number of publications originating from that author. Interestingly, we observed a phenomena that is well documented as Price's Law. Price's Law states that half the publications in any given field originate from a square root of all contributors. In our exploration of the data, we found that the relation between the number of authors and the number of papers was exponential in nature, and thus roughly half the publications are indeed written by a square root of the number of authors. In fact, when we observed this when we were exploring with only a subset of the data, but this held true when we used the full set of ICSE authors, which illustrates that Price's Law holds even at scale. 
-
-\section{Other Information}
 
 \end{document}
