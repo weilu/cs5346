@@ -81,6 +81,13 @@ We encoded the 10 most frequently occuring keywords per year in ICSE publication
 
 \textbf{Insights:} Author Rodrigo C. de Lamare is very productive with 29 publications, but he only has one collaboration with one of the top 1000 authors, therefore he's a solo powerhouse. We can also see that there is one large group in the center (colored in purple) that connects majority of the top authors\footnote{Some nodes of the same color appear to be not connected to the rest of the nodes in the group because their co-authors that formed the links are not among the top 1000 authors}.
 
-For Task 4b, we represented authors as a cell in a treemap, with the relative size of the cell determined by the number of publications originating from that author. Interestingly, we observed a phenomena that is well documented as Price's Law. Price's Law states that half the publications in any given field originate from a square root of all contributors. In our exploration of the data, we found that the relation between the number of authors and the number of papers was exponential in nature, and thus roughly half the publications are indeed written by a square root of the number of authors. In fact, when we observed this when we were exploring with only a subset of the data, but this held true when we used the full set of ICSE authors, which illustrates that Price's Law holds even at scale. 
+\subsubsection*{Task4b: ArXiV Author Contribution}
+\textbf{Visual Encoding:} We represented authors as cells in a treemap, and drew the relation between author and contribution using the size and color of the cell. Both size and color of each cell represent the relative number of publications made by the author, and the data is sorted in descending number of publications. This gives us a treemap that has cells of decreasing sizes from left to right. 
+
+\textbf{Interactions:} Hovering over a cell shows the author name and his/her total number of publications. 
+
+\textbf{Data Processing:} There are over 47,581 authors in the dataset of 21,557 ArXiv publications, and we use all of these to generate the treemap. We sorted the authors by number of publications, but did no other data manipulation to preserve the full scale of data so as to also preserve the insights we had observed. 
+
+\textbf{Insights:} Interestingly, we observed a phenomena that is well documented as Price's Law. Price's Law states that half the publications in any given field originate from a square root of all contributors. In our exploration of the data, we found that the relation between the number of authors and the number of papers was exponential in nature, and thus roughly half the publications are indeed written by a square root of the number of authors. In fact, when we observed this when we were exploring with only a subset of the data, but this held true when we used the full set of ArXiV authors, which illustrates that Price's Law holds even at scale. 
 
 \end{document}
