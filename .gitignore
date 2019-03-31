@@ -5,3 +5,6 @@
 *.jpg
 *.png
 2017_Assignments/
+
+!A3/report/*.png
+!A3/report/*.pdf
