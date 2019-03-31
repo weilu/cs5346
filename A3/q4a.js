@@ -1,6 +1,6 @@
 // Referenced https://observablehq.com/@d3/disjoint-force-directed-graph
 var margin = { top: 0, right: 0, bottom: 100, left: 20 },
-    width = 1200 - margin.left - margin.right,
+    width = 1100 - margin.left - margin.right,
     height = 1200 - margin.top - margin.bottom
 
 function render(nodes, links) {
@@ -42,13 +42,16 @@ function render(nodes, links) {
     }
   }
 
+  const paperCountMinMax = d3.extent(nodes.map(d => d.paperCount))
+  const paperCountRange = paperCountMinMax[1] - paperCountMinMax[0]
   const node = svg.append("g")
       .attr("stroke", "#fff")
       .attr("stroke-width", 1.5)
     .selectAll("circle")
     .data(nodes)
     .join("circle")
-      .attr("r", d => d.paperCount)
+      // scale radius to range 4 - 14
+      .attr("r", d => (d.paperCount - paperCountMinMax[0])/paperCountRange * 10 + 4)
       .attr("fill", colorFn)
       .call(drag(simulation));
 
