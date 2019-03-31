@@ -3,48 +3,14 @@ var margin = { top: 0, right: 0, bottom: 100, left: 20 },
     width = 1200 - margin.left - margin.right,
     height = 1200 - margin.top - margin.bottom
 
-function centroid(nodes) {
-  let x = 0;
-  let y = 0;
-  let z = 0;
-  for (const d of nodes) {
-    let k = d.paperCount ** 2;
-    x += d.x * k;
-    y += d.y * k;
-    z += k;
-  }
-  return {x: x / z, y: y / z};
-}
-
-function forceCluster() {
-  const strength = 0.3;
-  let nodes;
-
-  function force(alpha) {
-    const centroids = d3.rollup(nodes, centroid, d => d.group);
-    const l = alpha * strength;
-    for (const d of nodes) {
-      const {x: cx, y: cy} = centroids.get(d.group);
-      d.vx -= (d.x - cx) * l;
-      d.vy -= (d.y - cy) * l;
-    }
-  }
-
-  force.initialize = _ => nodes = _;
-
-  return force;
-}
-
 function render(nodes, links) {
   console.log(nodes)
 
   const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id))
-      // .force("charge", d3.forceManyBody())
+      .force("charge", d3.forceManyBody())
       .force("x", d3.forceX())
-      .force("y", d3.forceY())
-      .force("cluster", forceCluster())
-      .force('collide', d3.forceCollide(d => d.paperCount + 10).strength(0.7))
+      .force("y", d3.forceY());
 
   const svg = d3.select('#q4a').append("svg")
       .attr("width", width + margin.left + margin.right)
