@@ -25,6 +25,9 @@ function render(nodes, links) {
     .join("line")
       .attr("stroke-width", d => d.value < 1 ? 0 : Math.sqrt(d.value));
 
+  link.append("title")
+      .text(d => d.value + ' collaborations');
+
   const allGroups = d3.set(nodes.map(n => n.group)).values().map(d => parseInt(d))
   const colorScale = d3.scaleSequential(d3.interpolateRainbow)
     .domain(d3.range(allGroups.length));
