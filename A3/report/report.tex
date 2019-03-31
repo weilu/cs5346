@@ -1,78 +1,74 @@
-## CS5346 Assignment 3 - CIRViz
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[pdflang={en-US},pdftex]{hyperref}
+\usepackage{microtype}
 
-<html>
-    <table>
-        <tr>
-            <td>Student Name</td>
-            <td>Lu Wei</td>
-            <td>Julian Teh</td>
-        </tr>
-        <tr>
-            <td>Matriculation Number</td>
-            <td>A0040955E</td>
-            <td>A0163126M</td>
-        </tr>
-    </table>
-</html>
+\usepackage{graphicx}
 
-### 1. Introduction
+\begin{document}
+
+\raggedright
+
+\newcommand{\insertimage}[1]{ \begin{center} \includegraphics[width=10cm]{#1} \end{center} }
+
+\title{ CS5346 Assignment 3 - CIRViz }
+
+\maketitle
+
+\begin{center}
+\begin{tabular} { l | l }
+    Lu Wei & A0040955E \\
+    Julian Teh & A0163126M
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Introduction}
 The assignment teaches students to handle big data, either by filtering it or cleaning it, and then handling it to extract insights or to explore. In this assignment we split the work into two main portions; exploration of the data, and coding the final visualizations. For exploration we used Tableau with a small dataset to examine any interesting trends, and for the final visualization we used C3.js on top of D3.js to render with the full dataset. 
 
-### 2. Visualizations - Purpose and Method
-#### (i)
-<html>
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Visualization</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Heatmap</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Categorical Bar Chart</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Time Series Line Chart, Stacked Area Chart</td>
-        </tr>
-        <tr>
-            <td>4a</td>
-            <td>Force Directed Graph</td>
-        </tr>
-        <tr>
-            <td>4b</td>
-            <td>Tree Map</td>
-        </tr>
-    </table>
-</html>
+\section{Visualizations - Purpose and Method}
 
-#### (ii)
+\subsection{}
+\begin{tabular} { l | l }
+    Task & Visualization\\
+    \hline
+    1 & Heatmap\\
+    2 & Categorical Bar Chart \\
+    3 & Time Series Line Chart, Stacked Area Chart \\
+    4a & Force Directed Graph\\
+    4b & Tree Map
+\end{tabular}
+
+\subsection{}
+\insertimage{task1_1.png}
 Task 1: Heat Map
-![Task 1: Heat Map](task1_1.png)
 
+\insertimage{task2_1.png}
 Task 2: Bar Chart
-![Task 2: Bar Chart](task2_1.png)
 
+\insertimage{task3_1.png}
 Task 3: Time Series Line Chart
-![Task 3: Time Series Line Chart](task3_1.png)
 
+\insertimage{task3_2.png}
 Task 3: Stacked Area Chart
-![Task 3: Stacked Area Chart](task3_2.png)
 
+\insertimage{task4a_1.png}
 Task 4a: Force Directed Graph
-![Task 4a: Force Directed Graph](task4a_1.png)
 
+\insertimage{task4b_1.png}
 Task 4b: Tree Map
-![Task 4b: Tree Map](task4b_1.png)
 
-#### (iii)
-
+\subsection{}
 For Task 3, we encoded the 10 most frequently occuring keywords per year in ICSE publications into a stacked area chart. We first counted and extracted the 10 most frequently occuring keywords, and collected these by year. Using the X-Axis for year, and the Y-Axis for the number of occurrences of the keywords, we mapped out the points, and then connected them using a spline with colored area.
 
 For Task 4a, we represented authors as nodes in a graph, and drew the relations between authors and co-authors by connecting them with lines if they had written a paper together. In addition, we defined the attractive force between authors as high if they were co-authors, and low if one had referenced another. This gave us a force-directed graph representing the relation of authors. 
 
-### 3. Other Information
-None
+\section{Other Information}
+
+\end{document}
