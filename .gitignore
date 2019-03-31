@@ -7,4 +7,4 @@
 2017_Assignments/
 
 !A3/report/*.png
-!A3/report/*.pdf
+!A3/**/*.pdf
