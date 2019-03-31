@@ -4,8 +4,6 @@ var margin = { top: 0, right: 0, bottom: 100, left: 20 },
     height = 1200 - margin.top - margin.bottom
 
 function render(nodes, links) {
-  // console.log(nodes)
-
   const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id))
       .force("charge", d3.forceManyBody())
@@ -25,12 +23,16 @@ function render(nodes, links) {
     .selectAll("line")
     .data(links)
     .join("line")
-      .attr("stroke-width", d => Math.sqrt(d.value));
+      .attr("stroke-width", d => d.value < 1 ? 0 : Math.sqrt(d.value));
 
-  const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
+  const allGroups = d3.set(nodes.map(n => n.group)).values().map(d => parseInt(d))
+  const colorScale = d3.scaleSequential(d3.interpolateRainbow)
+    .domain(d3.range(allGroups.length));
+
   function colorFn(d) {
     if (d.group != 0) {
-      return colorScale(d.group)
+      const colorIndex = allGroups.indexOf(d.group) / allGroups.length
+      return colorScale(colorIndex)
     }
     else {
       return 'grey'
@@ -48,7 +50,7 @@ function render(nodes, links) {
       .call(drag(simulation));
 
   node.append("title")
-      .text(d => d.name + ' ' + d.id + ' group: ' + d.group);
+      .text(d => d.name + ': ' + d.paperCount + ' publications');
 
   simulation.on("tick", () => {
     link
@@ -139,8 +141,7 @@ export default function(data) {
   })
 
   const top1000Authors = {}
-  // console.log(sortedAuthors.length)
-  sortedAuthors.slice(0, 100).forEach(a => top1000Authors[a.id] = a)
+  sortedAuthors.slice(0, 1000).forEach(a => top1000Authors[a.id] = a)
 
   const authors = {}
   const coauthors = {}
@@ -204,18 +205,22 @@ export default function(data) {
     }
   })
 
-
   const groupLinks = Object.keys(coauthorGroups).map(function(linkId) {
     const sourceTarget = linkId.split('&')
     return {source: sourceTarget[0], target: sourceTarget[1], value: 0.01}
   })
-  console.log(groupLinks)
 
   const links = Object.keys(coauthors).map(function(linkId) {
     const sourceTarget = linkId.split('&')
     return {source: sourceTarget[0], target: sourceTarget[1], value: coauthors[linkId]}
   }).concat(groupLinks)
-  console.log(links)
+
+  const connectedNodeIds = d3.set(links.reduce((acc, curr) => acc.concat([curr.source, curr.target]), [])).values()
+  nodes.forEach(function(n){
+    if (!connectedNodeIds.includes(n.id)) {
+      n.group = 0
+    }
+  })
 
   render(nodes, links)
 }
