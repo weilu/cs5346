@@ -3,9 +3,8 @@ var margin = { top: 0, right: 0, bottom: 100, left: 20 },
     width = 1200 - margin.left - margin.right,
     height = 1200 - margin.top - margin.bottom
 
-function render(dataNodes, dataLinks) {
-  const links = dataLinks.map(d => Object.create(d));
-  const nodes = dataNodes.map(d => Object.create(d));
+function render(nodes, links) {
+  console.log(nodes)
 
   const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id))
@@ -28,9 +27,13 @@ function render(dataNodes, dataLinks) {
     .join("line")
       .attr("stroke-width", d => Math.sqrt(d.value));
 
-  function color() {
-    const scale = d3.scaleOrdinal(d3.schemeCategory10);
-    return d => scale(d.group);
+  const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
+  function colorFn(d) {
+    if (d.group != 0) {
+      return colorScale(d.group)
+    } else {
+      return 'grey'
+    }
   }
 
   const node = svg.append("g")
@@ -40,22 +43,22 @@ function render(dataNodes, dataLinks) {
     .data(nodes)
     .join("circle")
       .attr("r", d => d.paperCount)
-      .attr("fill", color)
+      .attr("fill", colorFn)
       .call(drag(simulation));
 
   node.append("title")
-      .text(d => d.id);
+      .text(d => d.name);
 
   simulation.on("tick", () => {
     link
         .attr("x1", d => d.source.x)
         .attr("y1", d => d.source.y)
         .attr("x2", d => d.target.x)
-        .attr("y2", d => d.target.y);
+        .attr("y2", d => d.target.y)
 
     node
         .attr("cx", d => d.x)
-        .attr("cy", d => d.y);
+        .attr("cy", d => d.y)
   });
 
   function drag(simulation) {
@@ -87,17 +90,40 @@ function render(dataNodes, dataLinks) {
 export default function(data) {
   const authorsById = {}
   data.forEach(function(paper){
+    const paperAuthors = paper.authors.reduce((acc, curr) => acc.concat(curr.ids), [])
     paper.authors.forEach((d) => d.ids.forEach(function(id) {
       if (authorsById[id] == null) {
-        authorsById[id] = {id: id, papers: 1}
-      } else {
-        authorsById[id].papers += 1
+        authorsById[id] = {id: id, papers: 0, coauthors: {}}
       }
+      authorsById[id].papers += 1
+      paperAuthors.forEach(function(a){
+        if (a !== id) { authorsById[id].coauthors[a] = 1 }
+      })
     }))
   })
 
   const sortedAuthors = Object.values(authorsById).sort((a, b) => b.papers - a.papers)
+
+  function dfs(author, parent) {
+    if (parent == null) {
+      author.group = parseInt(author.id)
+    } else {
+      author.group = parseInt(parent.group)
+    }
+
+    Object.keys(author.coauthors).forEach(function(neighborId){
+      const neighbor = authorsById[neighborId]
+      if (neighbor.group == null) dfs(neighbor, author)
+    })
+  }
+
+  Object.keys(authorsById).forEach(function(id){
+    const author = authorsById[id]
+    if (author.group == null) dfs(author)
+  })
+
   const top1000Authors = {}
+  console.log(sortedAuthors.length)
   sortedAuthors.slice(0, 1000).forEach(a => top1000Authors[a.id] = a)
 
   const authors = {}
@@ -128,10 +154,15 @@ export default function(data) {
     }
   })
 
+  function getGroup(author) {
+    const hasTopCoauthors = Object.keys(author.coauthors).some(a => a in top1000Authors)
+    return hasTopCoauthors ? author.group : 0
+  }
   const nodes = Object.keys(authors).map(id => ({
     id: id,
     name: authors[id],
-    paperCount: top1000Authors[id].papers
+    paperCount: top1000Authors[id].papers,
+    group: getGroup(top1000Authors[id])
   }))
   const links = Object.keys(coauthors).map(function(linkId) {
     const sourceTarget = linkId.split('&')
