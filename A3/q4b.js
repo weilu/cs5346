@@ -13,10 +13,20 @@ function render(dataNodes) {
           .attr(
               'transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-  console.log(dataNodes);
+  var div = d3.select('#q4b')
+                .append('div')
+                .style('position', 'absolute')
+                .style('opacity', 0)
+                .style('text-align', 'center')
+                .style('padding', '2px')
+                .style('border', '1px')
+                .style('background', 'white')
+                .style('width', 100)
+                .style('height', 40)
+                .style('pointer-events', 'none');
 
   var colorScale = d3.scaleSequential(d3.interpolateGreens)
-                       .domain(d3.extent(dataNodes, d => d.value))
+                       .domain(d3.extent(dataNodes, d => d.value).reverse())
 
   svg.selectAll('g')
       .data(dataNodes)
@@ -43,6 +53,18 @@ function render(dataNodes) {
             return d.y1 - d.y0;
           })
       .style('fill', d => colorScale(d.value))
+      .on('mouseover',
+          function(d) {
+            if (d.data.papers === undefined) return;
+            div.transition().duration(200).style('opacity', .9);
+            div.html(d.data.name + ': ' + d.data.papers)
+                .style('left', (d3.event.pageX) + 'px')
+                .style('top', (d3.event.pageY - 28) + 'px');
+            // .attr('transform', 'translate(' + d.x0 + ',' + d.y0 + ')')
+          })
+      .on('mouseout', function(d) {
+        div.transition().duration(500).style('opacity', 0);
+      })
 }
 
 export default function(data) {
@@ -62,7 +84,6 @@ export default function(data) {
       Object.values(authors).sort((a, b) => b.papers - a.papers);
 
   var authorNodes = {'name': 'authors', 'children': []};
-  // sortedAuthors.slice(0, 10).map((d) => authorNodes.children.push(d));
   Object.values(sortedAuthors).forEach((d) => authorNodes.children.push(d));
 
   var root = d3.hierarchy(authorNodes);
