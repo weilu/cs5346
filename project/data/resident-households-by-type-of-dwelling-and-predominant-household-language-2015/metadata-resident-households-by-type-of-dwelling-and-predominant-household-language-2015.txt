@@ -1,0 +1,102 @@
+# Metadata for Resident Households by Type of Dwelling and Predominant Household Language, 2015
+---
+Identifier: '8e786dc8-4a51-40d2-b479-34960284a1b4'
+Name: 'resident-households-by-type-of-dwelling-and-predominant-household-language-2015'
+Title: 'Resident Households by Type of Dwelling and Predominant Household Language,
+  2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Predominant Household Language'
+  - 'Resident Households'
+  - 'Type of Dwelling'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8288&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-11-05T04:33:43.656047'
+Resources:
+  -
+    Identifier: '66e8de4e-0fd9-469f-9c56-be0cdc438467'
+    Title: 'Resident Households by Type of Dwelling(Broad) and Predominant Household
+      Language'
+    Url: 'https://storage.data.gov.sg/resident-households-by-type-of-dwelling-and-predominant-household-language-2015/resources/resident-households-by-type-of-dwelling-broad-and-predominant-household-language-2018-11-05T04-33-43Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-11-05T04:33:43.033181'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Predominant Household Language'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: '29f868c4-d221-4a25-b5e7-df2e58277641'
+    Title: 'Resident Households by Type of Dwelling(HDB) and Predominant Household
+      Language'
+    Url: 'https://storage.data.gov.sg/resident-households-by-type-of-dwelling-and-predominant-household-language-2015/resources/resident-households-by-type-of-dwelling-hdb-and-predominant-household-language-2018-05-31T07-15-30Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-05-31T07:15:30.569917'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Predominant Household Language'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Type of Dwelling (HDB)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'

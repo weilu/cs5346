@@ -1,0 +1,52 @@
+year,level_1,level_2,level_3,value
+2015,Total,"HDB Dwellings","1- and 2-Room Flats",41.4
+2015,Total,"HDB Dwellings","3-Room Flats",166.9
+2015,Total,"HDB Dwellings","4-Room Flats",359.6
+2015,Total,"HDB Dwellings","5-Room and Executive Flats",280.8
+2015,English,"HDB Dwellings","1- and 2-Room Flats",6.4
+2015,English,"HDB Dwellings","3-Room Flats",31.4
+2015,English,"HDB Dwellings","4-Room Flats",90.9
+2015,English,"HDB Dwellings","5-Room and Executive Flats",124.4
+2015,Mandarin,"HDB Dwellings","1- and 2-Room Flats",8.9
+2015,Mandarin,"HDB Dwellings","3-Room Flats",62.1
+2015,Mandarin,"HDB Dwellings","4-Room Flats",149.4
+2015,Mandarin,"HDB Dwellings","5-Room and Executive Flats",94.8
+2015,Chinese Dialects- Total,"HDB Dwellings","1- and 2-Room Flats",8.7
+2015,Chinese Dialects- Total,"HDB Dwellings","3-Room Flats",38
+2015,Chinese Dialects- Total,"HDB Dwellings","4-Room Flats",53
+2015,Chinese Dialects- Total,"HDB Dwellings","5-Room and Executive Flats",25
+2015,Chinese Dialects- Hokkien,"HDB Dwellings","1- and 2-Room Flats",5.2
+2015,Chinese Dialects- Hokkien,"HDB Dwellings","3-Room Flats",18.2
+2015,Chinese Dialects- Hokkien,"HDB Dwellings","4-Room Flats",25.6
+2015,Chinese Dialects- Hokkien,"HDB Dwellings","5-Room and Executive Flats",9.7
+2015,Chinese Dialects- Teochew,"HDB Dwellings","1- and 2-Room Flats",1.1
+2015,Chinese Dialects- Teochew,"HDB Dwellings","3-Room Flats",7.5
+2015,Chinese Dialects- Teochew,"HDB Dwellings","4-Room Flats",11.9
+2015,Chinese Dialects- Teochew,"HDB Dwellings","5-Room and Executive Flats",5.4
+2015,Chinese Dialects- Cantonese,"HDB Dwellings","1- and 2-Room Flats",2.1
+2015,Chinese Dialects- Cantonese,"HDB Dwellings","3-Room Flats",10.2
+2015,Chinese Dialects- Cantonese,"HDB Dwellings","4-Room Flats",12.2
+2015,Chinese Dialects- Cantonese,"HDB Dwellings","5-Room and Executive Flats",7.7
+2015,Chinese Dialects- Other Chinese Dialects,"HDB Dwellings","1- and 2-Room Flats",0.2
+2015,Chinese Dialects- Other Chinese Dialects,"HDB Dwellings","3-Room Flats",2.1
+2015,Chinese Dialects- Other Chinese Dialects,"HDB Dwellings","4-Room Flats",3.3
+2015,Chinese Dialects- Other Chinese Dialects,"HDB Dwellings","5-Room and Executive Flats",2.2
+2015,Malay,"HDB Dwellings","1- and 2-Room Flats",14.8
+2015,Malay,"HDB Dwellings","3-Room Flats",22.3
+2015,Malay,"HDB Dwellings","4-Room Flats",45.2
+2015,Malay,"HDB Dwellings","5-Room and Executive Flats",23
+2015,Indian Languages- Total,"HDB Dwellings","1- and 2-Room Flats",2.6
+2015,Indian Languages- Total,"HDB Dwellings","3-Room Flats",11.3
+2015,Indian Languages- Total,"HDB Dwellings","4-Room Flats",17.9
+2015,Indian Languages- Total,"HDB Dwellings","5-Room and Executive Flats",12
+2015,Indian Languages- Tamil,"HDB Dwellings","1- and 2-Room Flats",2.4
+2015,Indian Languages- Tamil,"HDB Dwellings","3-Room Flats",9.2
+2015,Indian Languages- Tamil,"HDB Dwellings","4-Room Flats",14.5
+2015,Indian Languages- Tamil,"HDB Dwellings","5-Room and Executive Flats",9.2
+2015,Indian Languages- Other Indian Languages,"HDB Dwellings","1- and 2-Room Flats",0.2
+2015,Indian Languages- Other Indian Languages,"HDB Dwellings","3-Room Flats",2.1
+2015,Indian Languages- Other Indian Languages,"HDB Dwellings","4-Room Flats",3.5
+2015,Indian Languages- Other Indian Languages,"HDB Dwellings","5-Room and Executive Flats",2.8
+2015,Others,"HDB Dwellings","3-Room Flats",1.9
+2015,Others,"HDB Dwellings","4-Room Flats",3.3
+2015,Others,"HDB Dwellings","5-Room and Executive Flats",1.7
