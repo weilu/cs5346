@@ -1,0 +1,102 @@
+function getPercentageMap(data) {
+  const total = d3.sum(data.map(d => d.value))
+  return data.reduce((acc, d) => {
+    acc[d.housing] = d.value/total
+    return acc
+  }, {})
+}
+
+function toComparisonWord(a, b) {
+  return a > b ? 'higher' : 'lower'
+}
+
+function formatPercent(n) {
+  return d3.format(".1%")(n)
+}
+
+export default function(data, hdbData, keyword) {
+  const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
+  const plotData = totalData.map(d => [d.housing, d.value])
+  var chart = c3.generate({
+    bindto: `#${keyword} .viz .leftviz`,
+    data: {
+      type : 'donut',
+      columns: plotData,
+    },
+    donut: {
+      title: "All Housing Types",
+    }
+  })
+  const totalPercent = getPercentageMap(totalData)
+
+  // HDB plot
+  const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')
+  const plotHDBData = totalHDBData.map(d => [d.housing, d.value])
+  var hdbChart = c3.generate({
+    bindto: `#${keyword} .viz .rightviz`,
+    data: {
+      type : 'donut',
+      columns: plotHDBData,
+    },
+    donut: {
+      title: "HDB Housing Types",
+    },
+    color: {
+      pattern: d3.schemeBlues[plotHDBData.length + 2]
+    }
+  })
+  const totalHDBPercent = getPercentageMap(totalHDBData)
+
+  // populate select options
+  const langData = data.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
+  var demographics = d3.set(langData.map(d => d.demographic)).values()
+  const langSelect = document.querySelector(`#type-${keyword}`);
+  demographics.forEach(l => langSelect.insertAdjacentHTML('afterbegin', '<option value="' + l + '">' + l + '</option>'))
+
+  // on select visualize donut chart
+  langSelect.addEventListener('change', (event) => {
+    const filteredLangData = langData.filter(d => d.demographic == event.target.value)
+    const plotData = filteredLangData.map(d => [d.housing, d.value])
+
+    chart.load({
+      columns: plotData
+    })
+    d3.select(`#${keyword} .viz .c3-chart-arcs-title`)
+      .node().innerHTML = `${event.target.value} Speakers`
+
+    // update HDB chart
+    const langHDBData = hdbData.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
+    const filteredLangHDBData = langHDBData.filter(d => d.demographic == event.target.value)
+    const plotHDBData = filteredLangHDBData.map(d => [d.housing, d.value])
+    hdbChart.load({
+      columns: plotHDBData
+    })
+
+    // Construct & show commentary text
+    const langPercent = getPercentageMap(filteredLangData)
+    const maxType = filteredLangData[d3.scan(filteredLangData, (a, b) => b.value - a.value)]
+    const percentage = langPercent[maxType.housing]
+    const totalPercentage = totalPercent[maxType.housing]
+
+    const langHDBPercent = getPercentageMap(filteredLangHDBData)
+    const maxHDBType = filteredLangHDBData[d3.scan(filteredLangHDBData, (a, b) => b.value - a.value)]
+    const hdbPercentage = langHDBPercent[maxHDBType.housing]
+    const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
+
+    const resultDiv = document.querySelector(`#${keyword} .result`)
+    resultDiv.innerHTML = `<p>A majority (${formatPercent(percentage)}) 
+                           of ${event.target.value} speakers live in ${maxType.housing},
+                           which is ${toComparisonWord(percentage, totalPercentage)} than
+                           the national average of ${formatPercent(totalPercentage)}. 
+                           Among the ${event.target.value} speaking HDB residents,
+                           the majority (${formatPercent(hdbPercentage)})
+                           live in ${maxHDBType.housing},
+                           which is ${toComparisonWord(hdbPercentage, totalHDBPercentage)} than
+                           the national average of ${formatPercent(totalHDBPercentage)}.</p>`
+    resultDiv.innerHTML += '<button>Next</button>'
+    if (!resultDiv.className.includes('fade-in')) {
+      resultDiv.className += ' fade-in'
+    }
+
+  })
+}

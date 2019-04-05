@@ -28,6 +28,11 @@ text {
   max-height: 80vh;
 }
 
+.viz div {
+  width: 49.5%;
+  display: inline-block;
+}
+
 .question {
   display: block;
   margin: 0 auto;
@@ -36,7 +41,6 @@ text {
 }
 
 .fade-in {
-  text-align: right;
   color: #1B4F72;
   font-weight: 900;
   opacity: 1;
@@ -44,6 +48,10 @@ text {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 1s;
+}
+
+.fade-in button {
+  float: right;
 }
 
 @keyframes fadeInOpacity {
@@ -65,21 +73,24 @@ text {
     <h3>Team 13: Lee Zi Shan, Sia Wei Kiat Jason, Teh Wei Liang Julian, Lu Wei</h3>
   </div>
   <div id='content'>
+    <h2>What type of housing is popular for my demographics?</h2>
     <div id='language' class='question'>
-      <h2>What type of housing is popular for my demographics?</h2>
       <label for="type-language">My Predominant Household Language is</label>
       <select id="type-language">
         <option value="" selected disabled hidden>choose one</option>
       </select>
-      <div id='language-viz' class='viz'></div>
-      <div id='language-result'></div>
+      <div class='viz'>
+        <div class='leftviz'></div>
+        <div class='rightviz'></div>
+      </div>
+      <div class='result'></div>
     </div>
   </div>
 
   <script src="lib/d3.v5.min.js"></script>
   <script src="lib/d3-array.min.js"></script>
   <script src="lib/c3.min.js"></script>
-  <script type="module" src="housing_type_language.js"></script>
+  <script type="module" src="housing_type.js"></script>
   <script type="module" src="index.js"></script>
 </body>
 
