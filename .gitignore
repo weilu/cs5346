@@ -6,5 +6,9 @@
 *.png
 2017_Assignments/
 
+A3/s2*
+A3/sample-pretty.json
+A3/manifest.txt
+A3/report/*
 !A3/report/*.png
-!A3/**/*.pdf
+!A3/report/*.pdf
