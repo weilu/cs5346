@@ -1,4 +1,4 @@
-import housingType from './housing_type.js'
+import housingTypeLanguage from './housing_type_language.js'
 
 d3.csv('data/resident-households-by-type-of-dwelling-and-predominant-household-language-2015/resident-households-by-type-of-dwelling-broad-and-predominant-household-language.csv', function(d) {
   return {
@@ -6,4 +6,4 @@ d3.csv('data/resident-households-by-type-of-dwelling-and-predominant-household-l
     housing: d.level_2,
     value: +d.value
   }
-}).then(housingType)
+}).then(housingTypeLanguage)
