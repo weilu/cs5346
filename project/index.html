@@ -34,6 +34,26 @@ text {
   max-width: 100vh;
   text-align: left;
 }
+
+.fade-in {
+  text-align: right;
+  color: #1B4F72;
+  font-weight: 900;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
 
 <body>
@@ -52,6 +72,7 @@ text {
         <option value="" selected disabled hidden>choose one</option>
       </select>
       <div id='language-viz' class='viz'></div>
+      <div id='language-result'></div>
     </div>
   </div>
 
