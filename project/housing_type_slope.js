@@ -2,9 +2,11 @@ import util from './utils.js'
 
 // modified from https://bl.ocks.org/tlfrd/042b2318c8767bad7a485098fbf760fc
 function render(data, keyword, demographic) {
-  var margin = {top: 50, right: 100, bottom: 50, left: 100};
-
   const containerSelector = `#${keyword} .bottomleftviz`
+  d3.select(containerSelector).select('svg').remove()
+
+  var margin = {top: 50, right: 150, bottom: 50, left: 150};
+
   const containerEl = document.querySelector(containerSelector)
   var width = containerEl.clientWidth - margin.left - margin.right,
     height = containerEl.clientWidth - margin.top - margin.bottom;
