@@ -1,0 +1,113 @@
+# Metadata for Resident Population Aged 15 Years and Over by Type of Dwelling, Religion and Sex, 2015
+---
+Identifier: '745152be-0f83-43af-9cb1-928c18902c30'
+Name: 'resident-population-aged-15-years-and-over-by-type-of-dwelling-religion-and-sex-2015'
+Title: 'Resident Population Aged 15 Years and Over by Type of Dwelling, Religion and
+  Sex, 2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Religion'
+  - 'Resident Population Aged 15 Years and Over'
+  - 'Sex'
+  - 'Type of Dwelling'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8435&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-05-25T07:12:19.630320'
+Resources:
+  -
+    Identifier: 'd47a8538-506b-433c-a83a-c8998d7e1628'
+    Title: 'Resident Population Aged 15 Years and Over by Type of Dwelling(Broad),
+      Religion and Sex'
+    Url: 'https://storage.data.gov.sg/resident-population-aged-15-years-and-over-by-type-of-dwelling-religion-and-sex-2015/resources/resident-population-aged-15-years-and-over-by-type-of-dwelling-broad-religion-and-sex-2018-05-25T07-07-49Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-05-25T07:07:49.378005'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Religion'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Sex'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: 'e921cd37-38f8-46f5-b7a6-fdaf3150f65f'
+    Title: 'Resident Population Aged 15 Years and Over by Type of Dwelling(HDB), Religion
+      and Sex'
+    Url: 'https://storage.data.gov.sg/resident-population-aged-15-years-and-over-by-type-of-dwelling-religion-and-sex-2015/resources/resident-population-aged-15-years-and-over-by-type-of-dwelling-hdb-religion-and-sex-2018-05-25T07-07-51Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-05-25T07:07:51.754247'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Religion'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Sex'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_4'
+        Title: 'Type of Dwelling'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'

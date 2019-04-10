@@ -1,0 +1,111 @@
+# Metadata for Resident Households by Type of Dwelling, Marital Status of Head of Household and Tenancy, 2015
+---
+Identifier: 'd4ed6dd4-e5e7-48d1-a714-0fee53ee9281'
+Name: 'resident-households-by-type-of-dwelling-marital-status-of-head-of-household-and-tenancy-2015'
+Title: 'Resident Households by Type of Dwelling, Marital Status of Head of Household
+  and Tenancy, 2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Marital Status of Head of Household'
+  - 'Resident Households'
+  - 'Tenancy'
+  - 'Type of Dwelling'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8238&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-05-28T05:45:35.754362'
+Resources:
+  -
+    Identifier: 'ddd4b21c-4923-45fb-8637-6c75123e564a'
+    Title: 'Type of Dwelling(Total), Marital Status of Head of Household and Tenancy'
+    Url: 'https://storage.data.gov.sg/resident-households-by-type-of-dwelling-marital-status-of-head-of-household-and-tenancy-2015/resources/type-of-dwelling-total-marital-status-of-head-of-household-and-tenancy-2018-05-28T05-45-15Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-05-28T05:45:15.582307'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Marital Status of Head of Household'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Tenancy'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: '2d9fbb5e-6412-4aaf-ad17-ed2c350cd4ff'
+    Title: 'Type of Dwelling(HDB), Marital Status of Head of Household and Tenancy'
+    Url: 'https://storage.data.gov.sg/resident-households-by-type-of-dwelling-marital-status-of-head-of-household-and-tenancy-2015/resources/type-of-dwelling-hdb-marital-status-of-head-of-household-and-tenancy-2018-05-28T05-45-23Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-05-28T05:45:23.289524'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Marital Status of Head of Household'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Tenancy'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_4'
+        Title: 'Type of Dwelling (HDB)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'

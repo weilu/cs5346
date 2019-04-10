@@ -1,0 +1,142 @@
+year,level_1,level_2,level_3,value
+2015,Total,Total,"Total",3275.9
+2015,Total,Total,"HDB Dwellings",2696.7
+2015,Total,Total,"Condominiums and Other Apartments",372.3
+2015,Total,Total,"Landed Properties",199.1
+2015,Total,Total,"Others",7.7
+2015,Total,Males,"Total",1589.6
+2015,Total,Males,"HDB Dwellings",1310.1
+2015,Total,Males,"Condominiums and Other Apartments",179.2
+2015,Total,Males,"Landed Properties",96.7
+2015,Total,Males,"Others",3.6
+2015,Total,Females,"Total",1686.3
+2015,Total,Females,"HDB Dwellings",1386.6
+2015,Total,Females,"Condominiums and Other Apartments",193.1
+2015,Total,Females,"Landed Properties",102.5
+2015,Total,Females,"Others",4.1
+2015,No Religion,Total,"Total",604.5
+2015,No Religion,Total,"HDB Dwellings",450.6
+2015,No Religion,Total,"Condominiums and Other Apartments",104.7
+2015,No Religion,Total,"Landed Properties",47.6
+2015,No Religion,Total,"Others",1.7
+2015,No Religion,Males,"Total",317.2
+2015,No Religion,Males,"HDB Dwellings",235.6
+2015,No Religion,Males,"Condominiums and Other Apartments",54.8
+2015,No Religion,Males,"Landed Properties",25.8
+2015,No Religion,Males,"Others",1
+2015,No Religion,Females,"Total",287.3
+2015,No Religion,Females,"HDB Dwellings",215
+2015,No Religion,Females,"Condominiums and Other Apartments",49.9
+2015,No Religion,Females,"Landed Properties",21.8
+2015,No Religion,Females,"Others",0.7
+2015,Buddhism,Total,"Total",1087.3
+2015,Buddhism,Total,"HDB Dwellings",945.6
+2015,Buddhism,Total,"Condominiums and Other Apartments",91.2
+2015,Buddhism,Total,"Landed Properties",46.8
+2015,Buddhism,Total,"Others",3.7
+2015,Buddhism,Males,"Total",522.4
+2015,Buddhism,Males,"HDB Dwellings",456.3
+2015,Buddhism,Males,"Condominiums and Other Apartments",42.4
+2015,Buddhism,Males,"Landed Properties",22.2
+2015,Buddhism,Males,"Others",1.5
+2015,Buddhism,Females,"Total",564.9
+2015,Buddhism,Females,"HDB Dwellings",489.3
+2015,Buddhism,Females,"Condominiums and Other Apartments",48.8
+2015,Buddhism,Females,"Landed Properties",24.6
+2015,Buddhism,Females,"Others",2.2
+2015,Taoism,Total,"Total",326.4
+2015,Taoism,Total,"HDB Dwellings",290.9
+2015,Taoism,Total,"Condominiums and Other Apartments",18.2
+2015,Taoism,Total,"Landed Properties",16.4
+2015,Taoism,Total,"Others",0.8
+2015,Taoism,Males,"Total",160.7
+2015,Taoism,Males,"HDB Dwellings",144.3
+2015,Taoism,Males,"Condominiums and Other Apartments",9
+2015,Taoism,Males,"Landed Properties",7
+2015,Taoism,Males,"Others",0.4
+2015,Taoism,Females,"Total",165.6
+2015,Taoism,Females,"HDB Dwellings",146.6
+2015,Taoism,Females,"Condominiums and Other Apartments",9.2
+2015,Taoism,Females,"Landed Properties",9.3
+2015,Taoism,Females,"Others",0.4
+2015,Islam,Total,"Total",459.8
+2015,Islam,Total,"HDB Dwellings",446.5
+2015,Islam,Total,"Condominiums and Other Apartments",8.3
+2015,Islam,Total,"Landed Properties",4.9
+2015,Islam,Males,"Total",226
+2015,Islam,Males,"HDB Dwellings",220.2
+2015,Islam,Males,"Condominiums and Other Apartments",3.7
+2015,Islam,Males,"Landed Properties",2.1
+2015,Islam,Females,"Total",233.8
+2015,Islam,Females,"HDB Dwellings",226.3
+2015,Islam,Females,"Condominiums and Other Apartments",4.6
+2015,Islam,Females,"Landed Properties",2.8
+2015,Hinduism,Total,"Total",162.5
+2015,Hinduism,Total,"HDB Dwellings",131.7
+2015,Hinduism,Total,"Condominiums and Other Apartments",24.4
+2015,Hinduism,Total,"Landed Properties",6.1
+2015,Hinduism,Total,"Others",0.3
+2015,Hinduism,Males,"Total",81.3
+2015,Hinduism,Males,"HDB Dwellings",66
+2015,Hinduism,Males,"Condominiums and Other Apartments",12.3
+2015,Hinduism,Males,"Landed Properties",2.9
+2015,Hinduism,Males,"Others",0.2
+2015,Hinduism,Females,"Total",81.2
+2015,Hinduism,Females,"HDB Dwellings",65.7
+2015,Hinduism,Females,"Condominiums and Other Apartments",12.1
+2015,Hinduism,Females,"Landed Properties",3.2
+2015,Hinduism,Females,"Others",0.1
+2015,Sikhism,Total,"Total",11.5
+2015,Sikhism,Total,"HDB Dwellings",9.1
+2015,Sikhism,Total,"Condominiums and Other Apartments",1.5
+2015,Sikhism,Total,"Landed Properties",0.8
+2015,Sikhism,Males,"Total",5.2
+2015,Sikhism,Males,"HDB Dwellings",4.1
+2015,Sikhism,Males,"Condominiums and Other Apartments",0.7
+2015,Sikhism,Males,"Landed Properties",0.3
+2015,Sikhism,Females,"Total",6.3
+2015,Sikhism,Females,"HDB Dwellings",5
+2015,Sikhism,Females,"Condominiums and Other Apartments",0.8
+2015,Sikhism,Females,"Landed Properties",0.5
+2015,Christianity- Catholic,Total,"Total",220.9
+2015,Christianity- Catholic,Total,"HDB Dwellings",149.5
+2015,Christianity- Catholic,Total,"Condominiums and Other Apartments",42.1
+2015,Christianity- Catholic,Total,"Landed Properties",28.9
+2015,Christianity- Catholic,Total,"Others",0.5
+2015,Christianity- Catholic,Males,"Total",98.1
+2015,Christianity- Catholic,Males,"HDB Dwellings",66.2
+2015,Christianity- Catholic,Males,"Condominiums and Other Apartments",18.5
+2015,Christianity- Catholic,Males,"Landed Properties",13.3
+2015,Christianity- Catholic,Males,"Others",0.2
+2015,Christianity- Catholic,Females,"Total",122.8
+2015,Christianity- Catholic,Females,"HDB Dwellings",83.3
+2015,Christianity- Catholic,Females,"Condominiums and Other Apartments",23.5
+2015,Christianity- Catholic,Females,"Landed Properties",15.6
+2015,Christianity- Catholic,Females,"Others",0.3
+2015,Christianity- Other Christians,Total,"Total",395.2
+2015,Christianity- Other Christians,Total,"HDB Dwellings",266.7
+2015,Christianity- Other Christians,Total,"Condominiums and Other Apartments",80.4
+2015,Christianity- Other Christians,Total,"Landed Properties",47.4
+2015,Christianity- Other Christians,Total,"Others",0.8
+2015,Christianity- Other Christians,Males,"Total",174.7
+2015,Christianity- Other Christians,Males,"HDB Dwellings",114.6
+2015,Christianity- Other Christians,Males,"Condominiums and Other Apartments",36.8
+2015,Christianity- Other Christians,Males,"Landed Properties",22.9
+2015,Christianity- Other Christians,Males,"Others",0.4
+2015,Christianity- Other Christians,Females,"Total",220.5
+2015,Christianity- Other Christians,Females,"HDB Dwellings",152.1
+2015,Christianity- Other Christians,Females,"Condominiums and Other Apartments",43.6
+2015,Christianity- Other Christians,Females,"Landed Properties",24.5
+2015,Christianity- Other Christians,Females,"Others",0.4
+2015,Other Religions,Total,"Total",7.9
+2015,Other Religions,Total,"HDB Dwellings",6.2
+2015,Other Religions,Total,"Condominiums and Other Apartments",1.5
+2015,Other Religions,Total,"Landed Properties",0.2
+2015,Other Religions,Males,"Total",4
+2015,Other Religions,Males,"HDB Dwellings",2.9
+2015,Other Religions,Males,"Condominiums and Other Apartments",1
+2015,Other Religions,Males,"Landed Properties",0.2
+2015,Other Religions,Females,"Total",3.9
+2015,Other Religions,Females,"HDB Dwellings",3.3
+2015,Other Religions,Females,"Condominiums and Other Apartments",0.5
+2015,Other Religions,Females,"Landed Properties",0.1

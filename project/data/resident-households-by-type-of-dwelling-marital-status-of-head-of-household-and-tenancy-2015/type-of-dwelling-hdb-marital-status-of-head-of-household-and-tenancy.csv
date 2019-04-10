@@ -1,0 +1,61 @@
+year,level_1,level_2,level_3,level_4,value
+2015,Total,Total,"HDB Dwellings","1- and 2-Room Flats",68.8
+2015,Total,Total,"HDB Dwellings","3-Room Flats",223.4
+2015,Total,Total,"HDB Dwellings","4-Room Flats",392.3
+2015,Total,Total,"HDB Dwellings","5-Room and Executive Flats",295.8
+2015,Total,Owner,"HDB Dwellings","1- and 2-Room Flats",23.3
+2015,Total,Owner,"HDB Dwellings","3-Room Flats",211.7
+2015,Total,Owner,"HDB Dwellings","4-Room Flats",379.6
+2015,Total,Owner,"HDB Dwellings","5-Room and Executive Flats",287.4
+2015,Total,Non-Owner,"HDB Dwellings","1- and 2-Room Flats",45.5
+2015,Total,Non-Owner,"HDB Dwellings","3-Room Flats",11.7
+2015,Total,Non-Owner,"HDB Dwellings","4-Room Flats",12.7
+2015,Total,Non-Owner,"HDB Dwellings","5-Room and Executive Flats",8.3
+2015,Single,Total,"HDB Dwellings","1- and 2-Room Flats",16.2
+2015,Single,Total,"HDB Dwellings","3-Room Flats",50.7
+2015,Single,Total,"HDB Dwellings","4-Room Flats",40.7
+2015,Single,Total,"HDB Dwellings","5-Room and Executive Flats",18.9
+2015,Single,Owner,"HDB Dwellings","1- and 2-Room Flats",6.3
+2015,Single,Owner,"HDB Dwellings","3-Room Flats",48.2
+2015,Single,Owner,"HDB Dwellings","4-Room Flats",37.8
+2015,Single,Owner,"HDB Dwellings","5-Room and Executive Flats",16.9
+2015,Single,Non-Owner,"HDB Dwellings","1- and 2-Room Flats",10
+2015,Single,Non-Owner,"HDB Dwellings","3-Room Flats",2.4
+2015,Single,Non-Owner,"HDB Dwellings","4-Room Flats",2.8
+2015,Single,Non-Owner,"HDB Dwellings","5-Room and Executive Flats",2
+2015,Married,Total,"HDB Dwellings","1- and 2-Room Flats",26.2
+2015,Married,Total,"HDB Dwellings","3-Room Flats",120.6
+2015,Married,Total,"HDB Dwellings","4-Room Flats",300.7
+2015,Married,Total,"HDB Dwellings","5-Room and Executive Flats",251.8
+2015,Married,Owner,"HDB Dwellings","1- and 2-Room Flats",9.1
+2015,Married,Owner,"HDB Dwellings","3-Room Flats",113.3
+2015,Married,Owner,"HDB Dwellings","4-Room Flats",292.1
+2015,Married,Owner,"HDB Dwellings","5-Room and Executive Flats",246
+2015,Married,Non-Owner,"HDB Dwellings","1- and 2-Room Flats",17
+2015,Married,Non-Owner,"HDB Dwellings","3-Room Flats",7.4
+2015,Married,Non-Owner,"HDB Dwellings","4-Room Flats",8.6
+2015,Married,Non-Owner,"HDB Dwellings","5-Room and Executive Flats",5.7
+2015,Widowed,Total,"HDB Dwellings","1- and 2-Room Flats",10.6
+2015,Widowed,Total,"HDB Dwellings","3-Room Flats",27.4
+2015,Widowed,Total,"HDB Dwellings","4-Room Flats",29.4
+2015,Widowed,Total,"HDB Dwellings","5-Room and Executive Flats",13
+2015,Widowed,Owner,"HDB Dwellings","1- and 2-Room Flats",3.9
+2015,Widowed,Owner,"HDB Dwellings","3-Room Flats",26.7
+2015,Widowed,Owner,"HDB Dwellings","4-Room Flats",28.9
+2015,Widowed,Owner,"HDB Dwellings","5-Room and Executive Flats",12.9
+2015,Widowed,Non-Owner,"HDB Dwellings","1- and 2-Room Flats",6.8
+2015,Widowed,Non-Owner,"HDB Dwellings","3-Room Flats",0.6
+2015,Widowed,Non-Owner,"HDB Dwellings","4-Room Flats",0.5
+2015,Widowed,Non-Owner,"HDB Dwellings","5-Room and Executive Flats",0.1
+2015,Divorced/Separated,Total,"HDB Dwellings","1- and 2-Room Flats",15.8
+2015,Divorced/Separated,Total,"HDB Dwellings","3-Room Flats",24.7
+2015,Divorced/Separated,Total,"HDB Dwellings","4-Room Flats",21.5
+2015,Divorced/Separated,Total,"HDB Dwellings","5-Room and Executive Flats",12.1
+2015,Divorced/Separated,Owner,"HDB Dwellings","1- and 2-Room Flats",4
+2015,Divorced/Separated,Owner,"HDB Dwellings","3-Room Flats",23.5
+2015,Divorced/Separated,Owner,"HDB Dwellings","4-Room Flats",20.8
+2015,Divorced/Separated,Owner,"HDB Dwellings","5-Room and Executive Flats",11.7
+2015,Divorced/Separated,Non-Owner,"HDB Dwellings","1- and 2-Room Flats",11.8
+2015,Divorced/Separated,Non-Owner,"HDB Dwellings","3-Room Flats",1.2
+2015,Divorced/Separated,Non-Owner,"HDB Dwellings","4-Room Flats",0.7
+2015,Divorced/Separated,Non-Owner,"HDB Dwellings","5-Room and Executive Flats",0.5
