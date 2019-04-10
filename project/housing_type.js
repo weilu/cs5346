@@ -94,6 +94,7 @@ export default function(data, hdbData, keyword) {
       resultDiv.className += ' fade-in'
     }
 
-    housingTypeSlope(totalPercent, langPercent, keyword, selected)
+    housingTypeSlope(totalPercent, langPercent, keyword, selected, 'bottomleftviz')
+    housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected, 'bottomrightviz')
   })
 }

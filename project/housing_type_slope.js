@@ -1,8 +1,9 @@
 import util from './utils.js'
 
 // modified from https://bl.ocks.org/tlfrd/042b2318c8767bad7a485098fbf760fc
-function render(data, keyword, demographic) {
-  const containerSelector = `#${keyword} .bottomleftviz`
+function render(data, keyword, demographic, divClass) {
+  console.log(divClass)
+  const containerSelector = `#${keyword} .${divClass}`
   d3.select(containerSelector).select('svg').remove()
 
   var margin = {top: 50, right: 150, bottom: 50, left: 150};
@@ -213,7 +214,7 @@ function relax(labels, position, config) {
   })
 }
 
-export default function(totalMap, demoMap, keyword, demo) {
+export default function(totalMap, demoMap, keyword, demo, divClass) {
   var data = []
   for (var key in totalMap) {
     data.push({demographic: 'Total', housing: key, value: totalMap[key]})
@@ -222,5 +223,5 @@ export default function(totalMap, demoMap, keyword, demo) {
     data.push({demographic: demo, housing: key, value: demoMap[key]})
   }
 
-  render(data, keyword, demo)
+  render(data, keyword, demo, divClass)
 }
