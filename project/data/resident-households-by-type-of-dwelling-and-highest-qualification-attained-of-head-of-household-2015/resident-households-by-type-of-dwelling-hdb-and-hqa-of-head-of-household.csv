@@ -1,0 +1,37 @@
+year,level_1,level_2,level_3,value
+2015,Total,HDB Dwellings,1- and 2-Room Flats,68.7
+2015,Total,HDB Dwellings,3-Room Flats,223
+2015,Total,HDB Dwellings,4-Room Flats,391.7
+2015,Total,HDB Dwellings,5-Room and Executive Flats,295.4
+2015,No Qualification,HDB Dwellings,1- and 2-Room Flats,24
+2015,No Qualification,HDB Dwellings,3-Room Flats,47.7
+2015,No Qualification,HDB Dwellings,4-Room Flats,49.7
+2015,No Qualification,HDB Dwellings,5-Room and Executive Flats,15
+2015,Primary,HDB Dwellings,1- and 2-Room Flats,11.1
+2015,Primary,HDB Dwellings,3-Room Flats,28
+2015,Primary,HDB Dwellings,4-Room Flats,37.6
+2015,Primary,HDB Dwellings,5-Room and Executive Flats,12.2
+2015,Lower Secondary,HDB Dwellings,1- and 2-Room Flats,12.4
+2015,Lower Secondary,HDB Dwellings,3-Room Flats,28.9
+2015,Lower Secondary,HDB Dwellings,4-Room Flats,42.9
+2015,Lower Secondary,HDB Dwellings,5-Room and Executive Flats,23.1
+2015,Secondary,HDB Dwellings,1- and 2-Room Flats,10.9
+2015,Secondary,HDB Dwellings,3-Room Flats,46.3
+2015,Secondary,HDB Dwellings,4-Room Flats,84.7
+2015,Secondary,HDB Dwellings,5-Room and Executive Flats,63.8
+2015,Post-Secondary (Non-Tertiary),HDB Dwellings,1- and 2-Room Flats,6.4
+2015,Post-Secondary (Non-Tertiary),HDB Dwellings,3-Room Flats,21.1
+2015,Post-Secondary (Non-Tertiary),HDB Dwellings,4-Room Flats,43.4
+2015,Post-Secondary (Non-Tertiary),HDB Dwellings,5-Room and Executive Flats,34.5
+2015,Polytechnic,HDB Dwellings,1- and 2-Room Flats,1.1
+2015,Polytechnic,HDB Dwellings,3-Room Flats,9.5
+2015,Polytechnic,HDB Dwellings,4-Room Flats,29.4
+2015,Polytechnic,HDB Dwellings,5-Room and Executive Flats,29.6
+2015,Professional Qualification and Other Diploma,HDB Dwellings,1- and 2-Room Flats,1.4
+2015,Professional Qualification and Other Diploma,HDB Dwellings,3-Room Flats,12.9
+2015,Professional Qualification and Other Diploma,HDB Dwellings,4-Room Flats,26.6
+2015,Professional Qualification and Other Diploma,HDB Dwellings,5-Room and Executive Flats,25.2
+2015,University,HDB Dwellings,1- and 2-Room Flats,1.4
+2015,University,HDB Dwellings,3-Room Flats,28.7
+2015,University,HDB Dwellings,4-Room Flats,77.3
+2015,University,HDB Dwellings,5-Room and Executive Flats,92

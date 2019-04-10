@@ -22,3 +22,26 @@ Promise.all([
 ]).then(function(data) {
   housingType(data[0], data[1], 'language')
 })
+
+const educationPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-highest-qualification-attained-of-head-of-household-2015/resident-households-by-type-of-dwelling-total-and-hqa-of-head-of-household.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_2,
+    value: +d.value
+  }
+})
+
+const educationHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-highest-qualification-attained-of-head-of-household-2015/resident-households-by-type-of-dwelling-hdb-and-hqa-of-head-of-household.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_3,
+    value: +d.value
+  }
+})
+
+Promise.all([
+  educationPromise,
+  educationHDBPromise
+]).then(function(data) {
+  housingType(data[0], data[1], 'education')
+})
