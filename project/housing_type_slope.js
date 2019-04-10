@@ -218,8 +218,8 @@ export default function(totalMap, demoMap, keyword, demo, divClass) {
   for (var key in totalMap) {
     data.push({demographic: 'Total', housing: key, value: totalMap[key]})
   }
-  for (var key in demoMap) {
-    data.push({demographic: demo, housing: key, value: demoMap[key]})
+  for (var key in totalMap) {
+    data.push({demographic: demo, housing: key, value: demoMap[key] || 0})
   }
 
   render(data, keyword, demo, divClass)
