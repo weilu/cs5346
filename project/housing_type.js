@@ -80,16 +80,15 @@ export default function(data, hdbData, keyword) {
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
 
     const resultDiv = document.querySelector(`#${keyword} .narrative`)
-    const narrative = `<p>A majority (${util.formatPercent(percentage)}) 
-                       of ${event.target.value} group live in ${maxType.housing},
-                       which is ${util.toComparisonWord(percentage, totalPercentage)} than
-                       the national average of ${util.formatPercent(totalPercentage)}. 
-                       Among the ${event.target.value} group HDB residents,
-                       the majority (${util.formatPercent(hdbPercentage)})
-                       live in ${maxHDBType.housing},
-                       which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
-                       the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
-    resultDiv.insertAdjacentHTML('afterbegin', narrative)
+    resultDiv.innerHTML = `<p>A majority (${util.formatPercent(percentage)}) 
+                           of ${event.target.value} group live in ${maxType.housing},
+                           which is ${util.toComparisonWord(percentage, totalPercentage)} than
+                           the national average of ${util.formatPercent(totalPercentage)}. 
+                           Among the ${event.target.value} group HDB residents,
+                           the majority (${util.formatPercent(hdbPercentage)})
+                           live in ${maxHDBType.housing},
+                           which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
+                           the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
     if (!resultDiv.className.includes('fade-in')) {
       resultDiv.className += ' fade-in'
     }
