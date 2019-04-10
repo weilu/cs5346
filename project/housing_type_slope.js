@@ -2,7 +2,6 @@ import util from './utils.js'
 
 // modified from https://bl.ocks.org/tlfrd/042b2318c8767bad7a485098fbf760fc
 function render(data, keyword, demographic, divClass) {
-  console.log(divClass)
   const containerSelector = `#${keyword} .${divClass}`
   d3.select(containerSelector).select('svg').remove()
 
@@ -31,7 +30,7 @@ function render(data, keyword, demographic, divClass) {
       spacing: 18
     },
     leftTitle: "National Average",
-    rightTitle: demographic,
+    rightTitle: `${demographic} Group`,
     labelGroupOffset: 5,
     labelKeyOffset: 50,
     radius: 6,

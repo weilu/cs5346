@@ -58,7 +58,7 @@ export default function(data, hdbData, keyword) {
       columns: plotData
     })
     d3.select(`#${keyword} .viz .c3-chart-arcs-title`)
-      .node().innerHTML = `${event.target.value} Speakers`
+      .node().innerHTML = `${event.target.value} Group`
 
     // update HDB chart
     const langHDBData = hdbData.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
