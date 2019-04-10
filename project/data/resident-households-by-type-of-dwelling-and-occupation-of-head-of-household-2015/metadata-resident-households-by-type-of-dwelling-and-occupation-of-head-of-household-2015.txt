@@ -1,0 +1,102 @@
+# Metadata for Resident Households by Type of Dwelling and Occupation of Head of Household, 2015
+---
+Identifier: '71f480e1-a897-4649-b924-705957e8d68c'
+Name: 'resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015'
+Title: 'Resident Households by Type of Dwelling and Occupation of Head of Household,
+  2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Occupation of Head of Household'
+  - 'Resident Households'
+  - 'Type of Dwelling'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8237&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-12-11T05:03:25.143458'
+Resources:
+  -
+    Identifier: 'ca7b13e3-12ec-47dd-b401-843dac3de0b9'
+    Title: 'Resident Households by Type of Dwelling(Total) and Occupation of Head
+      of Household'
+    Url: 'https://storage.data.gov.sg/resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015/resources/resident-households-by-type-of-dwelling-total-and-occupation-of-head-of-household-2018-12-11T05-03-24Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-12-11T05:03:24.612085'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Occupation of Head of Household'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: '6b90a53d-0cb2-42ba-895d-a87e4b28b32a'
+    Title: 'Resident Households by Type of Dwelling(HDB) and Occupation of Head of
+      Household'
+    Url: 'https://storage.data.gov.sg/resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015/resources/resident-households-by-type-of-dwelling-hdb-and-occupation-of-head-of-household-2018-05-28T08-23-43Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-05-28T08:23:43.878038'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Occupation of Head of Household'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Type of Dwelling (Broad)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Type of Dwelling (HDB)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'

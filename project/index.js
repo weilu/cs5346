@@ -46,6 +46,29 @@ Promise.all([
   housingType(data[0], data[1], 'education')
 })
 
+const occupationPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015/resident-households-by-type-of-dwelling-total-and-occupation-of-head-of-household.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_2,
+    value: +d.value
+  }
+})
+
+const occupationHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015/resident-households-by-type-of-dwelling-hdb-and-occupation-of-head-of-household.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_3,
+    value: +d.value
+  }
+})
+
+Promise.all([
+  occupationPromise,
+  occupationHDBPromise
+]).then(function(data) {
+  housingType(data[0], data[1], 'occupation')
+})
+
 const buttonEls = document.querySelectorAll('.next button')
 buttonEls.forEach(b => b.addEventListener('click', e => {
   e.target.parentElement.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
