@@ -45,3 +45,8 @@ Promise.all([
 ]).then(function(data) {
   housingType(data[0], data[1], 'education')
 })
+
+const buttonEls = document.querySelectorAll('.next button')
+buttonEls.forEach(b => b.addEventListener('click', e => {
+  e.target.parentElement.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
+}))

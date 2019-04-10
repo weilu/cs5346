@@ -32,8 +32,8 @@ text {
 }
 
 .viz div {
-  width: 49.5%;
   display: inline-block;
+  width: 49.5%;
 }
 
 .question {
@@ -54,7 +54,11 @@ text {
   animation-duration: 1s;
 }
 
-.fade-in button {
+.question .next {
+  height: 5em;
+}
+
+.question .next button {
   float: right;
 }
 
@@ -117,13 +121,14 @@ circle {
       <select id="type-language">
         <option value="" selected disabled hidden>choose one</option>
       </select>
+      <div class='narrative'></div>
       <div class='viz'>
-        <div class='leftviz'></div>
-        <div class='rightviz'></div>
-        <div class='bottomleftviz'></div>
-        <div class='bottomrightviz'></div>
+        <div class='top leftviz'></div>
+        <div class='top rightviz'></div>
+        <div class='bottom leftviz'></div>
+        <div class='bottom rightviz'></div>
       </div>
-      <div class='result'></div>
+      <div class='next'><button>Next</button></div>
     </div>
 
     <div id='education' class='question'>
@@ -131,13 +136,14 @@ circle {
       <select id="type-education">
         <option value="" selected disabled hidden>choose one</option>
       </select>
+      <div class='narrative'></div>
       <div class='viz'>
-        <div class='leftviz'></div>
-        <div class='rightviz'></div>
-        <div class='bottomleftviz'></div>
-        <div class='bottomrightviz'></div>
+        <div class='top leftviz'></div>
+        <div class='top rightviz'></div>
+        <div class='bottom leftviz'></div>
+        <div class='bottom rightviz'></div>
       </div>
-      <div class='result'></div>
+      <div class='next'><button>Next</button></div>
     </div>
   </div>
 

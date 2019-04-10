@@ -13,7 +13,7 @@ export default function(data, hdbData, keyword) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const plotData = totalData.map(d => [d.housing, d.value])
   var chart = c3.generate({
-    bindto: `#${keyword} .viz .leftviz`,
+    bindto: `#${keyword} .viz .top.leftviz`,
     data: {
       type : 'donut',
       columns: plotData,
@@ -28,7 +28,7 @@ export default function(data, hdbData, keyword) {
   const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const plotHDBData = totalHDBData.map(d => [d.housing, d.value])
   var hdbChart = c3.generate({
-    bindto: `#${keyword} .viz .rightviz`,
+    bindto: `#${keyword} .viz .top.rightviz`,
     data: {
       type : 'donut',
       columns: plotHDBData,
@@ -79,22 +79,22 @@ export default function(data, hdbData, keyword) {
     const hdbPercentage = langHDBPercent[maxHDBType.housing]
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
 
-    const resultDiv = document.querySelector(`#${keyword} .result`)
-    resultDiv.innerHTML = `<p>A majority (${util.formatPercent(percentage)}) 
-                           of ${event.target.value} group live in ${maxType.housing},
-                           which is ${util.toComparisonWord(percentage, totalPercentage)} than
-                           the national average of ${util.formatPercent(totalPercentage)}. 
-                           Among the ${event.target.value} group HDB residents,
-                           the majority (${util.formatPercent(hdbPercentage)})
-                           live in ${maxHDBType.housing},
-                           which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
-                           the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
-    resultDiv.innerHTML += '<button>Next</button>'
+    const resultDiv = document.querySelector(`#${keyword} .narrative`)
+    const narrative = `<p>A majority (${util.formatPercent(percentage)}) 
+                       of ${event.target.value} group live in ${maxType.housing},
+                       which is ${util.toComparisonWord(percentage, totalPercentage)} than
+                       the national average of ${util.formatPercent(totalPercentage)}. 
+                       Among the ${event.target.value} group HDB residents,
+                       the majority (${util.formatPercent(hdbPercentage)})
+                       live in ${maxHDBType.housing},
+                       which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
+                       the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
+    resultDiv.insertAdjacentHTML('afterbegin', narrative)
     if (!resultDiv.className.includes('fade-in')) {
       resultDiv.className += ' fade-in'
     }
 
-    housingTypeSlope(totalPercent, langPercent, keyword, selected, 'bottomleftviz')
-    housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected, 'bottomrightviz')
+    housingTypeSlope(totalPercent, langPercent, keyword, selected, '.bottom.leftviz')
+    housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected, '.bottom.rightviz')
   })
 }
