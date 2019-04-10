@@ -1,0 +1,3 @@
+[submodule "A4/singapore-postal-codes"]
+	path = A4/singapore-postal-codes
+	url = git@github.com:xkjyeah/singapore-postal-codes.git
