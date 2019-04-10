@@ -1,17 +1,12 @@
+import util from './utils.js'
+import housingTypeSlope from './housing_type_slope.js'
+
 function getPercentageMap(data) {
   const total = d3.sum(data.map(d => d.value))
   return data.reduce((acc, d) => {
     acc[d.housing] = d.value/total
     return acc
   }, {})
-}
-
-function toComparisonWord(a, b) {
-  return a > b ? 'higher' : 'lower'
-}
-
-function formatPercent(n) {
-  return d3.format(".1%")(n)
 }
 
 export default function(data, hdbData, keyword) {
@@ -55,7 +50,8 @@ export default function(data, hdbData, keyword) {
 
   // on select visualize donut chart
   langSelect.addEventListener('change', (event) => {
-    const filteredLangData = langData.filter(d => d.demographic == event.target.value)
+    const selected = event.target.value
+    const filteredLangData = langData.filter(d => d.demographic == selected)
     const plotData = filteredLangData.map(d => [d.housing, d.value])
 
     chart.load({
@@ -84,19 +80,20 @@ export default function(data, hdbData, keyword) {
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
 
     const resultDiv = document.querySelector(`#${keyword} .result`)
-    resultDiv.innerHTML = `<p>A majority (${formatPercent(percentage)}) 
+    resultDiv.innerHTML = `<p>A majority (${util.formatPercent(percentage)}) 
                            of ${event.target.value} speakers live in ${maxType.housing},
-                           which is ${toComparisonWord(percentage, totalPercentage)} than
-                           the national average of ${formatPercent(totalPercentage)}. 
+                           which is ${util.toComparisonWord(percentage, totalPercentage)} than
+                           the national average of ${util.formatPercent(totalPercentage)}. 
                            Among the ${event.target.value} speaking HDB residents,
-                           the majority (${formatPercent(hdbPercentage)})
+                           the majority (${util.formatPercent(hdbPercentage)})
                            live in ${maxHDBType.housing},
-                           which is ${toComparisonWord(hdbPercentage, totalHDBPercentage)} than
-                           the national average of ${formatPercent(totalHDBPercentage)}.</p>`
+                           which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
+                           the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
     resultDiv.innerHTML += '<button>Next</button>'
     if (!resultDiv.className.includes('fade-in')) {
       resultDiv.className += ' fade-in'
     }
 
+    housingTypeSlope(totalPercent, langPercent, keyword, selected)
   })
 }
