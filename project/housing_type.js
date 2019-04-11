@@ -95,5 +95,9 @@ export default function(data, hdbData, keyword) {
 
     housingTypeSlope(totalPercent, langPercent, keyword, selected, '.bottom.leftviz')
     housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected, '.bottom.rightviz')
+
+    var event = new Event('type-update')
+    event.data = {dimension: keyword, ...langPercent}
+    document.dispatchEvent(event)
   })
 }

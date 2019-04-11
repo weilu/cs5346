@@ -1,4 +1,8 @@
 import housingType from './housing_type.js'
+import housingTypeSummary from './housing_type_summary.js'
+
+const dimensions = []
+const summaryData = {}
 
 const languagePromise = d3.csv('data/resident-households-by-type-of-dwelling-and-predominant-household-language-2015/resident-households-by-type-of-dwelling-broad-and-predominant-household-language.csv', function(d) {
   return {
@@ -16,11 +20,13 @@ const languageHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling-
   }
 })
 
-Promise.all([
+const languageAll = Promise.all([
   languagePromise,
   languageHDBPromise
 ]).then(function(data) {
-  housingType(data[0], data[1], 'language')
+  const dimension = 'language'
+  housingType(data[0], data[1], dimension)
+  dimensions.push(dimension)
 })
 
 const educationPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-highest-qualification-attained-of-head-of-household-2015/resident-households-by-type-of-dwelling-total-and-hqa-of-head-of-household.csv', function(d) {
@@ -39,11 +45,13 @@ const educationHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling
   }
 })
 
-Promise.all([
+const educationAll = Promise.all([
   educationPromise,
   educationHDBPromise
 ]).then(function(data) {
-  housingType(data[0], data[1], 'education')
+  const dimension = 'education'
+  housingType(data[0], data[1], dimension)
+  dimensions.push(dimension)
 })
 
 const occupationPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015/resident-households-by-type-of-dwelling-total-and-occupation-of-head-of-household.csv', function(d) {
@@ -62,11 +70,13 @@ const occupationHDBPromise = d3.csv('data/resident-households-by-type-of-dwellin
   }
 })
 
-Promise.all([
+const occupationAll = Promise.all([
   occupationPromise,
   occupationHDBPromise
 ]).then(function(data) {
-  housingType(data[0], data[1], 'occupation')
+  const dimension = 'occupation'
+  housingType(data[0], data[1], dimension)
+  dimensions.push(dimension)
 })
 
 const maritalPromise = d3.csv('data/resident-households-by-type-of-dwelling-marital-status-of-head-of-household-and-tenancy-2015/type-of-dwelling-total-marital-status-of-head-of-household-and-tenancy.csv', function(d) {
@@ -87,13 +97,15 @@ const maritalHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling-m
   }
 })
 
-Promise.all([
+const maritalAll = Promise.all([
   maritalPromise,
   maritalHDBPromise
 ]).then(function(data) {
+  const dimension = 'marital'
   const ownerData = data[0].filter(d => d.tenancy === 'Owner')
   const ownerHDBData = data[1].filter(d => d.tenancy === 'Owner')
-  housingType(ownerData, ownerHDBData, 'marital')
+  housingType(ownerData, ownerHDBData, dimension)
+  dimensions.push(dimension)
 })
 
 const sexReligionPromise = d3.csv('data/resident-population-aged-15-years-and-over-by-type-of-dwelling-religion-and-sex-2015/resident-population-aged-15-years-and-over-by-type-of-dwelling-broad-religion-and-sex.csv', function(d) {
@@ -114,20 +126,51 @@ const sexReligionHDBPromise = d3.csv('data/resident-population-aged-15-years-and
   }
 })
 
-Promise.all([
+const sexReligionAll = Promise.all([
   sexReligionPromise,
   sexReligionHDBPromise
 ]).then(function(data) {
+  var dimension = 'sex'
   const sexData = data[0].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
   const sexHDBData = data[1].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
-  housingType(sexData, sexHDBData, 'sex')
+  housingType(sexData, sexHDBData, dimension)
+  dimensions.push(dimension)
 
+  dimension = 'religion'
   const religionData = data[0].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   const religionHDBData = data[1].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
-  housingType(religionData, religionHDBData, 'religion')
+  housingType(religionData, religionHDBData, dimension)
+  dimensions.push(dimension)
+})
+
+// Housing type summary using parallel coordinates
+Promise.all([
+  languageAll,
+  educationAll,
+  occupationAll,
+  maritalAll,
+  sexReligionAll
+]).then(() => {
+  document.addEventListener('type-update', function (e) {
+    // e.data = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
+    summaryData[e.data.dimension] = e.data
+    delete summaryData[e.data.dimension].dimension
+    var allTypes = Object.values(summaryData)
+                         .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
+    allTypes = d3.set(allTypes).values()
+    const summaryPlotData = allTypes.map(type => {
+      const data = {type: type}
+      Object.keys(summaryData).forEach(dim => {
+        data[dim] = summaryData[dim][type] || 0
+      })
+      return data
+    })
+    housingTypeSummary(dimensions, summaryPlotData)
+  }, false);
 })
 
 const buttonEls = document.querySelectorAll('.next button')
 buttonEls.forEach(b => b.addEventListener('click', e => {
   e.target.parentElement.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
 }))
+
