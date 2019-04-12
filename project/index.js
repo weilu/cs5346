@@ -1,3 +1,4 @@
+import district from './district.js'
 import housingType from './housing_type.js'
 import housingTypeSummary from './housing_type_summary.js'
 
@@ -20,12 +21,22 @@ const languageHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling-
   }
 })
 
+const languageDistrictPromise = d3.csv('data/resident-pop-aged-5-years-and-over-by-planning-area-language-most-frequently-spoken-at-home-2015/aged-5-years-and-over-by-planning-area-and-language-most-frequently-spoken-at-home.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_3,
+    value: +d.value
+  }
+})
+
 const languageAll = Promise.all([
   languagePromise,
-  languageHDBPromise
+  languageHDBPromise,
+  languageDistrictPromise
 ]).then(function(data) {
   const dimension = 'language'
   housingType(data[0], data[1], dimension)
+  district(data[2], dimension)
   dimensions.push(dimension)
 })
 

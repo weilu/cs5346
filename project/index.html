@@ -33,13 +33,13 @@ text {
 
 .viz div {
   display: inline-block;
-  width: 49.5%;
+  width: 33%;
 }
 
 .question {
   display: block;
   margin: 0 auto;
-  max-width: 100vh;
+  max-width: 150vh;
   min-height: 100vh;
   text-align: left;
 }
@@ -131,6 +131,7 @@ circle {
       <div class='viz'>
         <div class='top leftviz'></div>
         <div class='top rightviz'></div>
+        <div class='top rightrightviz'></div>
         <div class='bottom leftviz'></div>
         <div class='bottom rightviz'></div>
       </div>
@@ -220,6 +221,7 @@ circle {
   <script src="lib/c3.min.js"></script>
   <script src="lib/d3-voronoi.v1.min.js"></script>
   <script type="module" src="utils.js"></script>
+  <script type="module" src="district.js"></script>
   <script type="module" src="housing_type.js"></script>
   <script type="module" src="housing_type_slope.js"></script>
   <script type="module" src="housing_type_summary.js"></script>

@@ -1,0 +1,102 @@
+# Metadata for Resident Population Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken at Home, 2015
+---
+Identifier: '254b0b0a-494d-4b8b-bed5-a0fc9261214f'
+Name: 'resident-pop-aged-5-years-and-over-by-planning-area-language-most-frequently-spoken-at-home-2015'
+Title: 'Resident Population Aged 5 Years and Over by Planning Area and Language Most
+  Frequently Spoken at Home, 2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Language Most Frequently Spoken at Home'
+  - 'Planning Area'
+  - 'Resident Population Aged 5 Years and Over'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8331&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-06-01T07:17:33.620753'
+Resources:
+  -
+    Identifier: '95e9b65b-3548-452e-bad9-2bfd4f2ac3ee'
+    Title: 'Aged 5 Years and Over by Planning Area(Total) and Language Most Frequently
+      Spoken at Home'
+    Url: 'https://storage.data.gov.sg/resident-pop-aged-5-years-and-over-by-planning-area-language-most-frequently-spoken-at-home-2015/resources/aged-5-years-and-over-by-planning-area-total-and-language-most-frequently-spoken-at-home-2018-06-01T07-17-18Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-06-01T07:17:18.586303'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Language Most Frequently Spoken at Home'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Planning Area (Total)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: 'c749c859-db8b-47f3-baab-f974323b7ebe'
+    Title: 'Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken
+      at Home'
+    Url: 'https://storage.data.gov.sg/resident-pop-aged-5-years-and-over-by-planning-area-language-most-frequently-spoken-at-home-2015/resources/aged-5-years-and-over-by-planning-area-and-language-most-frequently-spoken-at-home-2018-06-01T07-17-21Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-06-01T07:17:21.304109'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Language Most Frequently Spoken at Home'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Planning Area (Total)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Planning Area'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
