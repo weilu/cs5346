@@ -1,21 +1,30 @@
 import util from './utils.js'
 
-function computePlotData(data) {
+function computePlotData(dataLabel, data, filteredDataLabel, filteredData) {
   const totalPercent = util.getPercentageMap(data)
   const sortedDistrictPercent = Object.keys(totalPercent)
     .map(d => [d, totalPercent[d]]) // district-percent pairs e.g. ['Kallang', 0.32]
     .sort((d1, d2) => d2[1] - d1[1]) // sort by percent desc
+  const sortedDistrict = sortedDistrictPercent.map(d => d[0])
 
   const plotData = []
-  plotData.push(['district'].concat(sortedDistrictPercent.map(d => d[0])))
-  plotData.push(['percentage'].concat(sortedDistrictPercent.map(d => d[1])))
+  plotData.push(['district'].concat(sortedDistrict))
+  plotData.push([dataLabel].concat(sortedDistrictPercent.map(d => d[1])))
+
+  if (filteredDataLabel != null && filteredData != null) {
+    const filteredPercent = util.getPercentageMap(filteredData)
+    const filteredPlotData = sortedDistrict.map(d => [filteredPercent[d]])
+    plotData.push([filteredDataLabel].concat(filteredPlotData))
+  }
 
   return plotData
 }
 
 export default function(data, keyword) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
-  const plotData = computePlotData(totalData)
+  const totalDataLabel = 'National Average'
+  var loadedDataIds = [totalDataLabel]
+  const plotData = computePlotData(totalDataLabel, totalData)
 
   var chart = c3.generate({
     bindto: `#${keyword} .viz .top.rightrightviz`,
@@ -38,10 +47,14 @@ export default function(data, keyword) {
   demoSelect.addEventListener('change', (event) => {
     const selected = event.target.value
     const filteredData = demoData.filter(d => d.demographic == selected)
-    const plotData = computePlotData(filteredData)
+    const plotData = computePlotData(selected, filteredData,
+                                     totalDataLabel, totalData)
 
-    chart.load({
-      columns: plotData
-    })
+    chart.unload({ids: loadedDataIds, done: () => {
+      chart.load({
+        columns: plotData
+      })
+      loadedDataIds = [totalDataLabel, selected]
+    }})
   })
 }
