@@ -1,14 +1,6 @@
 import util from './utils.js'
 import housingTypeSlope from './housing_type_slope.js'
 
-function getPercentageMap(data) {
-  const total = d3.sum(data.map(d => d.value))
-  return data.reduce((acc, d) => {
-    acc[d.housing] = d.value/total
-    return acc
-  }, {})
-}
-
 export default function(data, hdbData, keyword) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const plotData = totalData.map(d => [d.housing, d.value])
@@ -25,7 +17,7 @@ export default function(data, hdbData, keyword) {
       pattern: d3.schemeCategory10
     }
   })
-  const totalPercent = getPercentageMap(totalData)
+  const totalPercent = util.getPercentageMap(totalData)
 
   // HDB plot
   const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')
@@ -43,7 +35,7 @@ export default function(data, hdbData, keyword) {
       pattern: d3.schemeBlues[plotHDBData.length + 2]
     }
   })
-  const totalHDBPercent = getPercentageMap(totalHDBData)
+  const totalHDBPercent = util.getPercentageMap(totalHDBData)
 
   // populate select options
   const langData = data.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
@@ -72,12 +64,12 @@ export default function(data, hdbData, keyword) {
     })
 
     // Construct & show commentary text
-    const langPercent = getPercentageMap(filteredLangData)
+    const langPercent = util.getPercentageMap(filteredLangData)
     const maxType = filteredLangData[d3.scan(filteredLangData, (a, b) => b.value - a.value)]
     const percentage = langPercent[maxType.housing]
     const totalPercentage = totalPercent[maxType.housing]
 
-    const langHDBPercent = getPercentageMap(filteredLangHDBData)
+    const langHDBPercent = util.getPercentageMap(filteredLangHDBData)
     const maxHDBType = filteredLangHDBData[d3.scan(filteredLangHDBData, (a, b) => b.value - a.value)]
     const hdbPercentage = langHDBPercent[maxHDBType.housing]
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
