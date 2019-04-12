@@ -56,12 +56,22 @@ const educationHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling
   }
 })
 
+const educationDistrictPromise = d3.csv('data/resident-population-aged-15-years-and-over-by-planning-area-and-highest-qualification-attained-2015/resident-population-aged-15-years-and-over-by-planning-area-and-hqa.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_3,
+    value: +d.value
+  }
+})
+
 const educationAll = Promise.all([
   educationPromise,
-  educationHDBPromise
+  educationHDBPromise,
+  educationDistrictPromise
 ]).then(function(data) {
   const dimension = 'education'
   housingType(data[0], data[1], dimension)
+  district(data[2], dimension)
   dimensions.push(dimension)
 })
 
