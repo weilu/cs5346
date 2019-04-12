@@ -91,12 +91,22 @@ const occupationHDBPromise = d3.csv('data/resident-households-by-type-of-dwellin
   }
 })
 
+const occupationDistrictPromise = d3.csv('data/resident-working-persons-aged-15-years-and-over-by-planning-area-and-occupation-2015/resident-working-persons-aged-15-years-and-over-by-planning-area-and-occupation.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_3,
+    value: +d.value
+  }
+})
+
 const occupationAll = Promise.all([
   occupationPromise,
-  occupationHDBPromise
+  occupationHDBPromise,
+  occupationDistrictPromise
 ]).then(function(data) {
   const dimension = 'occupation'
   housingType(data[0], data[1], dimension)
+  district(data[2], dimension)
   dimensions.push(dimension)
 })
 

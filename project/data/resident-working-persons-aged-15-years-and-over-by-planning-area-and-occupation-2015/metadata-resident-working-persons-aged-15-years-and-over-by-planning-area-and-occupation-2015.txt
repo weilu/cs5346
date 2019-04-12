@@ -1,0 +1,101 @@
+# Metadata for Resident Working Persons Aged 15 Years and Over by Planning Area and Occupation, 2015
+---
+Identifier: 'a4bd1cf2-903b-4c71-ae5b-1215177eaa5c'
+Name: 'resident-working-persons-aged-15-years-and-over-by-planning-area-and-occupation-2015'
+Title: 'Resident Working Persons Aged 15 Years and Over by Planning Area and Occupation,
+  2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Occupation'
+  - 'Planning Area'
+  - 'Resident Working Persons Aged 15 Years and Over'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8321&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-06-01T08:49:44.258672'
+Resources:
+  -
+    Identifier: '757e0994-99c7-40f6-b1a8-528f7f93705a'
+    Title: 'Resident Working Persons Aged 15 Years and Over by Planning Area(Total)
+      and Occupation'
+    Url: 'https://storage.data.gov.sg/resident-working-persons-aged-15-years-and-over-by-planning-area-and-occupation-2015/resources/resident-working-persons-aged-15-years-and-over-by-planning-area-total-and-occupation-2018-06-01T08-49-26Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-06-01T08:49:26.735366'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Occupation'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Planning Area (Total)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: 'dab078d4-b187-4c59-9da4-45e349574ca4'
+    Title: 'Resident Working Persons Aged 15 Years and Over by Planning Area and Occupation'
+    Url: 'https://storage.data.gov.sg/resident-working-persons-aged-15-years-and-over-by-planning-area-and-occupation-2015/resources/resident-working-persons-aged-15-years-and-over-by-planning-area-and-occupation-2018-06-01T08-49-30Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-06-01T08:49:30.412379'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Occupation'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Planning Area (Total)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Planning Area'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
