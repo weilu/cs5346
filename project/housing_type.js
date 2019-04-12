@@ -20,6 +20,9 @@ export default function(data, hdbData, keyword) {
     },
     donut: {
       title: "All Housing Types",
+    },
+    color: {
+      pattern: d3.schemeCategory10
     }
   })
   const totalPercent = getPercentageMap(totalData)

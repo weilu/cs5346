@@ -1,3 +1,5 @@
+import util from './utils.js'
+
 // modified from https://www.d3-graph-gallery.com/graph/parallel_custom.html
 export default function(dimensions, data) {
   // keep dimension order, filter to keep only those available in data
@@ -32,10 +34,9 @@ export default function(dimensions, data) {
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-  // Color scale: give me a specie name, I return a color
   var color = d3.scaleOrdinal()
-    .domain(["setosa", "versicolor", "virginica" ])
-    .range([ "#440154ff", "#21908dff", "#fde725ff"])
+    .domain(d3.set(data.map(d => d.type)).values())
+    .range(d3.schemeCategory10)
 
   var y = {}
   for (var i in dimensions) {
@@ -60,7 +61,7 @@ export default function(dimensions, data) {
       .style("stroke", "lightgrey")
       .style("opacity", "0.2")
     // Second the hovered specie takes its color
-    d3.selectAll("." + selected_specie)
+    d3.selectAll("." + getSafeClassName(selected_specie))
       .transition().duration(200)
       .style("stroke", color(selected_specie))
       .style("opacity", "1")
@@ -80,16 +81,15 @@ export default function(dimensions, data) {
   }
 
   // Draw the lines
-  svg
-    .selectAll("myPath")
+  svg.selectAll("myPath")
     .data(data)
     .enter()
     .append("path")
-      .attr("class", function (d) { return "line " + d.type } ) // 2 class for each line: 'line' and the group name
+      .attr("class", function (d) { return "line " + getSafeClassName(d.type) } ) // 2 class for each line: 'line' and the group name
       .attr("d",  path)
       .style("fill", "none" )
       .style("stroke", function(d){ return( color(d.type))} )
-      .style("opacity", 0.5)
+      .style("opacity", 0.7)
       .on("mouseover", highlight)
       .on("mouseleave", doNotHighlight )
 
@@ -102,11 +102,16 @@ export default function(dimensions, data) {
     // I translate this element to its right position on the x axis
     .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
     // And I build the axis with the call function
-    .each(function(d) { d3.select(this).call(d3.axisLeft().ticks(5).scale(y[d])); })
+    .each(function(d) { d3.select(this).call(d3.axisLeft().ticks(5).scale(y[d]).tickFormat(d3.format(".0%"))) })
     // Add axis title
     .append("text")
       .style("text-anchor", "middle")
       .attr("y", -9)
-      .text(function(d) { return d; })
+      .text(d => d)
       .style("fill", "black")
+}
+
+function getSafeClassName(group) {
+  const regex = / /g
+  return group.replace(regex, '-')
 }
