@@ -5,7 +5,7 @@ function render(data, keyword, demographic, divClass) {
   const containerSelector = `#${keyword} ${divClass}`
   d3.select(containerSelector).select('svg').remove()
 
-  var margin = {top: 50, right: 150, bottom: 50, left: 150};
+  var margin = {top: 50, right: 150, bottom: 50, left: 50};
 
   const containerEl = document.querySelector(containerSelector)
   var width = containerEl.clientWidth - margin.left - margin.right,
@@ -100,14 +100,6 @@ function render(data, keyword, demographic, divClass) {
     .attr("text-anchor", "end")
     .text(d => util.formatPercent(d.values[0].value));
 
-  leftSlopeLabels.append("text")
-    .attr("x", d => d.xLeftPosition)
-    .attr("y", d => d.yLeftPosition)
-    .attr("dx", -config.labelKeyOffset)
-    .attr("dy", 3)
-    .attr("text-anchor", "end")
-    .text(d => d.key);
-
   var rightSlopeCircle = slopeGroups.append("circle")
     .attr("r", config.radius)
     .attr("cx", config.width)
@@ -142,7 +134,7 @@ function render(data, keyword, demographic, divClass) {
 
   titles.append("text")
     .attr("text-anchor", "end")
-    .attr("dx", -10)
+    .attr("dx", 70)
     .attr("dy", -margin.top / 2)
     .text(config.leftTitle);
 
