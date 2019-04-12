@@ -38,6 +38,11 @@ export default function(data, keyword) {
       x: {
         type: 'category',
         tick: { multiline: false }
+      },
+      y: {
+        tick: {
+          format: util.formatPercent
+        }
       }
     }
   })
