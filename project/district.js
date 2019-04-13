@@ -63,5 +63,8 @@ export default function(data, keyword, dropdownEl) {
       })
       loadedDataIds = [totalDataLabel, selected]
     }})
+
+    const narrativeEl = document.querySelector(`#${keyword} .district-all .narrative`)
+    narrativeEl.innerHTML = `<p>#TODO District Narrative</p>`
   })
 }

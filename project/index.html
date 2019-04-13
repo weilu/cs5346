@@ -68,8 +68,9 @@ text {
   overflow: visible
 }
 
-.district-all .viz div {
-  height: 90vh;
+.district-all .viz div.district {
+  top: 5em;
+  height: 80vh;
 }
 
 /* styles for slope graph */
@@ -140,9 +141,9 @@ circle {
         </div>
       </div>
       <div class='page district-all'>
-        <div class='narrative'></div>
-        <div class='viz' data-aos="fade-down">
-          <div class='district'></div>
+        <div class='viz'>
+          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+          <div class='district' data-aos="fade-down"></div>
         </div>
       </div>
     </div>
