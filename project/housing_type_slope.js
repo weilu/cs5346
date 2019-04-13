@@ -5,11 +5,11 @@ function render(data, keyword, demographic, divClass) {
   const containerSelector = `#${keyword} ${divClass}`
   d3.select(containerSelector).select('svg').remove()
 
-  var margin = {top: 50, right: 150, bottom: 50, left: 50};
+  var margin = {top: 50, right: 150, bottom: 50, left: 100};
 
   const containerEl = document.querySelector(containerSelector)
   var width = containerEl.clientWidth - margin.left - margin.right,
-    height = containerEl.clientWidth - margin.top - margin.bottom;
+    height = 0.8 * containerEl.clientWidth - margin.top - margin.bottom;
 
   var svg = d3.select(containerSelector).append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -48,6 +48,8 @@ function render(data, keyword, demographic, divClass) {
     .key(d => d.housing)
     .entries(data);
 
+  // const maxY = d3.max(data.map(d => d.value))
+  // y1.domain([0, maxY]);
   y1.domain([0, 1]);
 
   var yScale = y1;
@@ -134,7 +136,7 @@ function render(data, keyword, demographic, divClass) {
 
   titles.append("text")
     .attr("text-anchor", "end")
-    .attr("dx", 70)
+    .attr("dx", -10)
     .attr("dy", -margin.top / 2)
     .text(config.leftTitle);
 

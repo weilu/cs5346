@@ -27,7 +27,7 @@ export default function(data, keyword, dropdownEl) {
   const plotData = computePlotData(totalDataLabel, totalData)
 
   var chart = c3.generate({
-    bindto: `#${keyword} .viz .top.rightrightviz`,
+    bindto: `#${keyword} .viz .district`,
     data: {
       type: 'bar',
       columns: plotData,

@@ -5,13 +5,13 @@ export default function(data, hdbData, keyword, dropdownEl) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const plotData = totalData.map(d => [d.housing, d.value])
   var chart = c3.generate({
-    bindto: `#${keyword} .viz .top.leftviz`,
+    bindto: `#${keyword} .type-all .viz .housing-type`,
     data: {
       type : 'donut',
       columns: plotData,
     },
     donut: {
-      title: "All Housing Types",
+      title: "Housing Types",
     },
     color: {
       pattern: d3.schemeCategory10
@@ -28,7 +28,7 @@ export default function(data, hdbData, keyword, dropdownEl) {
   plotHDBData.push(['type'].concat(totalHDBData.map(d => d.housing)))
   plotHDBData.push([totalDataLabel].concat(totalHDBData.map(d => totalHDBPercent[d.housing])))
   var hdbChart = c3.generate({
-    bindto: `#${keyword} .viz .top.rightviz`,
+    bindto: `#${keyword} .type-hdb .viz .housing-type`,
     data: {
       columns: plotHDBData,
       type : 'bar',
@@ -56,8 +56,6 @@ export default function(data, hdbData, keyword, dropdownEl) {
     chart.load({
       columns: plotData
     })
-    d3.select(`#${keyword} .viz .c3-chart-arcs-title`)
-      .node().innerHTML = `${event.target.value} Group`
 
     // update HDB chart
     const langHDBData = hdbData.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
@@ -79,26 +77,31 @@ export default function(data, hdbData, keyword, dropdownEl) {
     const percentage = langPercent[maxType.housing]
     const totalPercentage = totalPercent[maxType.housing]
 
+    var narrativeEl = document.querySelector(`#${keyword} .type-all .narrative`)
+    narrativeEl.innerHTML = `<p>A majority (${util.formatPercent(percentage)}) 
+                           of ${event.target.value} group live in ${maxType.housing}, </p>`
+
+    narrativeEl = document.querySelector(`#${keyword} .type-all .narrative-slope`)
+    narrativeEl.innerHTML = `<p>which is ${util.toComparisonWord(percentage, totalPercentage)} than
+                           the national average of ${util.formatPercent(totalPercentage)}.</p>`
+
     const maxHDBType = filteredLangHDBData[d3.scan(filteredLangHDBData, (a, b) => b.value - a.value)]
     const hdbPercentage = langHDBPercent[maxHDBType.housing]
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
 
-    const resultDiv = document.querySelector(`#${keyword} .narrative`)
-    resultDiv.innerHTML = `<p>A majority (${util.formatPercent(percentage)}) 
-                           of ${event.target.value} group live in ${maxType.housing},
-                           which is ${util.toComparisonWord(percentage, totalPercentage)} than
-                           the national average of ${util.formatPercent(totalPercentage)}. 
-                           Among the ${event.target.value} group HDB residents,
+    narrativeEl = document.querySelector(`#${keyword} .type-hdb .narrative`)
+    narrativeEl.innerHTML = `<p>Among the ${event.target.value} group HDB residents,
                            the majority (${util.formatPercent(hdbPercentage)})
-                           live in ${maxHDBType.housing},
-                           which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
-                           the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
-    if (!resultDiv.className.includes('fade-in')) {
-      resultDiv.className += ' fade-in'
-    }
+                           live in ${maxHDBType.housing},</p>`
 
-    housingTypeSlope(totalPercent, langPercent, keyword, selected, '.bottom.leftviz')
-    housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected, '.bottom.rightviz')
+    narrativeEl = document.querySelector(`#${keyword} .type-hdb .narrative-slope`)
+    narrativeEl.innerHTML = `<p>which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
+                           the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
+
+    housingTypeSlope(totalPercent, langPercent, keyword, selected,
+                     '.type-all .viz .housing-type-slope')
+    housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected,
+                     '.type-hdb .viz .housing-type-slope')
 
     var event = new Event('type-update')
     event.data = {dimension: keyword, ...langPercent}
