@@ -218,6 +218,22 @@ circle {
     </div>
 
     <div id='type-summary' class='summary'></div>
+
+    <div id='prices' class='question'>
+      <label for="type-location">My Location is</label>
+      <select id="type-location">
+        <option value="" selected disabled hidden>choose one</option>
+      </select>
+      <div class='narrative'></div>
+      <div class='viz'>
+        <div class='top leftviz'></div>
+        <div class='top rightviz'></div>
+        <div class='bottom leftviz'></div>
+        <div class='bottom rightviz'></div>
+      </div>
+      <div class='next'><button>Next</button></div>
+    </div>
+
   </div>
 
   <script src="lib/d3.v5.min.js"></script>
@@ -230,6 +246,7 @@ circle {
   <script type="module" src="housing_type.js"></script>
   <script type="module" src="housing_type_slope.js"></script>
   <script type="module" src="housing_type_summary.js"></script>
+  <script type="module" src="resale_prices.js"></script>
   <script type="module" src="index.js"></script>
 </body>
 
