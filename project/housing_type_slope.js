@@ -58,7 +58,16 @@ function render(data, keyword, demographic, divClass) {
     .x(d => d.demographic == "Total" ? 0 : width)
     .y(d => yScale(d.value))
     .extent([[-margin.left, -margin.top],
-             [width + margin.right, height + margin.bottom]]);
+      [width + margin.right, height + margin.bottom]]);
+
+  var borderLines = svg.append("g")
+    .attr("class", "border-lines")
+  borderLines.append("line")
+    .attr("x1", 0).attr("y1", 0)
+    .attr("x2", 0).attr("y2", config.height);
+  borderLines.append("line")
+    .attr("x1", width).attr("y1", 0)
+    .attr("x2", width).attr("y2", config.height);
 
   var slopeGroups = svg.append("g")
     .selectAll("g")
@@ -142,7 +151,7 @@ function render(data, keyword, demographic, divClass) {
 
   titles.append("text")
     .attr("x", config.width)
-    .attr("dx", 0)
+    .attr("dx", -50)
     .attr("dy", -margin.top / 2)
     .text(config.rightTitle);
 
