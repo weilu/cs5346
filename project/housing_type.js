@@ -49,7 +49,10 @@ export default function(data, hdbData, keyword, dropdownEl) {
 
   // on select visualize donut chart
   dropdownEl.addEventListener('change', (event) => {
-    const selected = event.target.value
+    onSelect(event.target.value)
+  })
+
+  function onSelect(selected) {
     const filteredLangData = data.filter(d => d.demographic == selected && d.housing != 'Total')
     const plotData = filteredLangData.map(d => [d.housing, d.value])
 
@@ -59,7 +62,7 @@ export default function(data, hdbData, keyword, dropdownEl) {
 
     // update HDB chart
     const langHDBData = hdbData.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
-    const filteredLangHDBData = langHDBData.filter(d => d.demographic == event.target.value)
+    const filteredLangHDBData = langHDBData.filter(d => d.demographic == selected)
     const langHDBPercent = util.getPercentageMap(filteredLangHDBData)
     const plotHDBData = []
     plotHDBData.push(['type'].concat(filteredLangHDBData.map(d => d.housing)))
@@ -79,10 +82,8 @@ export default function(data, hdbData, keyword, dropdownEl) {
 
     var narrativeEl = document.querySelector(`#${keyword} .type-all .narrative`)
     narrativeEl.innerHTML = `<p>A majority (${util.formatPercent(percentage)}) 
-                           of ${event.target.value} group live in ${maxType.housing}, </p>`
-
-    narrativeEl = document.querySelector(`#${keyword} .type-all .narrative-slope`)
-    narrativeEl.innerHTML = `<p>which is ${util.toComparisonWord(percentage, totalPercentage)} than
+                           of ${selected} group live in ${maxType.housing},
+                           which is ${util.toComparisonWord(percentage, totalPercentage)} than
                            the national average of ${util.formatPercent(totalPercentage)}.</p>`
 
     const maxHDBType = filteredLangHDBData[d3.scan(filteredLangHDBData, (a, b) => b.value - a.value)]
@@ -90,12 +91,10 @@ export default function(data, hdbData, keyword, dropdownEl) {
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
 
     narrativeEl = document.querySelector(`#${keyword} .type-hdb .narrative`)
-    narrativeEl.innerHTML = `<p>Among the ${event.target.value} group HDB residents,
+    narrativeEl.innerHTML = `<p>Among the ${selected} group HDB residents,
                            the majority (${util.formatPercent(hdbPercentage)})
-                           live in ${maxHDBType.housing},</p>`
-
-    narrativeEl = document.querySelector(`#${keyword} .type-hdb .narrative-slope`)
-    narrativeEl.innerHTML = `<p>which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
+                           live in ${maxHDBType.housing},
+                           which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
                            the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
 
     housingTypeSlope(totalPercent, langPercent, keyword, selected,
@@ -106,5 +105,5 @@ export default function(data, hdbData, keyword, dropdownEl) {
     var event = new Event('type-update')
     event.data = {dimension: keyword, ...langPercent}
     document.dispatchEvent(event)
-  })
+  }
 }
