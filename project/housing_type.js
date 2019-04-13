@@ -14,7 +14,7 @@ export default function(data, hdbData, keyword, dropdownEl) {
       title: "Housing Types",
     },
     color: {
-      pattern: d3.schemeCategory10
+      pattern: util.coolColors
     }
   })
   const totalPercent = util.getPercentageMap(totalData)
@@ -36,6 +36,9 @@ export default function(data, hdbData, keyword, dropdownEl) {
         format: util.formatPercent
       },
       x: 'type'
+    },
+    color: {
+      pattern: util.warmColors
     },
     axis: {
       x: {

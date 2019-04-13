@@ -33,6 +33,9 @@ export default function(data, keyword, dropdownEl) {
       columns: plotData,
       x: 'district'
     },
+    color: {
+      pattern: util.warmColors
+    },
     axis: {
       rotated: true,
       x: {
