@@ -1,6 +1,7 @@
 import district from './district.js'
 import housingType from './housing_type.js'
 import housingTypeSummary from './housing_type_summary.js'
+import resale from './resale_prices.js'
 
 const dimensions = []
 const summaryData = {}
@@ -154,13 +155,42 @@ const sexReligionAll = Promise.all([
   dimensions.push(dimension)
 })
 
+const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-registered-applications-by-town-and-flat-type/median-resale-prices-for-registered-applications-by-town-and-flat-type.csv', function(d) {
+    return {
+       quarter: d.quarter,
+       town: d.town,
+       flat_type: d.flat_type,
+       price: d.price
+    }
+})
+
+
+const priceInfoAll = Promise.all([
+  pricesBasedOnLocationPromise
+]).then(function(data) {
+  var dimension = 'prices'
+
+  const town = "Ang Mo Kio"
+  const flatType = "3-room"
+  const priceInformation = data[0].filter(priceInfo => priceInfo.town === town && priceInfo.flat_type === flatType).map(d => ({ quarter: d.quarter, price: d.price }))
+
+  const timeXaxis = ['x'].concat(priceInformation.map(info=> info.quarter))
+  const priceYaxis= [flatType].concat(priceInformation.map(info=> info.price))
+  resale(timeXaxis, priceYaxis, dimension)
+  dimensions.push(dimension)
+
+})
+
+
+
 // Housing type summary using parallel coordinates
 Promise.all([
   languageAll,
   educationAll,
   occupationAll,
   maritalAll,
-  sexReligionAll
+  sexReligionAll,
+  priceInfoAll
 ]).then(() => {
   document.addEventListener('type-update', function (e) {
     // e.data = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
@@ -184,4 +214,3 @@ const buttonEls = document.querySelectorAll('.next button')
 buttonEls.forEach(b => b.addEventListener('click', e => {
   e.target.parentElement.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
 }))
-
