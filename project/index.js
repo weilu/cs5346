@@ -244,8 +244,8 @@ Promise.all([
   }, false);
 })
 
-const buttonEls = document.querySelectorAll('.next button')
-buttonEls.forEach(b => b.addEventListener('click', e => {
-  e.target.parentElement.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
+const selectEl = document.querySelectorAll('select')
+selectEl.forEach(b => b.addEventListener('change', e => {
+  e.target.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
 }))
 
