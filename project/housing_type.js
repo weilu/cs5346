@@ -20,32 +20,30 @@ export default function(data, hdbData, keyword, dropdownEl) {
   const totalPercent = util.getPercentageMap(totalData)
 
   // HDB plot
+  const totalDataLabel = 'National Average'
+  var loadedDataIds = [totalDataLabel]
   const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const totalHDBPercent = util.getPercentageMap(totalHDBData)
-  const plotHDBData = totalHDBData.map(d => [d.housing, totalHDBPercent[d.housing]])
+  const plotHDBData = []
+  plotHDBData.push(['type'].concat(totalHDBData.map(d => d.housing)))
+  plotHDBData.push([totalDataLabel].concat(totalHDBData.map(d => totalHDBPercent[d.housing])))
   var hdbChart = c3.generate({
     bindto: `#${keyword} .viz .top.rightviz`,
     data: {
       columns: plotHDBData,
       type : 'bar',
-      groups: [plotHDBData.map(d => d[0])],
       labels: {
         format: util.formatPercent
       },
-      order: null
+      x: 'type'
     },
     axis: {
-      rotated: true,
       x: {
         type: 'category',
-        show: false
       },
       y: {
         show: false
       }
-    },
-    color: {
-      pattern: d3.schemeBlues[plotHDBData.length + 2]
     }
   })
 
@@ -64,10 +62,16 @@ export default function(data, hdbData, keyword, dropdownEl) {
     // update HDB chart
     const langHDBData = hdbData.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
     const filteredLangHDBData = langHDBData.filter(d => d.demographic == event.target.value)
-    const plotHDBData = filteredLangHDBData.map(d => [d.housing, d.value])
-    hdbChart.load({
-      columns: plotHDBData
-    })
+    const langHDBPercent = util.getPercentageMap(filteredLangHDBData)
+    const plotHDBData = []
+    plotHDBData.push(['type'].concat(filteredLangHDBData.map(d => d.housing)))
+    plotHDBData.push([selected].concat(filteredLangHDBData.map(d => langHDBPercent[d.housing])))
+    hdbChart.unload({ids: loadedDataIds, done: () => {
+      hdbChart.load({
+        columns: plotHDBData
+      })
+      loadedDataIds = [totalDataLabel, selected]
+    }})
 
     // Construct & show commentary text
     const langPercent = util.getPercentageMap(filteredLangData)
@@ -75,7 +79,6 @@ export default function(data, hdbData, keyword, dropdownEl) {
     const percentage = langPercent[maxType.housing]
     const totalPercentage = totalPercent[maxType.housing]
 
-    const langHDBPercent = util.getPercentageMap(filteredLangHDBData)
     const maxHDBType = filteredLangHDBData[d3.scan(filteredLangHDBData, (a, b) => b.value - a.value)]
     const hdbPercentage = langHDBPercent[maxHDBType.housing]
     const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
