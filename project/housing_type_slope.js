@@ -5,7 +5,7 @@ function render(data, keyword, demographic, divClass) {
   const containerSelector = `#${keyword} ${divClass}`
   d3.select(containerSelector).select('svg').remove()
 
-  var margin = {top: 50, right: 150, bottom: 50, left: 100};
+  var margin = {top: 50, right: 150, bottom: 50, left: 65};
 
   const containerEl = document.querySelector(containerSelector)
   var width = containerEl.clientWidth - margin.left - margin.right,
@@ -132,17 +132,17 @@ function render(data, keyword, demographic, divClass) {
     .text(d => d.key);
 
   var titles = svg.append("g")
-    .attr("class", "title");
+    .attr("class", "title")
 
   titles.append("text")
-    .attr("text-anchor", "end")
-    .attr("dx", -10)
+    .attr("text-anchor", "middle")
+    .attr("dx", 0)
     .attr("dy", -margin.top / 2)
     .text(config.leftTitle);
 
   titles.append("text")
     .attr("x", config.width)
-    .attr("dx", 10)
+    .attr("dx", 0)
     .attr("dy", -margin.top / 2)
     .text(config.rightTitle);
 

@@ -12,10 +12,11 @@
 <style>
 body {
   color: #333;
-  font: 11px "Open Sans", sans-serif;
+  font: 16px "Open Sans", sans-serif;
 }
 
 h2 {
+  font-size: 2.5em;
   padding-top: 40vh;
 }
 
@@ -41,36 +42,34 @@ text {
 
 .viz div {
   position: absolute;
-  width: 50vh;
   text-align: left;
 }
 
-.viz div.narrative,
-.viz div.narrative-slope
-{
-  left: 50%;
-  width: 50vw;
+.viz div.housing-type {
+  width: 40vh;
+}
+
+.viz div.narrative {
+  font-size: 2em;
 }
 
 .viz div.narrative,
-.viz div.narrative-slope,
 .viz div.housing-type-slope
 {
-  left: 50%;
-}
-
-.viz div.narrative-slope {
-  top: 1.5em;
+  left: 40%;
 }
 
 .viz div.housing-type-slope {
   width: 60vh;
-  top: 25vh;
-  left: 50%;
+  top: 50vh;
+}
+
+.viz div.housing-type-slope svg {
+  overflow: visible
 }
 
 .district-all .viz div {
-  width: 100vh;
+  height: 90vh;
 }
 
 /* styles for slope graph */
@@ -85,7 +84,7 @@ text {
 }
 
 .slope-label-left, .slope-label-right {
-  font-size: 1em;
+  font-size: 0.8em;
   cursor: default;
   font-weight: 400;
 }
@@ -125,7 +124,6 @@ circle {
         <div class='viz'>
           <div class='narrative' data-aos="fade-in"></div>
           <div class='housing-type' data-aos="fade-right"></div>
-          <div class='narrative-slope' data-aos="fade-in"></div>
           <div class='housing-type-slope' data-aos="fade-left"></div>
         </div>
       </div>
@@ -133,7 +131,6 @@ circle {
         <div class='viz'>
           <div class='narrative' data-aos="fade-in"></div>
           <div class='housing-type' data-aos="fade-right"></div>
-          <div class='narrative-slope' data-aos="fade-in"></div>
           <div class='housing-type-slope' data-aos="fade-left"></div>
         </div>
       </div>
@@ -143,7 +140,6 @@ circle {
           <div class='district'></div>
         </div>
       </div>
-      <div class='next'><button>Next</button></div>
     </div>
   </div>
 
