@@ -1,3 +1,4 @@
+import dropdown from './dropdown.js'
 import district from './district.js'
 import housingType from './housing_type.js'
 import housingTypeSummary from './housing_type_summary.js'
@@ -29,14 +30,29 @@ const languageDistrictPromise = d3.csv('data/resident-pop-aged-5-years-and-over-
   }
 })
 
+function cleanLanguageData(data) {
+  data.forEach(d => {
+    if (d.demographic === 'Chinese Dialects- Total') {
+      d.demographic = 'Chinese Dialects'
+    } else if (d.demographic.includes('Indian Languages') &&
+             d.demographic !== 'Indian Languages- Total') {
+      d.demographic = d.demographic.replace('Indian Languages- ', '')
+    }
+  })
+}
+
 const languageAll = Promise.all([
   languagePromise,
   languageHDBPromise,
   languageDistrictPromise
 ]).then(function(data) {
   const dimension = 'language'
-  housingType(data[0], data[1], dimension)
-  district(data[2], dimension)
+  // use district data for dropdown as it's aggregated for chinese dialects
+  const dropdownEl = dropdown(data[2], dimension)
+  cleanLanguageData(data[0])
+  cleanLanguageData(data[1])
+  housingType(data[0], data[1], dimension, dropdownEl)
+  district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
 
@@ -70,8 +86,9 @@ const educationAll = Promise.all([
   educationDistrictPromise
 ]).then(function(data) {
   const dimension = 'education'
-  housingType(data[0], data[1], dimension)
-  district(data[2], dimension)
+  const dropdownEl = dropdown(data[0], dimension)
+  housingType(data[0], data[1], dimension, dropdownEl)
+  district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
 
@@ -105,8 +122,9 @@ const occupationAll = Promise.all([
   occupationDistrictPromise
 ]).then(function(data) {
   const dimension = 'occupation'
-  housingType(data[0], data[1], dimension)
-  district(data[2], dimension)
+  const dropdownEl = dropdown(data[0], dimension)
+  housingType(data[0], data[1], dimension, dropdownEl)
+  district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
 
@@ -145,10 +163,11 @@ const maritalAll = Promise.all([
   const dimension = 'marital'
   const ownerData = data[0].filter(d => d.tenancy === 'Owner')
   const ownerHDBData = data[1].filter(d => d.tenancy === 'Owner')
-  housingType(ownerData, ownerHDBData, dimension)
+  const dropdownEl = dropdown(ownerData, dimension)
+  housingType(ownerData, ownerHDBData, dimension, dropdownEl)
 
   const maritalData = data[2].filter(d => d.sex === 'Total')
-  district(maritalData, dimension)
+  district(maritalData, dimension, dropdownEl)
   dimensions.push(dimension)
 })
 
@@ -186,14 +205,16 @@ const sexReligionAll = Promise.all([
   var dimension = 'sex'
   const sexData = data[0].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
   const sexHDBData = data[1].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
-  housingType(sexData, sexHDBData, dimension)
+  var dropdownEl = dropdown(sexData, dimension)
+  housingType(sexData, sexHDBData, dimension, dropdownEl)
   dimensions.push(dimension)
 
   dimension = 'religion'
   const religionData = data[0].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   const religionHDBData = data[1].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
-  housingType(religionData, religionHDBData, dimension)
-  district(data[2], dimension)
+  dropdownEl = dropdown(religionData, dimension)
+  housingType(religionData, religionHDBData, dimension, dropdownEl)
+  district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
 

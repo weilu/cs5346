@@ -1,7 +1,7 @@
 import util from './utils.js'
 import housingTypeSlope from './housing_type_slope.js'
 
-export default function(data, hdbData, keyword) {
+export default function(data, hdbData, keyword, dropdownEl) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const plotData = totalData.map(d => [d.housing, d.value])
   var chart = c3.generate({
@@ -37,16 +37,10 @@ export default function(data, hdbData, keyword) {
   })
   const totalHDBPercent = util.getPercentageMap(totalHDBData)
 
-  // populate select options
-  const langData = data.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
-  var demographics = d3.set(langData.map(d => d.demographic)).values()
-  const langSelect = document.querySelector(`#type-${keyword}`);
-  demographics.forEach(l => langSelect.insertAdjacentHTML('afterbegin', '<option value="' + l + '">' + l + '</option>'))
-
   // on select visualize donut chart
-  langSelect.addEventListener('change', (event) => {
+  dropdownEl.addEventListener('change', (event) => {
     const selected = event.target.value
-    const filteredLangData = langData.filter(d => d.demographic == selected)
+    const filteredLangData = data.filter(d => d.demographic == selected && d.housing != 'Total')
     const plotData = filteredLangData.map(d => [d.housing, d.value])
 
     chart.load({

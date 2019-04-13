@@ -20,7 +20,7 @@ function computePlotData(dataLabel, data, filteredDataLabel, filteredData) {
   return plotData
 }
 
-export default function(data, keyword) {
+export default function(data, keyword, dropdownEl) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const totalDataLabel = 'National Average'
   var loadedDataIds = [totalDataLabel]
@@ -48,8 +48,7 @@ export default function(data, keyword) {
   })
 
   const demoData = data.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
-  const demoSelect = document.querySelector(`#type-${keyword}`);
-  demoSelect.addEventListener('change', (event) => {
+  dropdownEl.addEventListener('change', (event) => {
     const selected = event.target.value
     const filteredData = demoData.filter(d => d.demographic == selected)
     const plotData = computePlotData(selected, filteredData,
