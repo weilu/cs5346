@@ -21,21 +21,33 @@ export default function(data, hdbData, keyword, dropdownEl) {
 
   // HDB plot
   const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')
-  const plotHDBData = totalHDBData.map(d => [d.housing, d.value])
+  const totalHDBPercent = util.getPercentageMap(totalHDBData)
+  const plotHDBData = totalHDBData.map(d => [d.housing, totalHDBPercent[d.housing]])
   var hdbChart = c3.generate({
     bindto: `#${keyword} .viz .top.rightviz`,
     data: {
-      type : 'donut',
       columns: plotHDBData,
+      type : 'bar',
+      groups: [plotHDBData.map(d => d[0])],
+      labels: {
+        format: util.formatPercent
+      },
+      order: null
     },
-    donut: {
-      title: "HDB Housing Types",
+    axis: {
+      rotated: true,
+      x: {
+        type: 'category',
+        show: false
+      },
+      y: {
+        show: false
+      }
     },
     color: {
       pattern: d3.schemeBlues[plotHDBData.length + 2]
     }
   })
-  const totalHDBPercent = util.getPercentageMap(totalHDBData)
 
   // on select visualize donut chart
   dropdownEl.addEventListener('change', (event) => {
