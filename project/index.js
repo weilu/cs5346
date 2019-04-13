@@ -146,6 +146,7 @@ const maritalAll = Promise.all([
   const ownerData = data[0].filter(d => d.tenancy === 'Owner')
   const ownerHDBData = data[1].filter(d => d.tenancy === 'Owner')
   housingType(ownerData, ownerHDBData, dimension)
+
   const maritalData = data[2].filter(d => d.sex === 'Total')
   district(maritalData, dimension)
   dimensions.push(dimension)
@@ -169,9 +170,18 @@ const sexReligionHDBPromise = d3.csv('data/resident-population-aged-15-years-and
   }
 })
 
+const religionDistrictPromise = d3.csv('data/resident-population-aged-15-years-and-over-by-planning-area-and-religion-2015/resident-population-aged-15-years-and-over-by-planning-area-and-religion.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    housing: d.level_3,
+    value: +d.value
+  }
+})
+
 const sexReligionAll = Promise.all([
   sexReligionPromise,
-  sexReligionHDBPromise
+  sexReligionHDBPromise,
+  religionDistrictPromise
 ]).then(function(data) {
   var dimension = 'sex'
   const sexData = data[0].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
@@ -183,6 +193,7 @@ const sexReligionAll = Promise.all([
   const religionData = data[0].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   const religionHDBData = data[1].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   housingType(religionData, religionHDBData, dimension)
+  district(data[2], dimension)
   dimensions.push(dimension)
 })
 

@@ -1,0 +1,101 @@
+# Metadata for Resident Population Aged 15 Years and Over by Planning Area and Religion, 2015
+---
+Identifier: '6e23ba2f-9b82-4033-8dac-15533f51dceb'
+Name: 'resident-population-aged-15-years-and-over-by-planning-area-and-religion-2015'
+Title: 'Resident Population Aged 15 Years and Over by Planning Area and Religion,
+  2015'
+Description:
+  - 'From 1995, the General Household Survey (GHS) is conducted in between 2 Population
+    Censuses as a mid-decade mini-Census.'
+  - ''
+  - 'The General Household Survey (GHS) 2015 is the third in the series of mid-decade
+    national survey. It covers a wide range of topics and provides comprehensive data
+    on Singapore’s population and households in between the population censuses that
+    are conducted once in ten years.'
+Topics:
+  - 'Society'
+Keywords:
+  - 'General Household Survey'
+  - 'Planning Area'
+  - 'Religion'
+  - 'Resident Population Aged 15 Years and Over'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createSpecialTable.action?refId=8614&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Other'
+Coverage: '2015-01-01 to 2015-12-31'
+Last Updated: '2018-06-01T08:11:35.055890'
+Resources:
+  -
+    Identifier: '476b06e5-0814-4b7b-9788-17bbc4259019'
+    Title: 'Resident Population Aged 15 Years and Over by Planning Area(Total) and
+      Religion'
+    Url: 'https://storage.data.gov.sg/resident-population-aged-15-years-and-over-by-planning-area-and-religion-2015/resources/resident-population-aged-15-years-and-over-by-planning-area-total-and-religion-2018-06-01T08-11-19Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-06-01T08:11:19.135542'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Religion'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Planning Area (Total)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
+  -
+    Identifier: 'f4cd606f-b4a1-4f8d-a517-095e4af8c964'
+    Title: 'Resident Population Aged 15 Years and Over by Planning Area and Religion'
+    Url: 'https://storage.data.gov.sg/resident-population-aged-15-years-and-over-by-planning-area-and-religion-2015/resources/resident-population-aged-15-years-and-over-by-planning-area-and-religion-2018-06-01T08-11-22Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-01 to 2015-12-31'
+    Last Updated: '2018-06-01T08:11:22.167944'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'level_1'
+        Title: 'Religion'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Planning Area (Total)'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Planning Area'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Thousands'
