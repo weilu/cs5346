@@ -1,16 +1,20 @@
-import district from './district.js'
-import housingType from './housing_type.js'
 
 var map;
-var src = '/data/geo/kml/planningboundary.kml';
+var src =
+    'https://raw.githubusercontent.com/weilu/cs5346/julwrites/maps/project/data/geo/kml/planningboundary.kml';
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: new google.maps.LatLng(-19.257753, 146.823688),
-    zoom: 3,
+    center: new google.maps.LatLng(1.351616, 103.808053),
+    zoom: 12,
     mapTypeId: 'terrain'
   });
+
   var kmlLayer = new google.maps.KmlLayer(
-      src, {suppressInfoWindows: true, preserveViewport: false, map: map});
+      src, {suppressInfoWindows: true, preserveViewport: false});
+
+  kmlLayer.setMap(map);
+
   kmlLayer.addListener('click', function(event) {
     var content = event.featureData.infoWindowHtml;
     var testimonial = document.getElementById('capture');
