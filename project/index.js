@@ -128,14 +128,26 @@ const maritalHDBPromise = d3.csv('data/resident-households-by-type-of-dwelling-m
   }
 })
 
+const maritalDistrictPromise = d3.csv('data/resident-population-aged-15-years-and-over-by-planning-area-marital-status-and-sex-2015/resident-population-aged-15-years-and-over-by-planning-area-marital-status-and-sex.csv', function(d) {
+  return {
+    demographic: d.level_1,
+    sex: d.level_2,
+    housing: d.level_4,
+    value: +d.value
+  }
+})
+
 const maritalAll = Promise.all([
   maritalPromise,
-  maritalHDBPromise
+  maritalHDBPromise,
+  maritalDistrictPromise
 ]).then(function(data) {
   const dimension = 'marital'
   const ownerData = data[0].filter(d => d.tenancy === 'Owner')
   const ownerHDBData = data[1].filter(d => d.tenancy === 'Owner')
   housingType(ownerData, ownerHDBData, dimension)
+  const maritalData = data[2].filter(d => d.sex === 'Total')
+  district(maritalData, dimension)
   dimensions.push(dimension)
 })
 
