@@ -229,6 +229,15 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
     }
 })
 
+function parseDate(date){
+    var splitted = date.split('-');
+    var quarterEndMonth = splitted[1].charAt(1) * 3;
+    var quarterStartMonth = quarterEndMonth - 3;
+    var parseTime = d3.timeParse('%m %Y');
+    return parseTime(quarterStartMonth + ' ' + splitted[0]);
+}
+
+
 
 const priceInfoAll = Promise.all([
   pricesBasedOnLocationPromise
@@ -237,8 +246,10 @@ const priceInfoAll = Promise.all([
   const town = "Ang Mo Kio"
   const flatType = "3-room"
   const priceInformation = data[0].filter(priceInfo => priceInfo.town === town && priceInfo.flat_type === flatType).map(d => ({ quarter: d.quarter, price: d.price }))
-  const timeXaxis = ['x'].concat(priceInformation.map(info=> info.quarter))
+  const timeXaxis = ['x'].concat(priceInformation.map(
+                        info=> parseDate(info.quarter)))
   const priceYaxis= [flatType].concat(priceInformation.map(info=> info.price))
+
   resale(timeXaxis, priceYaxis, dimension)
   dimensions.push(dimension)
 

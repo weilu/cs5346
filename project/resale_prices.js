@@ -6,6 +6,7 @@ export default function(xAxis,yAxis, keyword) {
 
          bindto: `#${keyword} .viz .top.leftviz`,
          data: {
+             x: 'x',
              columns: [
                  xAxis,
                  yAxis
@@ -13,8 +14,24 @@ export default function(xAxis,yAxis, keyword) {
          },
          axis: {
              x: {
+                label: 'Year',
+                 type: 'timeseries',
                  tick: {
-                     format: '%Y-%m-%d'
+                     format: '%Y'
+                 }
+             },
+             y:{
+                label: 'Price/SGD',
+                tick:{
+                    format: d3.format(".2s")
+                }
+             }
+         },
+         tooltip: {
+             format: {
+                 title: function (d) { return ("Date: "+ (new Date(d).getMonth() + 1) +" / " + new Date(d).getFullYear())},
+                 value: function (d) {
+                    return d
                  }
              }
          }
