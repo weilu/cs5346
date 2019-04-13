@@ -233,12 +233,10 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
 const priceInfoAll = Promise.all([
   pricesBasedOnLocationPromise
 ]).then(function(data) {
-  var dimension = 'prices'
-
+  var dimension = "prices"
   const town = "Ang Mo Kio"
   const flatType = "3-room"
   const priceInformation = data[0].filter(priceInfo => priceInfo.town === town && priceInfo.flat_type === flatType).map(d => ({ quarter: d.quarter, price: d.price }))
-
   const timeXaxis = ['x'].concat(priceInformation.map(info=> info.quarter))
   const priceYaxis= [flatType].concat(priceInformation.map(info=> info.price))
   resale(timeXaxis, priceYaxis, dimension)
@@ -253,8 +251,8 @@ Promise.all([
   educationAll,
   occupationAll,
   maritalAll,
-  sexReligionAll,
-  priceInfoAll
+  sexReligionAll
+//  priceInfoAll
 ]).then(() => {
   document.addEventListener('type-update', function (e) {
     // e.data = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
