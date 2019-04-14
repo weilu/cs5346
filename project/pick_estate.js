@@ -1,7 +1,7 @@
 
 var map;
 var filename =
-    'https://raw.githubusercontent.com/weilu/cs5346/julwrites/maps/project/data/geo/kml/planningboundary.kml';
+    'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
 var kmlLayer;
 var geoXml = null;
 var geoXmlDoc = null;
@@ -64,7 +64,7 @@ function setHighlightHandler(poly, polynum) {
   });
 }
 
-export function highlightRegion(name) {
+function highlightRegion(name) {
   if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
   for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
     var placemark = geoXmlDoc.placemarks[i];
@@ -93,4 +93,8 @@ export function highlightRegion(name) {
           {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
     }
   }
+}
+
+export default function(name) {
+  highlightRegion(name);
 }
