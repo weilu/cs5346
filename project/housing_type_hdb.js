@@ -2,6 +2,7 @@ import util from './utils.js'
 import housingTypeSlope from './housing_type_slope.js'
 
 export default function(hdbData, keyword, dropdownEl) {
+  util.cleanHDBData(hdbData)
   const totalDataLabel = 'National Average'
   var loadedDataIds = [totalDataLabel]
   const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')

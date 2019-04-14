@@ -4,6 +4,7 @@ import housingType from './housing_type.js'
 import housingTypeHDB from './housing_type_hdb.js'
 import housingTypeSummary from './housing_type_summary.js'
 import resale from './resale_prices.js'
+import util from './utils.js'
 
 const dimensions = []
 
@@ -31,17 +32,6 @@ const languageDistrictPromise = d3.csv('data/resident-pop-aged-5-years-and-over-
   }
 })
 
-function cleanLanguageData(data) {
-  data.forEach(d => {
-    if (d.demographic === 'Chinese Dialects- Total') {
-      d.demographic = 'Chinese Dialects'
-    } else if (d.demographic.includes('Indian Languages') &&
-             d.demographic !== 'Indian Languages- Total') {
-      d.demographic = d.demographic.replace('Indian Languages- ', '')
-    }
-  })
-}
-
 const languageAll = Promise.all([
   languagePromise,
   languageHDBPromise,
@@ -50,8 +40,8 @@ const languageAll = Promise.all([
   const dimension = 'language'
   // use district data for dropdown as it's aggregated for chinese dialects
   const dropdownEl = dropdown(data[2], dimension)
-  cleanLanguageData(data[0])
-  cleanLanguageData(data[1])
+  util.cleanLanguageData(data[0])
+  util.cleanLanguageData(data[1])
   housingType(data[0], dimension, dropdownEl)
   housingTypeHDB(data[1], dimension, dropdownEl)
   district(data[2], dimension, dropdownEl)
