@@ -1,7 +1,5 @@
 
 var map;
-var src =
-    'https://raw.githubusercontent.com/weilu/cs5346/julwrites/maps/project/data/geo/kml/planningboundary.kml';
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -10,6 +8,11 @@ function initMap() {
     mapTypeId: 'terrain'
   });
 
+  loadKML(
+      'https://raw.githubusercontent.com/weilu/cs5346/julwrites/maps/project/data/geo/kml/planningboundary.kml');
+}
+
+function loadKML(src) {
   var kmlLayer = new google.maps.KmlLayer(
       src, {suppressInfoWindows: true, preserveViewport: false});
 
