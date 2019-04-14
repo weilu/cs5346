@@ -22,18 +22,11 @@ function mountGeo(doc) {
   var currentBounds = map.getBounds();
   if (!currentBounds) currentBounds = new google.maps.LatLngBounds();
   // Geodata handling goes here, using JSON properties of the doc object
-  sidebarHtml =
-      '<table><tr><td><a href="javascript:showAll();">Show All</a></td></tr>';
-  //  var sidebarHtml = '<table>';
   geoXmlDoc = doc[0];
   if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
   for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
-    // console.log(doc[0].markers[i].title);
     var placemark = geoXmlDoc.placemarks[i];
     if (placemark.polygon) {
-      // if (currentBounds.intersects(placemark.polygon.bounds)) {
-      //   makeSidebarPolygonEntry(i);
-      // }
       var normalStyle = {
         strokeColor: placemark.polygon.get('strokeColor'),
         strokeWeight: placemark.polygon.get('strokeWeight'),
@@ -46,9 +39,6 @@ function mountGeo(doc) {
       highlightPoly(placemark.polygon, i);
     }
     if (placemark.polyline) {
-      // if (currentBounds.intersects(placemark.polyline.bounds)) {
-      //   makeSidebarPolylineEntry(i);
-      // }
       var normalStyle = {
         strokeColor: placemark.polyline.get('strokeColor'),
         strokeWeight: placemark.polyline.get('strokeWeight'),
@@ -58,16 +48,7 @@ function mountGeo(doc) {
 
       highlightPoly(placemark.polyline, i);
     }
-    // if (placemark.marker) {
-    //   if (currentBounds.contains(placemark.marker.getPosition())) {
-    //     makeSidebarEntry(i);
-    //   }
-    // }
-
-    /*    doc[0].markers[i].setVisible(false); */
   }
-  // sidebarHtml += '</table>';
-  // document.getElementById('sidebar').innerHTML = sidebarHtml;
 }
 
 // KML Layer Utils
@@ -108,8 +89,8 @@ function kmlUnHighlightPoly(pm) {
 }
 
 function highlightPoly(poly, polynum) {
-  //    poly.setOptions({fillColor: "#0000FF", strokeColor: "#0000FF",
-  //    fillOpacity: 0.3}) ;
+  poly.setOptions(
+      {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
   google.maps.event.addListener(poly, 'mouseover', function() {
     var rowElem = document.getElementById('row' + polynum);
     if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
@@ -122,7 +103,8 @@ function highlightPoly(poly, polynum) {
   google.maps.event.addListener(poly, 'mouseout', function() {
     var rowElem = document.getElementById('row' + polynum);
     if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
-    poly.setOptions(poly.normalStyle);
+    poly.setOptions(
+        {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
   });
 }
 
