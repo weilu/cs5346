@@ -27,6 +27,7 @@ export default function(data, keyword, dropdownEl) {
     const filteredLangData = data.filter(d => d.demographic == selected && d.housing != 'Total')
     const plotData = filteredLangData.map(d => [d.housing, d.value])
 
+    chart.unload()
     chart.load({
       columns: plotData
     })
