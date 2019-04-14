@@ -41,7 +41,6 @@ function mountGeo(doc) {
       setHighlightHandler(placemark.polyline, i);
     }
   }
-  highlightRegion('BISHAN');  // Example of how to highlight a region by name
 }
 
 function setHighlightHandler(poly, polynum) {
@@ -65,7 +64,7 @@ function setHighlightHandler(poly, polynum) {
   });
 }
 
-function highlightRegion(name) {
+export function highlightRegion(name) {
   if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
   for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
     var placemark = geoXmlDoc.placemarks[i];
