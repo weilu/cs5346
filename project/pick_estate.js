@@ -36,7 +36,7 @@ function mountGeo(doc) {
       };
       placemark.polygon.normalStyle = normalStyle;
 
-      highlightPoly(placemark.polygon, i);
+      setHighlightHandler(placemark.polygon, i);
     }
     if (placemark.polyline) {
       var normalStyle = {
@@ -46,7 +46,7 @@ function mountGeo(doc) {
       };
       placemark.polyline.normalStyle = normalStyle;
 
-      highlightPoly(placemark.polyline, i);
+      setHighlightHandler(placemark.polyline, i);
     }
   }
 }
@@ -76,21 +76,10 @@ function kmlHighlightPoly(pm) {
   }
 }
 
-function kmlUnHighlightPoly(pm) {
-  for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
-    if (i == pm) {
-      var placemark = geoXmlDoc.placemarks[i];
-      if (placemark.polygon)
-        placemark.polygon.setOptions(placemark.polygon.normalStyle);
-      if (placemark.polyline)
-        placemark.polyline.setOptions(placemark.polyline.normalStyle);
-    }
-  }
-}
-
-function highlightPoly(poly, polynum) {
+function setHighlightHandler(poly, polynum) {
   poly.setOptions(
       {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+
   google.maps.event.addListener(poly, 'mouseover', function() {
     var rowElem = document.getElementById('row' + polynum);
     if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
@@ -106,19 +95,4 @@ function highlightPoly(poly, polynum) {
     poly.setOptions(
         {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
   });
-}
-
-function load_kmlLayer() {
-  kmlLayer = new google.maps.KmlLayer(filename);
-  google.maps.event.addListener(kmlLayer, 'status_changed', function() {
-    document.getElementById('kmlstatus').innerHTML =
-        'Kml Status:' + kmlLayer.getStatus();
-  });
-  kmlLayer.setMap(map);
-}
-function hide_kmlLayer() {
-  kmlLayer.setMap(null);
-}
-function show_kmlLayer() {
-  kmlLayer.setMap(map);
 }
