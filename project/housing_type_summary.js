@@ -63,13 +63,19 @@ export default function(dimensions, data, containerSelector) {
     svg.selectAll("." + getSafeClassName(selected_specie))
       .transition().duration(200)
       .style("opacity", "1")
+    svg.selectAll(".tick text")
+      .transition().duration(200)
+      .style("opacity", "0")
   }
 
   // Unhighlight
   var doNotHighlight = function(d){
-    svg.selectAll(".line, .line-label")
+    svg.selectAll(".line, .line-label, .tick text")
       .transition().duration(200).delay(400)
       .style("opacity", "1")
+    svg.selectAll(".dim-label")
+      .transition().duration(200)
+      .style("opacity", "0")
   }
 
   // The path function take a row of the csv as input, and return x and y coordinates of the line to draw for this raw.
@@ -85,7 +91,7 @@ export default function(dimensions, data, containerSelector) {
     .append("g")
 
   // Draw the lines
-  pathGroups.append("path")
+  const paths = pathGroups.append("path")
       .attr("class", function (d) { return "line " + getSafeClassName(d.type) } ) // 2 class for each line: 'line' and the group name
       .attr("d",  path)
       .style("fill", "none" )
@@ -93,6 +99,23 @@ export default function(dimensions, data, containerSelector) {
       .style("opacity", 0.7)
       .on("mouseover", highlight)
       .on("mouseleave", doNotHighlight)
+
+  pathGroups.selectAll('text')
+    .data(d => {
+      return dimensions.map(k => ({
+        dimension: k,
+        type: d.type,
+        value: d[k]
+      }))
+    })
+    .enter()
+    .append('text')
+    .text(d => util.formatPercent(d.value))
+    .attr("x", d => x(d.dimension))
+    .attr("y", d => y[d.dimension](d.value))
+    .attr("text-anchor", "end")
+    .style("opacity", 0)
+    .attr("class", d => "dim-label " + getSafeClassName(d.type))
 
   const lastDim = dimensions[dimensions.length - 1]
   pathGroups.append('text')
@@ -113,14 +136,20 @@ export default function(dimensions, data, containerSelector) {
     .attr("class", "axis")
     // I translate this element to its right position on the x axis
     .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
-    // And I build the axis with the call function
-    .each(function(d) { d3.select(this).call(d3.axisLeft().ticks(5).scale(y[d]).tickFormat(d3.format(".0%"))) })
+    .each(function(d) {
+      var tickFormat = ""
+      // only mark the ticks on the first and last axis
+      if (dimensions.indexOf(d) === 0 || dimensions.indexOf(d) === dimensions.length - 1) {
+        tickFormat = d3.format(".0%")
+      }
+      return d3.select(this).call(d3.axisLeft().ticks(5).scale(y[d]).tickFormat(tickFormat))
+    })
     // Add axis title
     .append("text")
       .style("text-anchor", "middle")
-      .attr("y", -9)
+      .attr("y", '-1em')
       .text(d => d)
-      .style("fill", "black")
+      .style("fill", "#333")
 }
 
 function getSafeClassName(group) {
