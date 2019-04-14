@@ -1,0 +1,13 @@
+html, body { 
+    height: inherit;
+    width: inherit;
+    padding: 0; 
+    margin: 5vh 5vw 5vh 5vw; 
+} 
+
+#map { 
+    height: 80vh; 
+    width: 80vw; 
+    overflow: hidden;
+    border: none; 
+} 
