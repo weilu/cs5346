@@ -2,6 +2,7 @@ import dropdown from './dropdown.js'
 import district from './district.js'
 import housingType from './housing_type.js'
 import housingTypeSummary from './housing_type_summary.js'
+import resale from './resale_prices.js'
 
 const dimensions = []
 const summaryData = {}
@@ -218,6 +219,21 @@ const sexReligionAll = Promise.all([
   dimensions.push(dimension)
 })
 
+
+
+const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-registered-applications-by-town-and-flat-type/median-resale-prices-for-registered-applications-by-town-and-flat-type.csv', function(d) {
+    return {
+       quarter: d.quarter,
+       town: d.town,
+       flat_type: d.flat_type,
+       price: d.price
+    }
+}).then(function(data) {
+  // to be replaced with appropriate inputs
+  resale(data, "Ang Mo Kio" , "3-room")
+})
+
+
 // Housing type summary using parallel coordinates
 Promise.all([
   languageAll,
@@ -225,6 +241,7 @@ Promise.all([
   occupationAll,
   maritalAll,
   sexReligionAll
+//  priceInfoAll
 ]).then(() => {
   document.addEventListener('type-update', function (e) {
     // e.data = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
