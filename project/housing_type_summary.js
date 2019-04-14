@@ -1,9 +1,10 @@
 import util from './utils.js'
 
 // modified from https://www.d3-graph-gallery.com/graph/parallel_custom.html
-export default function(dimensions, data) {
+export default function(dimensions, data, containerSelector) {
   // keep dimension order, filter to keep only those available in data
   dimensions = dimensions.filter(d => d in data[0])
+  console.log(data)
 
   // function getSampleData() {
   //   const result = {}
@@ -22,7 +23,6 @@ export default function(dimensions, data) {
     height = 400 - margin.top - margin.bottom;
 
   // empty canvas
-  const containerSelector = "#type-summary"
   d3.select(containerSelector).select('svg').remove()
 
   // append the svg object to the body of the page
@@ -37,6 +37,7 @@ export default function(dimensions, data) {
   var color = d3.scaleOrdinal()
     .domain(d3.set(data.map(d => d.type)).values())
     .range(d3.schemeCategory10)
+  //TODO: make it consistent with color usage
 
   var y = {}
   for (var i in dimensions) {
@@ -56,12 +57,12 @@ export default function(dimensions, data) {
     var selected_specie = d.type
 
     // first every group turns grey
-    d3.selectAll(".line")
+    svg.selectAll(".line")
       .transition().duration(200)
       .style("stroke", "lightgrey")
       .style("opacity", "0.2")
     // Second the hovered specie takes its color
-    d3.selectAll("." + getSafeClassName(selected_specie))
+    svg.selectAll("." + getSafeClassName(selected_specie))
       .transition().duration(200)
       .style("stroke", color(selected_specie))
       .style("opacity", "1")
@@ -69,7 +70,7 @@ export default function(dimensions, data) {
 
   // Unhighlight
   var doNotHighlight = function(d){
-    d3.selectAll(".line")
+    svg.selectAll(".line")
       .transition().duration(200).delay(1000)
       .style("stroke", function(d){ return( color(d.type))} )
       .style("opacity", "1")
@@ -112,6 +113,5 @@ export default function(dimensions, data) {
 }
 
 function getSafeClassName(group) {
-  const regex = / /g
-  return group.replace(regex, '-')
+  return 'c' + group.replace(/\W/g, '')
 }

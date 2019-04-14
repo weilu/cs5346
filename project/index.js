@@ -6,7 +6,6 @@ import housingTypeSummary from './housing_type_summary.js'
 import resale from './resale_prices.js'
 
 const dimensions = []
-const summaryData = {}
 
 const languagePromise = d3.csv('data/resident-households-by-type-of-dwelling-and-predominant-household-language-2015/resident-households-by-type-of-dwelling-broad-and-predominant-household-language.csv', function(d) {
   return {
@@ -240,6 +239,25 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
 
 
 // Housing type summary using parallel coordinates
+function updateSummaryPlot(eventData, plotElSelector, summaryData) {
+  // eventData = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
+  summaryData[eventData.dimension] = eventData
+  delete summaryData[eventData.dimension].dimension
+  var allTypes = Object.values(summaryData)
+                       .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
+  allTypes = d3.set(allTypes).values()
+  const summaryPlotData = allTypes.map(type => {
+    const data = {type: type}
+    Object.keys(summaryData).forEach(dim => {
+      data[dim] = summaryData[dim][type] || 0
+    })
+    return data
+  })
+  housingTypeSummary(dimensions, summaryPlotData, plotElSelector)
+}
+
+const summaryData = {}
+const summaryHDBData = {}
 Promise.all([
   languageAll,
   educationAll,
@@ -248,21 +266,11 @@ Promise.all([
   sexReligionAll
 //  priceInfoAll
 ]).then(() => {
-  document.addEventListener('type-update', function (e) {
-    // e.data = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
-    summaryData[e.data.dimension] = e.data
-    delete summaryData[e.data.dimension].dimension
-    var allTypes = Object.values(summaryData)
-                         .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
-    allTypes = d3.set(allTypes).values()
-    const summaryPlotData = allTypes.map(type => {
-      const data = {type: type}
-      Object.keys(summaryData).forEach(dim => {
-        data[dim] = summaryData[dim][type] || 0
-      })
-      return data
-    })
-    housingTypeSummary(dimensions, summaryPlotData)
+  document.addEventListener('type-update', (e) => {
+    updateSummaryPlot(e.data, "#type-summary", summaryData)
+  }, false);
+  document.addEventListener('type-hdb-update', (e) => {
+    updateSummaryPlot(e.data, "#type-hdb-summary", summaryHDBData)
   }, false);
 })
 

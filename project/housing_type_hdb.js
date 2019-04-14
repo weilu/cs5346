@@ -66,8 +66,8 @@ export default function(hdbData, keyword, dropdownEl) {
     housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected,
                      '.type-hdb .viz .housing-type-slope')
 
-    // var event = new Event('type-update')
-    // event.data = {dimension: keyword, ...langPercent}
-    // document.dispatchEvent(event)
+    var event = new Event('type-hdb-update')
+    event.data = {dimension: keyword, ...langHDBPercent}
+    document.dispatchEvent(event)
   }
 }
