@@ -1,7 +1,7 @@
 import util from './utils.js'
 import housingTypeSlope from './housing_type_slope.js'
 
-export default function(data, hdbData, keyword, dropdownEl) {
+export default function(data, keyword, dropdownEl) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const plotData = totalData.map(d => [d.housing, d.value])
   var chart = c3.generate({
@@ -19,38 +19,6 @@ export default function(data, hdbData, keyword, dropdownEl) {
   })
   const totalPercent = util.getPercentageMap(totalData)
 
-  // HDB plot
-  const totalDataLabel = 'National Average'
-  var loadedDataIds = [totalDataLabel]
-  const totalHDBData = hdbData.filter(d => d.demographic === 'Total' && d.housing != 'Total')
-  const totalHDBPercent = util.getPercentageMap(totalHDBData)
-  const plotHDBData = []
-  plotHDBData.push(['type'].concat(totalHDBData.map(d => d.housing)))
-  plotHDBData.push([totalDataLabel].concat(totalHDBData.map(d => totalHDBPercent[d.housing])))
-  var hdbChart = c3.generate({
-    bindto: `#${keyword} .type-hdb .viz .housing-type`,
-    data: {
-      columns: plotHDBData,
-      type : 'bar',
-      labels: {
-        format: util.formatPercent
-      },
-      x: 'type'
-    },
-    color: {
-      pattern: util.warmColors
-    },
-    axis: {
-      x: {
-        type: 'category',
-      },
-      y: {
-        show: false
-      }
-    }
-  })
-
-  // on select visualize donut chart
   dropdownEl.addEventListener('change', (event) => {
     onSelect(event.target.value)
   })
@@ -62,20 +30,6 @@ export default function(data, hdbData, keyword, dropdownEl) {
     chart.load({
       columns: plotData
     })
-
-    // update HDB chart
-    const langHDBData = hdbData.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
-    const filteredLangHDBData = langHDBData.filter(d => d.demographic == selected)
-    const langHDBPercent = util.getPercentageMap(filteredLangHDBData)
-    const plotHDBData = []
-    plotHDBData.push(['type'].concat(filteredLangHDBData.map(d => d.housing)))
-    plotHDBData.push([selected].concat(filteredLangHDBData.map(d => langHDBPercent[d.housing])))
-    hdbChart.unload({ids: loadedDataIds, done: () => {
-      hdbChart.load({
-        columns: plotHDBData
-      })
-      loadedDataIds = [totalDataLabel, selected]
-    }})
 
     // Construct & show commentary text
     const langPercent = util.getPercentageMap(filteredLangData)
@@ -89,21 +43,8 @@ export default function(data, hdbData, keyword, dropdownEl) {
                            which is ${util.toComparisonWord(percentage, totalPercentage)} than
                            the national average of ${util.formatPercent(totalPercentage)}.</p>`
 
-    const maxHDBType = filteredLangHDBData[d3.scan(filteredLangHDBData, (a, b) => b.value - a.value)]
-    const hdbPercentage = langHDBPercent[maxHDBType.housing]
-    const totalHDBPercentage = totalHDBPercent[maxHDBType.housing]
-
-    narrativeEl = document.querySelector(`#${keyword} .type-hdb .narrative`)
-    narrativeEl.innerHTML = `<p>Among the ${selected} group HDB residents,
-                           the majority (${util.formatPercent(hdbPercentage)})
-                           live in ${maxHDBType.housing},
-                           which is ${util.toComparisonWord(hdbPercentage, totalHDBPercentage)} than
-                           the national average of ${util.formatPercent(totalHDBPercentage)}.</p>`
-
     housingTypeSlope(totalPercent, langPercent, keyword, selected,
                      '.type-all .viz .housing-type-slope')
-    housingTypeSlope(totalHDBPercent, langHDBPercent, keyword, selected,
-                     '.type-hdb .viz .housing-type-slope')
 
     var event = new Event('type-update')
     event.data = {dimension: keyword, ...langPercent}
