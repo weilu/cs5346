@@ -64,7 +64,7 @@ function setHighlightHandler(poly, polynum) {
   });
 }
 
-function highlightRegion(name) {
+export default function(name) {
   if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
   for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
     var placemark = geoXmlDoc.placemarks[i];
@@ -93,8 +93,4 @@ function highlightRegion(name) {
           {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
     }
   }
-}
-
-export default function(name) {
-  highlightRegion(name);
 }
