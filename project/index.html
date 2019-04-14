@@ -29,6 +29,10 @@ text {
   font-family: "Open Sans", sans-serif;
 }
 
+svg {
+  overflow: visible
+}
+
 .page {
   height: 100vh;
 }
@@ -62,10 +66,6 @@ text {
 .viz div.housing-type-slope {
   width: 60vh;
   top: 50vh;
-}
-
-.viz div.housing-type-slope svg {
-  overflow: visible
 }
 
 .district-all .viz div.district {
@@ -115,6 +115,11 @@ circle {
   stroke-width: 2px;
   stroke-linecap: round;
 }
+
+.summary svg text.line-label {
+  font-size: 0.8em;
+}
+
 </style>
 
 <body>

@@ -4,7 +4,6 @@ import util from './utils.js'
 export default function(dimensions, data, containerSelector) {
   // keep dimension order, filter to keep only those available in data
   dimensions = dimensions.filter(d => d in data[0])
-  console.log(data)
 
   // function getSampleData() {
   //   const result = {}
@@ -18,7 +17,7 @@ export default function(dimensions, data, containerSelector) {
   //         {...getSampleData(), type: 'Others'}]
 
   // set the dimensions and margins of the graph
-  var margin = {top: 30, right: 50, bottom: 10, left: 50},
+  var margin = {top: 30, right: 150, bottom: 10, left: 50},
     width = 800 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -57,42 +56,54 @@ export default function(dimensions, data, containerSelector) {
     var selected_specie = d.type
 
     // first every group turns grey
-    svg.selectAll(".line")
+    svg.selectAll(".line, .line-label")
       .transition().duration(200)
-      .style("stroke", "lightgrey")
       .style("opacity", "0.2")
     // Second the hovered specie takes its color
     svg.selectAll("." + getSafeClassName(selected_specie))
       .transition().duration(200)
-      .style("stroke", color(selected_specie))
       .style("opacity", "1")
   }
 
   // Unhighlight
   var doNotHighlight = function(d){
-    svg.selectAll(".line")
-      .transition().duration(200).delay(1000)
-      .style("stroke", function(d){ return( color(d.type))} )
+    svg.selectAll(".line, .line-label")
+      .transition().duration(200).delay(400)
       .style("opacity", "1")
   }
 
   // The path function take a row of the csv as input, and return x and y coordinates of the line to draw for this raw.
   function path(d) {
-      return d3.line()(dimensions.map(function(p) { return [x(p), y[p](d[p])]; }));
+      return d3.line()(dimensions.map(p => {
+        return [x(p), y[p](d[p])]
+      }));
   }
 
-  // Draw the lines
-  svg.selectAll("myPath")
+  const pathGroups = svg.selectAll("myPath")
     .data(data)
     .enter()
-    .append("path")
+    .append("g")
+
+  // Draw the lines
+  pathGroups.append("path")
       .attr("class", function (d) { return "line " + getSafeClassName(d.type) } ) // 2 class for each line: 'line' and the group name
       .attr("d",  path)
       .style("fill", "none" )
       .style("stroke", function(d){ return( color(d.type))} )
       .style("opacity", 0.7)
       .on("mouseover", highlight)
-      .on("mouseleave", doNotHighlight )
+      .on("mouseleave", doNotHighlight)
+
+  const lastDim = dimensions[dimensions.length - 1]
+  pathGroups.append('text')
+    .text(d => d.type)
+    .attr("x", width)
+    .attr("y", d => y[lastDim](d[lastDim]))
+    .attr("dx", 5)
+    .attr("class", d => "line-label " + getSafeClassName(d.type))
+    .attr("text-anchor", "start")
+    .on("mouseover", highlight)
+    .on("mouseleave", doNotHighlight)
 
   // Draw the axis:
   svg.selectAll("myAxis")
