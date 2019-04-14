@@ -1,7 +1,7 @@
 import util from './utils.js'
 
 // modified from https://www.d3-graph-gallery.com/graph/parallel_custom.html
-export default function(dimensions, data, containerSelector) {
+export default function(dimensions, data, containerSelector, color) {
   // keep dimension order, filter to keep only those available in data
   dimensions = dimensions.filter(d => d in data[0])
 
@@ -32,11 +32,6 @@ export default function(dimensions, data, containerSelector) {
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-
-  var color = d3.scaleOrdinal()
-    .domain(d3.set(data.map(d => d.type)).values())
-    .range(d3.schemeCategory10)
-  //TODO: make it consistent with color usage
 
   var y = {}
   for (var i in dimensions) {
