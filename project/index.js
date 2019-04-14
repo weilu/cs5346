@@ -220,6 +220,7 @@ const sexReligionAll = Promise.all([
 })
 
 
+
 const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-registered-applications-by-town-and-flat-type/median-resale-prices-for-registered-applications-by-town-and-flat-type.csv', function(d) {
     return {
        quarter: d.quarter,
@@ -227,32 +228,9 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
        flat_type: d.flat_type,
        price: d.price
     }
-})
-
-function parseDate(date){
-    var splitted = date.split('-');
-    var quarterEndMonth = splitted[1].charAt(1) * 3;
-    var quarterStartMonth = quarterEndMonth - 3;
-    var parseTime = d3.timeParse('%m %Y');
-    return parseTime(quarterStartMonth + ' ' + splitted[0]);
-}
-
-
-
-const priceInfoAll = Promise.all([
-  pricesBasedOnLocationPromise
-]).then(function(data) {
-  var dimension = "prices"
-  const town = "Ang Mo Kio"
-  const flatType = "3-room"
-  const priceInformation = data[0].filter(priceInfo => priceInfo.town === town && priceInfo.flat_type === flatType).map(d => ({ quarter: d.quarter, price: d.price }))
-  const timeXaxis = ['x'].concat(priceInformation.map(
-                        info=> parseDate(info.quarter)))
-  const priceYaxis= [flatType].concat(priceInformation.map(info=> info.price))
-
-  resale(timeXaxis, priceYaxis, dimension)
-  dimensions.push(dimension)
-
+}).then(function(data) {
+  // to be replaced with appropriate inputs
+  resale(data, "Ang Mo Kio" , "3-room")
 })
 
 
