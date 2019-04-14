@@ -1,10 +1,12 @@
 import dropdown from './dropdown.js'
 import district from './district.js'
 import housingType from './housing_type.js'
+import housingTypeHDB from './housing_type_hdb.js'
 import housingTypeSummary from './housing_type_summary.js'
+import resale from './resale_prices.js'
+import util from './utils.js'
 
 const dimensions = []
-const summaryData = {}
 
 const languagePromise = d3.csv('data/resident-households-by-type-of-dwelling-and-predominant-household-language-2015/resident-households-by-type-of-dwelling-broad-and-predominant-household-language.csv', function(d) {
   return {
@@ -30,17 +32,6 @@ const languageDistrictPromise = d3.csv('data/resident-pop-aged-5-years-and-over-
   }
 })
 
-function cleanLanguageData(data) {
-  data.forEach(d => {
-    if (d.demographic === 'Chinese Dialects- Total') {
-      d.demographic = 'Chinese Dialects'
-    } else if (d.demographic.includes('Indian Languages') &&
-             d.demographic !== 'Indian Languages- Total') {
-      d.demographic = d.demographic.replace('Indian Languages- ', '')
-    }
-  })
-}
-
 const languageAll = Promise.all([
   languagePromise,
   languageHDBPromise,
@@ -49,9 +40,10 @@ const languageAll = Promise.all([
   const dimension = 'language'
   // use district data for dropdown as it's aggregated for chinese dialects
   const dropdownEl = dropdown(data[2], dimension)
-  cleanLanguageData(data[0])
-  cleanLanguageData(data[1])
-  housingType(data[0], data[1], dimension, dropdownEl)
+  util.cleanLanguageData(data[0])
+  util.cleanLanguageData(data[1])
+  housingType(data[0], dimension, dropdownEl)
+  housingTypeHDB(data[1], dimension, dropdownEl)
   district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
@@ -87,7 +79,8 @@ const educationAll = Promise.all([
 ]).then(function(data) {
   const dimension = 'education'
   const dropdownEl = dropdown(data[0], dimension)
-  housingType(data[0], data[1], dimension, dropdownEl)
+  housingType(data[0], dimension, dropdownEl)
+  housingTypeHDB(data[1], dimension, dropdownEl)
   district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
@@ -123,7 +116,8 @@ const occupationAll = Promise.all([
 ]).then(function(data) {
   const dimension = 'occupation'
   const dropdownEl = dropdown(data[0], dimension)
-  housingType(data[0], data[1], dimension, dropdownEl)
+  housingType(data[0], dimension, dropdownEl)
+  housingTypeHDB(data[1], dimension, dropdownEl)
   district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
@@ -164,7 +158,8 @@ const maritalAll = Promise.all([
   const ownerData = data[0].filter(d => d.tenancy === 'Owner')
   const ownerHDBData = data[1].filter(d => d.tenancy === 'Owner')
   const dropdownEl = dropdown(ownerData, dimension)
-  housingType(ownerData, ownerHDBData, dimension, dropdownEl)
+  housingType(ownerData, dimension, dropdownEl)
+  housingTypeHDB(ownerHDBData, dimension, dropdownEl)
 
   const maritalData = data[2].filter(d => d.sex === 'Total')
   district(maritalData, dimension, dropdownEl)
@@ -206,46 +201,71 @@ const sexReligionAll = Promise.all([
   const sexData = data[0].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
   const sexHDBData = data[1].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
   var dropdownEl = dropdown(sexData, dimension)
-  housingType(sexData, sexHDBData, dimension, dropdownEl)
+  housingType(sexData, dimension, dropdownEl)
+  housingTypeHDB(sexHDBData, dimension, dropdownEl)
   dimensions.push(dimension)
 
   dimension = 'religion'
   const religionData = data[0].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   const religionHDBData = data[1].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   dropdownEl = dropdown(religionData, dimension)
-  housingType(religionData, religionHDBData, dimension, dropdownEl)
+  housingType(religionData, dimension, dropdownEl)
+  housingTypeHDB(religionHDBData, dimension, dropdownEl)
   district(data[2], dimension, dropdownEl)
   dimensions.push(dimension)
 })
 
+const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-registered-applications-by-town-and-flat-type/median-resale-prices-for-registered-applications-by-town-and-flat-type.csv', function(d) {
+    return {
+       quarter: d.quarter,
+       town: d.town,
+       flat_type: d.flat_type,
+       price: d.price
+    }
+}).then(function(data) {
+  // to be replaced with appropriate inputs
+  resale(data, "Ang Mo Kio" , "3-room")
+})
+
+
 // Housing type summary using parallel coordinates
+function updateSummaryPlot(eventData, plotElSelector, summaryData) {
+  // eventData = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
+  summaryData[eventData.dimension] = eventData
+  delete summaryData[eventData.dimension].dimension
+  var allTypes = Object.values(summaryData)
+                       .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
+  allTypes = d3.set(allTypes).values()
+  const summaryPlotData = allTypes.map(type => {
+    const data = {type: type}
+    Object.keys(summaryData).forEach(dim => {
+      data[dim] = summaryData[dim][type] || 0
+    })
+    return data
+  })
+  housingTypeSummary(dimensions, summaryPlotData, plotElSelector)
+}
+
+const summaryData = {}
+const summaryHDBData = {}
 Promise.all([
   languageAll,
   educationAll,
   occupationAll,
   maritalAll,
   sexReligionAll
+//  priceInfoAll
 ]).then(() => {
-  document.addEventListener('type-update', function (e) {
-    // e.data = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
-    summaryData[e.data.dimension] = e.data
-    delete summaryData[e.data.dimension].dimension
-    var allTypes = Object.values(summaryData)
-                         .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
-    allTypes = d3.set(allTypes).values()
-    const summaryPlotData = allTypes.map(type => {
-      const data = {type: type}
-      Object.keys(summaryData).forEach(dim => {
-        data[dim] = summaryData[dim][type] || 0
-      })
-      return data
-    })
-    housingTypeSummary(dimensions, summaryPlotData)
+  document.addEventListener('type-update', (e) => {
+    updateSummaryPlot(e.data, "#type-summary", summaryData)
+  }, false);
+  document.addEventListener('type-hdb-update', (e) => {
+    updateSummaryPlot(e.data, "#type-hdb-summary", summaryHDBData)
   }, false);
 })
 
-const buttonEls = document.querySelectorAll('.next button')
-buttonEls.forEach(b => b.addEventListener('click', e => {
-  e.target.parentElement.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
+const selectEl = document.querySelectorAll('select')
+selectEl.forEach(b => b.addEventListener('change', e => {
+  e.target.parentElement.nextElementSibling.scrollIntoView({ behavior: 'smooth' })
 }))
 

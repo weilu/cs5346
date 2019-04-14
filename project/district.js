@@ -27,11 +27,14 @@ export default function(data, keyword, dropdownEl) {
   const plotData = computePlotData(totalDataLabel, totalData)
 
   var chart = c3.generate({
-    bindto: `#${keyword} .viz .top.rightrightviz`,
+    bindto: `#${keyword} .viz .district`,
     data: {
       type: 'bar',
       columns: plotData,
       x: 'district'
+    },
+    color: {
+      pattern: util.warmColors
     },
     axis: {
       rotated: true,
@@ -60,5 +63,8 @@ export default function(data, keyword, dropdownEl) {
       })
       loadedDataIds = [totalDataLabel, selected]
     }})
+
+    const narrativeEl = document.querySelector(`#${keyword} .district-all .narrative`)
+    narrativeEl.innerHTML = `<p>#TODO District Narrative</p>`
   })
 }

@@ -5,11 +5,11 @@ function render(data, keyword, demographic, divClass) {
   const containerSelector = `#${keyword} ${divClass}`
   d3.select(containerSelector).select('svg').remove()
 
-  var margin = {top: 50, right: 150, bottom: 50, left: 50};
+  var margin = {top: 50, right: 150, bottom: 50, left: 65};
 
   const containerEl = document.querySelector(containerSelector)
   var width = containerEl.clientWidth - margin.left - margin.right,
-    height = containerEl.clientWidth - margin.top - margin.bottom;
+    height = 0.8 * containerEl.clientWidth - margin.top - margin.bottom;
 
   var svg = d3.select(containerSelector).append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -48,6 +48,8 @@ function render(data, keyword, demographic, divClass) {
     .key(d => d.housing)
     .entries(data);
 
+  // const maxY = d3.max(data.map(d => d.value))
+  // y1.domain([0, maxY]);
   y1.domain([0, 1]);
 
   var yScale = y1;
@@ -56,7 +58,16 @@ function render(data, keyword, demographic, divClass) {
     .x(d => d.demographic == "Total" ? 0 : width)
     .y(d => yScale(d.value))
     .extent([[-margin.left, -margin.top],
-             [width + margin.right, height + margin.bottom]]);
+      [width + margin.right, height + margin.bottom]]);
+
+  var borderLines = svg.append("g")
+    .attr("class", "border-lines")
+  borderLines.append("line")
+    .attr("x1", 0).attr("y1", 0)
+    .attr("x2", 0).attr("y2", config.height);
+  borderLines.append("line")
+    .attr("x1", width).attr("y1", 0)
+    .attr("x2", width).attr("y2", config.height);
 
   var slopeGroups = svg.append("g")
     .selectAll("g")
@@ -130,17 +141,17 @@ function render(data, keyword, demographic, divClass) {
     .text(d => d.key);
 
   var titles = svg.append("g")
-    .attr("class", "title");
+    .attr("class", "title")
 
   titles.append("text")
-    .attr("text-anchor", "end")
-    .attr("dx", 70)
+    .attr("text-anchor", "middle")
+    .attr("dx", 0)
     .attr("dy", -margin.top / 2)
     .text(config.leftTitle);
 
   titles.append("text")
     .attr("x", config.width)
-    .attr("dx", 10)
+    .attr("dx", -50)
     .attr("dy", -margin.top / 2)
     .text(config.rightTitle);
 
