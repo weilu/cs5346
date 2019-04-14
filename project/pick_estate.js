@@ -6,6 +6,14 @@ var kmlLayer;
 var geoXml = null;
 var geoXmlDoc = null;
 
+var highlightOptions = {
+  fillColor: '#FFFF00',
+  strokeColor: '#000000',
+  fillOpacity: 0.9,
+  strokeWidth: 10
+};
+var highlightLineOptions = {strokeColor: '#FFFF00', strokeWidth: 10};
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: new google.maps.LatLng(1.351616, 103.808053),
@@ -27,53 +35,13 @@ function mountGeo(doc) {
   for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
     var placemark = geoXmlDoc.placemarks[i];
     if (placemark.polygon) {
-      var normalStyle = {
-        strokeColor: placemark.polygon.get('strokeColor'),
-        strokeWeight: placemark.polygon.get('strokeWeight'),
-        strokeOpacity: placemark.polygon.get('strokeOpacity'),
-        fillColor: placemark.polygon.get('fillColor'),
-        fillOpacity: placemark.polygon.get('fillOpacity')
-      };
-      placemark.polygon.normalStyle = normalStyle;
-
       setHighlightHandler(placemark.polygon, i);
     }
     if (placemark.polyline) {
-      var normalStyle = {
-        strokeColor: placemark.polyline.get('strokeColor'),
-        strokeWeight: placemark.polyline.get('strokeWeight'),
-        strokeOpacity: placemark.polyline.get('strokeOpacity')
-      };
-      placemark.polyline.normalStyle = normalStyle;
-
       setHighlightHandler(placemark.polyline, i);
     }
   }
-}
-
-// KML Layer Utils
-var highlightOptions = {
-  fillColor: '#FFFF00',
-  strokeColor: '#000000',
-  fillOpacity: 0.9,
-  strokeWidth: 10
-};
-var highlightLineOptions = {strokeColor: '#FFFF00', strokeWidth: 10};
-
-function kmlHighlightPoly(pm) {
-  for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
-    var placemark = geoXmlDoc.placemarks[i];
-    if (i == pm) {
-      if (placemark.polygon) placemark.polygon.setOptions(highlightOptions);
-      if (placemark.polyline)
-        placemark.polyline.setOptions(highlightLineOptions);
-    } else {
-      if (placemark.polygon)
-        placemark.polygon.setOptions(placemark.polygon.normalStyle);
-      if (placemark.polyline)
-        placemark.polyline.setOptions(placemark.polyline.normalStyle);
-    }
-  }
+  highlightRegion('BISHAN');  // Example of how to highlight a region by name
 }
 
 function setHighlightHandler(poly, polynum) {
@@ -95,4 +63,35 @@ function setHighlightHandler(poly, polynum) {
     poly.setOptions(
         {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
   });
+}
+
+function highlightRegion(name) {
+  if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
+  for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
+    var placemark = geoXmlDoc.placemarks[i];
+    var poly;
+
+    if (placemark.polygon) {
+      poly = placemark.polygon;
+    } else if (placemark.polyline) {
+      poly = placemark.polyline;
+    }
+
+    if (placemark.name === name) {
+      if (poly) {
+        var rowElem = document.getElementById('row' + i);
+        if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
+        if (geoXmlDoc.placemarks[i].polygon) {
+          poly.setOptions(highlightOptions);
+        } else if (geoXmlDoc.placemarks[i].polyline) {
+          poly.setOptions(highlightLineOptions);
+        }
+      }
+    } else {
+      var rowElem = document.getElementById('row' + i);
+      if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
+      poly.setOptions(
+          {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+    }
+  }
 }
