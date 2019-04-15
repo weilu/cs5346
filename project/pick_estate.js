@@ -1,4 +1,4 @@
-export default function buildMap(containerEl) {
+export default function buildMap(containerEl, done) {
   var map = new google.maps.Map(containerEl);
 
   var filename = 'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
@@ -28,17 +28,19 @@ export default function buildMap(containerEl) {
               geoXmlDoc, placemark.polygon, i, highlightOptions,
               highlightLineOptions);
         }
-        if (placemark.polyline) {
-          setHighlightHandler(
-              geoXmlDoc, placemark.polyline, i, highlightOptions,
-              highlightLineOptions);
-        }
+      }
+
+      if (done != null) {
+        done()
       }
     }
   });
   geoXml.parse(filename);
 
-  var highlightRegion = function(name) {
+  function highlightRegion(name) {
+    highlightRegionWithColor(name)
+  }
+  function highlightRegionWithColor(name, highlightOptions) {
     if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
     for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
       var placemark = geoXmlDoc.placemarks[i];
@@ -60,11 +62,6 @@ export default function buildMap(containerEl) {
             poly.setOptions(highlightLineOptions);
           }
         }
-      } else {
-        var rowElem = document.getElementById('row' + i);
-        if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
-        poly.setOptions(
-            {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
       }
     }
   }
@@ -73,7 +70,11 @@ export default function buildMap(containerEl) {
     // TODO
   }
 
-  return {highlight: highlightRegion, zoom: zoomRegion};
+  return {
+    highlight: highlightRegion,
+    highlightWithColor: highlightRegionWithColor,
+    zoom: zoomRegion
+  };
 }
 
 window.initMap = function() {

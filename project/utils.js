@@ -32,6 +32,37 @@ function cleanHDBData(data) {
   })
 }
 
+function tallyVotes (summaryData) {
+  const votes = {} // {HDB: [education, gender], landed: [language]}
+  const dimensions = Object.keys(summaryData)
+  dimensions.forEach(d => {
+    var vote = null
+    var voteVal = 0
+    Object.keys(summaryData[d]).forEach(type => {
+      if (summaryData[d][type] > voteVal) {
+        voteVal = summaryData[d][type]
+        vote = type
+      }
+    })
+
+    if (votes[vote] == null) {
+      votes[vote] = [d]
+    } else {
+      votes[vote].push(d)
+    }
+  })
+  return votes
+}
+
+function majorityRuleRanked(votes) {
+  const typeValuePairs = Object.keys(votes).map(t => [t, votes[t]])
+  return typeValuePairs.sort((a, b) => b[1].length - a[1].length)
+}
+
+function majorityRuleWinnerAndSupporters(votes) {
+  return majorityRuleRanked(votes)[0]
+}
+
 // 99% accessible colors: https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/
 // grey is the first color for national average
 const warmColors = ['#a9a9a9', '#800000', '#e6194B', '#9A6324', '#f58231', '#f032e6', '#ffe119', '#fabebe', '#e6beff']
@@ -45,4 +76,7 @@ export default {
   coolColors,
   cleanLanguageData,
   cleanHDBData,
+  tallyVotes,
+  majorityRuleRanked,
+  majorityRuleWinnerAndSupporters,
 }

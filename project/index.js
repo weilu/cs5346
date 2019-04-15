@@ -228,9 +228,9 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
   resale(data, "Ang Mo Kio" , "3-room")
 })
 
-
 const summaryData = {}
 const summaryHDBData = {}
+const summaryDistrictData = {}
 Promise.all([
   languageAll,
   educationAll,
@@ -248,14 +248,38 @@ Promise.all([
                        dimensions, d3.schemeYlOrRd[5].slice(1), true)
   }, false);
 
-  buildMap(document.querySelector('#summary-map'))
+  document.addEventListener('district-update', (e) => {
+    summaryDistrictData[e.data.dimension] = e.data
+    delete summaryDistrictData[e.data.dimension].dimension
+    const districtVotes = util.tallyVotes(summaryDistrictData)
+    const sortedDistrictAndDims = util.majorityRuleRanked(districtVotes)
+    const winner = sortedDistrictAndDims[0][0]
+    const topDimensions = sortedDistrictAndDims[0][1]
 
-  dimensions.forEach(d => {
-    var el = document.querySelector(`#type-${d}`)
-    el.value = el.children[0].value
-    var event = new Event('change')
-    el.dispatchEvent(event)
-  })
+    const narrativeEl = document.querySelector(`#district-summary div.narrative`)
+    var narrative = `The most popular district is <b>${winner}</b>
+      among your demographic groups of ${topDimensions.join(', ')}`
+    if (sortedDistrictAndDims.length > 1) {
+      narrative += `, followed by `
+      narrative += sortedDistrictAndDims.slice(1)
+        .map(dd => `district ${dd[0]} among your demographic groups of ${dd[1].join(', ')}`)
+        .join(' and ')
+    }
+    narrativeEl.innerHTML = `<p>${narrative}.</p>`
+
+    const summaryMap = buildMap(document.querySelector('#summary-map'), function() {
+      const numColors = sortedDistrictAndDims.length < 3 ? 3 : sortedDistrictAndDims.length
+      const colors = d3.schemeYlGn[numColors].slice().reverse()
+      for (var i = 0; i < sortedDistrictAndDims.length; i++) {
+        const highlightOptions = {
+          fillColor: colors[i],
+          fillOpacity: 1,
+        }
+        summaryMap.highlightWithColor(sortedDistrictAndDims[i][0].toUpperCase(), highlightOptions)
+      }
+    })
+  }, false);
+
 })
 
 const selectEl = document.querySelectorAll('select')

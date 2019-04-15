@@ -1,35 +1,12 @@
 import util from './utils.js'
 
 function buildNarrarive(summaryData, containerParentSelector) {
+  const votes = util.tallyVotes(summaryData)
+  const winnerAndSupporters = util.majorityRuleWinnerAndSupporters(votes)
+  var type = winnerAndSupporters[0]
+  var topDimensions = winnerAndSupporters[1]
+
   const dimensions = Object.keys(summaryData)
-  const votes = {} // {HDB: [education, gender], landed: [language]}
-  dimensions.forEach(d => {
-    var vote = null
-    var voteVal = 0
-    Object.keys(summaryData[d]).forEach(type => {
-      if (summaryData[d][type] > voteVal) {
-        voteVal = summaryData[d][type]
-        vote = type
-      }
-    })
-
-    if (votes[vote] == null) {
-      votes[vote] = [d]
-    } else {
-      votes[vote].push(d)
-    }
-  })
-
-  // majority rule
-  var type = null
-  var topDimensions = []
-  Object.keys(votes).forEach(t => {
-    if (votes[t].length > topDimensions.length) {
-      type = t
-      topDimensions = votes[t]
-    }
-  })
-
   const narrativeEl = document.querySelector(`${containerParentSelector} div.narrative`)
   narrativeEl.innerHTML = `<p>Given your demographics, the most popular
     housing type is <b>${type}</b>, because based on majority rule

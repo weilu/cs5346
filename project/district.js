@@ -66,5 +66,10 @@ export default function(data, keyword, dropdownEl) {
 
     const narrativeEl = document.querySelector(`#${keyword} .district-all .narrative`)
     narrativeEl.innerHTML = `<p>#TODO District Narrative</p>`
+
+    var event = new Event('district-update')
+    const filteredPercent = util.getPercentageMap(filteredData)
+    event.data = {dimension: keyword, ...filteredPercent}
+    document.dispatchEvent(event)
   })
 }
