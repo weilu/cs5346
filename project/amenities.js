@@ -1,27 +1,25 @@
 export default function buildMap(containerEl, done) {
   const kmlDataPath =
       'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/';
+  var kmlRef = {};
   var kmlData = [];
-  ['soonhdb.kml'  //,
-                  //  'aquaticsg.kml',
-                  //  'childcare.kml',
-                  //  'clinics.kml',
-                  //  'communityclubs.kml',
-                  //  'firestation.kml',
-                  //  'gymsg.kml',
-                  //  'kindergarten.kml',
-                  //  'libraries.kml',
-                  //  'marketfood.kml',
-                  //  'mrtexit.kml',
-                  //  'museums.kml',
-                  //  'parks.kml',
-                  //  'pharmacy.kml',
-                  //  'playsg.kml',
-                  //  'police.kml',
-                  //  'sportsg.kml',
-  ].forEach((kmlFile) => {
-    kmlData.push(kmlDataPath + kmlFile);
-  });
+  var i = 0;
+  ['soonhdb', 'aquaticsg', 'childcare', 'clinics', 'communityclubs',
+   'firestation', 'gymsg', 'kindergarten', 'libraries', 'marketfood', 'mrtexit',
+   'museums', 'parks', 'pharmacy', 'playsg', 'police', 'sportsg',
+   'planningboundary']
+      .forEach((kmlFile) => {
+        kmlData.push(kmlDataPath + kmlFile + '.kml');
+        kmlRef[kmlFile] = i++;
+      });
+  var highlightOptions = {
+    fillColor: '#FFFF00',
+    strokeColor: '#000000',
+    fillOpacity: 0.9,
+    strokeWidth: 10
+  };
+  var highlightLineOptions = {strokeColor: '#FFFF00', strokeWidth: 10};
+
 
   var map = new google.maps.Map(containerEl);
   var geoXmlDocs = null;
@@ -34,26 +32,53 @@ export default function buildMap(containerEl, done) {
       geoXmlDocs = doc;
       var currentBounds = map.getBounds();
       if (!currentBounds) currentBounds = new google.maps.LatLngBounds();
-      // // Geodata handling goes here, using JSON properties of the doc object
-      // geoXmlDoc = doc[0];
-      // if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
-      // for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
-      //   var placemark = geoXmlDoc.placemarks[i];
-      //   if (placemark.polygon) {
-      //     placemark.polygon.setOptions(
-      //         {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity:
-      //         0.3});
-      //     if (!disableMouseOverHighlight) {
-      //       setHighlightHandler(
-      //           geoXmlDoc, placemark.polygon, i, highlightOptions,
-      //           highlightLineOptions);
-      //     }
-      //   }
-      // }
+
+      // Geodata handling goes here, using JSON properties of the doc object
+      geoXmlDoc = doc[0];  // HDB info
+      if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
+      for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
+        var placemark = geoXmlDoc.placemarks[i];
+        if (placemark.polygon) {
+          placemark.polygon.setOptions(
+              {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+          setHighlightHandler(
+              geoXmlDoc, placemark.polygon, i, highlightOptions,
+              highlightLineOptions);
+        }
+      }
+
+      geoXmlDoc = doc[0];  // Should be the hdb info
+      if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
+      for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
+        var placemark = geoXmlDoc.placemarks[i];
+        if (placemark.polygon) {
+          placemark.polygon.setOptions(
+              {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+          setHighlightHandler(
+              geoXmlDoc, placemark.polygon, i, highlightOptions,
+              highlightLineOptions);
+        }
+      }
+
+      for (var g = 1; g < doc.length; g++) {
+        var geoDoc = doc[g];
+        if (!geoDoc || !geoDoc.placemarks) return;
+        for (var i = 0; i < geoDoc.placemarks.length; i++) {
+          var placemark = geoDoc.placemarks[i];
+          if (placemark.marker) {
+            placemark.marker.setMap(null);
+          }
+          if (placemark.polygon) {
+            placemark.polygon.setOptions({fillOpacity: 0.0});
+          }
+        }
+      }
 
       if (done != null) {
         done()
       }
+
+      zoomRegion('BISHAN');
     }
   });
   geoXml.parse(kmlData);
@@ -72,7 +97,15 @@ export default function buildMap(containerEl, done) {
 
   var zoomRegion =
       function(name, type) {
-    // TODO
+    var geoDoc = geoXmlDocs[kmlRef['planningboundary']];
+
+    for (var i = 0; i < geoDoc.placemarks.length; i++) {
+      var placemark = geoDoc.placemarks[i];
+      if (placemark.polygon && placemark.name === name) {
+        map.fitBounds(placemark.polygon.bounds);
+        break;
+      }
+    }
   }
 
   return {show: showAmenities, click: onClick, zoom: zoomRegion};
