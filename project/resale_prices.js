@@ -8,9 +8,19 @@ function parseDate(date){
     return parseTime(quarterStartMonth + ' ' + splitted[0]);
 }
 
-export default function(data,town, flatType) {
+export default function(data, town, flatType) {
+  const priceTowns = d3.set(data.map(d => d.town))
+  if (!priceTowns.has(town)) {
+    console.log(priceTowns.values() + ' does not contain ' + town)
+  }
 
-     const priceInformation = data.filter(priceInfo => priceInfo.town === town && priceInfo.flat_type === flatType).map(d => ({ quarter: d.quarter, price: d.price }))
+  flatType = flatType.toLowerCase()
+  const priceflatTypes = d3.set(data.map(d => d.flat_type))
+  if (!priceflatTypes.has(flatType)) {
+    console.log(priceflatTypes.values() + ' does not contain ' + flatType)
+  }
+
+     const priceInformation = data.filter(priceInfo => priceInfo.town === town && flatType.includes(priceInfo.flat_type)).map(d => ({ quarter: d.quarter, price: d.price }))
      const timeXaxis = ['x'].concat(priceInformation.map(
                            info=> parseDate(info.quarter)))
      const priceYaxis= [flatType].concat(priceInformation.map(info=> info.price))

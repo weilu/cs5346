@@ -220,32 +220,36 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
     return {
        quarter: d.quarter,
        town: d.town,
-       flat_type: d.flat_type,
+       flat_type: d.flat_type.toLowerCase(),
        price: d.price
     }
-}).then(function(data) {
-  // to be replaced with appropriate inputs
-  resale(data, "Ang Mo Kio" , "3-room")
 })
 
 const summaryData = {}
 const summaryHDBData = {}
 const summaryDistrictData = {}
+const recommendations = {}
 Promise.all([
+  pricesBasedOnLocationPromise,
   languageAll,
   educationAll,
   occupationAll,
   maritalAll,
   sexReligionAll
-//  priceInfoAll
-]).then(() => {
+]).then((data) => {
+  const resaleData = data[0]
+
   document.addEventListener('type-update', (e) => {
-    housingTypeSummary(e.data, "#type-summary .viz", summaryData,
-                       dimensions, util.coolColors, false)
+    const typeWinner = housingTypeSummary(e.data, "#type-summary .viz",
+      summaryData, dimensions, util.coolColors, false)
+    recommendations.type = typeWinner
+    updatePriceViz(recommendations)
   }, false);
   document.addEventListener('type-hdb-update', (e) => {
-    housingTypeSummary(e.data, "#type-hdb-summary .viz", summaryHDBData,
-                       dimensions, d3.schemeYlOrRd[5].slice(1), true)
+    const hdbTypeWinner = housingTypeSummary(e.data, "#type-hdb-summary .viz",
+      summaryHDBData, dimensions, d3.schemeYlOrRd[5].slice(1), true)
+    recommendations.hdbType = hdbTypeWinner
+    updatePriceViz(recommendations)
   }, false);
 
   document.addEventListener('district-update', (e) => {
@@ -278,9 +282,18 @@ Promise.all([
         summaryMap.highlightWithColor(sortedDistrictAndDims[i][0].toUpperCase(), highlightOptions)
       }
     })
+
+    recommendations.district = winner
+    updatePriceViz(recommendations)
   }, false);
 
+  function updatePriceViz(recommendations) {
+    if (Object.keys(recommendations).length !== 3 || recommendations.type !== 'HDB Dwellings') return
+
+    resale(resaleData, recommendations.district, recommendations.hdbType)
+  }
 })
+
 
 const selectEl = document.querySelectorAll('select')
 selectEl.forEach(b => b.addEventListener('change', e => {
