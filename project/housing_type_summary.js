@@ -13,6 +13,8 @@ function buildNarrarive(summaryData, containerParentSelector) {
     ${type} is the most popular choice across ${topDimensions.length}
     dimensions, namely ${topDimensions.join(', ')},
     out of all ${dimensions.length} dimensions.</p>`
+
+  return type
 }
 
 // Housing type summary using parallel coordinates
@@ -38,7 +40,7 @@ export default function(eventData, plotElSelector, summaryData, dimensions,
   var color = d3.scaleOrdinal()
     .domain(colorDomain).range(colorRange)
   parallelCoordinates(dimensions, summaryPlotData, plotElSelector, color)
-  buildNarrarive(summaryData, plotElSelector)
+  return buildNarrarive(summaryData, plotElSelector)
 }
 
 // modified from https://www.d3-graph-gallery.com/graph/parallel_custom.html
