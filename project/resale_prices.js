@@ -45,7 +45,7 @@ export default function(data, town, flatType) {
                  }
              },
              y:{
-                label: 'Price/SGD',
+                label: 'Price(SGD)',
                 tick:{
                     format: d3.format(".2s")
                 }
@@ -53,10 +53,13 @@ export default function(data, town, flatType) {
          },
          tooltip: {
              format: {
-                 title: function (d) { return ("Date: "+ (new Date(d).getMonth() + 1) +" / " + new Date(d).getFullYear())},
-                 value: function (d) {
-                    return d
-                 }
+                 title: function (d) { 
+                   const date = new Date(d)
+                   const quarter = Math.floor((date.getMonth() + 3) / 3)
+                   const year = date.getFullYear()
+                   return `${year} Q${quarter}`
+                 },
+                 value: d => "$" + d3.format(",.0f")(d)
              }
          }
      });
