@@ -14,27 +14,40 @@ export default function(data, town, flatType) {
     console.log(priceTowns.values() + ' does not contain ' + town)
   }
 
-  flatType = flatType.toLowerCase()
+  flatType = flatType.toLowerCase().replace(/ flats/, '').replace('1-&', '1-room &')
+  const flatTypes = flatType.includes(' & ') ? flatType.split(' & ') : [flatType]
+
   const priceflatTypes = d3.set(data.map(d => d.flat_type))
-  if (!priceflatTypes.has(flatType)) {
-    console.log(priceflatTypes.values() + ' does not contain ' + flatType)
-  }
+  flatTypes.forEach(t => {
+    if (!priceflatTypes.has(t)) {
+      console.log(priceflatTypes.values() + ' does not contain ' + t)
+    }
+  })
 
-  const priceInformation = data.filter(priceInfo => priceInfo.town === town && flatType.includes(priceInfo.flat_type)).map(d => ({ quarter: d.quarter, price: d.price }))
-  const timeXaxis = ['x'].concat(priceInformation.map(
-    info=> parseDate(info.quarter)))
-  const priceYaxis= [flatType].concat(priceInformation.map(info=> info.price))
+  const priceInformation = data
+    .filter(info => (info.town === town && flatTypes.includes(info.flat_type)))
 
+  const priceQuarterTypeMap = priceInformation.reduce((acc, info) => {
+    if (acc[info.quarter] == null) {
+      acc[info.quarter] = {}
+    }
+    acc[info.quarter][info.flat_type] = info.price
+    return acc
+  }, {})
+
+  const dates = Object.keys(priceQuarterTypeMap)
+  const plotData = []
+  plotData.push(['x'].concat(dates.map(parseDate)))
+  flatTypes.forEach(t => {
+    plotData.push([t].concat(dates.map(d => priceQuarterTypeMap[d][t])))
+  })
 
   var chart = c3.generate({
 
     bindto: `#${"prices"} .viz .top.leftviz`,
     data: {
       x: 'x',
-      columns: [
-        timeXaxis,
-        priceYaxis
-      ]
+      columns: plotData
     },
     axis: {
       x: {
