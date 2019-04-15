@@ -4,6 +4,7 @@ import housingType from './housing_type.js'
 import housingTypeHDB from './housing_type_hdb.js'
 import housingTypeSummary from './housing_type_summary.js'
 import resale from './resale_prices.js'
+import buildMap from './pick_estate.js'
 import util from './utils.js'
 
 const dimensions = []
@@ -246,6 +247,15 @@ Promise.all([
     housingTypeSummary(e.data, "#type-hdb-summary .viz", summaryHDBData,
                        dimensions, d3.schemeYlOrRd[5].slice(1), true)
   }, false);
+
+  buildMap(document.querySelector('#summary-map'))
+
+  dimensions.forEach(d => {
+    var el = document.querySelector(`#type-${d}`)
+    el.value = el.children[0].value
+    var event = new Event('change')
+    el.dispatchEvent(event)
+  })
 })
 
 const selectEl = document.querySelectorAll('select')

@@ -137,6 +137,12 @@ circle {
   top: 25vh;
 }
 
+#summary-map {
+    height: 60vh;
+    width: 60vw;
+    overflow: hidden;
+    border: none;
+}
 </style>
 
 <body>
@@ -322,6 +328,12 @@ circle {
           <div class='summary' data-aos="fade-down"></div>
         </div>
       </div>
+      <div id='district-summary' class='page'>
+        <div class='viz'>
+          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+          <div id="summary-map" class='summary'></div>
+        </div>
+      </div>
     </div>
 
     <div id='prices' class='question'>
@@ -355,6 +367,10 @@ circle {
   <script type="module" src="housing_type_summary.js"></script>
   <script type="module" src="resale_prices.js"></script>
   <script type="module" src="index.js"></script>
+
+  <script type='module' src='pick_estate.js'></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXWlNQI0L23IiD5_QT6T4gkCDKz4OI5w8"></script>
+  <script src="lib/geoxml3.js"></script>
 </body>
 
 </html>

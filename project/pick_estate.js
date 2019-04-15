@@ -1,14 +1,7 @@
-window.initMap =
-    function() {
-  var map;
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: new google.maps.LatLng(1.351616, 103.808053),
-    zoom: 12,
-    mapTypeId: 'terrain'
-  });
+export default function buildMap(containerEl) {
+  var map = new google.maps.Map(containerEl);
 
-  var filename =
-      'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
+  var filename = 'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
   var geoXmlDoc = null;
 
   var highlightOptions = {
@@ -18,7 +11,6 @@ window.initMap =
     strokeWidth: 10
   };
   var highlightLineOptions = {strokeColor: '#FFFF00', strokeWidth: 10};
-
 
   var geoXml = new geoXML3.parser({
     map: map,
@@ -46,8 +38,7 @@ window.initMap =
   });
   geoXml.parse(filename);
 
-  var highlightRegion =
-      function(name) {
+  var highlightRegion = function(name) {
     if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
     for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
       var placemark = geoXmlDoc.placemarks[i];
@@ -78,12 +69,15 @@ window.initMap =
     }
   }
 
-  var zoomRegion =
-      function(name) {
+  var zoomRegion = function(name) {
     // TODO
   }
 
   return {highlight: highlightRegion, zoom: zoomRegion};
+}
+
+window.initMap = function() {
+  return buildMap(document.getElementById('map'))
 }
 
 function setHighlightHandler(
