@@ -20,8 +20,6 @@ function buildNarrarive(summaryData, containerParentSelector) {
     }
   })
 
-  console.log(votes)
-
   // majority rule
   var type = null
   var topDimensions = []
