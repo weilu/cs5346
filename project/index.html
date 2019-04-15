@@ -125,6 +125,18 @@ circle {
   cursor: default;
 }
 
+#type-summary .viz div.narrative,
+#type-hdb-summary .viz div.narrative {
+  left: 0;
+  height: 20vh;
+  font-size: 1.5em;
+}
+
+#type-summary .viz div.summary,
+#type-hdb-summary .viz div.summary {
+  top: 25vh;
+}
+
 </style>
 
 <body>
@@ -297,8 +309,20 @@ circle {
       </div>
     </div>
 
-    <div id='type-summary' class='summary' data-aos="fade-down"></div>
-    <div id='type-hdb-summary' class='summary' data-aos="fade-down"></div>
+    <div id='summary' class='question'>
+      <div id='type-summary' class='page'>
+        <div class='viz'>
+          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+          <div class='summary' data-aos="fade-down"></div>
+        </div>
+      </div>
+      <div id='type-hdb-summary' class='page'>
+        <div class='viz'>
+          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+          <div class='summary' data-aos="fade-down"></div>
+        </div>
+      </div>
+    </div>
 
     <div id='prices' class='question'>
       <div class='narrative'></div>

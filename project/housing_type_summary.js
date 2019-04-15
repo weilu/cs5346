@@ -1,7 +1,73 @@
 import util from './utils.js'
 
+function buildNarrarive(summaryData, containerParentSelector) {
+  const dimensions = Object.keys(summaryData)
+  const votes = {} // {HDB: [education, gender], landed: [language]}
+  dimensions.forEach(d => {
+    var vote = null
+    var voteVal = 0
+    Object.keys(summaryData[d]).forEach(type => {
+      if (summaryData[d][type] > voteVal) {
+        voteVal = summaryData[d][type]
+        vote = type
+      }
+    })
+
+    if (votes[vote] == null) {
+      votes[vote] = [d]
+    } else {
+      votes[vote].push(d)
+    }
+  })
+
+  console.log(votes)
+
+  // majority rule
+  var type = null
+  var topDimensions = []
+  Object.keys(votes).forEach(t => {
+    if (votes[t].length > topDimensions.length) {
+      type = t
+      topDimensions = votes[t]
+    }
+  })
+
+  const narrativeEl = document.querySelector(`${containerParentSelector} div.narrative`)
+  narrativeEl.innerHTML = `<p>Given your demographics, the most popular
+    housing type is <b>${type}</b>, because based on majority rule
+    ${type} is the most popular choice across ${topDimensions.length}
+    dimensions, namely ${topDimensions.join(', ')},
+    out of all ${dimensions.length} dimensions.</p>`
+}
+
+// Housing type summary using parallel coordinates
+export default function(eventData, plotElSelector, summaryData, dimensions,
+                        colorRange, sortTypes) {
+  // eventData = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
+  summaryData[eventData.dimension] = eventData
+  delete summaryData[eventData.dimension].dimension
+  var allTypes = Object.values(summaryData)
+                       .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
+
+  allTypes = d3.set(allTypes).values()
+  const summaryPlotData = allTypes.map(type => {
+    const data = {type: type}
+    Object.keys(summaryData).forEach(dim => {
+      data[dim] = summaryData[dim][type] || 0
+    })
+    return data
+  })
+
+  var colorDomain = d3.set(summaryPlotData.map(d => d.type)).values()
+  if (sortTypes) colorDomain = colorDomain.sort()
+  var color = d3.scaleOrdinal()
+    .domain(colorDomain).range(colorRange)
+  parallelCoordinates(dimensions, summaryPlotData, plotElSelector, color)
+  buildNarrarive(summaryData, plotElSelector)
+}
+
 // modified from https://www.d3-graph-gallery.com/graph/parallel_custom.html
-export default function(dimensions, data, containerSelector, color) {
+function parallelCoordinates(dimensions, data, containerParentSelector, color) {
   // keep dimension order, filter to keep only those available in data
   dimensions = dimensions.filter(d => d in data[0])
 
@@ -17,11 +83,13 @@ export default function(dimensions, data, containerSelector, color) {
   //         {...getSampleData(), type: 'Others'}]
 
   // set the dimensions and margins of the graph
+  const containerEl = document.querySelector(containerParentSelector)
   var margin = {top: 30, right: 150, bottom: 10, left: 50},
-    width = 800 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = containerEl.clientWidth - margin.left - margin.right,
+    height = 0.5 * containerEl.clientWidth - margin.top - margin.bottom;
 
   // empty canvas
+  const containerSelector = `${containerParentSelector} div.summary`
   d3.select(containerSelector).select('svg').remove()
 
   // append the svg object to the body of the page

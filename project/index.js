@@ -228,28 +228,6 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
 })
 
 
-// Housing type summary using parallel coordinates
-function updateSummaryPlot(eventData, plotElSelector, summaryData, colorRange, sortTypes) {
-  // eventData = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
-  summaryData[eventData.dimension] = eventData
-  delete summaryData[eventData.dimension].dimension
-  var allTypes = Object.values(summaryData)
-                       .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
-  allTypes = d3.set(allTypes).values()
-  const summaryPlotData = allTypes.map(type => {
-    const data = {type: type}
-    Object.keys(summaryData).forEach(dim => {
-      data[dim] = summaryData[dim][type] || 0
-    })
-    return data
-  })
-  var colorDomain = d3.set(summaryPlotData.map(d => d.type)).values()
-  if (sortTypes) colorDomain = colorDomain.sort()
-  var color = d3.scaleOrdinal()
-    .domain(colorDomain).range(colorRange)
-  housingTypeSummary(dimensions, summaryPlotData, plotElSelector, color)
-}
-
 const summaryData = {}
 const summaryHDBData = {}
 Promise.all([
@@ -261,12 +239,12 @@ Promise.all([
 //  priceInfoAll
 ]).then(() => {
   document.addEventListener('type-update', (e) => {
-    updateSummaryPlot(e.data, "#type-summary", summaryData,
-                      util.coolColors, false)
+    housingTypeSummary(e.data, "#type-summary .viz", summaryData,
+                       dimensions, util.coolColors, false)
   }, false);
   document.addEventListener('type-hdb-update', (e) => {
-    updateSummaryPlot(e.data, "#type-hdb-summary", summaryHDBData,
-                      d3.schemeYlOrRd[5].slice(1), true)
+    housingTypeSummary(e.data, "#type-hdb-summary .viz", summaryHDBData,
+                       dimensions, d3.schemeYlOrRd[5].slice(1), true)
   }, false);
 })
 
