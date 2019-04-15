@@ -47,7 +47,8 @@ export default function buildMap(containerEl, done) {
         }
       }
 
-      geoXmlDoc = doc[0];  // Should be the hdb info
+      // Display in-progress hdb information
+      geoXmlDoc = doc[kmlRef['soonhdb']];
       if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
       for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
         var placemark = geoXmlDoc.placemarks[i];
@@ -60,12 +61,14 @@ export default function buildMap(containerEl, done) {
         }
       }
 
+      // Hide all the other data
       for (var g = 1; g < doc.length; g++) {
         var geoDoc = doc[g];
         if (!geoDoc || !geoDoc.placemarks) return;
         for (var i = 0; i < geoDoc.placemarks.length; i++) {
           var placemark = geoDoc.placemarks[i];
           if (placemark.marker) {
+            // TODO: Set the placemark style
             placemark.marker.setMap(null);
           }
           if (placemark.polygon) {
@@ -78,15 +81,15 @@ export default function buildMap(containerEl, done) {
         done()
       }
 
-      zoomRegion('BISHAN');
+      zoomRegion('SERANGOON');
     }
   });
   geoXml.parse(kmlData);
 
   function showAmenities(name, type) {
-    // TODO: Somehow parse HDB data?
+    zoomRegion(name);
 
-    // TODO: Zoom into region
+    // Iterate the data and show the nearest amenities
   }
 
   function onClick() {
@@ -96,7 +99,7 @@ export default function buildMap(containerEl, done) {
   }
 
   var zoomRegion =
-      function(name, type) {
+      function(name) {
     var geoDoc = geoXmlDocs[kmlRef['planningboundary']];
 
     for (var i = 0; i < geoDoc.placemarks.length; i++) {
