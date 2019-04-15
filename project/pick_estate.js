@@ -1,4 +1,4 @@
-export default function buildMap(containerEl, done) {
+export default function buildMap(containerEl, disableMouseOverHighlight, done) {
   var map = new google.maps.Map(containerEl);
 
   var filename = 'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
@@ -24,9 +24,15 @@ export default function buildMap(containerEl, done) {
       for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
         var placemark = geoXmlDoc.placemarks[i];
         if (placemark.polygon) {
-          setHighlightHandler(
-              geoXmlDoc, placemark.polygon, i, highlightOptions,
-              highlightLineOptions);
+          placemark.polygon.setOptions({
+            fillColor: '#0000FF',
+            strokeColor: '#0000FF',
+            fillOpacity: 0.3
+          });
+          if (!disableMouseOverHighlight) {
+            setHighlightHandler(geoXmlDoc, placemark.polygon, i,
+              highlightOptions, highlightLineOptions);
+          }
         }
       }
 
@@ -81,10 +87,8 @@ window.initMap = function() {
   return buildMap(document.getElementById('map'))
 }
 
-function setHighlightHandler(
-    geoXmlDoc, poly, id, highlightOptions, highlightLineOptions) {
-  poly.setOptions(
-      {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+function setHighlightHandler(geoXmlDoc, poly, id,
+  highlightOptions, highlightLineOptions) {
 
   google.maps.event.addListener(poly, 'mouseover', function() {
     var rowElem = document.getElementById('row' + id);

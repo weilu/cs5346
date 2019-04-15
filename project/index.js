@@ -267,7 +267,7 @@ Promise.all([
     }
     narrativeEl.innerHTML = `<p>${narrative}.</p>`
 
-    const summaryMap = buildMap(document.querySelector('#summary-map'), function() {
+    const summaryMap = buildMap(document.querySelector('#summary-map'), true, function() {
       const numColors = sortedDistrictAndDims.length < 3 ? 3 : sortedDistrictAndDims.length
       const colors = d3.schemeYlGn[numColors].slice().reverse()
       for (var i = 0; i < sortedDistrictAndDims.length; i++) {
