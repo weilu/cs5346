@@ -38,16 +38,30 @@ export default function(data, town, flatType) {
   const dates = Object.keys(priceQuarterTypeMap)
   const plotData = []
   plotData.push(['x'].concat(dates.map(parseDate)))
+  const typePrices = []
   flatTypes.forEach(t => {
-    plotData.push([t].concat(dates.map(d => priceQuarterTypeMap[d][t])))
+    const prices = dates.map(d => priceQuarterTypeMap[d][t])
+    typePrices.push(prices)
+    plotData.push([t].concat(prices))
   })
+
+  function getColorPattern() {
+    return {
+      '1-room & 2-room': [d3.rgb('#fecc5c').brighter().hex(),
+                          d3.rgb('#fecc5c').darker().hex()],
+      '3-room': ['#fd8d3c'],
+      '4-room': ['#f03b20'],
+      '5-room & executive': [d3.rgb('#bd0026').brighter().hex(),
+                             d3.rgb('#bd0026').darker().hex()]
+    }[flatType]
+  }
 
   var chart = c3.generate({
 
-    bindto: `#${"prices"} .viz .top.leftviz`,
+    bindto: '#summary-price',
     data: {
       x: 'x',
-      columns: plotData
+      columns: plotData,
     },
     axis: {
       x: {
@@ -72,9 +86,32 @@ export default function(data, town, flatType) {
           const year = date.getFullYear()
           return `${year} Q${quarter}`
         },
-        value: d => "$" + d3.format(",.0f")(d)
+        value: formatMoney
       }
+    },
+    color: {
+      pattern: getColorPattern()
     }
   });
 
+  const latestPrices = typePrices.map(priceArray => {
+    return priceArray.reverse().reduce((acc, curr) => {
+     if (acc == null && !isNaN(curr)) {
+        acc = curr
+      }
+      return acc
+    }, null)
+  })
+  const estimatedPrice = latestPrices.map(formatMoney).join(' to ')
+  var narrative = `You can expect to spend ${estimatedPrice} for
+    a resale ${flatType} flat in ${town}, according to the median price
+    from the last transacted quarter.`
+  narrative += ` Below is the quarterly median resale price history of
+    ${flatType} flat in ${town} for your reference.`
+  const narrativeEl = document.querySelector(`#price-summary .narrative`)
+  narrativeEl.innerHTML = `<p>${narrative}</p>`
+}
+
+function formatMoney(d) {
+  return "$" + d3.format(",.0f")(d)
 }

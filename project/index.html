@@ -73,8 +73,13 @@ svg g {
 }
 
 .district-all .viz div.district {
-  top: 5em;
-  height: 80vh;
+  top: 10em;
+  height: 70vh;
+}
+
+.district-all .viz div.narrative {
+  left: 0;
+  font-size: 1.3em;
 }
 
 /* styles for slope graph */
@@ -125,6 +130,7 @@ circle {
   cursor: default;
 }
 
+#price-summary .viz div.narrative,
 #district-summary .viz div.narrative,
 #type-summary .viz div.narrative,
 #type-hdb-summary .viz div.narrative {
@@ -133,6 +139,7 @@ circle {
   font-size: 1.5em;
 }
 
+#price-summary .viz div.summary,
 #district-summary .viz div.summary,
 #type-summary .viz div.summary,
 #type-hdb-summary .viz div.summary {
@@ -145,6 +152,12 @@ circle {
     overflow: hidden;
     border: none;
 }
+
+/* monkey patch c3 */
+g.c3-legend-item-National-Average line{
+  stroke: #a9a9a9 !important;
+}
+
 </style>
 
 <body>
@@ -318,6 +331,9 @@ circle {
     </div>
 
     <div id='summary' class='question'>
+      <div class='page'>
+        <h2>Summary</h2>
+      </div>
       <div id='type-summary' class='page'>
         <div class='viz'>
           <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
@@ -336,19 +352,13 @@ circle {
           <div id="summary-map" data-aos="fade-down" class='summary'></div>
         </div>
       </div>
-    </div>
-
-    <div id='prices' class='question'>
-      <div class='narrative'></div>
-      <div class='viz'>
-        <div class='top leftviz'></div>
-        <div class='top rightviz'></div>
-        <div class='bottom leftviz'></div>
-        <div class='bottom rightviz'></div>
+      <div id='price-summary' class='page'>
+        <div class='viz'>
+          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+          <div id="summary-price" data-aos="fade-down" class='summary'></div>
+        </div>
       </div>
-      <div class='next'><button>Next</button></div>
     </div>
-
   </div>
 
   <script src="lib/aos.js"></script>

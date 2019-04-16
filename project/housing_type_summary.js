@@ -18,8 +18,8 @@ function buildNarrarive(summaryData, containerParentSelector) {
 }
 
 // Housing type summary using parallel coordinates
-export default function(eventData, plotElSelector, summaryData, dimensions,
-                        colorRange, sortTypes) {
+export default function(eventData, plotElSelector, summaryData,
+                        dimensions, color) {
   // eventData = {dimension: language, HDB: 0.34, Landed: 0.02, Others: 0.1}}
   summaryData[eventData.dimension] = eventData
   delete summaryData[eventData.dimension].dimension
@@ -35,10 +35,6 @@ export default function(eventData, plotElSelector, summaryData, dimensions,
     return data
   })
 
-  var colorDomain = d3.set(summaryPlotData.map(d => d.type)).values()
-  if (sortTypes) colorDomain = colorDomain.sort()
-  var color = d3.scaleOrdinal()
-    .domain(colorDomain).range(colorRange)
   parallelCoordinates(dimensions, summaryPlotData, plotElSelector, color)
   return buildNarrarive(summaryData, plotElSelector)
 }
