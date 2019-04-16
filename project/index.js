@@ -5,6 +5,7 @@ import housingTypeHDB from './housing_type_hdb.js'
 import housingTypeSummary from './housing_type_summary.js'
 import resale from './resale_prices.js'
 import buildMap from './pick_estate.js'
+import buildSelection from './amenities.js'
 import util from './utils.js'
 
 const dimensions = []
@@ -299,6 +300,10 @@ Promise.all([
         }
         summaryMap.highlightWithColor(sortedDistrictAndDims[i][0].toUpperCase(), highlightOptions)
       }
+    })
+
+    const selectionMap = buildSelection(document.querySelector('#amenities-map'), function() {
+      selectionMap.zoom(winner);
     })
 
     recommendations.district = winner

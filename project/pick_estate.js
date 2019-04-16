@@ -1,7 +1,8 @@
 export default function buildMap(containerEl, disableMouseOverHighlight, done) {
   var map = new google.maps.Map(containerEl);
 
-  var filename = 'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
+  var filename =
+      'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/planningboundary.kml';
   var geoXmlDoc = null;
 
   var highlightOptions = {
@@ -15,6 +16,7 @@ export default function buildMap(containerEl, disableMouseOverHighlight, done) {
   var geoXml = new geoXML3.parser({
     map: map,
     singleInfoWindow: true,
+    suppressInfoWindows: true,
     afterParse: function(doc) {
       var currentBounds = map.getBounds();
       if (!currentBounds) currentBounds = new google.maps.LatLngBounds();
@@ -24,14 +26,12 @@ export default function buildMap(containerEl, disableMouseOverHighlight, done) {
       for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
         var placemark = geoXmlDoc.placemarks[i];
         if (placemark.polygon) {
-          placemark.polygon.setOptions({
-            fillColor: '#0000FF',
-            strokeColor: '#0000FF',
-            fillOpacity: 0.3
-          });
+          placemark.polygon.setOptions(
+              {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
           if (!disableMouseOverHighlight) {
-            setHighlightHandler(geoXmlDoc, placemark.polygon, i,
-              highlightOptions, highlightLineOptions);
+            setHighlightHandler(
+                geoXmlDoc, placemark.polygon, i, highlightOptions,
+                highlightLineOptions);
           }
         }
       }
@@ -72,8 +72,18 @@ export default function buildMap(containerEl, disableMouseOverHighlight, done) {
     }
   }
 
-  var zoomRegion = function(name) {
-    // TODO
+  var zoomRegion =
+      function(name) {
+    for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
+      var placemark = geoXmlDoc.placemarks[i];
+      if (placemark.polygon && placemark.name === name) {
+        map.fitBounds(placemark.polygon.bounds);
+        break;
+      } else if (geoXmlDoc.placemarks[i].polyline) {
+        map.fitBounds(placemark.polyline.bounds);
+        break;
+      }
+    }
   }
 
   return {
@@ -83,13 +93,13 @@ export default function buildMap(containerEl, disableMouseOverHighlight, done) {
   };
 }
 
-window.initMap = function() {
+window.initMap =
+    function() {
   return buildMap(document.getElementById('map'))
 }
 
-function setHighlightHandler(geoXmlDoc, poly, id,
-  highlightOptions, highlightLineOptions) {
-
+function setHighlightHandler(
+    geoXmlDoc, poly, id, highlightOptions, highlightLineOptions) {
   google.maps.event.addListener(poly, 'mouseover', function() {
     var rowElem = document.getElementById('row' + id);
     if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
