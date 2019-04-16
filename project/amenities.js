@@ -2,7 +2,7 @@ export default function buildSelection(containerEl, done) {
   var kml = indexKmlData();
   var geoData = null;
   var map = new google.maps.Map(containerEl);
-  var info = new google.maps.InfoWindow();
+  var info = new google.maps.InfoWindow({maxWidth: 200});
   var selection = {};
 
   var geoXml = new geoXML3.parser({
@@ -88,11 +88,6 @@ export default function buildSelection(containerEl, done) {
       map.setCenter(hdb.bounds.getCenter());
 
       var report = showAmenities(hdb);
-
-      // Display distance to nearest amenities
-      // info.setContent(report);
-      // info.setPosition(hdb.bounds.getCenter());
-      // info.open(map);
     });
   };
 
@@ -205,8 +200,6 @@ export default function buildSelection(containerEl, done) {
       var placemark = geoDoc.placemarks[i];
 
       if (placemark.name.toUpperCase() == name.toUpperCase()) {
-        console.log("Zoomed to ", placemark);
-
         var poly;
         if (placemark.polygon) poly = placemark.polygon;
         else if (placemark.polyline) poly = placemark.polyline;
@@ -267,11 +260,11 @@ function calcDistance(p1, p2) {
 
 function showSidebar(report) {
   var sidebarHtml =
-      '<table><tr><td><a href="javascript:showAll();">Show All</a></td></tr>';
+      '<table>';
   for (let i = 0; i < report.length; i++) {
     const row = report[i];
-    sidebarHtml += '<tr id="row' + i + '" >' + row + '</tr>';
+    sidebarHtml += '<tr id="row' + i + '"><td>' + row + '</td></tr>';
   }
   sidebarHtml += '</table>';
-  document.getElementById('sidebar').innerHTML = sidebarHtml;
+  document.getElementById('amenities-sidebar').innerHTML = sidebarHtml;
 }

@@ -146,12 +146,27 @@
         top: 25vh;
     }
 
-    #summary-map, 
-    #amenities-map {
+    #summary-map {
         height: 60vh;
         width: 60vw;
         overflow: hidden;
         border: none;
+    }
+
+    #amenities-map {
+        height: 60vh;
+        width: 40vw;
+        overflow: hidden;
+        border: none;
+        left: 0;
+    }
+
+    #amenities-sidebar {
+        height: 60vh;
+        width: 20vw;
+        overflow: hidden;
+        border: none;
+        right: 0;
     }
 
     /* monkey patch c3 */
@@ -355,8 +370,14 @@
             <div id='amenities-summary' class='page'>
                 <div class='viz'>
                     <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
-                    <div id="amenities-map" data-aos="fade-down" class='summary'></div>
-                    <div id="sidebar" data-aos="fade-down" class='summary'></div>
+                    <table>
+                        <td>
+                            <div id="amenities-map" data-aos="fade-down" class='summary'></div>
+                        </td>
+                        <td>
+                            <div id="amenities-sidebar" data-aos="fade-down" class='summary'></div>
+                        </td>
+                    </table>
                 </div>
             </div>
             <div id='price-summary' class='page'>
