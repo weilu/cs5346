@@ -1,14 +1,7 @@
 export default function buildMap(containerEl, done) {
-  var highlightOptions = {
-    fillColor: '#FFFF00',
-    strokeColor: '#000000',
-    fillOpacity: 0.9,
-    strokeWidth: 10
-  };
-  var highlightLineOptions = {strokeColor: '#FFFF00', strokeWidth: 10};
-
   const kmlDataPath =
       'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/';
+
   var kml = indexKmlData(kmlDataPath);
   var geoData = null;
   var map = new google.maps.Map(containerEl);
@@ -26,16 +19,14 @@ export default function buildMap(containerEl, done) {
       geoDoc = geoData[kml.ref['soonhdb']];
       if (!geoDoc || !geoDoc.placemarks) return;
 
-      for (var g = 0; g < geoDoc.placemarks.length; g++) {
-        var placemark = geoDoc.placemarks[g];
+      for (var i = 0; i < geoDoc.placemarks.length; i++) {
+        var placemark = geoDoc.placemarks[i];
 
         if (placemark.polygon) {
-          placemark.polygon.setOptions(
-              {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+          placemark.polygon.setOptions(polyStyle().nromal);
 
-          setHoverHandler(
-              geoDoc, placemark.polygon, g, highlightOptions,
-              highlightLineOptions);
+          setHoverHDB(placemark.polygon, i);
+          setClickHDB(geoDoc, placemark.polygon, i);
         }
       }
 
@@ -50,9 +41,11 @@ export default function buildMap(containerEl, done) {
           var placemark = geoDoc.placemarks[i];
 
           if (placemark.marker) {
-            setClickHandler(geoDoc, placemark.marker, i);
+            setHoverAmenities(placemark.marker, i);
 
             placemark.marker.setMap(null);
+          } else if (placemark.polygon) {
+            placemark.polygon.setOptions({fillOpacity: 0.0});
           }
         }
       }
@@ -144,28 +137,88 @@ function indexKmlData(path) {
 }
 
 function
-setClickHandler() {
-  // TODO: Somehow parse HDB data?
+polyStyle() {
+  return {
+    normal: {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3},
+        hover: {
+          fillColor: '#FFFF00',
+          strokeColor: '#000000',
+          fillOpacity: 0.9,
+          strokeWidth: 10
+        },
+        click: {
+          fillColor: '#0000FF',
+          strokeColor: '#000000',
+          fillOpacity: 0.9,
+          strokeWidth: 10
+        }
+  }
+}
 
-  // TODO: Zoom into region
+function
+markerStyle() {
+  return {
+    normal: {}, hover: {}, click: {}
+  }
+}
+
+function setClickHDB(geoDoc, poly, id) {
+  google.maps.event.addListener(poly, 'leftclick', function(event) {
+    var lat = event.latLng.lat();
+    var lng = event.latLng.lng();
+
+    for (var i = 0; i < geoDoc.placemarks.length; i++) {
+      var placemark = geoDoc.placemarks[i];
+      if (placemark.polygon) {
+        placemark.polygon.setOptions(polyStyle().normal);
+      }
+    }
+
+    // TODO: Center around position
+
+    var rowElem = document.getElementById('row' + id);
+    if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
+    if (poly) {
+      poly.setOptions(polyStyle().click);
+    }
+
+    // Parse nearby amenities
+    // Calculate distance
+
+    // Display distance to nearest amenities
+  });
 }
 
 // TODO: Change to render points per type
-function setHoverHandler(
-    geoDoc, poly, id, highlightOptions, highlightLineOptions) {
+function setHoverHDB(poly, id) {
   google.maps.event.addListener(poly, 'mouseover', function() {
     var rowElem = document.getElementById('row' + id);
     if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
-    if (geoDoc.placemarks[id].polygon) {
-      marker.setOptions(highlightOptions);
-    } else if (geoDoc.placemarks[id].polyline) {
-      marker.setOptions(highlightLineOptions);
+    if (poly) {
+      poly.setOptions(polyStyle().hover);
     }
   });
   google.maps.event.addListener(poly, 'mouseout', function() {
     var rowElem = document.getElementById('row' + id);
     if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
-    poly.setOptions(
-        {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
+    poly.setOptions(polyStyle().normal);
+  });
+}
+
+function setHoverAmenities(marker, id) {
+  google.maps.event.addListener(marker, 'mouseover', function() {
+    var rowElem = document.getElementById('row' + id);
+    if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
+
+    marker.setOptions(markerStyle().hover);
+
+    // TODO: Display data
+  });
+
+  google.maps.event.addListener(marker, 'mouseout', function() {
+    var rowElem = document.getElementById('row' + id);
+    if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
+
+    marker.setOptions(markerStyle().normal);
   });
 }
