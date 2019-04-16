@@ -19359,7 +19359,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_298">
-<name>P & J Kindergarten</name>
+<name>P \& J Kindergarten</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -19393,7 +19393,7 @@
 <td>0</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>NAME</th>
-<td>P & J Kindergarten</td>
+<td>P \& J Kindergarten</td>
 </tr><tr bgcolor="">
 <th>PHOTOURL</th>
 <td></td>
@@ -26460,7 +26460,7 @@
 <td>555108</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSSTREETNAME</th>
-<td>3 & 5 Tavistock Avenue</td>
+<td>3 \& 5 Tavistock Avenue</td>
 </tr><tr bgcolor="">
 <th>ADDRESSTYPE</th>
 <td></td>

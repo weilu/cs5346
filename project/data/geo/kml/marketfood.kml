@@ -1027,7 +1027,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_20">
-<name>Chong Pang Market & Food Centre</name>
+<name>Chong Pang Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1052,7 +1052,7 @@
 <td>Blk 104/105, Yishun Ring Road, S(760104/760105)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Chong Pang Market & Food Centre</td>
+<td>Chong Pang Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>A9AA6532E61280D3</td>
@@ -1079,7 +1079,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_21">
-<name>Kovan Market & Food Centre</name>
+<name>Kovan Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1104,7 +1104,7 @@
 <td>Blk 209, Hougang Street 21, S(530209)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Kovan Market & Food Centre</td>
+<td>Kovan Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>44B94C6BAA16B6C0</td>
@@ -1131,7 +1131,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_22">
-<name>Pek Kio Market & Food Centre</name>
+<name>Pek Kio Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1156,7 +1156,7 @@
 <td>Blk 41A, Cambridge Road, S(211041)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Pek Kio Market & Food Centre</td>
+<td>Pek Kio Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>23C3F35C9DCD2829</td>
@@ -1599,7 +1599,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_31">
-<name>Taman Jurong Market & Food Centre</name>
+<name>Taman Jurong Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1624,7 +1624,7 @@
 <td>3, Yung Sheng Road, S(618499)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Taman Jurong Market & Food Centre</td>
+<td>Taman Jurong Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>6FD48288A1322B7B</td>
@@ -1807,7 +1807,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_35">
-<name>ABC Brickworks Market & Food Centre</name>
+<name>ABC Brickworks Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1832,7 +1832,7 @@
 <td>Blk 6, Jalan Bukit Merah, S(150006)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>ABC Brickworks Market & Food Centre</td>
+<td>ABC Brickworks Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>B86732D7CBD62B21</td>
@@ -1859,7 +1859,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_36">
-<name>Albert Centre Market & Food Centre</name>
+<name>Albert Centre Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1884,7 +1884,7 @@
 <td>Blk 270, Queen Street, S(180270)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Albert Centre Market & Food Centre</td>
+<td>Albert Centre Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>C28105A48AF747D8</td>
@@ -3367,7 +3367,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_65">
-<name>Blks 2 & 3 Changi Village Road</name>
+<name>Blks 2 \& 3 Changi Village Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3392,7 +3392,7 @@
 <td>Blk 2/3, Changi Village Road, S(500002/500003)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Blks 2 & 3 Changi Village Road</td>
+<td>Blks 2 \& 3 Changi Village Road</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>50F2B6ED7D29FD93</td>
@@ -3783,7 +3783,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_73">
-<name>Holland Village Market & Food Centre</name>
+<name>Holland Village Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3808,7 +3808,7 @@
 <td>1, Lorong Mambong, S(277700)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Holland Village Market & Food Centre</td>
+<td>Holland Village Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>185550BFB6F4A070</td>
@@ -3835,7 +3835,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_74">
-<name>Hong Lim Market & Food Centre</name>
+<name>Hong Lim Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3860,7 +3860,7 @@
 <td>Blk 531A, Upper Cross Street, S(051531)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>Hong Lim Market & Food Centre</td>
+<td>Hong Lim Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>0FD5B62D96F89474</td>
@@ -4095,7 +4095,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_79">
-<name>North Bridge Road Market & Food Centre</name>
+<name>North Bridge Road Market \& Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4120,7 +4120,7 @@
 <td>861, North Bridge Road, S(198783)</td>
 </tr><tr bgcolor="">
 <th>NAME_OF_CENTRE</th>
-<td>North Bridge Road Market & Food Centre</td>
+<td>North Bridge Road Market \& Food Centre</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>INC_CRC</th>
 <td>791D32393943BC77</td>
