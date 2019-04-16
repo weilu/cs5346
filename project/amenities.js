@@ -22,7 +22,7 @@ export default function buildMap(containerEl, done) {
         var placemark = geoDoc.placemarks[i];
 
         if (placemark.polygon) {
-          placemark.polygon.setOptions(polyStyle().nromal);
+          placemark.polygon.setOptions(style().nromal);
 
           setHoverHDB(placemark.polygon);
           setClickHDB(map, geoDoc, placemark.polygon, info);
@@ -39,13 +39,13 @@ export default function buildMap(containerEl, done) {
         for (var i = 0; i < geoDoc.placemarks.length; i++) {
           var placemark = geoDoc.placemarks[i];
 
-          if (placemark.marker) {
+          if (placemark.polygon) {
+            placemark.polygon.setOptions(style().hide);
+          } else if (placemark.marker) {
             setHoverAmenities(placemark.marker, i);
 
             placemark.marker.setOptions({icon: kml.icon[g]})
             placemark.marker.setMap(null);
-          } else if (placemark.polygon) {
-            placemark.polygon.setOptions(polyStyle().hide);
           }
         }
       }
@@ -59,94 +59,118 @@ export default function buildMap(containerEl, done) {
   });
   geoXml.parse(kml.data);
 
-  var setClickHDB = function(map, geoDoc, poly, info) {
-    google.maps.event.addListener(map, 'click', function(event) {
-      console.log('Click event away from poly');
-      hideAmenities();
+  var setClickHDB = function(map, geoDoc, region, info) {
+    map.addListener('click', function(event) {
+      hideAmenities(region);
+      info.close();
     });
 
-    google.maps.event.addListener(poly, 'click', function(event) {
+    google.maps.event.addListener(region, 'click', function(event) {
       var lat = event.latLng.lat();
       var lng = event.latLng.lng();
-      map.setCenter(new google.maps.LatLng(lat, lng));
+      var latlng = new google.maps.LatLng(lat, lng);
+      map.setCenter(latlng);
 
       for (var i = 0; i < geoDoc.placemarks.length; i++) {
         var placemark = geoDoc.placemarks[i];
-        if (placemark.polygon) {
-          placemark.polygon.setOptions(polyStyle().normal);
+        if (placemark.regiongon) {
+          placemark.regiongon.setOptions(style().normal);
         }
       }
 
-      if (poly) {
-        poly.setOptions(polyStyle().click);
+      if (region) {
+        region.setOptions(style().click);
       }
 
-      showAmenities();
-
-      // Parse nearby amenities
-      // Calculate distance
+      var report = showAmenities(latlng);
 
       // Display distance to nearest amenities
-      info.setContent('TODO: Add amenities distances');
-      info.setPosition(poly.bounds.getCenter());
+      info.setContent(report);
+      info.setPosition(region.bounds.getCenter());
       info.open(map);
     });
   };
 
   // TODO: Change to render points per type
-  var setHoverHDB = function(poly) {
-    google.maps.event.addListener(poly, 'mouseover', function() {
+  var setHoverHDB = function(hdb) {
+    google.maps.event.addListener(hdb, 'mouseover', function() {
       console.log('Mouseover Polygon');
-      if (poly) {
-        poly.setOptions(polyStyle().hover);
+      if (hdb) {
+        hdb.setOptions(style().hover);
       }
     });
-    google.maps.event.addListener(poly, 'mouseout', function() {
+    google.maps.event.addListener(hdb, 'mouseout', function() {
       console.log('Mouseoff Polygon');
-      poly.setOptions(polyStyle().normal);
+      hdb.setOptions(style().normal);
     });
   };
 
   var setHoverAmenities = function(marker, id) {
+    var content;
+    var position;
+
     google.maps.event.addListener(marker, 'mouseover', function() {
       var rowElem = document.getElementById('row' + id);
       if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
 
+      content = info.getContent();
+      position = info.getPosition();
+
       info.setContent('TODO: Add amenities description');
-      info.setPosition(marker.getCenter());
-      info.open(map);
+      info.open(map, marker);
     });
 
     google.maps.event.addListener(marker, 'mouseout', function() {
       var rowElem = document.getElementById('row' + id);
       if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
 
-      info.close();
+      info.setContent(content);
+      info.setPosition(position);
     });
   };
 
   // Show all the amenities
   var showAmenities =
-      function() {
+      function(latlng) {
+    const DENSITY = 5;
+
+    var bounds = new google.maps.LatLngBounds();
+
     for (var g = 0; g < geoData.length; g++) {
       if (g === kml.ref['soonhdb']) continue;  // Skip hdb
 
       var geoDoc = geoData[g];
       if (!geoDoc || !geoDoc.placemarks) return;
 
+      var distance = [];
+
       for (var i = 0; i < geoDoc.placemarks.length; i++) {
         var placemark = geoDoc.placemarks[i];
 
         if (placemark.marker) {
-          placemark.marker.setMap(map);
+          distance.push(
+              {dist: calcDistance(latlng, placemark.marker.position), id: i});
         }
       }
+
+      distance.sort(function(a, b) {
+        return a.dist < b.dist;
+      });
+
+      for (var i = 0; i < DENSITY; i++) {
+        var placemark = geoDoc.placemarks[distance[i].id];
+        placemark.marker.setMap(map);
+
+        bounds.extend(placemark.marker.position);
+      }
     }
+
+    return 'TODO: Add amenities distances';
   }
 
   // Hide all the amenities
   var hideAmenities =
-      function() {
+      function(region) {
     // Set handler for every marker
     for (var g = 0; g < geoData.length; g++) {
       if (g === kml.ref['soonhdb']) continue;  // Skip hdb
@@ -162,6 +186,8 @@ export default function buildMap(containerEl, done) {
         }
       }
     }
+
+    map.fitBounds(region.bounds);
   }
 
   var zoomRegion =
@@ -202,14 +228,14 @@ indexKmlData() {
    'planningboundary']
       .forEach((kmlFile) => {
         kmlData.push(kmlDataPath + 'kml/' + kmlFile + '.kml');
-        kmlData.push(kmlDataPath + 'icon/' + kmlFile + '.png');
+        kmlIcon.push(kmlDataPath + 'icon/' + kmlFile + '.png');
         kmlRef[kmlFile] = id++;
       });
   return {ref: kmlRef, data: kmlData, icon: kmlIcon};
 }
 
 function
-polyStyle() {
+style() {
   return {
     normal: {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3},
         hover: {
@@ -226,4 +252,9 @@ polyStyle() {
         },
         hide: {fillOpacity: 0.0}
   }
+}
+
+function calcDistance(p1, p2) {
+  return google.maps.geometry.spherical.computeDistanceBetween(p1, p2).toFixed(
+      2);
 }
