@@ -13,3 +13,4 @@ A3/manifest.txt
 A3/report/*
 !A3/report/*.png
 !A3/report/*.pdf
+!project/data/geo/icon/*.png
