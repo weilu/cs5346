@@ -106,6 +106,8 @@ export default function(data, town, flatType) {
   var narrative = `You can expect to spend ${estimatedPrice} for
     a resale ${flatType} flat in ${town}, according to the median price
     from the last transacted quarter.`
+  narrative += ` Below is the quarterly median resale price history of
+    ${flatType} flat in ${town} for your reference.`
   const narrativeEl = document.querySelector(`#price-summary .narrative`)
   narrativeEl.innerHTML = `<p>${narrative}</p>`
 }
