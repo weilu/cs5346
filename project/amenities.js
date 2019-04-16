@@ -1,4 +1,4 @@
-export default function buildMap(containerEl, done) {
+export default function buildSelection(containerEl, done) {
   var kml = indexKmlData();
   var geoData = null;
   var map = new google.maps.Map(containerEl);
@@ -54,8 +54,6 @@ export default function buildMap(containerEl, done) {
       if (done != null) {
         done()
       }
-
-      zoomRegion('SERANGOON');
     }
   });
   geoXml.parse(kml.data);
@@ -267,7 +265,7 @@ function showSidebar(report) {
       '<table><tr><td><a href="javascript:showAll();">Show All</a></td></tr>';
   for (let i = 0; i < report.length; i++) {
     const row = report[i];
-    sidebarHtml += '<tr id="row' + i + '" >' + row + '</td></tr>';
+    sidebarHtml += '<tr id="row' + i + '" >' + row + '</tr>';
   }
   sidebarHtml += '</table>';
   document.getElementById('sidebar').innerHTML = sidebarHtml;

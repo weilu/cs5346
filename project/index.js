@@ -5,6 +5,7 @@ import housingTypeHDB from './housing_type_hdb.js'
 import housingTypeSummary from './housing_type_summary.js'
 import resale from './resale_prices.js'
 import buildMap from './pick_estate.js'
+import buildSelection from './amenities.js'
 import util from './utils.js'
 
 const dimensions = []
@@ -309,6 +310,10 @@ Promise.all([
     if (Object.keys(recommendations).length !== 3 || recommendations.type !== 'HDB Dwellings') return
 
     resale(resaleData, recommendations.district, recommendations.hdbType)
+
+    const selectionMap = buildSelection(document.querySelector('#amenities-map'), function() {
+      selectionMap.zoom(recommendations.district);
+    })
   }
 })
 
