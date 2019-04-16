@@ -33,7 +33,7 @@
 <Folder id="kml_ft_SPORTSG_SPORT_FACILITIES">
 <name>SPORTSG_SPORT_FACILITIES</name>
 <Placemark id="kml_1">
-<name>kml_1</name>
+<name>Ang Mo Kio Swimming Complex</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -81,7 +81,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_2">
-<name>kml_2</name>
+<name>Bishan Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -129,7 +129,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_3">
-<name>kml_3</name>
+<name>Bukit Batok Swimming Complex</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -177,7 +177,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_4">
-<name>kml_4</name>
+<name>Bukit Gombak Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -225,7 +225,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_5">
-<name>kml_5</name>
+<name>Bedok Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -273,7 +273,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_6">
-<name>kml_6</name>
+<name>Burghley Squash and Tennis Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -321,7 +321,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_7">
-<name>kml_7</name>
+<name>Choa Chu Kang Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -369,7 +369,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_8">
-<name>kml_8</name>
+<name>Jurong Stadium</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -417,7 +417,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_9">
-<name>kml_9</name>
+<name>Hougang Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -465,7 +465,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_10">
-<name>kml_10</name>
+<name>Clementi Stadium</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -513,7 +513,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_11">
-<name>kml_11</name>
+<name>Clementi Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -561,7 +561,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_12">
-<name>kml_12</name>
+<name>Jurong West Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -609,7 +609,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_13">
-<name>kml_13</name>
+<name>Kallang Basin Swimming Complex</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -657,7 +657,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_14">
-<name>kml_14</name>
+<name>Kallang Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -705,7 +705,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_15">
-<name>kml_15</name>
+<name>Katong Swimming Complex</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -753,7 +753,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_16">
-<name>kml_16</name>
+<name>Our Tampines Hub - Community Auditorium</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -801,7 +801,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_17">
-<name>kml_17</name>
+<name>Pasir Ris Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -849,7 +849,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_18">
-<name>kml_18</name>
+<name>Queenstown Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -897,7 +897,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_19">
-<name>kml_19</name>
+<name>Sengkang Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -945,7 +945,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_20">
-<name>kml_20</name>
+<name>Serangoon Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -993,7 +993,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_21">
-<name>kml_21</name>
+<name>Tampines Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1041,7 +1041,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_22">
-<name>kml_22</name>
+<name>Toa Payoh Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1089,7 +1089,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_23">
-<name>kml_23</name>
+<name>Woodlands Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1137,7 +1137,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_24">
-<name>kml_24</name>
+<name>St Wilfrid Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1185,7 +1185,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_25">
-<name>kml_25</name>
+<name>Yio Chu Kang Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1233,7 +1233,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_26">
-<name>kml_26</name>
+<name>Yishun Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1281,7 +1281,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_27">
-<name>kml_27</name>
+<name>Yishun Swimming Complex</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1329,7 +1329,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_28">
-<name>kml_28</name>
+<name>Co Curricular Activities Branch</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1377,7 +1377,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_29">
-<name>kml_29</name>
+<name>Delta Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1425,7 +1425,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_30">
-<name>kml_30</name>
+<name>Enabling Village Gym</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1473,7 +1473,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_31">
-<name>kml_31</name>
+<name>Geylang East Swimming Complex</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1521,7 +1521,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_32">
-<name>kml_32</name>
+<name>Geylang Field</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1569,7 +1569,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_33">
-<name>kml_33</name>
+<name>Farrer Park Field and Tennis Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1617,7 +1617,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_34">
-<name>kml_34</name>
+<name>Jalan Besar Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
@@ -1665,7 +1665,7 @@
 </Polygon>
 </Placemark>
 <Placemark id="kml_35">
-<name>kml_35</name>
+<name>Jurong East Sports Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>SPORTS_CENTRE</th>
