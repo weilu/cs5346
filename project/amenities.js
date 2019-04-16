@@ -3,6 +3,7 @@ export default function buildMap(containerEl, done) {
   var geoData = null;
   var map = new google.maps.Map(containerEl);
   var info = new google.maps.InfoWindow();
+  var selection = {};
 
   var geoXml = new geoXML3.parser({
     map: map,
@@ -22,7 +23,7 @@ export default function buildMap(containerEl, done) {
         var placemark = geoDoc.placemarks[i];
 
         if (placemark.polygon) {
-          placemark.polygon.setOptions(style().nromal);
+          placemark.polygon.setOptions(style().normal);
 
           setHoverHDB(placemark.polygon);
           setClickHDB(map, geoDoc, placemark.polygon, info);
@@ -59,64 +60,63 @@ export default function buildMap(containerEl, done) {
   });
   geoXml.parse(kml.data);
 
-  var setClickHDB = function(map, geoDoc, region, info) {
-    map.addListener('click', function(event) {
-      hideAmenities(region);
-      info.close();
+  var setClickHDB = function(map, geoDoc, hdb, info) {
+    map.addListener(hdb, 'click', function(event) {
+      hideAmenities();
+      // info.close();
+      hdb.setOptions(style().normal);
+
+      map.fitBounds(selection.region.bounds);
+      selection.block = null;
     });
 
-    google.maps.event.addListener(region, 'click', function(event) {
-      var lat = event.latLng.lat();
-      var lng = event.latLng.lng();
-      var latlng = new google.maps.LatLng(lat, lng);
-      map.setCenter(latlng);
+    google.maps.event.addListener(hdb, 'click', function(event) {
+      if (selection.block) selection.block.setOptions(style().normal);
+      map.fitBounds(selection.region.bounds);
+
+      selection.block = hdb;
 
       for (var i = 0; i < geoDoc.placemarks.length; i++) {
         var placemark = geoDoc.placemarks[i];
-        if (placemark.regiongon) {
-          placemark.regiongon.setOptions(style().normal);
+        if (placemark.hdbgon) {
+          placemark.hdbgon.setOptions(style().normal);
         }
       }
 
-      if (region) {
-        region.setOptions(style().click);
+      if (hdb) {
+        hdb.setOptions(style().click);
       }
 
-      var report = showAmenities(latlng);
+      map.setCenter(hdb.bounds.getCenter());
+
+      var report = showAmenities(hdb);
+
+      console.log(report);
 
       // Display distance to nearest amenities
-      info.setContent(report);
-      info.setPosition(region.bounds.getCenter());
-      info.open(map);
+      // info.setContent(report);
+      // info.setPosition(hdb.bounds.getCenter());
+      // info.open(map);
     });
   };
 
-  // TODO: Change to render points per type
   var setHoverHDB = function(hdb) {
     google.maps.event.addListener(hdb, 'mouseover', function() {
-      console.log('Mouseover Polygon');
-      if (hdb) {
+      if (hdb && selection.block !== hdb) {
         hdb.setOptions(style().hover);
       }
     });
     google.maps.event.addListener(hdb, 'mouseout', function() {
-      console.log('Mouseoff Polygon');
-      hdb.setOptions(style().normal);
+      if (selection.block !== hdb) hdb.setOptions(style().normal);
     });
   };
 
   var setHoverAmenities = function(marker, id) {
-    var content;
-    var position;
-
     google.maps.event.addListener(marker, 'mouseover', function() {
       var rowElem = document.getElementById('row' + id);
       if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
 
-      content = info.getContent();
-      position = info.getPosition();
-
-      info.setContent('TODO: Add amenities description');
+      info.setContent(marker.title);
       info.open(map, marker);
     });
 
@@ -124,17 +124,19 @@ export default function buildMap(containerEl, done) {
       var rowElem = document.getElementById('row' + id);
       if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
 
-      info.setContent(content);
-      info.setPosition(position);
+      info.close()
     });
   };
 
   // Show all the amenities
   var showAmenities =
-      function(latlng) {
-    const DENSITY = 5;
+      function(hdb) {
+    const DENSITY = 3;
 
-    var bounds = new google.maps.LatLngBounds();
+    hideAmenities();
+
+    var report = [];
+    var bounds = hdb.bounds;
 
     for (var g = 0; g < geoData.length; g++) {
       if (g === kml.ref['soonhdb']) continue;  // Skip hdb
@@ -148,29 +150,40 @@ export default function buildMap(containerEl, done) {
         var placemark = geoDoc.placemarks[i];
 
         if (placemark.marker) {
-          distance.push(
-              {dist: calcDistance(latlng, placemark.marker.position), id: i});
+          distance.push({
+            dist: calcDistance(
+                bounds.getCenter(), placemark.marker.getPosition()),
+            id: i
+          });
         }
       }
 
-      distance.sort(function(a, b) {
-        return a.dist < b.dist;
+      distance = distance.sort(function(a, b) {
+        return a.dist - b.dist;
       });
 
       for (var i = 0; i < DENSITY; i++) {
+        if (i >= distance.length) break;
+
         var placemark = geoDoc.placemarks[distance[i].id];
         placemark.marker.setMap(map);
 
         bounds.extend(placemark.marker.position);
+
+        if (i === 0)
+          report.push(placemark.marker.title + ': ' + distance[i].dist + 'm');
       }
     }
+    map.fitBounds(bounds);
 
-    return 'TODO: Add amenities distances';
+    showSidebar(report);
+
+    return report.join('<br>');
   }
 
   // Hide all the amenities
   var hideAmenities =
-      function(region) {
+      function() {
     // Set handler for every marker
     for (var g = 0; g < geoData.length; g++) {
       if (g === kml.ref['soonhdb']) continue;  // Skip hdb
@@ -186,8 +199,6 @@ export default function buildMap(containerEl, done) {
         }
       }
     }
-
-    map.fitBounds(region.bounds);
   }
 
   var zoomRegion =
@@ -198,6 +209,9 @@ export default function buildMap(containerEl, done) {
       var placemark = geoDoc.placemarks[i];
       if (placemark.polygon && placemark.name === name) {
         map.fitBounds(placemark.polygon.bounds);
+
+        selection.region = placemark.polygon;
+
         break;
       }
     }
@@ -222,10 +236,9 @@ indexKmlData() {
   var kmlIcon = [];
 
   var id = 0;
-  ['soonhdb', 'aquaticsg', 'childcare', 'clinics', 'communityclubs',
-   'firestation', 'gymsg', 'kindergarten', 'libraries', 'marketfood', 'mrtexit',
-   'museums', 'parks', 'pharmacy', 'playsg', 'police', 'sportsg',
-   'planningboundary']
+  ['soonhdb', 'childcare', 'clinics', 'communityclubs', 'firestation', 'gymsg',
+   'kindergarten', 'libraries', 'marketfood', 'mrtexit', 'parks', 'pharmacy',
+   'playsg', 'police', 'sportsg', 'planningboundary']
       .forEach((kmlFile) => {
         kmlData.push(kmlDataPath + 'kml/' + kmlFile + '.kml');
         kmlIcon.push(kmlDataPath + 'icon/' + kmlFile + '.png');
@@ -237,19 +250,9 @@ indexKmlData() {
 function
 style() {
   return {
-    normal: {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3},
-        hover: {
-          fillColor: '#FFFF00',
-          strokeColor: '#000000',
-          fillOpacity: 0.9,
-          strokeWidth: 10
-        },
-        click: {
-          fillColor: '#0000FF',
-          strokeColor: '#000000',
-          fillOpacity: 0.9,
-          strokeWidth: 10
-        },
+    normal: {fillColor: '#FF8800', fillOpacity: 0.7},
+        hover: {fillColor: '#FFFFFF', fillOpacity: 0.9},
+        click: {fillColor: '#0088FF', fillOpacity: 0.9},
         hide: {fillOpacity: 0.0}
   }
 }
@@ -257,4 +260,15 @@ style() {
 function calcDistance(p1, p2) {
   return google.maps.geometry.spherical.computeDistanceBetween(p1, p2).toFixed(
       2);
+}
+
+function showSidebar(report) {
+  var sidebarHtml =
+      '<table><tr><td><a href="javascript:showAll();">Show All</a></td></tr>';
+  for (let i = 0; i < report.length; i++) {
+    const row = report[i];
+    sidebarHtml += '<tr id="row' + i + '" >' + row + '</td></tr>';
+  }
+  sidebarHtml += '</table>';
+  document.getElementById('sidebar').innerHTML = sidebarHtml;
 }

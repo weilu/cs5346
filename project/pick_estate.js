@@ -16,6 +16,7 @@ export default function buildMap(containerEl, disableMouseOverHighlight, done) {
   var geoXml = new geoXML3.parser({
     map: map,
     singleInfoWindow: true,
+    suppressInfoWindows: true,
     afterParse: function(doc) {
       var currentBounds = map.getBounds();
       if (!currentBounds) currentBounds = new google.maps.LatLngBounds();

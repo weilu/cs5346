@@ -2,388 +2,387 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>CS5346 Project - Team 13</title>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-  <link href="lib/c3.min.css" rel="stylesheet">
-  <link href="lib/aos.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>CS5346 Project - Team 13</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link href="lib/c3.min.css" rel="stylesheet">
+    <link href="lib/aos.css" rel="stylesheet">
 </head>
 
 <style>
-body {
-  color: #333;
-  font: 16px "Open Sans", sans-serif;
-}
+    body {
+        color: #333;
+        font: 16px "Open Sans", sans-serif;
+    }
 
-h2 {
-  font-size: 2.5em;
-  padding-top: 40vh;
-}
+    h2 {
+        font-size: 2.5em;
+        padding-top: 40vh;
+    }
 
-#content {
-  text-align: center;
-  margin: 50px 0;
-}
+    #content {
+        text-align: center;
+        margin: 50px 0;
+    }
 
-text {
-  font-family: "Open Sans", sans-serif;
-}
+    text {
+        font-family: "Open Sans", sans-serif;
+    }
 
-svg {
-  overflow: visible
-}
+    svg {
+        overflow: visible
+    }
 
-svg g {
-  font-size: 1em;
-}
+    svg g {
+        font-size: 1em;
+    }
 
-.page {
-  height: 100vh;
-}
+    .page {
+        height: 100vh;
+    }
 
-.viz {
-  min-height: 50vh;
-  position: relative;
-  width: 60vw;
-  margin: 0 auto;
-}
+    .viz {
+        min-height: 50vh;
+        position: relative;
+        width: 60vw;
+        margin: 0 auto;
+    }
 
-.viz div {
-  position: absolute;
-  text-align: left;
-}
+    .viz div {
+        position: absolute;
+        text-align: left;
+    }
 
-.viz div.housing-type {
-  width: 40vh;
-}
+    .viz div.housing-type {
+        width: 40vh;
+    }
 
-.viz div.narrative {
-  font-size: 2em;
-}
+    .viz div.narrative {
+        font-size: 2em;
+    }
 
-.viz div.narrative,
-.viz div.housing-type-slope
-{
-  left: 40%;
-}
+    .viz div.narrative,
+    .viz div.housing-type-slope {
+        left: 40%;
+    }
 
-.viz div.housing-type-slope {
-  width: 60vh;
-  top: 50vh;
-}
+    .viz div.housing-type-slope {
+        width: 60vh;
+        top: 50vh;
+    }
 
-.district-all .viz div.district {
-  top: 10em;
-  height: 70vh;
-}
+    .district-all .viz div.district {
+        top: 10em;
+        height: 70vh;
+    }
 
-.district-all .viz div.narrative {
-  left: 0;
-  font-size: 1.3em;
-}
+    .district-all .viz div.narrative {
+        left: 0;
+        font-size: 1.3em;
+    }
 
-/* styles for slope graph */
-.title {
-  font-size: 1em;
-}
+    /* styles for slope graph */
+    .title {
+        font-size: 1em;
+    }
 
-.slope-line {
-  stroke: #333;
-  stroke-width: 2px;
-  stroke-linecap: round;
-}
+    .slope-line {
+        stroke: #333;
+        stroke-width: 2px;
+        stroke-linecap: round;
+    }
 
-.slope-label-left, .slope-label-right {
-  font-size: 0.8em;
-  cursor: default;
-  font-weight: 400;
-}
+    .slope-label-left,
+    .slope-label-right {
+        font-size: 0.8em;
+        cursor: default;
+        font-weight: 400;
+    }
 
-.label-figure {
-  font-weight: 700;
-}
+    .label-figure {
+        font-weight: 700;
+    }
 
-.border-lines {
-  stroke: #999;
-  stroke-width: 1px;
-}
+    .border-lines {
+        stroke: #999;
+        stroke-width: 1px;
+    }
 
-.voronoi path {
-  fill: none;
-  pointer-events: all;
-}
+    .voronoi path {
+        fill: none;
+        pointer-events: all;
+    }
 
-circle {
-  fill: white;
-  stroke: black;
-  stroke-width: 2px;
-}
+    circle {
+        fill: white;
+        stroke: black;
+        stroke-width: 2px;
+    }
 
-/* summary parallel axis styles */
-.summary path.line {
-  stroke-width: 2px;
-  stroke-linecap: round;
-}
+    /* summary parallel axis styles */
+    .summary path.line {
+        stroke-width: 2px;
+        stroke-linecap: round;
+    }
 
-.summary svg text {
-  font-size: 0.8em;
-  cursor: default;
-}
+    .summary svg text {
+        font-size: 0.8em;
+        cursor: default;
+    }
 
-#price-summary .viz div.narrative,
-#district-summary .viz div.narrative,
-#type-summary .viz div.narrative,
-#type-hdb-summary .viz div.narrative {
-  left: 0;
-  height: 20vh;
-  font-size: 1.5em;
-}
+    #price-summary .viz div.narrative,
+    #district-summary .viz div.narrative,
+    #type-summary .viz div.narrative,
+    #type-hdb-summary .viz div.narrative {
+        left: 0;
+        height: 20vh;
+        font-size: 1.5em;
+    }
 
-#price-summary .viz div.summary,
-#district-summary .viz div.summary,
-#type-summary .viz div.summary,
-#type-hdb-summary .viz div.summary {
-  top: 25vh;
-}
+    #price-summary .viz div.summary,
+    #district-summary .viz div.summary,
+    #type-summary .viz div.summary,
+    #type-hdb-summary .viz div.summary {
+        top: 25vh;
+    }
 
-#summary-map {
-    height: 60vh;
-    width: 60vw;
-    overflow: hidden;
-    border: none;
-}
+    #summary-map {
+        height: 60vh;
+        width: 60vw;
+        overflow: hidden;
+        border: none;
+    }
 
-/* monkey patch c3 */
-g.c3-legend-item-National-Average line{
-  stroke: #a9a9a9 !important;
-}
-
+    /* monkey patch c3 */
+    g.c3-legend-item-National-Average line {
+        stroke: #a9a9a9 !important;
+    }
 </style>
 
 <body>
-  <div id='content'>
-    <div id='language' class='question'>
-      <div class='page'>
-        <h2>What's your predominant household language?</h2>
-        <select id="type-language">
-          <option value="" selected disabled hidden>choose one</option>
-        </select>
-      </div>
-      <div class='page type-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
+    <div id='content'>
+        <div id='language' class='question'>
+            <div class='page'>
+                <h2>What's your predominant household language?</h2>
+                <select id="type-language">
+                    <option value="" selected disabled hidden>choose one</option>
+                </select>
+            </div>
+            <div class='page type-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page type-hdb'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page district-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='district' data-aos="fade-down"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class='page type-hdb'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
+
+        <div id='education' class='question'>
+            <div class='page'>
+                <h2>What's your education level?</h2>
+                <select id="type-education">
+                    <option value="" selected disabled hidden>choose one</option>
+                </select>
+            </div>
+            <div class='page type-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page type-hdb'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page district-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='district' data-aos="fade-down"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class='page district-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='district' data-aos="fade-down"></div>
+
+        <div id='occupation' class='question'>
+            <div class='page'>
+                <h2>What best describes your occupation?</h2>
+                <select id="type-occupation">
+                    <option value="" selected disabled hidden>choose one</option>
+                </select>
+            </div>
+            <div class='page type-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page type-hdb'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page district-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='district' data-aos="fade-down"></div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div id='marital' class='question'>
+            <div class='page'>
+                <h2>What's your marital status?</h2>
+                <select id="type-marital">
+                    <option value="" selected disabled hidden>choose one</option>
+                </select>
+            </div>
+            <div class='page type-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page type-hdb'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page district-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='district' data-aos="fade-down"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id='sex' class='question'>
+            <div class='page'>
+                <h2>Which gender do you identify with?</h2>
+                <select id="type-sex">
+                    <option value="" selected disabled hidden>choose one</option>
+                </select>
+            </div>
+            <div class='page type-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page type-hdb'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id='religion' class='question'>
+            <div class='page'>
+                <h2>What's your religion?</h2>
+                <select id="type-religion">
+                    <option value="" selected disabled hidden>choose one</option>
+                </select>
+            </div>
+            <div class='page type-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page type-hdb'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='housing-type' data-aos="fade-right"></div>
+                    <div class='housing-type-slope' data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div class='page district-all'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
+                    <div class='district' data-aos="fade-down"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id='summary' class='question'>
+            <div class='page'>
+                <h2>Summary</h2>
+            </div>
+            <div id='type-summary' class='page'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+                    <div class='summary' data-aos="fade-down"></div>
+                </div>
+            </div>
+            <div id='type-hdb-summary' class='page'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+                    <div class='summary' data-aos="fade-down"></div>
+                </div>
+            </div>
+            <div id='district-summary' class='page'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+                    <div id="summary-map" data-aos="fade-down" class='summary'></div>
+                </div>
+            </div>
+            <div id='price-summary' class='page'>
+                <div class='viz'>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
+                    <div id="summary-price" data-aos="fade-down" class='summary'></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id='education' class='question'>
-      <div class='page'>
-        <h2>What's your education level?</h2>
-        <select id="type-education">
-          <option value="" selected disabled hidden>choose one</option>
-        </select>
-      </div>
-      <div class='page type-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page type-hdb'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page district-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='district' data-aos="fade-down"></div>
-        </div>
-      </div>
-    </div>
+    <script src="lib/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
-    <div id='occupation' class='question'>
-      <div class='page'>
-        <h2>What best describes your occupation?</h2>
-        <select id="type-occupation">
-          <option value="" selected disabled hidden>choose one</option>
-        </select>
-      </div>
-      <div class='page type-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page type-hdb'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page district-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='district' data-aos="fade-down"></div>
-        </div>
-      </div>
-    </div>
+    <script src="lib/d3.v5.min.js"></script>
+    <script src="lib/d3-array.min.js"></script>
+    <script src="lib/c3.min.js"></script>
+    <script src="lib/d3-voronoi.v1.min.js"></script>
+    <script type="module" src="utils.js"></script>
+    <script type="module" src="dropdown.js"></script>
+    <script type="module" src="district.js"></script>
+    <script type="module" src="housing_type.js"></script>
+    <script type="module" src="housing_type_hdb.js"></script>
+    <script type="module" src="housing_type_slope.js"></script>
+    <script type="module" src="housing_type_summary.js"></script>
+    <script type="module" src="resale_prices.js"></script>
+    <script type="module" src="index.js"></script>
 
-    <div id='marital' class='question'>
-      <div class='page'>
-        <h2>What's your marital status?</h2>
-        <select id="type-marital">
-          <option value="" selected disabled hidden>choose one</option>
-        </select>
-      </div>
-      <div class='page type-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page type-hdb'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page district-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='district' data-aos="fade-down"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id='sex' class='question'>
-      <div class='page'>
-        <h2>Which gender do you identify with?</h2>
-        <select id="type-sex">
-          <option value="" selected disabled hidden>choose one</option>
-        </select>
-      </div>
-      <div class='page type-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page type-hdb'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id='religion' class='question'>
-      <div class='page'>
-        <h2>What's your religion?</h2>
-        <select id="type-religion">
-          <option value="" selected disabled hidden>choose one</option>
-        </select>
-      </div>
-      <div class='page type-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page type-hdb'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='housing-type' data-aos="fade-right"></div>
-          <div class='housing-type-slope' data-aos="fade-left"></div>
-        </div>
-      </div>
-      <div class='page district-all'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="200" data-aos-duration="500"></div>
-          <div class='district' data-aos="fade-down"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id='summary' class='question'>
-      <div class='page'>
-        <h2>Summary</h2>
-      </div>
-      <div id='type-summary' class='page'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
-          <div class='summary' data-aos="fade-down"></div>
-        </div>
-      </div>
-      <div id='type-hdb-summary' class='page'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
-          <div class='summary' data-aos="fade-down"></div>
-        </div>
-      </div>
-      <div id='district-summary' class='page'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
-          <div id="summary-map" data-aos="fade-down" class='summary'></div>
-        </div>
-      </div>
-      <div id='price-summary' class='page'>
-        <div class='viz'>
-          <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
-          <div id="summary-price" data-aos="fade-down" class='summary'></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="lib/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-  <script src="lib/d3.v5.min.js"></script>
-  <script src="lib/d3-array.min.js"></script>
-  <script src="lib/c3.min.js"></script>
-  <script src="lib/d3-voronoi.v1.min.js"></script>
-  <script type="module" src="utils.js"></script>
-  <script type="module" src="dropdown.js"></script>
-  <script type="module" src="district.js"></script>
-  <script type="module" src="housing_type.js"></script>
-  <script type="module" src="housing_type_hdb.js"></script>
-  <script type="module" src="housing_type_slope.js"></script>
-  <script type="module" src="housing_type_summary.js"></script>
-  <script type="module" src="resale_prices.js"></script>
-  <script type="module" src="index.js"></script>
-
-  <script type='module' src='pick_estate.js'></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXWlNQI0L23IiD5_QT6T4gkCDKz4OI5w8"></script>
-  <script src="lib/geoxml3.js"></script>
+    <script type='module' src='pick_estate.js'></script>
+    <script type='module' src='amenities.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXWlNQI0L23IiD5_QT6T4gkCDKz4OI5w8"></script>
+    <script src="lib/geoxml3.js"></script>
 </body>
 
 </html>
-
