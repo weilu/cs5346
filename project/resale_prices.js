@@ -45,12 +45,23 @@ export default function(data, town, flatType) {
     plotData.push([t].concat(prices))
   })
 
+  function getColorPattern() {
+    return {
+      '1-room & 2-room': [d3.rgb('#fecc5c').brighter().hex(),
+                          d3.rgb('#fecc5c').darker().hex()],
+      '3-room': ['#fd8d3c'],
+      '4-room': ['#f03b20'],
+      '5-room & executive': [d3.rgb('#bd0026').brighter().hex(),
+                             d3.rgb('#bd0026').darker().hex()]
+    }[flatType]
+  }
+
   var chart = c3.generate({
 
     bindto: '#summary-price',
     data: {
       x: 'x',
-      columns: plotData
+      columns: plotData,
     },
     axis: {
       x: {
@@ -77,6 +88,9 @@ export default function(data, town, flatType) {
         },
         value: formatMoney
       }
+    },
+    color: {
+      pattern: getColorPattern()
     }
   });
 
