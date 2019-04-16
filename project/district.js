@@ -50,6 +50,8 @@ export default function(data, keyword, dropdownEl) {
     }
   })
 
+  const totalPercent = util.getPercentageMap(totalData)
+
   const demoData = data.filter(d => !d.demographic.includes('Total') && d.housing != 'Total')
   dropdownEl.addEventListener('change', (event) => {
     const selected = event.target.value
@@ -64,11 +66,24 @@ export default function(data, keyword, dropdownEl) {
       loadedDataIds = [totalDataLabel, selected]
     }})
 
+    const maxDidstrict = filteredData[d3.scan(filteredData, (a, b) => b.value - a.value)]
+    var narrative = `The most popular district for ${selected} group
+      is ${maxDidstrict.housing}. `
+
+    const filteredPercent = util.getPercentageMap(filteredData)
+    const sortedDistrictByDiffPercent = Object.keys(totalPercent)
+      .map(d => [d, filteredPercent[d] - totalPercent[d]])
+      .sort((a, b) => a[1] - b[1])
+    const morePopularDistrict = sortedDistrictByDiffPercent[sortedDistrictByDiffPercent.length - 1][0]
+    const lessPopularDistrict = sortedDistrictByDiffPercent[0][0]
+    narrative += `Most differently from the national average,
+      ${morePopularDistrict} is more popular within the ${selected} group,
+      while ${lessPopularDistrict} is less popular within the ${selected} group.`
+
     const narrativeEl = document.querySelector(`#${keyword} .district-all .narrative`)
-    narrativeEl.innerHTML = `<p>#TODO District Narrative</p>`
+    narrativeEl.innerHTML = `<p>${narrative}</p>`
 
     var event = new Event('district-update')
-    const filteredPercent = util.getPercentageMap(filteredData)
     event.data = {dimension: keyword, ...filteredPercent}
     document.dispatchEvent(event)
   })
