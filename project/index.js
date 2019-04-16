@@ -39,14 +39,14 @@ const languageAll = Promise.all([
   languageDistrictPromise
 ]).then(function(data) {
   const dimension = 'language'
+  dimensions.push(dimension)
   // use district data for dropdown as it's aggregated for chinese dialects
   const dropdownEl = dropdown(data[2], dimension)
   util.cleanLanguageData(data[0])
   util.cleanLanguageData(data[1])
   housingType(data[0], dimension, dropdownEl)
-  housingTypeHDB(data[1], dimension, dropdownEl)
-  district(data[2], dimension, dropdownEl)
-  dimensions.push(dimension)
+  housingTypeHDB(data[1], dimension, dropdownEl, dimensions.length)
+  district(data[2], dimension, dropdownEl, dimensions.length)
 })
 
 const educationPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-highest-qualification-attained-of-head-of-household-2015/resident-households-by-type-of-dwelling-total-and-hqa-of-head-of-household.csv', function(d) {
@@ -79,11 +79,11 @@ const educationAll = Promise.all([
   educationDistrictPromise
 ]).then(function(data) {
   const dimension = 'education'
+  dimensions.push(dimension)
   const dropdownEl = dropdown(data[0], dimension)
   housingType(data[0], dimension, dropdownEl)
-  housingTypeHDB(data[1], dimension, dropdownEl)
-  district(data[2], dimension, dropdownEl)
-  dimensions.push(dimension)
+  housingTypeHDB(data[1], dimension, dropdownEl, dimensions.length)
+  district(data[2], dimension, dropdownEl, dimensions.length)
 })
 
 const occupationPromise = d3.csv('data/resident-households-by-type-of-dwelling-and-occupation-of-head-of-household-2015/resident-households-by-type-of-dwelling-total-and-occupation-of-head-of-household.csv', function(d) {
@@ -116,11 +116,11 @@ const occupationAll = Promise.all([
   occupationDistrictPromise
 ]).then(function(data) {
   const dimension = 'occupation'
+  dimensions.push(dimension)
   const dropdownEl = dropdown(data[0], dimension)
   housingType(data[0], dimension, dropdownEl)
-  housingTypeHDB(data[1], dimension, dropdownEl)
-  district(data[2], dimension, dropdownEl)
-  dimensions.push(dimension)
+  housingTypeHDB(data[1], dimension, dropdownEl, dimensions.length)
+  district(data[2], dimension, dropdownEl, dimensions.length)
 })
 
 const maritalPromise = d3.csv('data/resident-households-by-type-of-dwelling-marital-status-of-head-of-household-and-tenancy-2015/type-of-dwelling-total-marital-status-of-head-of-household-and-tenancy.csv', function(d) {
@@ -156,15 +156,15 @@ const maritalAll = Promise.all([
   maritalDistrictPromise
 ]).then(function(data) {
   const dimension = 'marital'
+  dimensions.push(dimension)
   const ownerData = data[0].filter(d => d.tenancy === 'Owner')
   const ownerHDBData = data[1].filter(d => d.tenancy === 'Owner')
   const dropdownEl = dropdown(ownerData, dimension)
   housingType(ownerData, dimension, dropdownEl)
-  housingTypeHDB(ownerHDBData, dimension, dropdownEl)
+  housingTypeHDB(ownerHDBData, dimension, dropdownEl, dimensions.length)
 
   const maritalData = data[2].filter(d => d.sex === 'Total')
-  district(maritalData, dimension, dropdownEl)
-  dimensions.push(dimension)
+  district(maritalData, dimension, dropdownEl, dimensions.length)
 })
 
 const sexReligionPromise = d3.csv('data/resident-population-aged-15-years-and-over-by-type-of-dwelling-religion-and-sex-2015/resident-population-aged-15-years-and-over-by-type-of-dwelling-broad-religion-and-sex.csv', function(d) {
@@ -199,21 +199,21 @@ const sexReligionAll = Promise.all([
   religionDistrictPromise
 ]).then(function(data) {
   var dimension = 'sex'
+  dimensions.push(dimension)
   const sexData = data[0].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
   const sexHDBData = data[1].filter(d => d.religion === 'Total').map(d => ({ ...d, demographic: d.sex }))
   var dropdownEl = dropdown(sexData, dimension)
   housingType(sexData, dimension, dropdownEl)
-  housingTypeHDB(sexHDBData, dimension, dropdownEl)
-  dimensions.push(dimension)
+  housingTypeHDB(sexHDBData, dimension, dropdownEl, dimensions.length)
 
   dimension = 'religion'
+  dimensions.push(dimension)
   const religionData = data[0].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   const religionHDBData = data[1].filter(d => d.sex === 'Total').map(d => ({ ...d, demographic: d.religion }))
   dropdownEl = dropdown(religionData, dimension)
   housingType(religionData, dimension, dropdownEl)
-  housingTypeHDB(religionHDBData, dimension, dropdownEl)
-  district(data[2], dimension, dropdownEl)
-  dimensions.push(dimension)
+  housingTypeHDB(religionHDBData, dimension, dropdownEl, dimensions.length)
+  district(data[2], dimension, dropdownEl, dimensions.length)
 })
 
 const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-registered-applications-by-town-and-flat-type/median-resale-prices-for-registered-applications-by-town-and-flat-type.csv', function(d) {

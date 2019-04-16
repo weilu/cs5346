@@ -20,7 +20,7 @@ function computePlotData(dataLabel, data, filteredDataLabel, filteredData) {
   return plotData
 }
 
-export default function(data, keyword, dropdownEl) {
+export default function(data, keyword, dropdownEl, colorIndex) {
   const totalData = data.filter(d => d.demographic === 'Total' && d.housing != 'Total')
   const totalDataLabel = 'National Average'
   var loadedDataIds = [totalDataLabel]
@@ -31,10 +31,14 @@ export default function(data, keyword, dropdownEl) {
     data: {
       type: 'bar',
       columns: plotData,
-      x: 'district'
-    },
-    color: {
-      pattern: util.warmColors
+      x: 'district',
+      color: (c, d) => {
+        if (d.id === totalDataLabel) {
+          return util.warmColors[0]
+        } else {
+          return util.warmColors[colorIndex]
+        }
+      }
     },
     axis: {
       rotated: true,

@@ -1,7 +1,7 @@
 import util from './utils.js'
 import housingTypeSlope from './housing_type_slope.js'
 
-export default function(hdbData, keyword, dropdownEl) {
+export default function(hdbData, keyword, dropdownEl, colorIndex) {
   util.cleanHDBData(hdbData)
   const totalDataLabel = 'National Average'
   var loadedDataIds = [totalDataLabel]
@@ -21,7 +21,7 @@ export default function(hdbData, keyword, dropdownEl) {
       x: 'type'
     },
     color: {
-      pattern: util.warmColors
+      pattern: [util.warmColors[colorIndex]]
     },
     axis: {
       x: {
