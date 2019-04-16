@@ -36,7 +36,7 @@
 <Folder id="kml_ft_REGISTERED_PHARMACY">
 <name>REGISTERED_PHARMACY</name>
 <Placemark id="kml_1">
-<name>kml_1</name>
+<name>ALPS PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -84,7 +84,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_2">
-<name>kml_2</name>
+<name>Admiralty Medical Centre Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -131,7 +131,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_3">
-<name>kml_3</name>
+<name>Airport Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -179,7 +179,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_4">
-<name>kml_4</name>
+<name>Amber Compounding Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -226,7 +226,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_5">
-<name>kml_5</name>
+<name>CGH Pharmacy B</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -271,7 +271,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_6">
-<name>kml_6</name>
+<name>CONCORD HEALTHCARE RETAIL PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -318,7 +318,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_7">
-<name>kml_7</name>
+<name>Child Guidance Clinic  Health Promotion Board</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -366,7 +366,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_8">
-<name>kml_8</name>
+<name>Clinic B Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -414,7 +414,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_9">
-<name>kml_9</name>
+<name>E+MED PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -461,7 +461,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_10">
-<name>kml_10</name>
+<name>E+MED Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -509,7 +509,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_11">
-<name>kml_11</name>
+<name>GLENEAGLES HOSPITAL</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -554,7 +554,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_12">
-<name>kml_12</name>
+<name>GRACE HEALTHCARE</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -601,7 +601,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_13">
-<name>kml_13</name>
+<name>Guardian Pharmacy ( Waterway Point)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -649,7 +649,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_14">
-<name>kml_14</name>
+<name>Guardian Pharmacy (313 @ Somerset)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -697,7 +697,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_15">
-<name>kml_15</name>
+<name>Guardian Pharmacy (Admiralty)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -745,7 +745,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_16">
-<name>kml_16</name>
+<name>Guardian Pharmacy (Amara Hotel)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -793,7 +793,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_17">
-<name>kml_17</name>
+<name>Guardian Pharmacy (Ang Mo Kio 3)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -841,7 +841,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_18">
-<name>kml_18</name>
+<name>Guardian Pharmacy (Bedok Central)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -889,7 +889,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_19">
-<name>kml_19</name>
+<name>Guardian Pharmacy (Bedok Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -937,7 +937,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_20">
-<name>kml_20</name>
+<name>Guardian Pharmacy (Bishan Place)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -985,7 +985,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_21">
-<name>kml_21</name>
+<name>Guardian Pharmacy (Bugis Junction 3)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1033,7 +1033,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_22">
-<name>kml_22</name>
+<name>Guardian Pharmacy (Bugis MRT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1081,7 +1081,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_23">
-<name>kml_23</name>
+<name>Guardian Pharmacy (Bukit Panjang Plaza)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1129,7 +1129,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_24">
-<name>kml_24</name>
+<name>Guardian Pharmacy (Causeway Point)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1177,7 +1177,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_25">
-<name>kml_25</name>
+<name>Guardian Pharmacy (Changi T3 Basement 2 North)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1225,7 +1225,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_26">
-<name>kml_26</name>
+<name>Guardian Pharmacy (Chinatown Point 4)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1273,7 +1273,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_27">
-<name>kml_27</name>
+<name>Guardian Pharmacy (City Link)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1321,7 +1321,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_28">
-<name>kml_28</name>
+<name>Guardian Pharmacy (City Square Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1369,7 +1369,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_29">
-<name>kml_29</name>
+<name>Guardian Pharmacy (Clementi Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1417,7 +1417,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_30">
-<name>kml_30</name>
+<name>Guardian Pharmacy (Clifford Centre 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1465,7 +1465,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_31">
-<name>kml_31</name>
+<name>Guardian Pharmacy (Parkway Parade)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1513,7 +1513,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_32">
-<name>kml_32</name>
+<name>Guardian Pharmacy (Plaza Singapura)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1561,7 +1561,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_33">
-<name>kml_33</name>
+<name>Guardian Pharmacy (Raffles City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1609,7 +1609,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_34">
-<name>kml_34</name>
+<name>Guardian Pharmacy (Raffles Place MRT 3)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1657,7 +1657,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_35">
-<name>kml_35</name>
+<name>Guardian Pharmacy (Seletar Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1705,7 +1705,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_36">
-<name>kml_36</name>
+<name>Guardian Pharmacy (Serangoon Garden)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1751,7 +1751,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_37">
-<name>kml_37</name>
+<name>Guardian Pharmacy (Serangoon NEX)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1799,7 +1799,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_38">
-<name>kml_38</name>
+<name>Guardian Pharmacy (Star Vista)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1847,7 +1847,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_39">
-<name>kml_39</name>
+<name>Guardian Pharmacy (Sun Plaza 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1895,7 +1895,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_40">
-<name>kml_40</name>
+<name>Guardian Pharmacy (Suntec City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1943,7 +1943,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_41">
-<name>kml_41</name>
+<name>Guardian Pharmacy (Tai Seng Street)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -1991,7 +1991,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_42">
-<name>kml_42</name>
+<name>Guardian Pharmacy (Takashimaya S. C. )</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2039,7 +2039,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_43">
-<name>kml_43</name>
+<name>Guardian Pharmacy (Tampines MRT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2087,7 +2087,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_44">
-<name>kml_44</name>
+<name>Guardian Pharmacy (Tampines Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2135,7 +2135,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_45">
-<name>kml_45</name>
+<name>Guardian Pharmacy (Tanglin Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2183,7 +2183,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_46">
-<name>kml_46</name>
+<name>Guardian Pharmacy (The Centrepoint)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2231,7 +2231,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_47">
-<name>kml_47</name>
+<name>Guardian Pharmacy (Thomson Plaza 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2279,7 +2279,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_48">
-<name>kml_48</name>
+<name>Guardian Pharmacy (Tiong Bahru Plaza)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2327,7 +2327,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_49">
-<name>kml_49</name>
+<name>Guardian Pharmacy (Toa Payoh Blk 190)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2375,7 +2375,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_50">
-<name>kml_50</name>
+<name>Guardian Pharmacy (United Square 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2423,7 +2423,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_51">
-<name>kml_51</name>
+<name>Guardian Pharmacy (Vivo City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2471,7 +2471,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_52">
-<name>kml_52</name>
+<name>Guardian Pharmacy (WRS)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2519,7 +2519,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_53">
-<name>kml_53</name>
+<name>Guardian Pharmacy (West Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2567,7 +2567,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_54">
-<name>kml_54</name>
+<name>Guardian Pharmacy (Westgate)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2615,7 +2615,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_55">
-<name>kml_55</name>
+<name>Guardian Pharmacy (White Sands Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2663,7 +2663,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_56">
-<name>kml_56</name>
+<name>Guardian Pharmacy (Yew Tee MRT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2711,7 +2711,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_57">
-<name>kml_57</name>
+<name>Guardian Pharmacy (Zhongsan Park)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2759,7 +2759,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_58">
-<name>kml_58</name>
+<name>Healing Hub @ Ang Mo Kio - Thye Hua Kwan Hospital</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2807,7 +2807,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_59">
-<name>kml_59</name>
+<name>Johns Hopkins Singapore International Medical Centre Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2854,7 +2854,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_60">
-<name>kml_60</name>
+<name>Jurong Community Hospital Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2902,7 +2902,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_61">
-<name>kml_61</name>
+<name>Jurong Medical Centre Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2949,7 +2949,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_62">
-<name>kml_62</name>
+<name>KK Emergency Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -2996,7 +2996,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_63">
-<name>kml_63</name>
+<name>KK Outpatient Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3043,7 +3043,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_64">
-<name>kml_64</name>
+<name>Khoo Teck Puat Hospital Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3090,7 +3090,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_65">
-<name>kml_65</name>
+<name>MANAPHARMA</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3137,7 +3137,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_66">
-<name>kml_66</name>
+<name>MEDI-LINK PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3184,7 +3184,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_67">
-<name>kml_67</name>
+<name>MOHAMED MUSTAFA & SAMSUDDIN CO PTE LTD (MUSTAFA CENTRE)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3230,7 +3230,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_68">
-<name>kml_68</name>
+<name>MOUNT ELIZABETH NOVENA HOSPITAL PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3278,7 +3278,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_69">
-<name>kml_69</name>
+<name>MT ALVERNIA HOSPITAL RETAIL PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3326,7 +3326,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_70">
-<name>kml_70</name>
+<name>MUSTAFA PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3374,7 +3374,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_71">
-<name>kml_71</name>
+<name>Mount Alvernia Hospital (Main Pharmacy)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3422,7 +3422,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_72">
-<name>kml_72</name>
+<name>Mount Elizabeth Hospital</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3470,7 +3470,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_73">
-<name>kml_73</name>
+<name>NATIONAL CANCER CENTRE PHARMACY (LEVEL 1)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3516,7 +3516,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_74">
-<name>kml_74</name>
+<name>NATIONAL CANCER CENTRE PHARMACY (LEVEL 3)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3562,7 +3562,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_75">
-<name>kml_75</name>
+<name>NATIONAL SKIN CENTRE (S) PTE LTD (PHARMACY)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3607,7 +3607,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_76">
-<name>kml_76</name>
+<name>NATIONAL UNIVERSITY HOSPITAL (S) PTE LTD (RETAIL PHARMACY)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3654,7 +3654,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_77">
-<name>kml_77</name>
+<name>NATIONAL UNIVERSITY HOSPITAL(S) PTE LTD (MEDICAL CENTRE PHARMACY)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3701,7 +3701,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_78">
-<name>kml_78</name>
+<name>NHG Pharmacy (CCK Polyclinic)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3746,7 +3746,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_79">
-<name>kml_79</name>
+<name>NHG Pharmacy (Yishun)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3793,7 +3793,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_80">
-<name>kml_80</name>
+<name>NTUC Healthcare (BTP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3840,7 +3840,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_81">
-<name>kml_81</name>
+<name>NTUC Healthcare - The Living Pharmacy (TSP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3887,7 +3887,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_82">
-<name>kml_82</name>
+<name>National Addiction Management Services (NAMS) Clinic Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3934,7 +3934,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_83">
-<name>kml_83</name>
+<name>National Healthcare Group Pharmacy (Ang Mo Kio)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3981,7 +3981,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_84">
-<name>kml_84</name>
+<name>National Healthcare Group Pharmacy (Ang Mo Kio)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4028,7 +4028,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_85">
-<name>kml_85</name>
+<name>National Healthcare Group Pharmacy (Bukit Batok)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4073,7 +4073,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_86">
-<name>kml_86</name>
+<name>National Healthcare Group Pharmacy (Clementi)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4120,7 +4120,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_87">
-<name>kml_87</name>
+<name>National Healthcare Group Pharmacy (Geylang)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4168,7 +4168,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_88">
-<name>kml_88</name>
+<name>National Healthcare Group Pharmacy (Hougang)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4213,7 +4213,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_89">
-<name>kml_89</name>
+<name>National Healthcare Group Pharmacy (Jurong)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4258,7 +4258,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_90">
-<name>kml_90</name>
+<name>National Healthcare Group Pharmacy (Pioneer)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4305,7 +4305,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_91">
-<name>kml_91</name>
+<name>National Healthcare Group Pharmacy (Queenstown)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4352,7 +4352,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_92">
-<name>kml_92</name>
+<name>National Healthcare Group Pharmacy (Toa Payoh)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4397,7 +4397,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_93">
-<name>kml_93</name>
+<name>National Healthcare Group Pharmacy (Woodlands)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4444,7 +4444,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_94">
-<name>kml_94</name>
+<name>National Healthcare Group Pharmacy (Yishun)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4491,7 +4491,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_95">
-<name>kml_95</name>
+<name>National Heart Centre Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4538,7 +4538,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_96">
-<name>kml_96</name>
+<name>National University Hosital - Kent Ridge Wing Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4583,7 +4583,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_97">
-<name>kml_97</name>
+<name>National University Hospital (s) Pte Ltd (Pharmacy @ NCIS)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4630,7 +4630,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_98">
-<name>kml_98</name>
+<name>Ng Teng Fong General Hospital Outpatient & Retail Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4677,7 +4677,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_99">
-<name>kml_99</name>
+<name>Nishino Pharmacy (Shaw House)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4724,7 +4724,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_100">
-<name>kml_100</name>
+<name>Nishino Pharmacy (Takashimaya)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4771,7 +4771,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_101">
-<name>kml_101</name>
+<name>P & L Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4818,7 +4818,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_102">
-<name>kml_102</name>
+<name>PARKWAY EAST HOSPITAL PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4863,7 +4863,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_103">
-<name>kml_103</name>
+<name>PHARMACY @ CGH MEDICAL CENTRE</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4910,7 +4910,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_104">
-<name>kml_104</name>
+<name>Pacific Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4957,7 +4957,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_105">
-<name>kml_105</name>
+<name>Pharmacy A  Changi General Hospital</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5004,7 +5004,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_106">
-<name>kml_106</name>
+<name>Pharmacy Services Centre  NHG (Blk 9)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5051,7 +5051,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_107">
-<name>kml_107</name>
+<name>Pharmacy@IB  CGH (The Integrated Building)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5098,7 +5098,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_108">
-<name>kml_108</name>
+<name>Princeton Pharmacy (S) Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5145,7 +5145,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_109">
-<name>kml_109</name>
+<name>R & D PHARMACEUTICAL PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5192,7 +5192,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_110">
-<name>kml_110</name>
+<name>Raffles Health Holland V</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5239,7 +5239,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_111">
-<name>kml_111</name>
+<name>SGH Retail Pharmacy (Blk 4)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5286,7 +5286,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_112">
-<name>kml_112</name>
+<name>SINGAPORE NATIONAL EYE CENTRE PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5331,7 +5331,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_113">
-<name>kml_113</name>
+<name>ST ANDREW'S COMMUNITY HOSPITAL PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5379,7 +5379,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_114">
-<name>kml_114</name>
+<name>ST LUKE'S HOSPITAL BLOCK A</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5427,7 +5427,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_115">
-<name>kml_115</name>
+<name>SUMANG FAMILY PHARMACY</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5474,7 +5474,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_116">
-<name>kml_116</name>
+<name>Sengkang Pharmacy (Main Building Blk1)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5522,7 +5522,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_117">
-<name>kml_117</name>
+<name>Singhealth Poly - Bedok</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5570,7 +5570,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_118">
-<name>kml_118</name>
+<name>Singhealth Poly - Bukit Merah</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5617,7 +5617,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_119">
-<name>kml_119</name>
+<name>Singhealth Poly - Marine Parade</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5664,7 +5664,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_120">
-<name>kml_120</name>
+<name>Singhealth Poly - Pasir Ris</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5711,7 +5711,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_121">
-<name>kml_121</name>
+<name>Singhealth Poly - Punggol</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5758,7 +5758,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_122">
-<name>kml_122</name>
+<name>Singhealth Poly - Sengkang</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5806,7 +5806,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_123">
-<name>kml_123</name>
+<name>Guardian Pharmacy (Compass One)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5854,7 +5854,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_124">
-<name>kml_124</name>
+<name>Guardian Pharmacy (Departure Transit Lounge East)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5902,7 +5902,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_125">
-<name>kml_125</name>
+<name>Guardian Pharmacy (Departure Transit West T1)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5950,7 +5950,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_126">
-<name>kml_126</name>
+<name>Guardian Pharmacy (Departure/Check In Hall North)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5998,7 +5998,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_127">
-<name>kml_127</name>
+<name>Guardian Pharmacy (Departure/Transit Lounge North Terminal 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6046,7 +6046,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_128">
-<name>kml_128</name>
+<name>Guardian Pharmacy (Departure/Transit Lounge South)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6094,7 +6094,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_129">
-<name>kml_129</name>
+<name>Guardian Pharmacy (Gleneagles)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6142,7 +6142,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_130">
-<name>kml_130</name>
+<name>Guardian Pharmacy (Great World City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6190,7 +6190,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_131">
-<name>kml_131</name>
+<name>Guardian Pharmacy (H205)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6238,7 +6238,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_132">
-<name>kml_132</name>
+<name>Guardian Pharmacy (Harbourfront Centre)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6286,7 +6286,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_133">
-<name>kml_133</name>
+<name>Guardian Pharmacy (Holland Shopping Centre)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6334,7 +6334,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_134">
-<name>kml_134</name>
+<name>Guardian Pharmacy (Hougang Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6382,7 +6382,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_135">
-<name>kml_135</name>
+<name>Guardian Pharmacy (IMM2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6430,7 +6430,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_136">
-<name>kml_136</name>
+<name>Guardian Pharmacy (ION)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6478,7 +6478,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_137">
-<name>kml_137</name>
+<name>Guardian Pharmacy (International Building)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6526,7 +6526,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_138">
-<name>kml_138</name>
+<name>Guardian Pharmacy (Jelita)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6574,7 +6574,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_139">
-<name>kml_139</name>
+<name>Guardian Pharmacy (Jurong Point 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6622,7 +6622,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_140">
-<name>kml_140</name>
+<name>Guardian Pharmacy (Jurong West Blk 503)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6670,7 +6670,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_141">
-<name>kml_141</name>
+<name>Guardian Pharmacy (Kallang Leisure Park 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6718,7 +6718,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_142">
-<name>kml_142</name>
+<name>Guardian Pharmacy (Katong Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6766,7 +6766,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_143">
-<name>kml_143</name>
+<name>Guardian Pharmacy (LOT 1)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6814,7 +6814,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_144">
-<name>kml_144</name>
+<name>Guardian Pharmacy (Lavender MRT Station)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6862,7 +6862,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_145">
-<name>kml_145</name>
+<name>Guardian Pharmacy (Marina Bay Sands)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6910,7 +6910,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_146">
-<name>kml_146</name>
+<name>Guardian Pharmacy (Mount Elizabeth)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -6958,7 +6958,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_147">
-<name>kml_147</name>
+<name>Guardian Pharmacy (Northpoint)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7006,7 +7006,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_148">
-<name>kml_148</name>
+<name>Guardian Pharmacy (Novena Hospital)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7054,7 +7054,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_149">
-<name>kml_149</name>
+<name>Guardian Pharmacy (Novena Square)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7102,7 +7102,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_150">
-<name>kml_150</name>
+<name>Guardian Pharmacy (Our Tampines Hub)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7150,7 +7150,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_151">
-<name>kml_151</name>
+<name>Guardian Pharmacy (Pagoda Street)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7196,7 +7196,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_152">
-<name>kml_152</name>
+<name>Guardian Pharmacy (Paragon)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7244,7 +7244,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_153">
-<name>kml_153</name>
+<name>Singhealth Poly - Tampines</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7292,7 +7292,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_154">
-<name>kml_154</name>
+<name>TAN TOCK SENG HOSPITAL PTE LTD (EMERGENCY PHARMACY)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7340,7 +7340,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_155">
-<name>kml_155</name>
+<name>THE DENTAL PHARM</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7387,7 +7387,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_156">
-<name>kml_156</name>
+<name>Tan Tock Seng Hospital (Pharmacy  Level 2)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7435,7 +7435,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_157">
-<name>kml_157</name>
+<name>The Dental Pharm</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7483,7 +7483,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_158">
-<name>kml_158</name>
+<name>The Japanese Association Clinic  Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7528,7 +7528,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_159">
-<name>kml_159</name>
+<name>Thomson Medical Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7573,7 +7573,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_160">
-<name>kml_160</name>
+<name>UNITY By FairPrice (BN(A))</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7620,7 +7620,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_161">
-<name>kml_161</name>
+<name>UNITY By FairPrice (EPT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7668,7 +7668,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_162">
-<name>kml_162</name>
+<name>UNITY By FairPrice (HAMK)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7716,7 +7716,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_163">
-<name>kml_163</name>
+<name>UNITY By FairPrice (HGLS)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7764,7 +7764,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_164">
-<name>kml_164</name>
+<name>UNITY By FairPrice (HGPT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7812,7 +7812,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_165">
-<name>kml_165</name>
+<name>UNITY By FairPrice (HNEX)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7860,7 +7860,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_166">
-<name>kml_166</name>
+<name>UNITY By FairPrice (JPT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7908,7 +7908,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_167">
-<name>kml_167</name>
+<name>UNITY By FairPrice (LOT1)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -7956,7 +7956,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_168">
-<name>kml_168</name>
+<name>UNITY By FairPrice (MP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8004,7 +8004,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_169">
-<name>kml_169</name>
+<name>UNITY By FairPrice (OKM)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8052,7 +8052,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_170">
-<name>kml_170</name>
+<name>UNITY By FairPrice (PGOL)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8100,7 +8100,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_171">
-<name>kml_171</name>
+<name>UNITY By FairPrice (PGWW)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8148,7 +8148,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_172">
-<name>kml_172</name>
+<name>UNITY By FairPrice (PSG)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8196,7 +8196,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_173">
-<name>kml_173</name>
+<name>UNITY By FairPrice (RVAL)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8244,7 +8244,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_174">
-<name>kml_174</name>
+<name>UNITY By FairPrice (SPO)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8292,7 +8292,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_175">
-<name>kml_175</name>
+<name>UNITY By FairPrice (TAML)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8340,7 +8340,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_176">
-<name>kml_176</name>
+<name>UNITY By FairPrice (TBRU)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8388,7 +8388,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_177">
-<name>kml_177</name>
+<name>UNITY By FairPrice (TGP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8435,7 +8435,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_178">
-<name>kml_178</name>
+<name>UNITY By FairPrice (THDB)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8483,7 +8483,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_179">
-<name>kml_179</name>
+<name>UNITY By FairPrice (THPZ)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8531,7 +8531,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_180">
-<name>kml_180</name>
+<name>UNITY By FairPrice (TMA)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8579,7 +8579,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_181">
-<name>kml_181</name>
+<name>UNITY By FairPrice (TPO)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8627,7 +8627,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_182">
-<name>kml_182</name>
+<name>UNITY By FairPrice (UARC)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8675,7 +8675,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_183">
-<name>kml_183</name>
+<name>UNITY By FairPrice (UBMC)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8723,7 +8723,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_184">
-<name>kml_184</name>
+<name>UNITY By FairPrice (UBPP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8771,7 +8771,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_185">
-<name>kml_185</name>
+<name>UNITY By FairPrice (UBTPZ)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8819,7 +8819,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_186">
-<name>kml_186</name>
+<name>UNITY By FairPrice (UGWC)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8867,7 +8867,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_187">
-<name>kml_187</name>
+<name>UNITY By FairPrice (UHBF)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8915,7 +8915,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_188">
-<name>kml_188</name>
+<name>UNITY By FairPrice (UHJPT )Hyper Jurong Point</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -8963,7 +8963,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_189">
-<name>kml_189</name>
+<name>UNITY By FairPrice (UHLM)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9011,7 +9011,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_190">
-<name>kml_190</name>
+<name>UNITY By FairPrice (UJEM)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9059,7 +9059,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_191">
-<name>kml_191</name>
+<name>UNITY By FairPrice (UJX8)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9107,7 +9107,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_192">
-<name>kml_192</name>
+<name>UNITY By FairPrice (UNPCT) North Point City</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9155,7 +9155,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_193">
-<name>kml_193</name>
+<name>UNITY By FairPrice (USMA)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9203,7 +9203,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_194">
-<name>kml_194</name>
+<name>UNITY By FairPrice (UWSA)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9250,7 +9250,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_195">
-<name>kml_195</name>
+<name>UNITY By FairPrice (UYSH)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9298,7 +9298,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_196">
-<name>kml_196</name>
+<name>UNITY By FairPrice (WGA)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9346,7 +9346,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_197">
-<name>kml_197</name>
+<name>UNITY By Fairprice (CIA3)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9394,7 +9394,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_198">
-<name>kml_198</name>
+<name>UNITY By Fairprice (CLML)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9442,7 +9442,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_199">
-<name>kml_199</name>
+<name>UNITY By Fairprice (YTP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9490,7 +9490,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_200">
-<name>kml_200</name>
+<name>UNITY Waterway Point (WWP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9538,7 +9538,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_201">
-<name>kml_201</name>
+<name>Unity (HLM) Hillion Mall</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9586,7 +9586,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_202">
-<name>kml_202</name>
+<name>Unity By FairPrice (HSPH) Sports Hub</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9634,7 +9634,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_203">
-<name>kml_203</name>
+<name>UrbanRx Compounding Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9682,7 +9682,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_204">
-<name>kml_204</name>
+<name>VERTEX PHARMACY PTE. LTD.</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9727,7 +9727,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_205">
-<name>kml_205</name>
+<name>WATSON'S PERSONAL CARE STORES PTE LTD (WATERWAY POINT)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9775,7 +9775,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_206">
-<name>kml_206</name>
+<name>WOODS PHARMACY PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9822,7 +9822,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_207">
-<name>kml_207</name>
+<name>Watson's Personal Care Stores Pte Ltd (Bedok Central)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9870,7 +9870,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_208">
-<name>kml_208</name>
+<name>Watson's Personal Care Stores Pte Ltd (Bugis Junction)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9918,7 +9918,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_209">
-<name>kml_209</name>
+<name>Watson's Personal Care Stores Pte Ltd (Changi Airport T4 Check in Hall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -9966,7 +9966,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_210">
-<name>kml_210</name>
+<name>Watson's Personal Care Stores Pte Ltd (Clementi Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10014,7 +10014,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_211">
-<name>kml_211</name>
+<name>Watson's Personal Care Stores Pte Ltd (Heartbeat@bedok)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10062,7 +10062,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_212">
-<name>kml_212</name>
+<name>Watson's Personal Care Stores Pte Ltd (IMM)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10110,7 +10110,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_213">
-<name>kml_213</name>
+<name>Watson's Personal Care Stores Pte Ltd (Junction 8)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10158,7 +10158,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_214">
-<name>kml_214</name>
+<name>Watson's Personal Care Stores Pte Ltd (North Point)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10206,7 +10206,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_215">
-<name>kml_215</name>
+<name>Watson's Personal Care Stores Pte Ltd (Royal Square)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10254,7 +10254,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_216">
-<name>kml_216</name>
+<name>Watson's Personal Care Stores Pte Ltd (Toa Payoh HDB Hub)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10301,7 +10301,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_217">
-<name>kml_217</name>
+<name>Welcia-BHG Bugis Junction</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10349,7 +10349,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_218">
-<name>kml_218</name>
+<name>Welcia-BHG Northpoint City</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10397,7 +10397,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_219">
-<name>kml_219</name>
+<name>West Point Hospital Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10445,7 +10445,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_220">
-<name>kml_220</name>
+<name>Guardian Pharmacy (JEM)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10493,7 +10493,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_221">
-<name>kml_221</name>
+<name>A.M. Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10541,7 +10541,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_222">
-<name>kml_222</name>
+<name>Alchemy Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10589,7 +10589,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_223">
-<name>kml_223</name>
+<name>Essentials Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10637,7 +10637,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_224">
-<name>kml_224</name>
+<name>Farrer Park Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10685,7 +10685,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_225">
-<name>kml_225</name>
+<name>Watson's Personal Care Stores Pte Ltd (Novena Square)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10733,7 +10733,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_226">
-<name>kml_226</name>
+<name>Watson's Personal Care Stores Pte Ltd (One@Kentridge)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10781,7 +10781,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_227">
-<name>kml_227</name>
+<name>Watson's Personal Care Stores Pte Ltd (Paragon)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10829,7 +10829,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_228">
-<name>kml_228</name>
+<name>Watson's Personal Care Stores Pte Ltd (Raffles City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10877,7 +10877,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_229">
-<name>kml_229</name>
+<name>Watson's Personal Care Stores Pte Ltd (Resort World Sentosa)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10925,7 +10925,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_230">
-<name>kml_230</name>
+<name>Watson's Personal Care Stores Pte Ltd (Tampines Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -10973,7 +10973,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_231">
-<name>kml_231</name>
+<name>Watson's Personal Care Stores Pte Ltd (Vivo City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11021,7 +11021,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_232">
-<name>kml_232</name>
+<name>Watson's Personal Care Stores Pte Ltd (West Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11069,7 +11069,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_233">
-<name>kml_233</name>
+<name>WESTMEAD PHARMACY PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11117,7 +11117,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_234">
-<name>kml_234</name>
+<name>Watson's Personal Care Stores Pte Ltd (Parkway Parade)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11165,7 +11165,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_235">
-<name>kml_235</name>
+<name>Watson's Personal Care Stores Pte Ltd (United Square)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11213,7 +11213,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_236">
-<name>kml_236</name>
+<name>Watson's Personal Care Stores Pte Ltd Ion Orchard</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11261,7 +11261,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_237">
-<name>kml_237</name>
+<name>Watson's Personal Care Stores Pte Ltd (Changi Airport T3 Basement)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11309,7 +11309,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_238">
-<name>kml_238</name>
+<name>Singapore General Hospital Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11357,7 +11357,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_239">
-<name>kml_239</name>
+<name>SINGHEALTH POLY-OUTRAM</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11405,7 +11405,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_240">
-<name>kml_240</name>
+<name>SMITH PHARMACY PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11453,7 +11453,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_241">
-<name>kml_241</name>
+<name>Specialist Compounding Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11501,7 +11501,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_242">
-<name>kml_242</name>
+<name>Tan Tock Seng Hospital (Outpatient & Retail Pharmacy)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11549,7 +11549,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_243">
-<name>kml_243</name>
+<name>TTSH (CDC Pharmacy - Blk 810 Moulmein Road)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11597,7 +11597,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_244">
-<name>kml_244</name>
+<name>UNITY (HBF)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11645,7 +11645,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_245">
-<name>kml_245</name>
+<name>UNITY (HLC)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11693,7 +11693,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_246">
-<name>kml_246</name>
+<name>UNITY (JEM)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11741,7 +11741,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_247">
-<name>kml_247</name>
+<name>UNITY (PSG)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11789,7 +11789,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_248">
-<name>kml_248</name>
+<name>UNITY (TBR) Tiong Bahru Plaza</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11837,7 +11837,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_249">
-<name>kml_249</name>
+<name>UNITY (TPO)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11885,7 +11885,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_250">
-<name>kml_250</name>
+<name>UNITY (YTP)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11933,7 +11933,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_251">
-<name>kml_251</name>
+<name>Vivahealth Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11981,7 +11981,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_252">
-<name>kml_252</name>
+<name>Watson's Personal Care Store Pte Ltd (Lucky Plaza)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12029,7 +12029,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_253">
-<name>kml_253</name>
+<name>WATSONS PERSONAL CARE STORES (TIONG BAHRU PLAZA)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12077,7 +12077,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_254">
-<name>kml_254</name>
+<name>Watson's Personal Care Stores Pte Ltd (Bedok Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12125,7 +12125,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_255">
-<name>kml_255</name>
+<name>Watson's Personal Care Stores Pte Ltd (Bukit Panjang Plaza)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12173,7 +12173,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_256">
-<name>kml_256</name>
+<name>Watson's Personal Care Stores Pte Ltd (Causeway Point)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12221,7 +12221,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_257">
-<name>kml_257</name>
+<name>Watson's Personal Care Stores Pte Ltd (Changi Airport T3 Check in Hall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12269,7 +12269,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_258">
-<name>kml_258</name>
+<name>Watson's Personal Care Stores Pte Ltd (Changi Airport Terminal 3 Transit North)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12317,7 +12317,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_259">
-<name>kml_259</name>
+<name>Watson's Personal Care Stores Pte Ltd (Changi Airport Terminal 3 Transit)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12365,7 +12365,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_260">
-<name>kml_260</name>
+<name>Watson's Personal Care Stores Pte Ltd (Compass One)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12413,7 +12413,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_261">
-<name>kml_261</name>
+<name>Watson's Personal Care Stores Pte Ltd (Great World City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12461,7 +12461,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_262">
-<name>kml_262</name>
+<name>Watson's Personal Care Stores Pte Ltd (Hougang Mall)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12509,7 +12509,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_263">
-<name>kml_263</name>
+<name>Watson's Personal Care Stores Pte Ltd (International Plaza)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12557,7 +12557,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_264">
-<name>kml_264</name>
+<name>Watson's Personal Care Stores Pte Ltd (Jem)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12605,7 +12605,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_265">
-<name>kml_265</name>
+<name>Watson's Personal Care Stores Pte Ltd (Jurong Point)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12653,7 +12653,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_266">
-<name>kml_266</name>
+<name>Watson's Personal Care Stores Pte Ltd (Marina Bay Financial Centre)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12701,7 +12701,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_267">
-<name>kml_267</name>
+<name>Watson's Personal Care Stores Pte Ltd (Marina Square)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12749,7 +12749,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_268">
-<name>kml_268</name>
+<name>Watson's Personal Care Stores Pte Ltd (NEX)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -12797,7 +12797,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_269">
-<name>kml_269</name>
+<name>Watson's Personal Care Stores Pte Ltd (Ngee Ann City)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>

@@ -54,7 +54,7 @@
 <Folder id="kml_ft_MUSEUM">
 <name>MUSEUM</name>
 <Placemark id="kml_1">
-<name>kml_1</name>
+<name>National Healthcare Group Polyclinics' Gallery of Memories</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -123,7 +123,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_2">
-<name>kml_2</name>
+<name>National Library Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -191,7 +191,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_3">
-<name>kml_3</name>
+<name>National Museum of Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -259,7 +259,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_4">
-<name>kml_4</name>
+<name>Ngee Ann Cultural Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -328,7 +328,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_5">
-<name>kml_5</name>
+<name>Peranakan Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -396,7 +396,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_6">
-<name>kml_6</name>
+<name>Police Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -466,7 +466,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_7">
-<name>kml_7</name>
+<name>Red Dot Design Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -534,7 +534,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_8">
-<name>kml_8</name>
+<name>Reflections at Bukit Chandu</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -602,7 +602,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_9">
-<name>kml_9</name>
+<name>Republic of Singapore Airforce Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -670,7 +670,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_10">
-<name>kml_10</name>
+<name>Republic of Singapore Navy Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -738,7 +738,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_11">
-<name>kml_11</name>
+<name>Singapore Discovery Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -806,7 +806,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_12">
-<name>kml_12</name>
+<name>Science Centre Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -874,7 +874,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_13">
-<name>kml_13</name>
+<name>Singapore Art Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -942,7 +942,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_14">
-<name>kml_14</name>
+<name>Singapore City Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1012,7 +1012,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_15">
-<name>kml_15</name>
+<name>Singapore Maritime Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1081,7 +1081,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_16">
-<name>kml_16</name>
+<name>Singapore Philatelic Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1149,7 +1149,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_17">
-<name>kml_17</name>
+<name>Singapore Sports Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1217,7 +1217,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_18">
-<name>kml_18</name>
+<name>Sun Yat Sen Nanyang Memorial Hall</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1285,7 +1285,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_19">
-<name>kml_19</name>
+<name>Tan Tock Seng Hospital Heritage Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1353,7 +1353,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_20">
-<name>kml_20</name>
+<name>The Battle Box</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1421,7 +1421,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_21">
-<name>kml_21</name>
+<name>The Changi Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1489,7 +1489,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_22">
-<name>kml_22</name>
+<name>The Grassroots Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1557,7 +1557,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_23">
-<name>kml_23</name>
+<name>The Intan</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1625,7 +1625,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_24">
-<name>kml_24</name>
+<name>The Private Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1693,7 +1693,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_25">
-<name>kml_25</name>
+<name>The SGH Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1761,7 +1761,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_26">
-<name>kml_26</name>
+<name>Woodbridge Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1830,7 +1830,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_27">
-<name>kml_27</name>
+<name>Army Museum of Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1898,7 +1898,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_28">
-<name>kml_28</name>
+<name>ArtScience Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1966,7 +1966,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_29">
-<name>kml_29</name>
+<name>Asian Civilisations Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2034,7 +2034,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_30">
-<name>kml_30</name>
+<name>BCA Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2102,7 +2102,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_31">
-<name>kml_31</name>
+<name>Chinatown Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2170,7 +2170,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_32">
-<name>kml_32</name>
+<name>Chinese Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2238,7 +2238,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_33">
-<name>kml_33</name>
+<name>Civil Defence Heritage Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2307,7 +2307,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_34">
-<name>kml_34</name>
+<name>Eurasian Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2376,7 +2376,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_35">
-<name>kml_35</name>
+<name>Former Ford Factory</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2444,7 +2444,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_36">
-<name>kml_36</name>
+<name>Fort Siloso</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2512,7 +2512,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_37">
-<name>kml_37</name>
+<name>Fuk Tak Chi Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2580,7 +2580,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_38">
-<name>kml_38</name>
+<name>Gan Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2648,7 +2648,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_39">
-<name>kml_39</name>
+<name>Gem Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2717,7 +2717,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_40">
-<name>kml_40</name>
+<name>HDB Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2787,7 +2787,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_41">
-<name>kml_41</name>
+<name>Home Team Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2855,7 +2855,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_42">
-<name>kml_42</name>
+<name>IRAS Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2925,7 +2925,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_43">
-<name>kml_43</name>
+<name>Indian Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -2993,7 +2993,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_44">
-<name>kml_44</name>
+<name>Istana Heritage Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3061,7 +3061,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_45">
-<name>kml_45</name>
+<name>Land Transport Gallery</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3129,7 +3129,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_46">
-<name>kml_46</name>
+<name>Lee Kong Chian Natural History Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3197,7 +3197,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_47">
-<name>kml_47</name>
+<name>Malay Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3265,7 +3265,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_48">
-<name>kml_48</name>
+<name>Marina Barrage</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3333,7 +3333,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_49">
-<name>kml_49</name>
+<name>Ministry of Education Heritage Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3400,7 +3400,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_50">
-<name>kml_50</name>
+<name>Mint Museum of Toys</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3468,7 +3468,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_51">
-<name>kml_51</name>
+<name>NEWater Visitor Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3536,7 +3536,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_52">
-<name>kml_52</name>
+<name>NUS Baba House</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3604,7 +3604,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_53">
-<name>kml_53</name>
+<name>NUS Museum</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -3673,7 +3673,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_54">
-<name>kml_54</name>
+<name>National Gallery Singapore</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>

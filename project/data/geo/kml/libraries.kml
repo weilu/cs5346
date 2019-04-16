@@ -54,7 +54,7 @@
 <Folder id="kml_ft_LIBRARIES">
 <name>LIBRARIES</name>
 <Placemark id="kml_1">
-<name>kml_1</name>
+<name>Bedok Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -124,7 +124,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_2">
-<name>kml_2</name>
+<name>Chua Chu Kang Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -194,7 +194,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_3">
-<name>kml_3</name>
+<name>Bukit Panjang Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -264,7 +264,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_4">
-<name>kml_4</name>
+<name>Cheng San Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -334,7 +334,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_5">
-<name>kml_5</name>
+<name>Clementi Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -405,7 +405,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_6">
-<name>kml_6</name>
+<name>Ang Mo Kio Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -473,7 +473,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_7">
-<name>kml_7</name>
+<name>Yishun Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -543,7 +543,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_8">
-<name>kml_8</name>
+<name>Bishan Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -613,7 +613,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_9">
-<name>kml_9</name>
+<name>Central Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -681,7 +681,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_10">
-<name>kml_10</name>
+<name>Bukit Merah Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -749,7 +749,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_11">
-<name>kml_11</name>
+<name>Toa Payoh Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -817,7 +817,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_12">
-<name>kml_12</name>
+<name>Jurong Regional Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -885,7 +885,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_13">
-<name>kml_13</name>
+<name>National Library Building</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -953,7 +953,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_14">
-<name>kml_14</name>
+<name>Queenstown Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1021,7 +1021,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_15">
-<name>kml_15</name>
+<name>Woodlands Regional Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1091,7 +1091,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_16">
-<name>kml_16</name>
+<name>Tampines Regional Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1161,7 +1161,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_17">
-<name>kml_17</name>
+<name>Sembawang Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1231,7 +1231,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_18">
-<name>kml_18</name>
+<name>Geylang East Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1299,7 +1299,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_19">
-<name>kml_19</name>
+<name>Jurong West Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1369,7 +1369,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_20">
-<name>kml_20</name>
+<name>Serangoon Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1440,7 +1440,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_21">
-<name>kml_21</name>
+<name>Bukit Batok Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1510,7 +1510,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_22">
-<name>kml_22</name>
+<name>Sengkang Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1580,7 +1580,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_23">
-<name>kml_23</name>
+<name>Marine Parade Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1650,7 +1650,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_24">
-<name>kml_24</name>
+<name>Pasir Ris Public Library</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1720,7 +1720,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_25">
-<name>kml_25</name>
+<name>library@orchard</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1790,7 +1790,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_26">
-<name>kml_26</name>
+<name>library@esplanade</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>
@@ -1860,7 +1860,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_27">
-<name>kml_27</name>
+<name>library@chinatown</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>ADDRESSBLOCKHOUSENUMBER</th>

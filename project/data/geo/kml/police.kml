@@ -48,7 +48,7 @@
 <Folder id="kml_ft_SPF_ESTABLISHMENTS">
 <name>SPF_ESTABLISHMENTS</name>
 <Placemark id="kml_1">
-<name>kml_1</name>
+<name>Bedok South Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -109,7 +109,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_2">
-<name>kml_2</name>
+<name>Found and Unclaimed Property Office (FUPO)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -171,7 +171,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_3">
-<name>kml_3</name>
+<name>Jurong Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -233,7 +233,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_4">
-<name>kml_4</name>
+<name>Bukit Timah Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -295,7 +295,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_5">
-<name>kml_5</name>
+<name>Eunos Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -357,7 +357,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_6">
-<name>kml_6</name>
+<name>Tanjong Pagar Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -419,7 +419,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_7">
-<name>kml_7</name>
+<name>Tiong Bahru Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -481,7 +481,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_8">
-<name>kml_8</name>
+<name>Bukit Merah West Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -543,7 +543,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_9">
-<name>kml_9</name>
+<name>Queenstown Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -605,7 +605,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_10">
-<name>kml_10</name>
+<name>Special Operations Command</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -665,7 +665,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_11">
-<name>kml_11</name>
+<name>Alexandra Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -727,7 +727,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_12">
-<name>kml_12</name>
+<name>Commonwealth Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -789,7 +789,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_13">
-<name>kml_13</name>
+<name>Dover Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -851,7 +851,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_14">
-<name>kml_14</name>
+<name>Clementi Police Divisional HQ</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -912,7 +912,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_15">
-<name>kml_15</name>
+<name>Clementi Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -973,7 +973,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_16">
-<name>kml_16</name>
+<name>West Coast Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1035,7 +1035,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_17">
-<name>kml_17</name>
+<name>Clementi Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1097,7 +1097,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_18">
-<name>kml_18</name>
+<name>Pasir Panjang Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1158,7 +1158,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_19">
-<name>kml_19</name>
+<name>Telok Blangah Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1220,7 +1220,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_20">
-<name>kml_20</name>
+<name>Police Coast Guard</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1281,7 +1281,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_21">
-<name>kml_21</name>
+<name>Radin Mas Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1343,7 +1343,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_22">
-<name>kml_22</name>
+<name>Central Police Divisional HQ</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1405,7 +1405,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_23">
-<name>kml_23</name>
+<name>Bukit Merah East Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1467,7 +1467,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_24">
-<name>kml_24</name>
+<name>Marina Bay Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1528,7 +1528,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_25">
-<name>kml_25</name>
+<name>Hong Kah South Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1590,7 +1590,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_26">
-<name>kml_26</name>
+<name>Boon Lay Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1652,7 +1652,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_27">
-<name>kml_27</name>
+<name>Punggol Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1713,7 +1713,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_28">
-<name>kml_28</name>
+<name>Airport Police Division</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1774,7 +1774,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_29">
-<name>kml_29</name>
+<name>Bukit Panjang North Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1836,7 +1836,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_30">
-<name>kml_30</name>
+<name>Marsiling Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1898,7 +1898,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_31">
-<name>kml_31</name>
+<name>Chong Pang Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -1959,7 +1959,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_32">
-<name>kml_32</name>
+<name>Nee Soon South Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2021,7 +2021,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_33">
-<name>kml_33</name>
+<name>Woodlands East Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2082,7 +2082,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_34">
-<name>kml_34</name>
+<name>Sembawang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2143,7 +2143,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_35">
-<name>kml_35</name>
+<name>Woodlands Police Divisional HQ</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2204,7 +2204,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_36">
-<name>kml_36</name>
+<name>Woodlands West Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2265,7 +2265,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_37">
-<name>kml_37</name>
+<name>Yishun South Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2326,7 +2326,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_38">
-<name>kml_38</name>
+<name>Yishun North Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2387,7 +2387,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_39">
-<name>kml_39</name>
+<name>Criminal Investigation Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2450,7 +2450,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_40">
-<name>kml_40</name>
+<name>Licensing Division</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2518,7 +2518,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_41">
-<name>kml_41</name>
+<name>Volunteer Special Constabulary Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2581,7 +2581,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_42">
-<name>kml_42</name>
+<name>Warrant Enforcement Unit</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2644,7 +2644,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_43">
-<name>kml_43</name>
+<name>Welfare Division</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2707,7 +2707,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_44">
-<name>kml_44</name>
+<name>Training Command</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2769,7 +2769,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_45">
-<name>kml_45</name>
+<name>Choa Chu Kang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2831,7 +2831,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_46">
-<name>kml_46</name>
+<name>Choa Chu Kang Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2893,7 +2893,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_47">
-<name>kml_47</name>
+<name>Bukit Panjang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -2955,7 +2955,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_48">
-<name>kml_48</name>
+<name>Bukit Panjang South Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3017,7 +3017,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_49">
-<name>kml_49</name>
+<name>Kreta Ayer Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3078,7 +3078,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_50">
-<name>kml_50</name>
+<name>Commercial Affairs Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3141,7 +3141,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_51">
-<name>kml_51</name>
+<name>Tanah Merah Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3203,7 +3203,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_52">
-<name>kml_52</name>
+<name>Chai Chee Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3265,7 +3265,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_53">
-<name>kml_53</name>
+<name>Kaki Bukit Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3327,7 +3327,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_54">
-<name>kml_54</name>
+<name>Bedok Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3389,7 +3389,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_55">
-<name>kml_55</name>
+<name>Siglap Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3450,7 +3450,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_56">
-<name>kml_56</name>
+<name>Marine Parade Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3511,7 +3511,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_57">
-<name>kml_57</name>
+<name>Marine Parade Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3573,7 +3573,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_58">
-<name>kml_58</name>
+<name>Joo Chiat Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3634,7 +3634,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_59">
-<name>kml_59</name>
+<name>Kampong Kembangan Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3695,7 +3695,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_60">
-<name>kml_60</name>
+<name>Geylang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3756,7 +3756,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_61">
-<name>kml_61</name>
+<name>Public Transport Security Command (TransCom)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3817,7 +3817,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_62">
-<name>kml_62</name>
+<name>Traffic Police Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3882,7 +3882,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_63">
-<name>kml_63</name>
+<name>Kampong Ubi Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -3944,7 +3944,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_64">
-<name>kml_64</name>
+<name>Mountbatten Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4006,7 +4006,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_65">
-<name>kml_65</name>
+<name>Geylang Serai Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4068,7 +4068,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_66">
-<name>kml_66</name>
+<name>MacPherson Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4130,7 +4130,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_67">
-<name>kml_67</name>
+<name>Aljunied Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4192,7 +4192,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_68">
-<name>kml_68</name>
+<name>Potong Pasir Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4254,7 +4254,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_69">
-<name>kml_69</name>
+<name>Kolam Ayer Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4316,7 +4316,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_70">
-<name>kml_70</name>
+<name>Administration & Finance Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4378,7 +4378,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_71">
-<name>kml_71</name>
+<name>Inspectorate & Compliance Office</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4440,7 +4440,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_72">
-<name>kml_72</name>
+<name>Logistics Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4502,7 +4502,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_73">
-<name>kml_73</name>
+<name>Manpower Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4564,7 +4564,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_74">
-<name>kml_74</name>
+<name>Operation Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4626,7 +4626,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_75">
-<name>kml_75</name>
+<name>Planning & Organisation Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4688,7 +4688,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_76">
-<name>kml_76</name>
+<name>Police Intelligence Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4750,7 +4750,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_77">
-<name>kml_77</name>
+<name>Police Technology Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4812,7 +4812,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_78">
-<name>kml_78</name>
+<name>Public Affairs Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4874,7 +4874,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_79">
-<name>kml_79</name>
+<name>Kallang Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4936,7 +4936,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_80">
-<name>kml_80</name>
+<name>Moulmein Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -4998,7 +4998,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_81">
-<name>kml_81</name>
+<name>Whampoa Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5060,7 +5060,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_82">
-<name>kml_82</name>
+<name>Security Command</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5121,7 +5121,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_83">
-<name>kml_83</name>
+<name>Toa Payoh Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5184,7 +5184,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_84">
-<name>kml_84</name>
+<name>Kim Keat Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5246,7 +5246,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_85">
-<name>kml_85</name>
+<name>Boon Teck Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5308,7 +5308,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_86">
-<name>kml_86</name>
+<name>Police National Service Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5374,7 +5374,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_87">
-<name>kml_87</name>
+<name>Buona Vista Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5436,7 +5436,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_88">
-<name>kml_88</name>
+<name>Bukit Timah Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5497,7 +5497,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_89">
-<name>kml_89</name>
+<name>Orchard Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5558,7 +5558,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_90">
-<name>kml_90</name>
+<name>Tanglin Police Divisional HQ</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5619,7 +5619,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_91">
-<name>kml_91</name>
+<name>Kampong Java Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5680,7 +5680,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_92">
-<name>kml_92</name>
+<name>Cairnhill Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5742,7 +5742,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_93">
-<name>kml_93</name>
+<name>Rochor Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5803,7 +5803,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_94">
-<name>kml_94</name>
+<name>Kampong Glam Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5864,7 +5864,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_95">
-<name>kml_95</name>
+<name>Kim Seng Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5925,7 +5925,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_96">
-<name>kml_96</name>
+<name>River Valley Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -5987,7 +5987,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_97">
-<name>kml_97</name>
+<name>Nanyang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6048,7 +6048,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_98">
-<name>kml_98</name>
+<name>Jurong East Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6109,7 +6109,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_99">
-<name>kml_99</name>
+<name>Ayer Rajah Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6171,7 +6171,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_100">
-<name>kml_100</name>
+<name>Bishan Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6232,7 +6232,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_101">
-<name>kml_101</name>
+<name>Bishan Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6294,7 +6294,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_102">
-<name>kml_102</name>
+<name>Thomson Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6356,7 +6356,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_103">
-<name>kml_103</name>
+<name>Ang Mo Kio South Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6417,7 +6417,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_104">
-<name>kml_104</name>
+<name>Ang Mo Kio Police Divisional Head Quarters</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6478,7 +6478,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_105">
-<name>kml_105</name>
+<name>Ang Mo Kio North Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6539,7 +6539,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_106">
-<name>kml_106</name>
+<name>Teck Ghee Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6600,7 +6600,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_107">
-<name>kml_107</name>
+<name>Kebun Baru Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6661,7 +6661,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_108">
-<name>kml_108</name>
+<name>Serangoon Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6723,7 +6723,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_109">
-<name>kml_109</name>
+<name>Serangoon Gardens Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6784,7 +6784,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_110">
-<name>kml_110</name>
+<name>Serangoon North Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6846,7 +6846,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_111">
-<name>kml_111</name>
+<name>Sengkang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6908,7 +6908,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_112">
-<name>kml_112</name>
+<name>Hougang Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -6969,7 +6969,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_113">
-<name>kml_113</name>
+<name>Hougang Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7031,7 +7031,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_114">
-<name>kml_114</name>
+<name>Paya Lebar Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7093,7 +7093,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_115">
-<name>kml_115</name>
+<name>Changi Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7154,7 +7154,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_116">
-<name>kml_116</name>
+<name>Tampines Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7215,7 +7215,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_117">
-<name>kml_117</name>
+<name>Changkat Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7277,7 +7277,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_118">
-<name>kml_118</name>
+<name>Tampines North Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7339,7 +7339,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_119">
-<name>kml_119</name>
+<name>Tampines East Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7401,7 +7401,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_120">
-<name>kml_120</name>
+<name>Pasir Ris Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7463,7 +7463,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_121">
-<name>kml_121</name>
+<name>Bedok Police Divisional Head Quarters</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7524,7 +7524,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_122">
-<name>kml_122</name>
+<name>Bedok North Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7585,7 +7585,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_123">
-<name>kml_123</name>
+<name>Bukit Batok Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7646,7 +7646,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_124">
-<name>kml_124</name>
+<name>Hong Kah North Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7708,7 +7708,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_125">
-<name>kml_125</name>
+<name>Bukit Batok Neighbourhood Police Post</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7770,7 +7770,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_126">
-<name>kml_126</name>
+<name>Jurong West Neighbourhood Police Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
@@ -7831,7 +7831,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_127">
-<name>kml_127</name>
+<name>Jurong Police Divisional HQ</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>

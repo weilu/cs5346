@@ -39,7 +39,7 @@
 <Folder id="kml_ft_MARKET_FOOD_CENTRE">
 <name>MARKET_FOOD_CENTRE</name>
 <Placemark id="kml_1">
-<name>kml_1</name>
+<name>Blk 75 Toa Payoh Lorong 5</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -91,7 +91,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_2">
-<name>kml_2</name>
+<name>Blk 79 Redhill Lane</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -143,7 +143,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_3">
-<name>kml_3</name>
+<name>Blk 79 Telok Blangah Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -195,7 +195,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_4">
-<name>kml_4</name>
+<name>Blk 80 Circuit Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -247,7 +247,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_5">
-<name>kml_5</name>
+<name>Blk 82 Telok Blangah Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -299,7 +299,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_6">
-<name>kml_6</name>
+<name>Blk 84 Marine Parade Central</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -351,7 +351,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_7">
-<name>kml_7</name>
+<name>Blk 85 Bedok North Street 4</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -403,7 +403,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_8">
-<name>kml_8</name>
+<name>Blk 85 Redhill Lane</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -455,7 +455,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_9">
-<name>kml_9</name>
+<name>Blk 89 Circuit Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -507,7 +507,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_10">
-<name>kml_10</name>
+<name>Blk 90 Whampoa Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -559,7 +559,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_11">
-<name>kml_11</name>
+<name>Blk 93 Toa Payoh Lorong 4</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -611,7 +611,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_12">
-<name>kml_12</name>
+<name>Blks 13/14 Haig Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -663,7 +663,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_13">
-<name>kml_13</name>
+<name>Blks 160/162 Ang Mo Kio Ave 4</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -715,7 +715,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_14">
-<name>kml_14</name>
+<name>Blks 1A/ 2A/ 3A Commonwealth Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -767,7 +767,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_15">
-<name>kml_15</name>
+<name>Blks 20/21 Marsiling Lane</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -819,7 +819,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_16">
-<name>kml_16</name>
+<name>Blks 221 A/B Boon Lay Place</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -871,7 +871,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_17">
-<name>kml_17</name>
+<name>Blks 22A/B Havelock Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -923,7 +923,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_18">
-<name>kml_18</name>
+<name>Blks 91/92 Whampoa Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -975,7 +975,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_19">
-<name>kml_19</name>
+<name>Chinatown Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1027,7 +1027,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_20">
-<name>kml_20</name>
+<name>Chong Pang Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1079,7 +1079,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_21">
-<name>kml_21</name>
+<name>Kovan Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1131,7 +1131,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_22">
-<name>kml_22</name>
+<name>Pek Kio Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1183,7 +1183,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_23">
-<name>kml_23</name>
+<name>People's Park Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1235,7 +1235,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_24">
-<name>kml_24</name>
+<name>Quality Road Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1287,7 +1287,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_25">
-<name>kml_25</name>
+<name>Tekka Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1339,7 +1339,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_26">
-<name>kml_26</name>
+<name>Commonwealth Crescent Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1391,7 +1391,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_27">
-<name>kml_27</name>
+<name>Adam Road Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1443,7 +1443,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_28">
-<name>kml_28</name>
+<name>Alexandra Village Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1495,7 +1495,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_29">
-<name>kml_29</name>
+<name>Amoy Street Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1547,7 +1547,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_30">
-<name>kml_30</name>
+<name>Serangoon Garden Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1599,7 +1599,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_31">
-<name>kml_31</name>
+<name>Taman Jurong Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1651,7 +1651,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_32">
-<name>kml_32</name>
+<name>Tanglin Halt Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1703,7 +1703,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_33">
-<name>kml_33</name>
+<name>Tiong Bahru Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1755,7 +1755,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_34">
-<name>kml_34</name>
+<name>Zion Riverside Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1807,7 +1807,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_35">
-<name>kml_35</name>
+<name>ABC Brickworks Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1859,7 +1859,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_36">
-<name>kml_36</name>
+<name>Albert Centre Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1911,7 +1911,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_37">
-<name>kml_37</name>
+<name>Ayer Rajah Food Centre 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -1963,7 +1963,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_38">
-<name>kml_38</name>
+<name>Ayer Rajah Food Centre 3</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2015,7 +2015,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_39">
-<name>kml_39</name>
+<name>Blk 1 Jalan Kukoh</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2067,7 +2067,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_40">
-<name>kml_40</name>
+<name>Blk 105 Hougang Ave 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2119,7 +2119,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_41">
-<name>kml_41</name>
+<name>Blk 11 Telok Blangah Crescent</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2171,7 +2171,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_42">
-<name>kml_42</name>
+<name>Blk 115 Bukit Merah View</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2223,7 +2223,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_43">
-<name>kml_43</name>
+<name>Blk 117 Aljunied Ave 2</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2275,7 +2275,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_44">
-<name>kml_44</name>
+<name>Blk 127 Toa Payoh Lorong 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2327,7 +2327,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_45">
-<name>kml_45</name>
+<name>Blk 137 Tampines Street 11</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2379,7 +2379,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_46">
-<name>kml_46</name>
+<name>Blk 159 Mei Chin Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2431,7 +2431,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_47">
-<name>kml_47</name>
+<name>Blk 16 Bedok South Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2483,7 +2483,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_48">
-<name>kml_48</name>
+<name>Blk 163 Bukit Merah Central</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2535,7 +2535,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_49">
-<name>kml_49</name>
+<name>Blk 20 Ghim Moh Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2587,7 +2587,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_50">
-<name>kml_50</name>
+<name>Blk 208B New Upper Changi Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2639,7 +2639,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_51">
-<name>kml_51</name>
+<name>Blk 210 Toa Payoh Lorong 8</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2691,7 +2691,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_52">
-<name>kml_52</name>
+<name>Blk 216 Bedok North Street 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2743,7 +2743,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_53">
-<name>kml_53</name>
+<name>Blk 22 Toa Payoh Lorong 7</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2795,7 +2795,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_54">
-<name>kml_54</name>
+<name>Blk 503 West Coast Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2847,7 +2847,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_55">
-<name>kml_55</name>
+<name>Blk 502 West  Coast Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2899,7 +2899,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_56">
-<name>kml_56</name>
+<name>Bedok Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -2951,7 +2951,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_57">
-<name>kml_57</name>
+<name>Beo Crescent Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3003,7 +3003,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_58">
-<name>kml_58</name>
+<name>Berseh Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3055,7 +3055,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_59">
-<name>kml_59</name>
+<name>Blk 112 Jalan Bukit Merah</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3107,7 +3107,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_60">
-<name>kml_60</name>
+<name>Blk 17 Upper Boon Keng Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3159,7 +3159,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_61">
-<name>kml_61</name>
+<name>Blk 353 Clementi Ave 2</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3211,7 +3211,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_62">
-<name>kml_62</name>
+<name>Blk 4A Eunos Crescent</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3263,7 +3263,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_63">
-<name>kml_63</name>
+<name>Blk 6 Tanjong Pagar Plaza</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3315,7 +3315,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_64">
-<name>kml_64</name>
+<name>Blks 79/79A Circuit Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3367,7 +3367,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_65">
-<name>kml_65</name>
+<name>Blks 2 & 3 Changi Village Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3419,7 +3419,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_66">
-<name>kml_66</name>
+<name>Bukit Timah Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3471,7 +3471,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_67">
-<name>kml_67</name>
+<name>Chomp Chomp Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3523,7 +3523,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_68">
-<name>kml_68</name>
+<name>Dunman Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3575,7 +3575,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_69">
-<name>kml_69</name>
+<name>East Coast Lagoon Food Village</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3627,7 +3627,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_70">
-<name>kml_70</name>
+<name>Geylang Serai Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3679,7 +3679,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_71">
-<name>kml_71</name>
+<name>Golden Mile Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3731,7 +3731,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_72">
-<name>kml_72</name>
+<name>Blk 44 Holland Drive</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3783,7 +3783,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_73">
-<name>kml_73</name>
+<name>Holland Village Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3835,7 +3835,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_74">
-<name>kml_74</name>
+<name>Hong Lim Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3887,7 +3887,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_75">
-<name>kml_75</name>
+<name>Kallang Estate Market</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3939,7 +3939,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_76">
-<name>kml_76</name>
+<name>Market Street Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -3991,7 +3991,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_77">
-<name>kml_77</name>
+<name>Maxwell Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4043,7 +4043,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_78">
-<name>kml_78</name>
+<name>Newton Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4095,7 +4095,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_79">
-<name>kml_79</name>
+<name>North Bridge Road Market & Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4147,7 +4147,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_80">
-<name>kml_80</name>
+<name>Pasir Panjang Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4199,7 +4199,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_81">
-<name>kml_81</name>
+<name>Sembawang Hills Food Centre</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4251,7 +4251,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_82">
-<name>kml_82</name>
+<name>Blk 226D Ang Mo Kio Ave 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4303,7 +4303,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_83">
-<name>kml_83</name>
+<name>Blk 226H Ang Mo Kio Street 22</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4355,7 +4355,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_84">
-<name>kml_84</name>
+<name>Blk 254 Jurong East Street 24</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4407,7 +4407,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_85">
-<name>kml_85</name>
+<name>Blk 29 Bendemeer Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4459,7 +4459,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_86">
-<name>kml_86</name>
+<name>Blk 320 Shunfu Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4511,7 +4511,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_87">
-<name>kml_87</name>
+<name>Blk 341 Ang Mo Kio Ave 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4563,7 +4563,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_88">
-<name>kml_88</name>
+<name>Blk 347 Jurong East Ave 1</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4615,7 +4615,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_89">
-<name>kml_89</name>
+<name>Blk 36 Telok Blangah Rise</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4667,7 +4667,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_90">
-<name>kml_90</name>
+<name>Blk 37A Teban Gardens Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4719,7 +4719,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_91">
-<name>kml_91</name>
+<name>Blk 409 Ang Mo Kio Ave 10</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4771,7 +4771,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_92">
-<name>kml_92</name>
+<name>Blk 448 Clementi Ave 3</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4823,7 +4823,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_93">
-<name>kml_93</name>
+<name>Blk 453A Ang Mo Kio Ave 10</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4875,7 +4875,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_94">
-<name>kml_94</name>
+<name>Blk 49 Sims Place</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4927,7 +4927,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_95">
-<name>kml_95</name>
+<name>Blk 4A Jalan Batu</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -4979,7 +4979,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_96">
-<name>kml_96</name>
+<name>Blk 4A Woodlands Centre Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5031,7 +5031,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_97">
-<name>kml_97</name>
+<name>Blk 505 Jurong West Street 52</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5083,7 +5083,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_98">
-<name>kml_98</name>
+<name>Blk 50A Marine Terrace</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5135,7 +5135,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_99">
-<name>kml_99</name>
+<name>Blk 51 Old Airport Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5187,7 +5187,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_100">
-<name>kml_100</name>
+<name>Blk 511 Bedok North Street 3</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5239,7 +5239,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_101">
-<name>kml_101</name>
+<name>Blk 527 Ang Mo Kio Ave 10</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5291,7 +5291,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_102">
-<name>kml_102</name>
+<name>Blk 538 Bedok North Street 3</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5343,7 +5343,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_103">
-<name>kml_103</name>
+<name>Blk 58 New Upper Changi Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5395,7 +5395,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_104">
-<name>kml_104</name>
+<name>Blk 628 Ang Mo Kio Ave 4</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5447,7 +5447,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_105">
-<name>kml_105</name>
+<name>Blk 630 Bedok Reservoir Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5499,7 +5499,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_106">
-<name>kml_106</name>
+<name>Blk 69 Geylang Bahru</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5551,7 +5551,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_107">
-<name>kml_107</name>
+<name>Blk 7 Empress Road</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5603,7 +5603,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_108">
-<name>kml_108</name>
+<name>Blk 724 Ang Mo Kio Ave 6</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5655,7 +5655,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_109">
-<name>kml_109</name>
+<name>Blk 726 Clementi West Street 2</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
@@ -5707,7 +5707,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_110">
-<name>kml_110</name>
+<name>Blk 74 Toa Payoh Lorong 4</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>TOTAL_STALLS</th>
