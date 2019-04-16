@@ -3184,7 +3184,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_67">
-<name>MOHAMED MUSTAFA & SAMSUDDIN CO PTE LTD (MUSTAFA CENTRE)</name>
+<name>MOHAMED MUSTAFA \& SAMSUDDIN CO PTE LTD (MUSTAFA CENTRE)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -3206,7 +3206,7 @@
 <td>145</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>PHARMACY_NAME</th>
-<td>MOHAMED MUSTAFA & SAMSUDDIN CO PTE LTD (MUSTAFA CENTRE)</td>
+<td>MOHAMED MUSTAFA \& SAMSUDDIN CO PTE LTD (MUSTAFA CENTRE)</td>
 </tr><tr bgcolor="">
 <th>INC_CRC</th>
 <td>5070519C4B095207</td>
@@ -4630,7 +4630,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_98">
-<name>Ng Teng Fong General Hospital Outpatient & Retail Pharmacy</name>
+<name>Ng Teng Fong General Hospital Outpatient \& Retail Pharmacy</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4652,7 +4652,7 @@
 <td>1</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>PHARMACY_NAME</th>
-<td>Ng Teng Fong General Hospital Outpatient & Retail Pharmacy</td>
+<td>Ng Teng Fong General Hospital Outpatient \& Retail Pharmacy</td>
 </tr><tr bgcolor="">
 <th>INC_CRC</th>
 <td>0FC5D9EE05838B0F</td>
@@ -4771,7 +4771,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_101">
-<name>P & L Pharmacy Pte Ltd</name>
+<name>P \& L Pharmacy Pte Ltd</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -4793,7 +4793,7 @@
 <td>19</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>PHARMACY_NAME</th>
-<td>P & L Pharmacy Pte Ltd</td>
+<td>P \& L Pharmacy Pte Ltd</td>
 </tr><tr bgcolor="">
 <th>INC_CRC</th>
 <td>9ED0F0C4CD0848B6</td>
@@ -5145,7 +5145,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_109">
-<name>R & D PHARMACEUTICAL PTE LTD</name>
+<name>R \& D PHARMACEUTICAL PTE LTD</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -5167,7 +5167,7 @@
 <td>265</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>PHARMACY_NAME</th>
-<td>R & D PHARMACEUTICAL PTE LTD</td>
+<td>R \& D PHARMACEUTICAL PTE LTD</td>
 </tr><tr bgcolor="">
 <th>INC_CRC</th>
 <td>4917100E7425299D</td>
@@ -11501,7 +11501,7 @@
 </Point>
 </Placemark>
 <Placemark id="kml_242">
-<name>Tan Tock Seng Hospital (Outpatient & Retail Pharmacy)</name>
+<name>Tan Tock Seng Hospital (Outpatient \& Retail Pharmacy)</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>POSTAL_CODE</th>
@@ -11523,7 +11523,7 @@
 <td>11</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>PHARMACY_NAME</th>
-<td>Tan Tock Seng Hospital (Outpatient & Retail Pharmacy)</td>
+<td>Tan Tock Seng Hospital (Outpatient \& Retail Pharmacy)</td>
 </tr><tr bgcolor="">
 <th>INC_CRC</th>
 <td>D292B3AFDBDC6E4D</td>

@@ -219,7 +219,7 @@ export default function buildSelection(containerEl, done) {
 // TODO: Create sidebar with distance from amenities
 window.initMap =
     function() {
-  return buildMap(document.getElementById('map'))
+  return buildSelection(document.getElementById('map'))
 }
 
 function
