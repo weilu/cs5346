@@ -38,13 +38,16 @@ export default function(data, town, flatType) {
   const dates = Object.keys(priceQuarterTypeMap)
   const plotData = []
   plotData.push(['x'].concat(dates.map(parseDate)))
+  const typePrices = []
   flatTypes.forEach(t => {
-    plotData.push([t].concat(dates.map(d => priceQuarterTypeMap[d][t])))
+    const prices = dates.map(d => priceQuarterTypeMap[d][t])
+    typePrices.push(prices)
+    plotData.push([t].concat(prices))
   })
 
   var chart = c3.generate({
 
-    bindto: `#${"prices"} .viz .top.leftviz`,
+    bindto: '#summary-price',
     data: {
       x: 'x',
       columns: plotData
@@ -72,9 +75,27 @@ export default function(data, town, flatType) {
           const year = date.getFullYear()
           return `${year} Q${quarter}`
         },
-        value: d => "$" + d3.format(",.0f")(d)
+        value: formatMoney
       }
     }
   });
 
+  const latestPrices = typePrices.map(priceArray => {
+    return priceArray.reverse().reduce((acc, curr) => {
+     if (acc == null && !isNaN(curr)) {
+        acc = curr
+      }
+      return acc
+    }, null)
+  })
+  const estimatedPrice = latestPrices.map(formatMoney).join(' to ')
+  var narrative = `You can expect to spend ${estimatedPrice} for
+    a resale ${flatType} flat in ${town}, according to the median price
+    from the last transacted quarter.`
+  const narrativeEl = document.querySelector(`#price-summary .narrative`)
+  narrativeEl.innerHTML = `<p>${narrative}</p>`
+}
+
+function formatMoney(d) {
+  return "$" + d3.format(",.0f")(d)
 }
