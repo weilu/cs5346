@@ -2,7 +2,7 @@ export default function buildSelection(containerEl, done) {
   var kml = indexKmlData();
   var geoData = null;
   var map = new google.maps.Map(containerEl);
-  var info = new google.maps.InfoWindow({maxWidth: 200});
+  var info = new google.maps.InfoWindow();
   var selection = {};
 
   var geoXml = new geoXML3.parser({
@@ -43,7 +43,7 @@ export default function buildSelection(containerEl, done) {
           if (placemark.polygon) {
             placemark.polygon.setOptions(style().hide);
           } else if (placemark.marker) {
-            setHoverAmenities(placemark.marker, i);
+            setHoverAmenities(placemark.marker);
 
             placemark.marker.setOptions({icon: kml.icon[g]})
             placemark.marker.setMap(null);
@@ -102,19 +102,13 @@ export default function buildSelection(containerEl, done) {
     });
   };
 
-  var setHoverAmenities = function(marker, id) {
+  var setHoverAmenities = function(marker) {
     google.maps.event.addListener(marker, 'mouseover', function() {
-      var rowElem = document.getElementById('row' + id);
-      if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
-
       info.setContent(marker.title);
       info.open(map, marker);
     });
 
     google.maps.event.addListener(marker, 'mouseout', function() {
-      var rowElem = document.getElementById('row' + id);
-      if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
-
       info.close()
     });
   };
@@ -160,9 +154,14 @@ export default function buildSelection(containerEl, done) {
         placemark.marker.setMap(map);
 
         bounds.extend(placemark.marker.position);
-
-        if (i === 0)
-          report.push(placemark.marker.title + ': ' + distance[i].dist + 'm');
+  
+        if (i === 0){
+          var name = placemark.marker.title;
+          name = name.toLowerCase();
+          name = name.split(" ").map(e => e[0].toUpperCase() + e.slice(1)).join(" ")
+          report.push(name + ':');
+          report.push(distance[i].dist + 'm');
+        }
       }
     }
     map.fitBounds(bounds);
@@ -261,9 +260,9 @@ function calcDistance(p1, p2) {
 function showSidebar(report) {
   var sidebarHtml =
       '<table>';
-  for (let i = 0; i < report.length; i++) {
+  for (let i = 0; i < report.length; i+=2) {
     const row = report[i];
-    sidebarHtml += '<tr id="row' + i + '"><td>' + row + '</td></tr>';
+    sidebarHtml += '<tr><td>' + report[i] + '</td><td>' + report[i + 1] + '</td></tr>';
   }
   sidebarHtml += '</table>';
   document.getElementById('amenities-sidebar').innerHTML = sidebarHtml;
