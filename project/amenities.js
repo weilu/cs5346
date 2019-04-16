@@ -233,7 +233,7 @@ indexKmlData() {
 
   var id = 0;
   ['soonhdb', 'childcare', 'clinics', 'communityclubs', 'firestation', 'gymsg',
-   'kindergarten', 'libraries', 'marketfood', 'mrtexit', 'parks', 'pharmacy',
+   'kindergarten', 'libraries', 'marketfood', 'parks', 'pharmacy',
    'playsg', 'police', 'sportsg', 'planningboundary']
       .forEach((kmlFile) => {
         kmlData.push(kmlDataPath + 'kml/' + kmlFile + '.kml');
