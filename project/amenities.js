@@ -1,14 +1,13 @@
 export default function buildMap(containerEl, done) {
-  const kmlDataPath =
-      'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/';
-
-  var kml = indexKmlData(kmlDataPath);
+  var kml = indexKmlData();
   var geoData = null;
   var map = new google.maps.Map(containerEl);
+  var info = new google.maps.InfoWindow();
 
   var geoXml = new geoXML3.parser({
     map: map,
     singleInfoWindow: true,
+    suppressInfoWindows: true,
     afterParse: function(data) {
       geoData = data;
 
@@ -25,8 +24,8 @@ export default function buildMap(containerEl, done) {
         if (placemark.polygon) {
           placemark.polygon.setOptions(polyStyle().nromal);
 
-          setHoverHDB(placemark.polygon, i);
-          setClickHDB(geoDoc, placemark.polygon, i);
+          setHoverHDB(placemark.polygon);
+          setClickHDB(map, geoDoc, placemark.polygon, info);
         }
       }
 
@@ -43,9 +42,10 @@ export default function buildMap(containerEl, done) {
           if (placemark.marker) {
             setHoverAmenities(placemark.marker, i);
 
+            placemark.marker.setOptions({icon: kml.icon[g]})
             placemark.marker.setMap(null);
           } else if (placemark.polygon) {
-            placemark.polygon.setOptions({fillOpacity: 0.0});
+            placemark.polygon.setOptions(polyStyle().hide);
           }
         }
       }
@@ -58,6 +58,72 @@ export default function buildMap(containerEl, done) {
     }
   });
   geoXml.parse(kml.data);
+
+  var setClickHDB = function(map, geoDoc, poly, info) {
+    google.maps.event.addListener(map, 'click', function(event) {
+      console.log('Click event away from poly');
+      hideAmenities();
+    });
+
+    google.maps.event.addListener(poly, 'click', function(event) {
+      var lat = event.latLng.lat();
+      var lng = event.latLng.lng();
+      map.setCenter(new google.maps.LatLng(lat, lng));
+
+      for (var i = 0; i < geoDoc.placemarks.length; i++) {
+        var placemark = geoDoc.placemarks[i];
+        if (placemark.polygon) {
+          placemark.polygon.setOptions(polyStyle().normal);
+        }
+      }
+
+      if (poly) {
+        poly.setOptions(polyStyle().click);
+      }
+
+      showAmenities();
+
+      // Parse nearby amenities
+      // Calculate distance
+
+      // Display distance to nearest amenities
+      info.setContent('TODO: Add amenities distances');
+      info.setPosition(poly.bounds.getCenter());
+      info.open(map);
+    });
+  };
+
+  // TODO: Change to render points per type
+  var setHoverHDB = function(poly) {
+    google.maps.event.addListener(poly, 'mouseover', function() {
+      console.log('Mouseover Polygon');
+      if (poly) {
+        poly.setOptions(polyStyle().hover);
+      }
+    });
+    google.maps.event.addListener(poly, 'mouseout', function() {
+      console.log('Mouseoff Polygon');
+      poly.setOptions(polyStyle().normal);
+    });
+  };
+
+  var setHoverAmenities = function(marker, id) {
+    google.maps.event.addListener(marker, 'mouseover', function() {
+      var rowElem = document.getElementById('row' + id);
+      if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
+
+      info.setContent('TODO: Add amenities description');
+      info.setPosition(marker.getCenter());
+      info.open(map);
+    });
+
+    google.maps.event.addListener(marker, 'mouseout', function() {
+      var rowElem = document.getElementById('row' + id);
+      if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
+
+      info.close();
+    });
+  };
 
   // Show all the amenities
   var showAmenities =
@@ -120,9 +186,14 @@ window.initMap =
   return buildMap(document.getElementById('map'))
 }
 
-function indexKmlData(path) {
+function
+indexKmlData() {
+  const kmlDataPath =
+      'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/';
+
   var kmlRef = {};
   var kmlData = [];
+  var kmlIcon = [];
 
   var id = 0;
   ['soonhdb', 'aquaticsg', 'childcare', 'clinics', 'communityclubs',
@@ -130,10 +201,11 @@ function indexKmlData(path) {
    'museums', 'parks', 'pharmacy', 'playsg', 'police', 'sportsg',
    'planningboundary']
       .forEach((kmlFile) => {
-        kmlData.push(path + kmlFile + '.kml');
+        kmlData.push(kmlDataPath + 'kml/' + kmlFile + '.kml');
+        kmlData.push(kmlDataPath + 'icon/' + kmlFile + '.png');
         kmlRef[kmlFile] = id++;
       });
-  return {ref: kmlRef, data: kmlData};
+  return {ref: kmlRef, data: kmlData, icon: kmlIcon};
 }
 
 function
@@ -151,74 +223,7 @@ polyStyle() {
           strokeColor: '#000000',
           fillOpacity: 0.9,
           strokeWidth: 10
-        }
+        },
+        hide: {fillOpacity: 0.0}
   }
-}
-
-function
-markerStyle() {
-  return {
-    normal: {}, hover: {}, click: {}
-  }
-}
-
-function setClickHDB(geoDoc, poly, id) {
-  google.maps.event.addListener(poly, 'leftclick', function(event) {
-    var lat = event.latLng.lat();
-    var lng = event.latLng.lng();
-
-    for (var i = 0; i < geoDoc.placemarks.length; i++) {
-      var placemark = geoDoc.placemarks[i];
-      if (placemark.polygon) {
-        placemark.polygon.setOptions(polyStyle().normal);
-      }
-    }
-
-    // TODO: Center around position
-
-    var rowElem = document.getElementById('row' + id);
-    if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
-    if (poly) {
-      poly.setOptions(polyStyle().click);
-    }
-
-    // Parse nearby amenities
-    // Calculate distance
-
-    // Display distance to nearest amenities
-  });
-}
-
-// TODO: Change to render points per type
-function setHoverHDB(poly, id) {
-  google.maps.event.addListener(poly, 'mouseover', function() {
-    var rowElem = document.getElementById('row' + id);
-    if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
-    if (poly) {
-      poly.setOptions(polyStyle().hover);
-    }
-  });
-  google.maps.event.addListener(poly, 'mouseout', function() {
-    var rowElem = document.getElementById('row' + id);
-    if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
-    poly.setOptions(polyStyle().normal);
-  });
-}
-
-function setHoverAmenities(marker, id) {
-  google.maps.event.addListener(marker, 'mouseover', function() {
-    var rowElem = document.getElementById('row' + id);
-    if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
-
-    marker.setOptions(markerStyle().hover);
-
-    // TODO: Display data
-  });
-
-  google.maps.event.addListener(marker, 'mouseout', function() {
-    var rowElem = document.getElementById('row' + id);
-    if (rowElem) rowElem.style.backgroundColor = '#FFFFFF';
-
-    marker.setOptions(markerStyle().normal);
-  });
 }
