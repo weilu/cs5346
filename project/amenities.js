@@ -89,8 +89,6 @@ export default function buildSelection(containerEl, done) {
 
       var report = showAmenities(hdb);
 
-      console.log(report);
-
       // Display distance to nearest amenities
       // info.setContent(report);
       // info.setPosition(hdb.bounds.getCenter());
@@ -205,10 +203,17 @@ export default function buildSelection(containerEl, done) {
 
     for (var i = 0; i < geoDoc.placemarks.length; i++) {
       var placemark = geoDoc.placemarks[i];
-      if (placemark.polygon && placemark.name === name) {
-        map.fitBounds(placemark.polygon.bounds);
 
-        selection.region = placemark.polygon;
+      if (placemark.name.toUpperCase() == name.toUpperCase()) {
+        console.log("Zoomed to ", placemark);
+
+        var poly;
+        if (placemark.polygon) poly = placemark.polygon;
+        else if (placemark.polyline) poly = placemark.polyline;
+
+        map.fitBounds(poly.bounds);
+
+        selection.region = poly;
 
         break;
       }

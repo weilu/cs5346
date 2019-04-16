@@ -302,6 +302,10 @@ Promise.all([
       }
     })
 
+    const selectionMap = buildSelection(document.querySelector('#amenities-map'), function() {
+      selectionMap.zoom(winner);
+    })
+
     recommendations.district = winner
     updatePriceViz(recommendations)
   }, false);
@@ -310,10 +314,6 @@ Promise.all([
     if (Object.keys(recommendations).length !== 3 || recommendations.type !== 'HDB Dwellings') return
 
     resale(resaleData, recommendations.district, recommendations.hdbType)
-
-    const selectionMap = buildSelection(document.querySelector('#amenities-map'), function() {
-      selectionMap.zoom(recommendations.district);
-    })
   }
 })
 
