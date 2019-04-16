@@ -1,17 +1,4 @@
 export default function buildMap(containerEl, done) {
-  const kmlDataPath =
-      'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/';
-  var kmlRef = {};
-  var kmlData = [];
-  var i = 0;
-  ['soonhdb', 'aquaticsg', 'childcare', 'clinics', 'communityclubs',
-   'firestation', 'gymsg', 'kindergarten', 'libraries', 'marketfood', 'mrtexit',
-   'museums', 'parks', 'pharmacy', 'playsg', 'police', 'sportsg',
-   'planningboundary']
-      .forEach((kmlFile) => {
-        kmlData.push(kmlDataPath + kmlFile + '.kml');
-        kmlRef[kmlFile] = i++;
-      });
   var highlightOptions = {
     fillColor: '#FFFF00',
     strokeColor: '#000000',
@@ -20,59 +7,52 @@ export default function buildMap(containerEl, done) {
   };
   var highlightLineOptions = {strokeColor: '#FFFF00', strokeWidth: 10};
 
-
+  const kmlDataPath =
+      'https://raw.githubusercontent.com/weilu/cs5346/master/project/data/geo/kml/';
+  var kml = indexKmlData(kmlDataPath);
+  var geoData = null;
   var map = new google.maps.Map(containerEl);
-  var geoXmlDocs = null;
-  var geoXmlDoc = null;
 
   var geoXml = new geoXML3.parser({
     map: map,
     singleInfoWindow: true,
-    afterParse: function(doc) {
-      geoXmlDocs = doc;
+    afterParse: function(data) {
+      geoData = data;
+
       var currentBounds = map.getBounds();
       if (!currentBounds) currentBounds = new google.maps.LatLngBounds();
 
-      // Geodata handling goes here, using JSON properties of the doc object
-      geoXmlDoc = doc[0];  // HDB info
-      if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
-      for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
-        var placemark = geoXmlDoc.placemarks[i];
-        if (placemark.polygon) {
-          placemark.polygon.setOptions(
-              {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
-          setHighlightHandler(
-              geoXmlDoc, placemark.polygon, i, highlightOptions,
-              highlightLineOptions);
-        }
-      }
-
       // Display in-progress hdb information
-      geoXmlDoc = doc[kmlRef['soonhdb']];
-      if (!geoXmlDoc || !geoXmlDoc.placemarks) return;
-      for (var i = 0; i < geoXmlDoc.placemarks.length; i++) {
-        var placemark = geoXmlDoc.placemarks[i];
+      geoDoc = geoData[kml.ref['soonhdb']];
+      if (!geoDoc || !geoDoc.placemarks) return;
+
+      for (var g = 0; g < geoDoc.placemarks.length; g++) {
+        var placemark = geoDoc.placemarks[g];
+
         if (placemark.polygon) {
           placemark.polygon.setOptions(
               {fillColor: '#0000FF', strokeColor: '#0000FF', fillOpacity: 0.3});
-          setHighlightHandler(
-              geoXmlDoc, placemark.polygon, i, highlightOptions,
+
+          setHoverHandler(
+              geoDoc, placemark.polygon, g, highlightOptions,
               highlightLineOptions);
         }
       }
 
-      // Hide all the other data
-      for (var g = 1; g < doc.length; g++) {
-        var geoDoc = doc[g];
+      // Set handler for every marker
+      for (var g = 0; g < geoData.length; g++) {
+        if (g === kml.ref['soonhdb']) continue;  // Skip hdb
+
+        var geoDoc = geoData[g];
         if (!geoDoc || !geoDoc.placemarks) return;
+
         for (var i = 0; i < geoDoc.placemarks.length; i++) {
           var placemark = geoDoc.placemarks[i];
+
           if (placemark.marker) {
-            // TODO: Set the placemark style
+            setClickHandler(geoDoc, placemark.marker, i);
+
             placemark.marker.setMap(null);
-          }
-          if (placemark.polygon) {
-            placemark.polygon.setOptions({fillOpacity: 0.0});
           }
         }
       }
@@ -84,23 +64,50 @@ export default function buildMap(containerEl, done) {
       zoomRegion('SERANGOON');
     }
   });
-  geoXml.parse(kmlData);
+  geoXml.parse(kml.data);
 
-  function showAmenities(name, type) {
-    zoomRegion(name);
+  // Show all the amenities
+  var showAmenities =
+      function() {
+    for (var g = 0; g < geoData.length; g++) {
+      if (g === kml.ref['soonhdb']) continue;  // Skip hdb
 
-    // Iterate the data and show the nearest amenities
+      var geoDoc = geoData[g];
+      if (!geoDoc || !geoDoc.placemarks) return;
+
+      for (var i = 0; i < geoDoc.placemarks.length; i++) {
+        var placemark = geoDoc.placemarks[i];
+
+        if (placemark.marker) {
+          placemark.marker.setMap(map);
+        }
+      }
+    }
   }
 
-  function onClick() {
-    // TODO: Somehow parse HDB data?
+  // Hide all the amenities
+  var hideAmenities =
+      function() {
+    // Set handler for every marker
+    for (var g = 0; g < geoData.length; g++) {
+      if (g === kml.ref['soonhdb']) continue;  // Skip hdb
 
-    // TODO: Zoom into region
+      var geoDoc = geoData[g];
+      if (!geoDoc || !geoDoc.placemarks) return;
+
+      for (var i = 0; i < geoDoc.placemarks.length; i++) {
+        var placemark = geoDoc.placemarks[i];
+
+        if (placemark.marker) {
+          placemark.marker.setMap(null);
+        }
+      }
+    }
   }
 
   var zoomRegion =
       function(name) {
-    var geoDoc = geoXmlDocs[kmlRef['planningboundary']];
+    var geoDoc = geoData[kml.ref['planningboundary']];
 
     for (var i = 0; i < geoDoc.placemarks.length; i++) {
       var placemark = geoDoc.placemarks[i];
@@ -111,7 +118,7 @@ export default function buildMap(containerEl, done) {
     }
   }
 
-  return {show: showAmenities, click: onClick, zoom: zoomRegion};
+  return {show: showAmenities, hide: hideAmenities, zoom: zoomRegion};
 }
 
 // TODO: Create sidebar with distance from amenities
@@ -120,16 +127,39 @@ window.initMap =
   return buildMap(document.getElementById('map'))
 }
 
+function indexKmlData(path) {
+  var kmlRef = {};
+  var kmlData = [];
+
+  var id = 0;
+  ['soonhdb', 'aquaticsg', 'childcare', 'clinics', 'communityclubs',
+   'firestation', 'gymsg', 'kindergarten', 'libraries', 'marketfood', 'mrtexit',
+   'museums', 'parks', 'pharmacy', 'playsg', 'police', 'sportsg',
+   'planningboundary']
+      .forEach((kmlFile) => {
+        kmlData.push(path + kmlFile + '.kml');
+        kmlRef[kmlFile] = id++;
+      });
+  return {ref: kmlRef, data: kmlData};
+}
+
+function
+setClickHandler() {
+  // TODO: Somehow parse HDB data?
+
+  // TODO: Zoom into region
+}
+
 // TODO: Change to render points per type
-function setHighlightHandler(
-    geoXmlDoc, poly, id, highlightOptions, highlightLineOptions) {
+function setHoverHandler(
+    geoDoc, poly, id, highlightOptions, highlightLineOptions) {
   google.maps.event.addListener(poly, 'mouseover', function() {
     var rowElem = document.getElementById('row' + id);
     if (rowElem) rowElem.style.backgroundColor = '#FFFA5E';
-    if (geoXmlDoc.placemarks[id].polygon) {
-      poly.setOptions(highlightOptions);
-    } else if (geoXmlDoc.placemarks[id].polyline) {
-      poly.setOptions(highlightLineOptions);
+    if (geoDoc.placemarks[id].polygon) {
+      marker.setOptions(highlightOptions);
+    } else if (geoDoc.placemarks[id].polyline) {
+      marker.setOptions(highlightLineOptions);
     }
   });
   google.maps.event.addListener(poly, 'mouseout', function() {
