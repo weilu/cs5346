@@ -2458,7 +2458,7 @@
 </tr><tr bgcolor="">
 <th>ALT_TELEPHONE_LINE</th>
 <td>6226 2254 (General Licensing Unit)
-6223 4704 (Arms \& Explosives Unit)
+6223 4704 (Arms and Explosives Unit)
 6223 8425 (Liquor Licensing Unit)</td>
 </tr><tr bgcolor="#E3E3F3">
 <th>STREET_NAME</th>
@@ -4316,11 +4316,11 @@
 </Point>
 </Placemark>
 <Placemark id="kml_70">
-<name>Administration \& Finance Department</name>
+<name>Administration and Finance Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
-<td>Administration \& Finance Department</td>
+<td>Administration and Finance Department</td>
 </tr><tr bgcolor="">
 <th>ALT_TELEPHONE_LINE</th>
 <td></td>
@@ -4378,11 +4378,11 @@
 </Point>
 </Placemark>
 <Placemark id="kml_71">
-<name>Inspectorate \& Compliance Office</name>
+<name>Inspectorate and Compliance Office</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
-<td>Inspectorate \& Compliance Office</td>
+<td>Inspectorate and Compliance Office</td>
 </tr><tr bgcolor="">
 <th>ALT_TELEPHONE_LINE</th>
 <td></td>
@@ -4626,11 +4626,11 @@
 </Point>
 </Placemark>
 <Placemark id="kml_75">
-<name>Planning \& Organisation Department</name>
+<name>Planning and Organisation Department</name>
 <snippet> </snippet>
 <description><![CDATA[<center><table><tr><th colspan='2' align='center'><em>Attributes</em></th></tr><tr bgcolor="#E3E3F3">
 <th>DEPARTMENT</th>
-<td>Planning \& Organisation Department</td>
+<td>Planning and Organisation Department</td>
 </tr><tr bgcolor="">
 <th>ALT_TELEPHONE_LINE</th>
 <td></td>
