@@ -225,6 +225,16 @@ const pricesBasedOnLocationPromise = d3.csv('data/median-resale-prices-for-regis
     }
 })
 
+function getTypesFromSummaryData(data, sorted) {
+  var allTypes = Object.values(data)
+                       .reduce((acc, curr) => acc.concat(Object.keys(curr)), [])
+  allTypes = d3.set(allTypes).values()
+  if (sorted) {
+    allTypes = allTypes.sort()
+  }
+  return allTypes
+}
+
 const summaryData = {}
 const summaryHDBData = {}
 const summaryDistrictData = {}
@@ -240,14 +250,22 @@ Promise.all([
   const resaleData = data[0]
 
   document.addEventListener('type-update', (e) => {
+    const colorDomain = getTypesFromSummaryData(summaryData, false)
+    var color = d3.scaleOrdinal()
+      .domain(colorDomain)
+      .range(util.coolColors)
     const typeWinner = housingTypeSummary(e.data, "#type-summary .viz",
-      summaryData, dimensions, util.coolColors, false)
+      summaryData, dimensions, color)
     recommendations.type = typeWinner
     updatePriceViz(recommendations)
   }, false);
   document.addEventListener('type-hdb-update', (e) => {
+    const colorDomain = getTypesFromSummaryData(summaryHDBData, true)
+    var color = d3.scaleOrdinal()
+      .domain(colorDomain)
+      .range(d3.schemeYlOrRd[5].slice(1))
     const hdbTypeWinner = housingTypeSummary(e.data, "#type-hdb-summary .viz",
-      summaryHDBData, dimensions, d3.schemeYlOrRd[5].slice(1), true)
+      summaryHDBData, dimensions, color)
     recommendations.hdbType = hdbTypeWinner
     updatePriceViz(recommendations)
   }, false);
