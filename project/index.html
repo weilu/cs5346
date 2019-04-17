@@ -134,6 +134,7 @@
         cursor: default;
     }
 
+    #amenities-summary .viz div.narrative,
     #price-summary .viz div.narrative,
     #district-summary .viz div.narrative,
     #type-summary .viz div.narrative,
@@ -148,6 +149,10 @@
     #type-summary .viz div.summary,
     #type-hdb-summary .viz div.summary {
         top: 25vh;
+    }
+
+    #amenities-summary .viz div.summary {
+        top: 15vh;
     }
 
     #summary-map {
@@ -375,8 +380,10 @@
             </div>
             <div id='amenities-summary' class='page'>
                 <div class='viz'>
-                    <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500"></div>
-                    <table>
+                    <div class='narrative' data-aos="fade-in" data-aos-delay="500" data-aos-duration="500">
+                      Below are HDB blocks under construction in your district. Select a block to view nearby amenities.
+                    </div>
+                    <table >
                         <td>
                             <div id="amenities-map" data-aos="fade-down" class='summary'></div>
                         </td>
