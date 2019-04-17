@@ -43,7 +43,7 @@ export default function buildSelection(containerEl, done) {
           if (placemark.polygon) {
             placemark.polygon.setOptions(style().hide);
           } else if (placemark.marker) {
-            setHoverAmenities(placemark.marker);
+            // setHoverAmenities(placemark.marker);
 
             placemark.marker.setOptions({icon: kml.icon[g]})
             placemark.marker.setMap(null);
@@ -154,11 +154,13 @@ export default function buildSelection(containerEl, done) {
         placemark.marker.setMap(map);
 
         bounds.extend(placemark.marker.position);
-  
-        if (i === 0){
+
+        if (i === 0) {
           var name = placemark.marker.title;
           name = name.toLowerCase();
-          name = name.split(" ").map(e => e[0].toUpperCase() + e.slice(1)).join(" ")
+          name = name.split(' ')
+                     .map(e => e[0].toUpperCase() + e.slice(1))
+                     .join(' ')
           report.push(name + ':');
           report.push(distance[i].dist + 'm');
         }
@@ -200,8 +202,10 @@ export default function buildSelection(containerEl, done) {
 
       if (placemark.name.toUpperCase() == name.toUpperCase()) {
         var poly;
-        if (placemark.polygon) poly = placemark.polygon;
-        else if (placemark.polyline) poly = placemark.polyline;
+        if (placemark.polygon)
+          poly = placemark.polygon;
+        else if (placemark.polyline)
+          poly = placemark.polyline;
 
         map.fitBounds(poly.bounds);
 
@@ -232,8 +236,8 @@ indexKmlData() {
 
   var id = 0;
   ['soonhdb', 'childcare', 'clinics', 'communityclubs', 'firestation', 'gymsg',
-   'kindergarten', 'libraries', 'marketfood', 'parks', 'pharmacy',
-   'playsg', 'police', 'sportsg', 'planningboundary']
+   'kindergarten', 'libraries', 'marketfood', 'parks', 'pharmacy', 'playsg',
+   'police', 'sportsg', 'planningboundary']
       .forEach((kmlFile) => {
         kmlData.push(kmlDataPath + 'kml/' + kmlFile + '.kml');
         kmlIcon.push(kmlDataPath + 'icon/' + kmlFile + '.png');
@@ -258,11 +262,11 @@ function calcDistance(p1, p2) {
 }
 
 function showSidebar(report) {
-  var sidebarHtml =
-      '<table>';
-  for (let i = 0; i < report.length; i+=2) {
+  var sidebarHtml = '<table>';
+  for (let i = 0; i < report.length; i += 2) {
     const row = report[i];
-    sidebarHtml += '<tr><td>' + report[i] + '</td><td>' + report[i + 1] + '</td></tr>';
+    sidebarHtml +=
+        '<tr><td>' + report[i] + '</td><td>' + report[i + 1] + '</td></tr>';
   }
   sidebarHtml += '</table>';
   document.getElementById('amenities-sidebar').innerHTML = sidebarHtml;
