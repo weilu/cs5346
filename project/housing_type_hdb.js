@@ -30,7 +30,12 @@ export default function(hdbData, keyword, dropdownEl, colorIndex) {
       y: {
         show: false
       }
-    }
+    },
+    tooltip: {
+      format: {
+        value: d3.format(".2%")
+      }
+    },
   })
 
   dropdownEl.addEventListener('change', (event) => {
