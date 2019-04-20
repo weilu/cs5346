@@ -6,7 +6,8 @@ export default function(data, keyword) {
   ))
   var demographics = d3.set(filteredData.map(d => d.demographic)).values()
   const selectEl = document.querySelector(`#type-${keyword}`);
-  demographics.forEach(l => selectEl.insertAdjacentHTML('afterbegin', '<option value="' + l + '">' + l + '</option>'))
+  demographics.forEach(l => selectEl.insertAdjacentHTML('beforeend',
+    '<option value="' + l + '">' + l + '</option>'))
 
   return selectEl
 }
