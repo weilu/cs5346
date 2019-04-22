@@ -315,6 +315,15 @@ Promise.all([
 
     resale(resaleData, recommendations.district, recommendations.hdbType)
   }
+
+  // title page background color
+  dimensions.forEach((d, i) => {
+    var el = document.querySelector(`#${d} div.page:first-of-type`)
+    el.style.background = util.warmColors[i+1]
+    if (i != dimensions.length - 1) { // skip yellow
+      el.style.color = 'white'
+    }
+  })
 })
 
 
